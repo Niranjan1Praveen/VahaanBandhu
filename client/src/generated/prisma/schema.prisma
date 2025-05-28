@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model MandiLatLong {
+  id        Int    @id @default(autoincrement())
+  State     String
+  Mandi     String
+  Latitude  Float?
+  Longitude Float?
+}
+
+model Truck {
+  id               Int    @id @default(autoincrement())
+  State            String
+  TruckDriverName  String
+  TruckNumberPlate String @unique
+  Latitude         Float?
+  Longitude        Float?
+}
+
+model VoiceResponse {
+  id        String   @id @default(cuid())
+  crop      String
+  market    String
+  quantity  String
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,121 @@
+/* Custom styling for the truck tracking app */
+
+/* Map container styling */
+.map-container {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Truck markers */
+.truck-icon {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.status-delayed .truck-icon {
+    background-color: #dc3545;
+}
+
+/* Mandi markers */
+.mandi-icon {
+    background-color: #28a745;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Truck popup styling */
+.truck-popup h6 {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.truck-details p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Truck list item hover effect */
+.truck-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.truck-item:hover {
+    background-color: rgba(60, 70, 80, 0.9);
+}
+
+/* Custom scrollbar for panels */
+.info-panel, .route-panel {
+    max-height: 90%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 100, 0.5) rgba(50, 50, 50, 0.2);
+}
+
+.info-panel::-webkit-scrollbar, .route-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.info-panel::-webkit-scrollbar-track, .route-panel::-webkit-scrollbar-track {
+    background: rgba(50, 50, 50, 0.2);
+    border-radius: 3px;
+}
+
+.info-panel::-webkit-scrollbar-thumb, .route-panel::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.5);
+    border-radius: 3px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .info-panel, .route-panel {
+        position: relative;
+        width: 100%;
+        margin-top: 15px;
+        top: 0;
+        right: 0;
+    }
+    
+    .map-container {
+        height: 50vh;
+    }
+}
+
+/* Animation for location updates */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.truck-marker-update {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Make sure popups are readable in dark theme */
+.leaflet-popup-content-wrapper {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.leaflet-popup-tip {
+    background-color: #343a40;
+}
