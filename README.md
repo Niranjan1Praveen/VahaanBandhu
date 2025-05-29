@@ -12,7 +12,7 @@
 
 ## A Brief of the Prototype:
 
-**Interact with the UI of the website here** – [vahaan-bandhu-iagsdx5f4-niranjan-praveens-projects.vercel.app](vahaan-bandhu-iagsdx5f4-niranjan-praveens-projects.vercel.app)
+**Interact with the UI of the website here** – [https://vahaan-bandhu.vercel.app/](https://vahaan-bandhu.vercel.app/)
 
 The solution presented by Team CODE4CHANGE aims to revolutionize rural transport logistics through a web application primarily developed in the **Hindi** language  that facilitates **circular logistics** for **truck drivers** while maximizing value for **farmers** and **input dealers**. Built with **Next.js** on the frontend and backed by **Python-based AI models**, our platform addresses critical inefficiencies in agricultural transportation networks in rural India.
 
