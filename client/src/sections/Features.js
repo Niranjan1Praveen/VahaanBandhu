@@ -2,7 +2,7 @@ import FeatureCard from "@/components/ui/featureCard";
 import Tags from "@/components/ui/tags";
 import Image from "next/image";
 import Key from "@/components/ui/key";
-import dashboard from "@/assets/images/dashboard-new.png";
+import featureMap from "@/assets/images/featureMap.jpeg";
 const features = [
   "खाली लौटने से बचाव",
   "एफपीओ और यूनियन इंटीग्रेशन",
@@ -40,7 +40,7 @@ export default function Features() {
           >
             <div className="aspect-video flex items-center justify-center">
               <Image
-                src={dashboard}
+                src={featureMap}
                 className="rounded-xl"
                 height={650}
                 width={650}
