@@ -19,8 +19,9 @@ The solution presented by Team CODE4CHANGE aims to revolutionize rural transport
 Our system optimizes delivery routes, predicts transportation demand, and connects farmers to available truck capacity in real time. It helps reduce empty return loads, minimize delivery delays, and ensure the affordability and sustainability of agricultural logistics. The app is built with scalability and inclusivity at its core — designed to grow from local village-level implementations to regional and national deployments.
 
 ---
-![Dashboard Preview](./designs/vehicleRequest.png)
-
+![Landing Page Preview](./designs/landingPage.png)
+![Vehicle Request Preview](./designs/vehicleRequest.png)
+![Enterprise Resource Planning](./designs/ERP.png)
 ## Key Features Include:
 
 * **AI-Powered Route Optimization**: Smart algorithms compute optimal delivery routes for minimal fuel usage and time.
