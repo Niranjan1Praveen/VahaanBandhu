@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  provider      = "prisma-client-js"
+  output        = "../src/generated/prisma"
+  binaryTargets = ["native", "windows", "darwin-arm64"]
 }
 
 datasource db {
@@ -9,21 +10,32 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+model User {
+  id           String   @id @unique
+  email        String   @unique
+  firstName    String
+  lastName     String
+  profileImage String
+  createdAt    DateTime @default(now())
+}
+
 model MandiLatLong {
-  id        Int    @id @default(autoincrement())
-  State     String
-  Mandi     String
-  Latitude  Float?
-  Longitude Float?
+  id          Int    @id @default(autoincrement())
+  State       String
+  Mandi       String
+  Mandi_Hindi String
+  Latitude    Float?
+  Longitude   Float?
 }
 
 model Truck {
-  id               Int    @id @default(autoincrement())
-  State            String
-  TruckDriverName  String
-  TruckNumberPlate String @unique
-  Latitude         Float?
-  Longitude        Float?
+  id                    Int    @id @default(autoincrement())
+  State                 String
+  TruckDriverName       String
+  TruckDriverName_Hindi String
+  TruckNumberPlate      String @unique
+  Latitude              Float?
+  Longitude             Float?
 }
 
 model VoiceResponse {
@@ -31,5 +43,7 @@ model VoiceResponse {
   crop      String
   market    String
   quantity  String
+  Latitude  Float?
+  Longitude Float?
   createdAt DateTime @default(now())
 }
