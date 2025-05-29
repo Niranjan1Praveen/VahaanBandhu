@@ -14,7 +14,7 @@
 
 **Interact with the UI of the website here** – [vahaan-bandhu-iagsdx5f4-niranjan-praveens-projects.vercel.app](vahaan-bandhu-iagsdx5f4-niranjan-praveens-projects.vercel.app)
 
-The solution presented by Team CODE4CHANGE aims to revolutionize rural transport logistics through a web application that facilitates **circular logistics** for **truck drivers** while maximizing value for **farmers** and **input dealers**. Built with **Next.js** on the frontend and backed by **Python-based AI models**, our platform addresses critical inefficiencies in agricultural transportation networks in rural India.
+The solution presented by Team CODE4CHANGE aims to revolutionize rural transport logistics through a web application primarily developed in the **Hindi** language  that facilitates **circular logistics** for **truck drivers** while maximizing value for **farmers** and **input dealers**. Built with **Next.js** on the frontend and backed by **Python-based AI models**, our platform addresses critical inefficiencies in agricultural transportation networks in rural India.
 
 Our system optimizes delivery routes, predicts transportation demand, and connects farmers to available truck capacity in real time. It helps reduce empty return loads, minimize delivery delays, and ensure the affordability and sustainability of agricultural logistics. The app is built with scalability and inclusivity at its core — designed to grow from local village-level implementations to regional and national deployments.
 
@@ -22,6 +22,7 @@ Our system optimizes delivery routes, predicts transportation demand, and connec
 ![Landing Page Preview](./designs/landingPage.png)
 ![Vehicle Request Preview](./designs/vehicleRequest.png)
 ![Enterprise Resource Planning](./designs/ERP.png)
+
 ## Key Features Include:
 
 * **AI-Powered Route Optimization**: Smart algorithms compute optimal delivery routes for minimal fuel usage and time.
@@ -41,9 +42,9 @@ Our system optimizes delivery routes, predicts transportation demand, and connec
 
 * **Frontend**: Next.js (React Framework)
 * **Backend**: Python (FastAPI/Flask), AI Models (Scikit-learn, TensorFlow)
-* **Database**: MongoDB / PostgreSQL (Optional scalable backend integration)
+* **Database**: Supabase / PostgreSQL (Optional scalable backend integration)
 * **Real-Time**: WebSockets / GPS APIs for live tracking
-* **Deployment**: Netlify (Frontend), Railway / Render / Heroku (Backend)
+* **Deployment**: Vercel (Frontend), Railway / Render / Heroku (Backend)
 
 ---
 
