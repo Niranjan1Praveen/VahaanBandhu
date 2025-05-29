@@ -1,12 +1,21 @@
 # Hack with Gujarat Challenge 2025
 
 **Team Name** - CODE4CHANGE
-**Team Members** -  Debshata Choudhury
-                 -  Niranjan Praveen
-                 -  Abhishek Chaubhey
-                 -  Vaibhav Jain
+**Team Members**:
+
+* Debshata Choudhury
+* Niranjan Praveen
+* Abhishek Chaubhey
+* Vaibhav Jain
+
 **Problem Statement** - Transport & Logistics Optimization for Rural India
 **Team Leader Email** - [debshatachoudhury@gmail.com](mailto:debshatachoudhury@gmail.com)
+
+---
+
+## Web App Title:
+
+**VaahanBandhu – Quantum Enhanced Circular Logistics App for Truck Drivers**
 
 ---
 
@@ -14,50 +23,82 @@
 
 **Interact with the UI of the website here** – [https://vahaan-bandhu.vercel.app/](https://vahaan-bandhu.vercel.app/)
 
-The solution presented by Team CODE4CHANGE aims to revolutionize rural transport logistics through a web application primarily developed in the **Hindi** language  that facilitates **circular logistics** for **truck drivers** while maximizing value for **farmers** and **input dealers**. Built with **Next.js** on the frontend and backed by **Python-based AI models**, our platform addresses critical inefficiencies in agricultural transportation networks in rural India.
+VaahanBandhu, built by Team CODE4CHANGE, addresses rural India's inefficient agricultural transport network by enabling **circular logistics** for **truck drivers**, while maximizing outcomes for **farmers** and **input dealers**.
 
-Our system optimizes delivery routes, predicts transportation demand, and connects farmers to available truck capacity in real time. It helps reduce empty return loads, minimize delivery delays, and ensure the affordability and sustainability of agricultural logistics. The app is built with scalability and inclusivity at its core — designed to grow from local village-level implementations to regional and national deployments.
+Using **Next.js** for the frontend and **Python AI models** in the backend, the app intelligently matches crop loads with available transport, reduces empty return trips, and ensures timely delivery through optimized routing. The system combines **classical AI** and **quantum computing techniques** to make route selection smarter and faster, while remaining affordable and scalable for rural communities.
 
 ---
+
 ![Landing Page Preview](./designs/landingPage.png)
 ![Vehicle Request Preview](./designs/vehicleRequest.png)
 ![Enterprise Resource Planning](./designs/ERP.png)
 
 ## Key Features Include:
 
-* **AI-Powered Route Optimization**: Smart algorithms compute optimal delivery routes for minimal fuel usage and time.
-* **Real-Time Tracking**: Live updates and route monitoring for logistics managers and drivers.
-* **Demand Forecasting**: Predictive models forecast transport needs to reduce delays and spoilage.
-* **Farmer-Truck Coordination**: Matches farmers' crop delivery needs with nearby truck drivers to avoid vehicle under-utilization.
-* **Circular Logistics System**: Encourages profit-sharing models where truck drivers are incentivized for round trips instead of returning empty.
-* **Multi-User Roles**: The app supports:
+* **AI-Powered Route Optimization** – Smart algorithms reduce travel time and fuel usage.
+* **Quantum-Enhanced Pathfinding** – Quantum logic processes multiple routes simultaneously to find optimal logistics paths.
+* **Real-Time Tracking** – Users receive live updates via GPS-based tracking systems.
+* **Demand Forecasting** – AI models predict future transport needs based on usage data.
+* **Farmer-Truck Coordination** – Matches supply with transport capacity through a smart interface.
+* **Circular Logistics** – Promotes a profit-sharing return-trip model to maximize vehicle usage.
+* **Multi-User Roles**:
 
-  * **Farmers** – Post crop delivery requests
-  * **Truck Drivers** – Find available loads and optimize returns
-  * **Input Dealers** – Request or supply transportation for agri-inputs
+  * **Farmers** – Post crop delivery requests.
+  * **Truck Drivers** – Find loads and optimize round trips.
+  * **Input Dealers** – Manage agri-input transportation.
+
+---
+
+## Quantum Computing Integration (Simplified Overview)
+
+Here are the key quantum computing concepts used in the code:
+
+### Qubit Encoding
+
+* Traffic is encoded as qubits: `|0⟩ = bad`, `|1⟩ = good`.
+* `qc.x(i)` flips qubits based on traffic score (e.g., >70% = good traffic).
+
+### Quantum Entanglement
+
+* `qc.cx(i, i+1)` gates create correlation between road segments.
+* Helps evaluate connected routes as a unit (if one is bad, others likely are too).
+
+### Measurement & Probabilistic Output
+
+* `qc.measure_all()` collapses qubits into classical bits.
+* The most frequent outcome (`max(counts)`) suggests the best path.
+
+### Quantum Parallelism
+
+* Evaluates **2ⁿ** routes at once using quantum superposition.
+
+### Hybrid Approach
+
+* Classical logic handles UI, maps, and API integrations.
+* Quantum logic optimizes critical route segments (up to 5-qubit simulations).
+* Results are visualized using **Folium** for map rendering.
+
+This hybrid quantum-classical design demonstrates how **emerging quantum tech** can solve real-world challenges in logistics — even within today's hardware limits.
 
 ---
 
 ## Technology Stack:
 
 * **Frontend**: Next.js (React Framework)
-* **Backend**: Python (FastAPI/Flask), AI Models (Scikit-learn, TensorFlow)
-* **Database**: Supabase / PostgreSQL (Optional scalable backend integration)
-* **Real-Time**: WebSockets / GPS APIs for live tracking
-* **Deployment**: Vercel (Frontend), Railway / Render / Heroku (Backend)
+* **Backend**: Python (FastAPI or Flask), AI Models (Scikit-learn, TensorFlow), Quantum Logic (Qiskit)
+* **Database**: MongoDB / PostgreSQL
+* **Real-Time Updates**: WebSockets, GPS APIs
+* **Deployment**: Netlify (Frontend), Railway/Render/Heroku (Backend)
 
 ---
 
-## Code Execution Instruction:
+## Code Execution Instructions:
 
-### How to Run the Full Stack Application
-
-#### 1. Clone the Repository
-
-Open your terminal and run:
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Niranjan1Praveen/VahaanBandhu.git 
+git clone https://github.com/Niranjan1Praveen/VahaanBandhu.git  
+cd vaahanbandhu
 ```
 
 ---
@@ -74,7 +115,7 @@ npm install
 ### 3. Install Backend Dependencies (Python API)
 
 ```bash
-cd ../server
+cd ../server/truckroutenavigator
 pip install -r requirements.txt
 ```
 
@@ -82,17 +123,17 @@ pip install -r requirements.txt
 
 ### 4. Start the Application
 
-* **Frontend (Next.js)**
+#### Start Frontend (Next.js):
 
 ```bash
-cd ../client
+cd ../../client
 npm run dev
 ```
 
-* **Backend (FastAPI/Flask)**
+#### Start Backend (Python):
 
 ```bash
-cd ../server
+cd ../server/truckroutenavigator
 python app.py
 ```
 
@@ -100,19 +141,21 @@ python app.py
 
 ### 5. Access the Application
 
-Visit `http://localhost:3000` in your web browser to use the platform.
+Visit `http://localhost:3000` in your browser to start using the platform.
 
 ---
 
 ## Scalability, Sustainability, and Affordability Plan:
 
-* **Farmer Reach**: Local onboarding drives via FPOs, agri-input dealers, and mobile agents.
-* **Scalability**: Modular architecture supports multi-region rollout with region-specific data models.
-* **Sustainability**: Monetized through service fees from bulk transporters and data analytics packages.
-* **Affordability**: Free for farmers; revenue from B2B logistics insights sustains operations.
+* **Farmer Reach**: Onboarding via FPOs, agri-input dealers, and regional agents.
+* **Scalability**: Modular backend allows rollout to new geographies and logistics clusters.
+* **Sustainability**: Revenue model from commercial transporters and analytics services.
+* **Affordability**: Core services are free for farmers; subsidized via B2B partnerships.
 
 ---
 
-This project stands out for addressing one of rural India's most overlooked problems using modern AI and web technologies. With its focus on circular logistics, real-time insights, and community-wide impact, this app promises to become a transformative tool in agricultural transportation.
+## Summary
+
+VaahanBandhu sets a new standard for rural transportation optimization. By combining AI, quantum computing, and user-centric design, it makes logistics **faster, fairer, and more efficient** — empowering farmers and truckers alike.
 
 ---
