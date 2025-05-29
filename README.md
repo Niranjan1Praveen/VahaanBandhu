@@ -86,9 +86,9 @@ This hybrid quantum-classical design demonstrates how **emerging quantum tech** 
 
 * **Frontend**: Next.js (React Framework)
 * **Backend**: Python (FastAPI or Flask), AI Models (Scikit-learn, TensorFlow), Quantum Logic (Qiskit)
-* **Database**: MongoDB / PostgreSQL
-* **Real-Time Updates**: WebSockets, GPS APIs
-* **Deployment**: Netlify (Frontend), Railway/Render/Heroku (Backend)
+* **Database**: PrismaDB /Supabase/ PostgreSQL
+* **Real-Time Updates**: WebSockets, GPS APIs, TomTom API
+* **Deployment**: Vercel (Frontend), Render (Backend)
 
 ---
 
