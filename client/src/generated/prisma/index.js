@@ -164,7 +164,11 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
+<<<<<<< HEAD
       "value": "/Users/serb9/Desktop/VahaanBandhu/client/src/generated/prisma",
+=======
+      "value": "D:\\VahaanBandhu\\VahaanBandhu\\client\\src\\generated\\prisma",
+>>>>>>> 29f46bfa5d256636900a5de6ac499f726ff17fbc
       "fromEnvVar": null
     },
     "config": {
@@ -186,7 +190,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
+<<<<<<< HEAD
     "sourceFilePath": "/Users/serb9/Desktop/VahaanBandhu/client/prisma/schema.prisma",
+=======
+    "sourceFilePath": "D:\\VahaanBandhu\\VahaanBandhu\\client\\prisma\\schema.prisma",
+>>>>>>> 29f46bfa5d256636900a5de6ac499f726ff17fbc
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
