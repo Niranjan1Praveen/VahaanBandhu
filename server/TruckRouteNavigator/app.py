@@ -120,7 +120,7 @@ def map_view():
     # Initialize map with default center (India)
     map_center = [20.5937, 78.9629]
     zoom_level = 5
-    api_key = "t97TBub7Ss9APxCbTxR6LXfCQtRb6JsB"  # TomTom API key
+    api_key = "UzMMAF8tgfNGRsjn35LDuPdyYajHgKsw"  # TomTom API key
 
     # Get latest user location
     voice_responses = supabase.table("VoiceResponse").select("*").order("createdAt", desc=True).limit(1).execute().data or []
@@ -181,14 +181,26 @@ def map_view():
             continue
 
         is_nearest = nearest_truck and truck.get("id") == nearest_truck.get("id")
-        color = "red" if is_nearest else "green"
-        icon = "star" if is_nearest else "truck"
-
-        folium.Marker(
-            location=[lat, lon],
-            popup=f"\U0001F69B {'🚩 Nearest: ' if is_nearest else ''}{name}",
-            icon=folium.Icon(color=color, icon=icon, prefix="fa")
-        ).add_to(m)
+        if is_nearest:
+            # Enhanced marker for nearest truck
+            popup_text = (
+                f"\U0001F69B Nearest Truck: {name}<br>"
+                f"Distance: {distance_km:.2f} km<br>"
+                f"ETA: {time_minutes:.0f} min"
+            )
+            folium.Marker(
+                location=[lat, lon],
+                popup=popup_text,
+                icon=folium.Icon(color="red", icon="star", prefix="fa"),
+                tooltip="Nearest Truck"
+            ).add_to(m)
+        else:
+            # Regular truck marker
+            folium.Marker(
+                location=[lat, lon],
+                popup=f"\U0001F69B {name}",
+                icon=folium.Icon(color="green", icon="truck", prefix="fa")
+            ).add_to(m)
 
         # Draw straight-line connection to nearest truck
         if is_nearest and current_user_lat and current_user_lon:
@@ -250,7 +262,7 @@ def map_view():
                 opacity=0.6,
                 popup='Truck to User'
             ).add_to(m)
-                        # Collect traffic data for quantum evaluation
+            # Collect traffic data for quantum evaluation
             traffic_ratios = []
             sample_points = []
             sample_rate = max(1, len(route1)) // 5  # Sample 5 points
@@ -312,7 +324,6 @@ def map_view():
                         opacity=0.9
                     ).add_to(m)
 
-
         if route2:
             folium.PolyLine(
                 route2,
@@ -322,7 +333,7 @@ def map_view():
                 popup='User to Mandi'
             ).add_to(m)
 
-                        # Collect traffic data for quantum evaluation
+            # Collect traffic data for quantum evaluation
             traffic_ratios = []
             sample_points = []
             sample_rate = max(1, len(route2)) // 5  # Sample 5 points
@@ -383,7 +394,6 @@ def map_view():
                         weight=4,
                         opacity=0.9
                     ).add_to(m)
-
 
     # Add info legend
     legend_html = """
