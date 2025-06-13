@@ -15,7 +15,7 @@
 
 ## Web App Title:
 
-**VaahanBandhu – Quantum Enhanced Circular Logistics App for Truck Drivers**
+**VaahanBandhu – Circular Logistics for Driver Welfare & Sustainable Transport**
 
 ---
 
