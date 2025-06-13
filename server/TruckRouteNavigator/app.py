@@ -6,7 +6,11 @@ from supabase import create_client
 from math import radians, cos, sin, sqrt, atan2
 from dotenv import load_dotenv
 import time
+import numpy as np
+from qiskit import QuantumCircuit, transpile
+from qiskit.providers.basic_provider import BasicSimulator
 
+# Load environment variables
 load_dotenv()
 app = Flask(__name__)
 
@@ -78,12 +82,45 @@ def get_traffic_color(lat, lon, api_key):
         print(f"Traffic API exception: {str(e)}")
         return 'gray'
 
+def quantum_route_evaluation(traffic_ratios):
+    """Simple quantum circuit to evaluate route segments"""
+    if not traffic_ratios or len(traffic_ratios) < 2:
+        return []
+    
+    # Create a quantum circuit
+    num_qubits = min(5, len(traffic_ratios))  # Limit to 5 qubits for simplicity
+    qc = QuantumCircuit(num_qubits)
+    
+    # Encode traffic ratios as quantum states
+    for i in range(num_qubits):
+        if traffic_ratios[i] > 0.7:  # Good traffic
+            qc.x(i)  # Flip to |1> state
+    
+    # Add entanglement to correlate good segments
+    for i in range(num_qubits-1):
+        qc.cx(i, i+1)
+    
+    # Measure all qubits
+    qc.measure_all()
+    
+    # Run simulation
+    simulator = BasicSimulator()
+    compiled_circuit = transpile(qc, simulator)
+    result = simulator.run(compiled_circuit).result()
+    counts = result.get_counts(qc)
+    
+    # Get most frequent measurement
+    best_path = max(counts, key=counts.get)
+    
+    # Convert to segment indices (1=good, 0=bad)
+    return [i for i, val in enumerate(best_path[::-1]) if val == '1']
+
 @app.route("/")
 def map_view():
     # Initialize map with default center (India)
     map_center = [20.5937, 78.9629]
     zoom_level = 5
-    api_key = "t97TBub7Ss9APxCbTxR6LXfCQtRb6JsB"  # Directly use provided API key
+    api_key = "UzMMAF8tgfNGRsjn35LDuPdyYajHgKsw"  # TomTom API key
 
     # Get latest user location
     voice_responses = supabase.table("VoiceResponse").select("*").order("createdAt", desc=True).limit(1).execute().data or []
@@ -144,71 +181,211 @@ def map_view():
             continue
 
         is_nearest = nearest_truck and truck.get("id") == nearest_truck.get("id")
-        color = "red" if is_nearest else "green"
-        icon = "star" if is_nearest else "truck"
+        if is_nearest:
+            # Enhanced marker for nearest truck
+            popup_text = (
+                f"\U0001F69B Nearest Truck: {name}<br>"
+                f"Distance: {distance_km:.2f} km<br>"
+                f"ETA: {time_minutes:.0f} min"
+            )
+            folium.Marker(
+                location=[lat, lon],
+                popup=popup_text,
+                icon=folium.Icon(color="red", icon="star", prefix="fa"),
+                tooltip="Nearest Truck"
+            ).add_to(m)
+        else:
+            # Regular truck marker
+            folium.Marker(
+                location=[lat, lon],
+                popup=f"\U0001F69B {name}",
+                icon=folium.Icon(color="green", icon="truck", prefix="fa")
+            ).add_to(m)
 
-        folium.Marker(
-            location=[lat, lon],
-            popup=f"\U0001F69B {'🚩 Nearest: ' if is_nearest else ''}{name}",
-            icon=folium.Icon(color=color, icon=icon, prefix="fa")
-        ).add_to(m)
+        # Draw straight-line connection to nearest truck
+        if is_nearest and current_user_lat and current_user_lon:
+            folium.PolyLine(
+                locations=[[current_user_lat, current_user_lon], [lat, lon]],
+                color="blue",
+                weight=2.5,
+                dash_array="5, 10",
+                popup=f"Direct Distance: {distance_km:.2f} km"
+            ).add_to(m)
 
+            # --- Add Mandi (Market) Marker from VoiceResponse ---
+            latest_market = current_user.get("market") if voice_responses else None
+            if latest_market:
+                cleaned_market = latest_market.strip().split()[0]
+                mandi_entries = supabase.table("MandiLatLong")\
+                    .select("*")\
+                    .ilike("Mandi_Hindi", f"%{cleaned_market}%")\
+                    .execute().data
+
+                if mandi_entries:
+                    mandi = mandi_entries[0]
+                    mandi_lat = mandi.get("Latitude")
+                    mandi_lon = mandi.get("Longitude")
+                    mandi_name = mandi.get("Mandi")
+                    mandi_name_hindi = mandi.get("Mandi_Hindi")
+                    mandi_state = mandi.get("State")
+
+                    if mandi_lat and mandi_lon:
+                        folium.Marker(
+                            location=[mandi_lat, mandi_lon],
+                            popup=f"Mandi: {mandi_name_hindi} ({mandi_name}, {mandi_state})",
+                            icon=folium.Icon(color="orange", icon="shopping-cart", prefix="fa")
+                        ).add_to(m)
 
     # Generate route with traffic data
     if (nearest_truck and current_user_lat and current_user_lon and 
         nearest_truck_lat and nearest_truck_lon):
         
-        route_points = get_tomtom_route(
+        # Route: Truck → User
+        route1 = get_tomtom_route(
             nearest_truck_lat, nearest_truck_lon,
             current_user_lat, current_user_lon,
             api_key
         )
 
-        if route_points:
-            # Draw base route
-            folium.PolyLine(
-                route_points,
-                color='#555555',
-                weight=6,
-                opacity=0.5
-            ).add_to(m)
+        # Route: User → Mandi (if mandi available)
+        route2 = get_tomtom_route(
+            current_user_lat, current_user_lon,
+            mandi_lat, mandi_lon,
+            api_key
+        )
 
-            # Add traffic-colored segments with actual Traffic Flow API calls
-            segment_size = 5  # Check traffic every N points
+        if route1:
+            folium.PolyLine(
+                route1,
+                color='blue',
+                weight=5,
+                opacity=0.6,
+                popup='Truck to User'
+            ).add_to(m)
+            # Collect traffic data for quantum evaluation
+            traffic_ratios = []
+            sample_points = []
+            sample_rate = max(1, len(route1)) // 5  # Sample 5 points
+
+            for i, (lat, lon) in enumerate(route1):
+                if i % sample_rate == 0:
+                    color = get_traffic_color(lat, lon, api_key)
+                    ratio = 0.9 if color == 'green' else 0.6 if color == 'orange' else 0.3
+                    traffic_ratios.append(ratio)
+                    sample_points.append((lat, lon))
+                    time.sleep(0.1)
+
+            # Run quantum evaluation if we have enough points
+            if len(traffic_ratios) >= 2:
+                good_segments = quantum_route_evaluation(traffic_ratios)
+                if good_segments:
+                    optimized_points = [sample_points[i] for i in good_segments]
+                    folium.PolyLine(
+                        optimized_points,
+                        color='purple',
+                        weight=4,
+                        opacity=0.9,
+                        dash_array='10, 5',
+                        popup='Quantum-Evaluated Route'
+                    ).add_to(m)
+
+            # Add traffic-colored segments
+            segment_size = 3  # Check traffic every N points
             colored_segments = []
             current_segment = []
 
-            for i, (lat, lon) in enumerate(route_points):
-                # Only check traffic every N points to reduce API calls
+            for i, (lat, lon) in enumerate(route1):
                 if i % segment_size == 0:
-                    # Get traffic color for this point using Traffic Flow API
                     color = get_traffic_color(lat, lon, api_key)
-                    # If color changes or first point, start new segment
                     if colored_segments and colored_segments[-1][0] != color:
                         if current_segment:
                             colored_segments.append((color, current_segment))
                         current_segment = [(lat, lon)]
                     else:
                         current_segment.append((lat, lon))
-                    # Add to segments if color changed
                     if not colored_segments:
                         colored_segments.append((color, current_segment))
-                    elif colored_segments[-1][0] != color:
-                        colored_segments.append((color, current_segment))
-                        current_segment = [(lat, lon)]
-                    # Add small delay to avoid rate limiting
                     time.sleep(0.1)
                 else:
                     current_segment.append((lat, lon))
 
-            # Add the last segment
             if current_segment:
                 if colored_segments and colored_segments[-1][0] == color:
                     colored_segments[-1][1].extend(current_segment)
                 else:
                     colored_segments.append((color, current_segment))
 
-            # Draw colored segments on map
+            for color, segment in colored_segments:
+                if len(segment) > 1:
+                    folium.PolyLine(
+                        segment,
+                        color=color,
+                        weight=4,
+                        opacity=0.9
+                    ).add_to(m)
+
+        if route2:
+            folium.PolyLine(
+                route2,
+                color='darkorange',
+                weight=5,
+                opacity=0.6,
+                popup='User to Mandi'
+            ).add_to(m)
+
+            # Collect traffic data for quantum evaluation
+            traffic_ratios = []
+            sample_points = []
+            sample_rate = max(1, len(route2)) // 5  # Sample 5 points
+
+            for i, (lat, lon) in enumerate(route2):
+                if i % sample_rate == 0:
+                    color = get_traffic_color(lat, lon, api_key)
+                    ratio = 0.9 if color == 'green' else 0.6 if color == 'orange' else 0.3
+                    traffic_ratios.append(ratio)
+                    sample_points.append((lat, lon))
+                    time.sleep(0.1)
+
+            # Run quantum evaluation if we have enough points
+            if len(traffic_ratios) >= 2:
+                good_segments = quantum_route_evaluation(traffic_ratios)
+                if good_segments:
+                    optimized_points = [sample_points[i] for i in good_segments]
+                    folium.PolyLine(
+                        optimized_points,
+                        color='purple',
+                        weight=4,
+                        opacity=0.9,
+                        dash_array='10, 5',
+                        popup='Quantum-Evaluated Route'
+                    ).add_to(m)
+
+            # Add traffic-colored segments
+            segment_size = 3  # Check traffic every N points
+            colored_segments = []
+            current_segment = []
+
+            for i, (lat, lon) in enumerate(route2):
+                if i % segment_size == 0:
+                    color = get_traffic_color(lat, lon, api_key)
+                    if colored_segments and colored_segments[-1][0] != color:
+                        if current_segment:
+                            colored_segments.append((color, current_segment))
+                        current_segment = [(lat, lon)]
+                    else:
+                        current_segment.append((lat, lon))
+                    if not colored_segments:
+                        colored_segments.append((color, current_segment))
+                    time.sleep(0.1)
+                else:
+                    current_segment.append((lat, lon))
+
+            if current_segment:
+                if colored_segments and colored_segments[-1][0] == color:
+                    colored_segments[-1][1].extend(current_segment)
+                else:
+                    colored_segments.append((color, current_segment))
+
             for color, segment in colored_segments:
                 if len(segment) > 1:
                     folium.PolyLine(
@@ -237,6 +414,7 @@ def map_view():
         <span style="color:orange;">▉</span> Moderate traffic (60-90%)<br>
         <span style="color:red;">▉</span> Heavy traffic (<60%)<br>
         <span style="color:grey;">▉</span> No data<br>
+        <span style="color:purple;">▉</span> Quantum-evaluated<br>
         <hr style="margin:5px 0">
         <b>Nearest Truck</b>: {truck_info}
     </div>
@@ -244,6 +422,7 @@ def map_view():
         truck_info=f"{distance_km:.2f} km, ETA: {time_minutes:.0f} min" 
         if distance_km and time_minutes else "Not available"
     )
+
     
     m.get_root().html.add_child(folium.Element(legend_html))
     return m._repr_html_()

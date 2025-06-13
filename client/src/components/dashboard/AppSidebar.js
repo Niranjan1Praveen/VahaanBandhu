@@ -4,6 +4,7 @@ import {
   ChevronUp,
   BookOpenText,
   Boxes,
+  Boxes,
 } from "lucide-react";
 import {
   Sidebar,
@@ -36,11 +37,7 @@ const items = [
   },
   {
     title: "दस्तावेज़ीकरण",
-<<<<<<< HEAD
-    url: "/inputDealers/documentation",
-=======
-    url: "/input-dealer/documentation",
->>>>>>> 2d2231d161cb0c9d2a118f9951e83ba211572336
+    url: "/dashboard/documentation",
     icon: BookOpenText,
   },
 ];

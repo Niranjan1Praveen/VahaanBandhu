@@ -27,7 +27,11 @@ export async function GET(){
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     return NextResponse.redirect("http://localhost:3000/inputDealers");
+=======
+    return NextResponse.redirect("http://localhost:3000/input-dealer");
+>>>>>>> 2d2231d161cb0c9d2a118f9951e83ba211572336
 =======
     return NextResponse.redirect("http://localhost:3000/input-dealer");
 >>>>>>> 2d2231d161cb0c9d2a118f9951e83ba211572336
