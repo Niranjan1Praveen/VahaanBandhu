@@ -34,6 +34,7 @@ const signUpOptionsData = [
       "डिजिटल रूट प्लानिंग",
       "भरोसेमंद आय और भुगतान"
     ],
+    popular: true,
   },
   {
     id: 3,

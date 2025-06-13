@@ -163,7 +163,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\nithi\\Desktop\\FarmBandhu\\client\\src\\generated\\prisma",
+      "value": "C:\\Users\\nithi\\Desktop\\VahaanBandhu\\client\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -185,7 +185,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\nithi\\Desktop\\FarmBandhu\\client\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\nithi\\Desktop\\VahaanBandhu\\client\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

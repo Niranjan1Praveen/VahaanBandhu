@@ -40,7 +40,7 @@ const items = [
   },
   {
     title: "दस्तावेज़ीकरण",
-    url: "/dashboard/documentation",
+    url: "/inputDealers/documentation",
     icon: BookOpenText,
   },
 ];

@@ -17,7 +17,7 @@ export default function Hero() {
 
           <h1 className="text-4xl md:text-6xl font-medium mt-6 leading-relaxed">
             लॉजिस्टिक्स सुविधा के साथ ग्रामीण परिवहन में क्रांति लाएं
-            <div className="relative w-[200px] h-[100px] overflow-hidden inline-flex mx-8">
+            <div className="relative w-[200px] h-[100px] overflow-hidden inline-flex mx-8 ">
               <Truck
                 size={50}
                 className="absolute top-[35px] left-1/2 -translate-x-1/2"
