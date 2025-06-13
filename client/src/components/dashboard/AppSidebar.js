@@ -1,19 +1,15 @@
 import {
   Home,
-  Inbox,
-  Settings,
   User2,
   ChevronUp,
-  Car,
-  Truck,
   BookOpenText,
+  Boxes,
 } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
@@ -34,13 +30,17 @@ import {
 
 const items = [
   {
-    title: "होम",
-    url: "/dashboard",
-    icon: Home,
+    title: "एंटरप्राइज़ रिसोर्स प्लानिंग",
+    url: "/input-dealer",
+    icon: Boxes,
   },
   {
     title: "दस्तावेज़ीकरण",
+<<<<<<< HEAD
     url: "/inputDealers/documentation",
+=======
+    url: "/input-dealer/documentation",
+>>>>>>> 2d2231d161cb0c9d2a118f9951e83ba211572336
     icon: BookOpenText,
   },
 ];
