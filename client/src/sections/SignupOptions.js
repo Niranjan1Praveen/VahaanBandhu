@@ -63,7 +63,7 @@ const SignUpOptions = () => {
                     )}
                     {plan.id === 2 && (
                       <Link href={"http://127.0.0.1:5000/"}>
-                        <Button className="cursor-pointer w-full">रजिस्टर करें</Button>
+                        <Button className="cursor-pointer w-full">उठान शुरू</Button>
                       </Link>
                     )}
                     {plan.id === 3 && (
@@ -75,7 +75,7 @@ const SignUpOptions = () => {
                   <ul className="mt-6 space-y-2 text-sm">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <Check className="text-[#5EF7BA] mr-2" /> {feature}
+                        <Check className="text-lime-400 mr-2" /> {feature}
                       </li>
                     ))}
                   </ul>

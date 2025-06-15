@@ -43,8 +43,8 @@ export default function Features() {
                 alt="feature-map-design"
                 src={featureMap}
                 className="rounded-xl"
-                height={650}
-                width={650}
+                height={450}
+                width={450}
               />
             </div>
           </FeatureCard>

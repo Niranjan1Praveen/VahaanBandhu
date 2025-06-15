@@ -8,25 +8,25 @@ const docs = [
   {
     title: "शुरुआत कैसे करें",
     description: "नए उपयोगकर्ताओं के लिए प्लेटफ़ॉर्म पर पंजीकरण और लॉगिन प्रक्रिया।",
-    href: "/docs/getting-started",
+    href: "/input-dealer/documentation",
     icon: UserPlus,
   },
   {
     title: "वाहन अनुरोध प्रक्रिया",
     description: "किसानों द्वारा ट्रांसपोर्ट अनुरोध करने की पूरी प्रक्रिया को समझें।",
-    href: "/docs/vehicle-request",
+    href: "/input-dealer/documentation",
     icon: Truck,
   },
   {
     title: "रियल-टाइम ट्रैकिंग",
     description: "ट्रक की वर्तमान स्थिति और डिलीवरी स्टेटस को ट्रैक करने के तरीके।",
-    href: "/docs/tracking",
+    href: "/input-dealer/documentation",
     icon: Map,
   },
   {
     title: "साझेदार एकीकरण",
     description: "हमारे साथ जुड़ने के तरीके और अन्य प्लेटफॉर्म के साथ एकीकरण।",
-    href: "/docs/partners",
+    href: "/input-dealer/documentation",
     icon: BookOpen,
   },
 ];

@@ -1,6 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  provider      = "prisma-client-js"
+  output        = "../src/generated/prisma"
   binaryTargets = ["native", "windows", "darwin-arm64"]
 }
 
@@ -9,6 +9,12 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
+
+enum Role {
+  DRIVER
+  INPUTDEALER
+}
+
 model User {
   id           String   @id @unique
   email        String   @unique
@@ -16,6 +22,7 @@ model User {
   lastName     String
   profileImage String
   createdAt    DateTime @default(now())
+  role         Role     @default(DRIVER)
 }
 
 model MandiLatLong {

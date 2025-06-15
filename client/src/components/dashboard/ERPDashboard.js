@@ -4,9 +4,13 @@ import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { Input } from '../ui/input';
 import { products } from '@/assets/data/products';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
+import { Toaster } from '../ui/sonner';
 const ERPDashboard = () => {
   const [cart, setCart] = useState({});
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
+  const router = useRouter();
   const handleQuantityChange = (productName, delta) => {
     setCart((prevCart) => {
       const newQuantity = (prevCart[productName] || 0) + delta;
@@ -40,8 +44,9 @@ const ERPDashboard = () => {
     setIsPlacingOrder(true);
     setTimeout(() => {
       setIsPlacingOrder(false);
-      alert('Order placed successfully!');
+      toast.success('Order placed successfully!');
       setCart({});
+      router.push('http://127.0.0.1:5000/'); 
     }, 1000);
   };
 
@@ -51,6 +56,7 @@ const ERPDashboard = () => {
 
   return (
     <div className="p-6 min-h-screen flex flex-col md:flex-row gap-4">
+      <Toaster/>
       <div className="flex-1 ">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl font-bold">एंटरप्राइज़ रिसोर्स प्लानिंग डैशबोर्ड</h1>
@@ -58,6 +64,7 @@ const ERPDashboard = () => {
             type="text"
             placeholder="उत्पाद खोजें..."
             className="border rounded-lg p-2 w-1/3"
+            disabled
           />
         </div>
 
