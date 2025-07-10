@@ -9,7 +9,7 @@
 * Vaibhav Jain
 
 **Problem Statement** - Transport & Logistics Optimization for Rural India
-**Team Leader Email** - [debshatachoudhury@gmail.com](mailto:debshatachoudhury@gmail.com)
+**Team Leader Email** - [heckerhecker86@gmail.com](mailto:heckerhecker86@gmail.com)
 
 ---
 
