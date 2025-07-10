@@ -31,6 +31,7 @@ Using **Next.js** for the frontend and **Python AI models** in the backend, the 
 
 ![Landing Page Preview](./designs/landingPage.png)
 ![Vehicle Request Preview](./designs/vehicleRequest.png)
+![Route Preview](./designs/routePage.png)
 ![Enterprise Resource Planning](./designs/ERP.png)
 
 ## Key Features Include:
