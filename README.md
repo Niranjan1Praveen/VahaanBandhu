@@ -1,10 +1,10 @@
-# Hack with Gujarat Challenge 2025
+# Triwizardathon 1.0
 
 **Team Name** - CODE4CHANGE
 **Team Members**:
 
-* Debshata Choudhury
 * Niranjan Praveen
+* Debshata Choudhury
 * Abhishek Chaubhey
 * Vaibhav Jain
 
