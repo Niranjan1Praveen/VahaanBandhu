@@ -1,12 +1,12 @@
-# Triwizardathon 1.0
+# Top 10 in AgriTech Hackathob by Microsoft Azure Community
 
 **Team Name** - CODE4CHANGE
 **Team Members**:
 
-* Niranjan Praveen
-* Debshata Choudhury
-* Abhishek Chaubhey
-* Vaibhav Jain
+* Niranjan Praveen  Frontend Developer
+* Debshata Choudhury  QML Engineer
+* Abhishek Chaubhey  Backend Devloper
+* Vaibhav Jain Database Engineer
 
 **Problem Statement** - Transport & Logistics Optimization for Rural India
 **Team Leader Email** - [heckerhecker86@gmail.com](mailto:heckerhecker86@gmail.com)
