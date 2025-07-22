@@ -1,4 +1,4 @@
-# Top 10 in AgriTech Hackathob by Microsoft Azure Community
+# Top 10 in AgriTech Hackathon by Microsoft Azure Community
 
 **Team Name** - CODE4CHANGE
 **Team Members**:
