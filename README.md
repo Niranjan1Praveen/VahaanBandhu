@@ -1,4 +1,4 @@
-# Top 10 in AgriTech Hackathon by Microsoft Azure Community
+# D3CODE 2025 
 
 **Team Name** - CODE4CHANGE
 **Team Members**:
