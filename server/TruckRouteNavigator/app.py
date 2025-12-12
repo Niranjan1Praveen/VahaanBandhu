@@ -34,6 +34,38 @@ def haversine(lat1, lon1, lat2, lon2):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
     return R * c
 
+def compare_haversine_vs_qvr(
+    start_lat, start_lon,
+    end_lat, end_lon,
+    traffic_ratios,
+    trained_thetas,
+    base_speed_kmh=40,
+    max_delay=45.0
+):
+    """
+    Returns a simple comparison dict
+    """
+
+    # Classical haversine ETA
+    distance_km = haversine(start_lat, start_lon, end_lat, end_lon)
+    haversine_eta = (distance_km / base_speed_kmh) * 60  # minutes
+
+    # Quantum delay adjustment
+    qvr_delay = quantum_delay_prediction(
+        traffic_ratios,
+        trained_thetas=trained_thetas,
+        max_delay=max_delay
+    )
+
+    qvr_eta = haversine_eta + qvr_delay
+
+    return {
+        "distance_km": round(distance_km, 2),
+        "haversine_eta_min": round(haversine_eta, 1),
+        "qvr_delay_min": round(qvr_delay, 1),
+        "qvr_eta_min": round(qvr_eta, 1)
+    }
+
 def get_tomtom_route(start_lat, start_lon, end_lat, end_lon, api_key):
     """Get route geometry from TomTom Routing API"""
     url = (
