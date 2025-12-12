@@ -34,3 +34,11 @@ def quantum_delay_prediction(traffic_ratios, trained_thetas=None, max_delay=30.0
 
     estimated_delay = (1 - exp_z) / 2 * max_delay
     return estimated_delay
+
+def qvr_accuracy_percentage(mae, max_delay):
+    """
+    Converts MAE (minutes) to accuracy percentage.
+    """
+    accuracy = 1.0 - (mae / max_delay)
+    accuracy = max(0.0, accuracy)  # clamp
+    return round(accuracy * 100, 2)
