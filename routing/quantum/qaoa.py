@@ -98,7 +98,7 @@ def run_qaoa(
     qubo: QUBO, *, p: int = 2, shots: int = 2048, seed: int = 42,
     maxiter: int = 80, optimizer: str = "COBYLA",
     initial_params: list[float] | None = None,
-    backend=None, D: np.ndarray | None = None,
+    backend=None, D: np.ndarray | None = None, decode_fn=None,
 ) -> QAOAResult:
     """Run QAOA on a simulator (or a supplied backend) and decode the result.
 
@@ -133,7 +133,7 @@ def run_qaoa(
 
     final = qc.assign_parameters(dict(zip(params, res.x)))
     counts = backend.run(final, shots=shots, seed_simulator=seed).result().get_counts()
-    decoded = decode_counts(counts, qubo, D)
+    decoded = decode_counts(counts, qubo, D, decode_fn=decode_fn)
 
     best_bits = decoded["best_bitstring"]
     best_energy = decoded["best"].energy if decoded["best"] else float("inf")

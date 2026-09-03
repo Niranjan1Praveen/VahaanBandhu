@@ -129,11 +129,21 @@ class OfflineGraphProvider(RoutingProvider):
     def get_matrix(
         self, origins: list[LatLon], destinations: list[LatLon], **kw
     ) -> tuple[np.ndarray, np.ndarray]:
-        """Distance/duration matrix by location_id over the road graph.
+        """Distance/duration matrix by location_id over the road graph."""
+        m = self.get_cost_matrices(**kw)
+        return m["distance_km"], m["time_min"]
+
+    def get_cost_matrices(self, **kw) -> dict[str, np.ndarray]:
+        """All per-pair cost components in one pass over the graph.
+
+        Returns distance, time, toll, fuel and risk matrices. Computing them
+        together matters: every component must come from the *same* shortest
+        path, otherwise the toll of one route would be paired with the distance
+        of another and the multi-objective score would describe no real journey.
 
         Pairs with no path fall back to a great-circle estimate scaled by a
-        detour factor, and the caller can tell which those were because the
-        estimate is always strictly worse than any real path would be.
+        detour factor. Those entries are always worse than any real path, and
+        ``unreachable`` marks them so a caller can tell.
         """
         origin_ids = kw.get("origin_ids")
         destination_ids = kw.get("destination_ids")
@@ -141,19 +151,30 @@ class OfflineGraphProvider(RoutingProvider):
             raise ValueError("offline matrix requires origin_ids and destination_ids")
 
         n, m = len(origin_ids), len(destination_ids)
-        dist = np.zeros((n, m))
-        dur = np.zeros((n, m))
+        out = {k: np.zeros((n, m)) for k in
+               ("distance_km", "time_min", "toll_inr", "fuel_inr", "risk")}
+        unreachable = np.zeros((n, m), dtype=bool)
+
         for i, a in enumerate(origin_ids):
             for j, b in enumerate(destination_ids):
                 if a == b:
                     continue
                 try:
                     r = self.get_route(None, None, origin_id=a, destination_id=b)
-                    dist[i, j] = r.distance_km
-                    dur[i, j] = r.travel_time_min + r.traffic_delay_min
+                    out["distance_km"][i, j] = r.distance_km
+                    out["time_min"][i, j] = r.travel_time_min + r.traffic_delay_min
+                    out["toll_inr"][i, j] = r.toll_cost_inr
+                    out["fuel_inr"][i, j] = r.estimated_fuel_cost_inr
+                    out["risk"][i, j] = r.road_risk_score
                 except RuntimeError:
                     ca, cb = self._coords(a), self._coords(b)
                     g = haversine_km(ca.lat, ca.lon, cb.lat, cb.lon)
-                    dist[i, j] = g * 1.42
-                    dur[i, j] = dist[i, j] / 40.0 * 60.0
-        return dist, dur
+                    d = g * 1.42
+                    out["distance_km"][i, j] = d
+                    out["time_min"][i, j] = d / 40.0 * 60.0
+                    out["fuel_inr"][i, j] = d / 5.0 * 92.0
+                    out["risk"][i, j] = 0.5
+                    unreachable[i, j] = True
+
+        out["unreachable"] = unreachable
+        return out

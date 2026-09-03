@@ -75,9 +75,18 @@ def load_instance(instance_id: str, provider=None) -> RoutingInstance:
         provider = OfflineGraphProvider(t["edges"], t["locations"],
                                         scenario_id=inst["scenario_id"])
 
-    dist, dur = provider.get_matrix(
-        None, None, origin_ids=node_location_ids, destination_ids=node_location_ids
-    )
+    # Pull every cost component from one pass, so toll/fuel/risk always describe
+    # the same path as the distance they accompany.
+    if hasattr(provider, "get_cost_matrices"):
+        cm = provider.get_cost_matrices(
+            origin_ids=node_location_ids, destination_ids=node_location_ids)
+        dist, dur = cm["distance_km"], cm["time_min"]
+        toll, fuel, risk = cm["toll_inr"], cm["fuel_inr"], cm["risk"]
+    else:
+        dist, dur = provider.get_matrix(
+            None, None, origin_ids=node_location_ids,
+            destination_ids=node_location_ids)
+        toll = fuel = risk = None
 
     truck_ids = str(inst["truck_ids"]).split("|")
     trucks = t["trucks"].set_index("truck_id")
@@ -114,6 +123,9 @@ def load_instance(instance_id: str, provider=None) -> RoutingInstance:
         scenario_id=str(inst["scenario_id"]),
         dataset_version=str(inst["dataset_version"]),
         graph_version=str(inst["graph_version"]),
+        toll_matrix=toll,
+        fuel_matrix=fuel,
+        risk_matrix=risk,
     )
     ri.validate()
     return ri

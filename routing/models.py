@@ -80,6 +80,14 @@ class RoutingInstance:
     dataset_version: str
     graph_version: str
 
+    # Additional cost components, all derived from the SAME shortest paths as
+    # distance_matrix. Optional so older callers keep working, but required for
+    # the project's real multi-objective score -- without them a solver would be
+    # optimizing distance alone while claiming to optimize cost.
+    toll_matrix: np.ndarray | None = None
+    fuel_matrix: np.ndarray | None = None
+    risk_matrix: np.ndarray | None = None
+
     @property
     def n_nodes(self) -> int:
         return len(self.node_ids)

@@ -104,18 +104,42 @@ def decode_edge_selection(x: np.ndarray, qubo: QUBO) -> DecodedRoute:
     )
 
 
-def decode(x: np.ndarray, qubo: QUBO, D: np.ndarray | None = None) -> DecodedRoute:
+def decode(
+    x: np.ndarray, qubo: QUBO, D: np.ndarray | None = None,
+    decode_fn=None,
+) -> DecodedRoute:
+    """Decode a bitstring for any registered encoding.
+
+    ``decode_fn`` lets a caller supply a decoder for an encoding this module
+    does not know about (the segment-partition and return-load QUBOs carry
+    problem context that cannot live in the QUBO itself). It must return a dict
+    with at least a ``feasible`` key; a ``violations`` list is used if present.
+    Keeping this pluggable avoids importing every problem type into the decoder
+    and creating an import cycle.
+    """
+    if decode_fn is not None:
+        out = decode_fn(x)
+        return DecodedRoute(
+            tour=out.get("tour"), edges=None,
+            feasible=bool(out.get("feasible", False)),
+            violations=list(out.get("violations", [])),
+            energy=qubo.energy(x),
+            route_cost=out.get("objective"),
+        )
     if qubo.encoding == ENCODING_PERMUTATION:
         if D is None:
             raise ValueError("permutation decoding needs the distance matrix")
         return decode_permutation(x, qubo, D)
     if qubo.encoding == ENCODING_EDGE_SELECTION:
         return decode_edge_selection(x, qubo)
-    raise ValueError(f"unknown encoding: {qubo.encoding}")
+    raise ValueError(
+        f"unknown encoding {qubo.encoding!r}; pass decode_fn= for custom encodings"
+    )
 
 
 def decode_counts(
-    counts: dict[str, int], qubo: QUBO, D: np.ndarray | None = None
+    counts: dict[str, int], qubo: QUBO, D: np.ndarray | None = None,
+    decode_fn=None,
 ) -> dict:
     """Decode a full measurement histogram.
 
@@ -130,7 +154,7 @@ def decode_counts(
 
     for bits, shots in counts.items():
         x = bitstring_to_array(bits, qubo.n_vars)
-        dec = decode(x, qubo, D)
+        dec = decode(x, qubo, D, decode_fn=decode_fn)
         if dec.feasible:
             n_feasible_shots += shots
             if best is None or dec.energy < best.energy:
