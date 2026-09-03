@@ -1,0 +1,1504 @@
+{
+  "latest": {
+    "checked_at": "2026-09-03T12:15:10Z",
+    "auth_status": {
+      "token_configured": true,
+      "channel": "ibm_cloud",
+      "connected": false,
+      "error": null
+    },
+    "authenticated": true,
+    "backends_visible": [
+      {
+        "name": "ibm_fez",
+        "qubits": 156,
+        "pending_jobs": 0
+      },
+      {
+        "name": "ibm_marrakesh",
+        "qubits": 156,
+        "pending_jobs": 0
+      },
+      {
+        "name": "ibm_kingston",
+        "qubits": 156,
+        "pending_jobs": 76
+      }
+    ],
+    "jobs": [
+      {
+        "job_id": "dacft8l1ierc738ji9a0",
+        "status": "QUEUED",
+        "backend": "ibm_kingston",
+        "in_flight": true,
+        "created": "2026-09-03 10:29:14.147801+05:30",
+        "is_ours": true,
+        "experiment": "experiment_h_ibm_hardware",
+        "submitted": "2026-09-03T10:29:14+05:30",
+        "backend_requested": "ibm_kingston",
+        "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+        "parameters_source": "optimized on a noiseless simulator, then transferred"
+      },
+      {
+        "job_id": "da6ejl46l22c73dm82ng",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-08-25 06:33:16.207608+05:30",
+        "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+        "is_ours": false
+      },
+      {
+        "job_id": "da6eiuu0ukec7381vff0",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-08-25 06:31:47.786013+05:30",
+        "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+        "is_ours": false
+      },
+      {
+        "job_id": "da6eije0ukec7381vf1g",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-08-25 06:31:01.089983+05:30",
+        "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ujj85bh0os73er55f0",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 19:52:24.146185+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "01110": 222,
+          "11110": 216,
+          "00110": 181,
+          "01001": 179,
+          "01010": 171,
+          "10110": 170,
+          "00101": 156,
+          "10001": 149,
+          "01000": 140,
+          "00001": 130
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ujiidposuc738q9e0g",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 19:50:58.016562+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "01100": 242,
+          "01101": 228,
+          "11101": 214,
+          "10001": 203,
+          "01001": 190,
+          "00001": 174,
+          "10100": 170,
+          "10101": 165,
+          "00100": 162,
+          "11100": 161
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ujh9sbp3hs73864gb0",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 19:48:15.998783+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "10101": 415,
+          "11011": 280,
+          "11101": 269,
+          "11010": 250,
+          "10100": 235,
+          "01101": 221,
+          "01001": 191,
+          "00011": 174,
+          "00001": 169,
+          "00101": 163
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ujgbtbh0os73er51m0",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 19:46:16.042961+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "10101": 288,
+          "00101": 217,
+          "01101": 198,
+          "01001": 198,
+          "10001": 195,
+          "11101": 186,
+          "01110": 184,
+          "10010": 178,
+          "00010": 172,
+          "11011": 152
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ujfptbh0os73er50ug",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 19:45:03.524622+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "01010": 309,
+          "01101": 251,
+          "11101": 236,
+          "00010": 203,
+          "00100": 191,
+          "10010": 185,
+          "01001": 179,
+          "10100": 149,
+          "11110": 141,
+          "00110": 137
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8uh47lbh0os73er1ijg",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 17:03:50.790145+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "01001": 246,
+          "11010": 244,
+          "10001": 241,
+          "00001": 229,
+          "11001": 220,
+          "00010": 212,
+          "01010": 207,
+          "00011": 160,
+          "10010": 159,
+          "01011": 145
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8uh32tbh0os73er1h50",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 17:01:23.796651+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "10111": 280,
+          "01001": 249,
+          "01111": 222,
+          "11001": 217,
+          "10001": 217,
+          "00111": 208,
+          "00110": 197,
+          "00001": 190,
+          "01000": 180,
+          "11111": 155
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8uh254bp3hs73860t0g",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 16:59:24.290912+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "10101": 308,
+          "01101": 230,
+          "00101": 229,
+          "01001": 203,
+          "01110": 184,
+          "00010": 183,
+          "10010": 179,
+          "11101": 170,
+          "11001": 168,
+          "10001": 158
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8uh1hcbp3hs73860s90",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 16:58:05.681248+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "01010": 326,
+          "11101": 271,
+          "01001": 218,
+          "01101": 217,
+          "10010": 195,
+          "00010": 186,
+          "00100": 183,
+          "10100": 174,
+          "11010": 151,
+          "11110": 140
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ugkftposuc738q540g",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 16:30:15.624482+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "11010": 241,
+          "01100": 199,
+          "10000": 193,
+          "01010": 187,
+          "10100": 164,
+          "11011": 162,
+          "11100": 156,
+          "10001": 155,
+          "10110": 150,
+          "01110": 149
+        },
+        "is_ours": false
+      },
+      {
+        "job_id": "d8ugjf4bp3hs7386051g",
+        "status": "DONE",
+        "backend": "ibm_fez",
+        "in_flight": false,
+        "created": "2026-06-25 16:28:04.380123+05:30",
+        "counts_returned": true,
+        "n_distinct_bitstrings": 32,
+        "total_shots": 4096,
+        "counts_top10": {
+          "10101": 282,
+          "00101": 211,
+          "01001": 183,
+          "10010": 180,
+          "01101": 176,
+          "00010": 169,
+          "01110": 168,
+          "11101": 165,
+          "11011": 154,
+          "10001": 154
+        },
+        "is_ours": false
+      }
+    ],
+    "our_jobs": {
+      "dacft8l1ierc738ji9a0": {
+        "job_id": "dacft8l1ierc738ji9a0",
+        "status": "QUEUED",
+        "backend": "ibm_kingston",
+        "in_flight": true,
+        "created": "2026-09-03 10:29:14.147801+05:30",
+        "is_ours": true,
+        "experiment": "experiment_h_ibm_hardware",
+        "submitted": "2026-09-03T10:29:14+05:30",
+        "backend_requested": "ibm_kingston",
+        "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+        "parameters_source": "optimized on a noiseless simulator, then transferred"
+      }
+    },
+    "our_hardware_measurements_returned": false,
+    "other_account_jobs_with_counts": 11,
+    "n_in_flight": 1,
+    "our_jobs_in_flight": 1
+  },
+  "history": [
+    {
+      "checked_at": "2026-09-03T12:12:14Z",
+      "auth_status": {
+        "token_configured": true,
+        "channel": "ibm_cloud",
+        "connected": false,
+        "error": null
+      },
+      "authenticated": true,
+      "backends_visible": [
+        {
+          "name": "ibm_fez",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_marrakesh",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_kingston",
+          "qubits": 156,
+          "pending_jobs": 75
+        }
+      ],
+      "jobs": [
+        {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30"
+        },
+        {
+          "job_id": "da6ejl46l22c73dm82ng",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:33:16.207608+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'"
+        },
+        {
+          "job_id": "da6eiuu0ukec7381vff0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:47.786013+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'"
+        },
+        {
+          "job_id": "da6eije0ukec7381vf1g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:01.089983+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'"
+        },
+        {
+          "job_id": "d8ujj85bh0os73er55f0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:52:24.146185+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01110": 222,
+            "11110": 216,
+            "00110": 181,
+            "01001": 179,
+            "01010": 171,
+            "10110": 170,
+            "00101": 156,
+            "10001": 149,
+            "01000": 140,
+            "00001": 130
+          }
+        },
+        {
+          "job_id": "d8ujiidposuc738q9e0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:50:58.016562+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01100": 242,
+            "01101": 228,
+            "11101": 214,
+            "10001": 203,
+            "01001": 190,
+            "00001": 174,
+            "10100": 170,
+            "10101": 165,
+            "00100": 162,
+            "11100": 161
+          }
+        },
+        {
+          "job_id": "d8ujh9sbp3hs73864gb0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:48:15.998783+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 415,
+            "11011": 280,
+            "11101": 269,
+            "11010": 250,
+            "10100": 235,
+            "01101": 221,
+            "01001": 191,
+            "00011": 174,
+            "00001": 169,
+            "00101": 163
+          }
+        },
+        {
+          "job_id": "d8ujgbtbh0os73er51m0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:46:16.042961+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 288,
+            "00101": 217,
+            "01101": 198,
+            "01001": 198,
+            "10001": 195,
+            "11101": 186,
+            "01110": 184,
+            "10010": 178,
+            "00010": 172,
+            "11011": 152
+          }
+        },
+        {
+          "job_id": "d8ujfptbh0os73er50ug",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:45:03.524622+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01010": 309,
+            "01101": 251,
+            "11101": 236,
+            "00010": 203,
+            "00100": 191,
+            "10010": 185,
+            "01001": 179,
+            "10100": 149,
+            "11110": 141,
+            "00110": 137
+          }
+        },
+        {
+          "job_id": "d8uh47lbh0os73er1ijg",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:03:50.790145+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01001": 246,
+            "11010": 244,
+            "10001": 241,
+            "00001": 229,
+            "11001": 220,
+            "00010": 212,
+            "01010": 207,
+            "00011": 160,
+            "10010": 159,
+            "01011": 145
+          }
+        },
+        {
+          "job_id": "d8uh32tbh0os73er1h50",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:01:23.796651+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10111": 280,
+            "01001": 249,
+            "01111": 222,
+            "11001": 217,
+            "10001": 217,
+            "00111": 208,
+            "00110": 197,
+            "00001": 190,
+            "01000": 180,
+            "11111": 155
+          }
+        },
+        {
+          "job_id": "d8uh254bp3hs73860t0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:59:24.290912+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 308,
+            "01101": 230,
+            "00101": 229,
+            "01001": 203,
+            "01110": 184,
+            "00010": 183,
+            "10010": 179,
+            "11101": 170,
+            "11001": 168,
+            "10001": 158
+          }
+        },
+        {
+          "job_id": "d8uh1hcbp3hs73860s90",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:58:05.681248+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01010": 326,
+            "11101": 271,
+            "01001": 218,
+            "01101": 217,
+            "10010": 195,
+            "00010": 186,
+            "00100": 183,
+            "10100": 174,
+            "11010": 151,
+            "11110": 140
+          }
+        },
+        {
+          "job_id": "d8ugkftposuc738q540g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:30:15.624482+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "11010": 241,
+            "01100": 199,
+            "10000": 193,
+            "01010": 187,
+            "10100": 164,
+            "11011": 162,
+            "11100": 156,
+            "10001": 155,
+            "10110": 150,
+            "01110": 149
+          }
+        },
+        {
+          "job_id": "d8ugjf4bp3hs7386051g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:28:04.380123+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 282,
+            "00101": 211,
+            "01001": 183,
+            "10010": 180,
+            "01101": 176,
+            "00010": 169,
+            "01110": 168,
+            "11101": 165,
+            "11011": 154,
+            "10001": 154
+          }
+        }
+      ],
+      "hardware_measurements_returned": true,
+      "n_in_flight": 1
+    },
+    {
+      "checked_at": "2026-09-03T12:13:33Z",
+      "auth_status": {
+        "token_configured": true,
+        "channel": "ibm_cloud",
+        "connected": false,
+        "error": null
+      },
+      "authenticated": true,
+      "backends_visible": [
+        {
+          "name": "ibm_fez",
+          "qubits": 156,
+          "pending_jobs": 1
+        },
+        {
+          "name": "ibm_marrakesh",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_kingston",
+          "qubits": 156,
+          "pending_jobs": 75
+        }
+      ],
+      "jobs": [
+        {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30",
+          "is_ours": true,
+          "experiment": "experiment_h_ibm_hardware",
+          "submitted": "2026-09-03T10:29:14+05:30",
+          "backend_requested": "ibm_kingston",
+          "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+          "parameters_source": "optimized on a noiseless simulator, then transferred"
+        },
+        {
+          "job_id": "da6ejl46l22c73dm82ng",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:33:16.207608+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "da6eiuu0ukec7381vff0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:47.786013+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "da6eije0ukec7381vf1g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:01.089983+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujj85bh0os73er55f0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:52:24.146185+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujiidposuc738q9e0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:50:58.016562+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujh9sbp3hs73864gb0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:48:15.998783+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujgbtbh0os73er51m0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:46:16.042961+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujfptbh0os73er50ug",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:45:03.524622+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh47lbh0os73er1ijg",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:03:50.790145+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh32tbh0os73er1h50",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:01:23.796651+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh254bp3hs73860t0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:59:24.290912+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh1hcbp3hs73860s90",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:58:05.681248+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ugkftposuc738q540g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:30:15.624482+05:30",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ugjf4bp3hs7386051g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:28:04.380123+05:30",
+          "is_ours": false
+        }
+      ],
+      "our_jobs": {
+        "dacft8l1ierc738ji9a0": {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30",
+          "is_ours": true,
+          "experiment": "experiment_h_ibm_hardware",
+          "submitted": "2026-09-03T10:29:14+05:30",
+          "backend_requested": "ibm_kingston",
+          "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+          "parameters_source": "optimized on a noiseless simulator, then transferred"
+        }
+      },
+      "our_hardware_measurements_returned": false,
+      "other_account_jobs_with_counts": 0,
+      "n_in_flight": 1,
+      "our_jobs_in_flight": 1
+    },
+    {
+      "checked_at": "2026-09-03T12:14:15Z",
+      "auth_status": {
+        "token_configured": true,
+        "channel": "ibm_cloud",
+        "connected": false,
+        "error": null
+      },
+      "authenticated": true,
+      "backends_visible": [
+        {
+          "name": "ibm_fez",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_marrakesh",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_kingston",
+          "qubits": 156,
+          "pending_jobs": 75
+        }
+      ],
+      "jobs": [
+        {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30",
+          "is_ours": true,
+          "experiment": "experiment_h_ibm_hardware",
+          "submitted": "2026-09-03T10:29:14+05:30",
+          "backend_requested": "ibm_kingston",
+          "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+          "parameters_source": "optimized on a noiseless simulator, then transferred"
+        },
+        {
+          "job_id": "da6ejl46l22c73dm82ng",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:33:16.207608+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+          "is_ours": false
+        },
+        {
+          "job_id": "da6eiuu0ukec7381vff0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:47.786013+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+          "is_ours": false
+        },
+        {
+          "job_id": "da6eije0ukec7381vf1g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:01.089983+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujj85bh0os73er55f0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:52:24.146185+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01110": 222,
+            "11110": 216,
+            "00110": 181,
+            "01001": 179,
+            "01010": 171,
+            "10110": 170,
+            "00101": 156,
+            "10001": 149,
+            "01000": 140,
+            "00001": 130
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujiidposuc738q9e0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:50:58.016562+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01100": 242,
+            "01101": 228,
+            "11101": 214,
+            "10001": 203,
+            "01001": 190,
+            "00001": 174,
+            "10100": 170,
+            "10101": 165,
+            "00100": 162,
+            "11100": 161
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujh9sbp3hs73864gb0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:48:15.998783+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 415,
+            "11011": 280,
+            "11101": 269,
+            "11010": 250,
+            "10100": 235,
+            "01101": 221,
+            "01001": 191,
+            "00011": 174,
+            "00001": 169,
+            "00101": 163
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujgbtbh0os73er51m0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:46:16.042961+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 288,
+            "00101": 217,
+            "01101": 198,
+            "01001": 198,
+            "10001": 195,
+            "11101": 186,
+            "01110": 184,
+            "10010": 178,
+            "00010": 172,
+            "11011": 152
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujfptbh0os73er50ug",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:45:03.524622+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01010": 309,
+            "01101": 251,
+            "11101": 236,
+            "00010": 203,
+            "00100": 191,
+            "10010": 185,
+            "01001": 179,
+            "10100": 149,
+            "11110": 141,
+            "00110": 137
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh47lbh0os73er1ijg",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:03:50.790145+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01001": 246,
+            "11010": 244,
+            "10001": 241,
+            "00001": 229,
+            "11001": 220,
+            "00010": 212,
+            "01010": 207,
+            "00011": 160,
+            "10010": 159,
+            "01011": 145
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh32tbh0os73er1h50",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:01:23.796651+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10111": 280,
+            "01001": 249,
+            "01111": 222,
+            "11001": 217,
+            "10001": 217,
+            "00111": 208,
+            "00110": 197,
+            "00001": 190,
+            "01000": 180,
+            "11111": 155
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh254bp3hs73860t0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:59:24.290912+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 308,
+            "01101": 230,
+            "00101": 229,
+            "01001": 203,
+            "01110": 184,
+            "00010": 183,
+            "10010": 179,
+            "11101": 170,
+            "11001": 168,
+            "10001": 158
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh1hcbp3hs73860s90",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:58:05.681248+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01010": 326,
+            "11101": 271,
+            "01001": 218,
+            "01101": 217,
+            "10010": 195,
+            "00010": 186,
+            "00100": 183,
+            "10100": 174,
+            "11010": 151,
+            "11110": 140
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ugkftposuc738q540g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:30:15.624482+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "11010": 241,
+            "01100": 199,
+            "10000": 193,
+            "01010": 187,
+            "10100": 164,
+            "11011": 162,
+            "11100": 156,
+            "10001": 155,
+            "10110": 150,
+            "01110": 149
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ugjf4bp3hs7386051g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:28:04.380123+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 282,
+            "00101": 211,
+            "01001": 183,
+            "10010": 180,
+            "01101": 176,
+            "00010": 169,
+            "01110": 168,
+            "11101": 165,
+            "11011": 154,
+            "10001": 154
+          },
+          "is_ours": false
+        }
+      ],
+      "our_jobs": {
+        "dacft8l1ierc738ji9a0": {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30",
+          "is_ours": true,
+          "experiment": "experiment_h_ibm_hardware",
+          "submitted": "2026-09-03T10:29:14+05:30",
+          "backend_requested": "ibm_kingston",
+          "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+          "parameters_source": "optimized on a noiseless simulator, then transferred"
+        }
+      },
+      "our_hardware_measurements_returned": false,
+      "other_account_jobs_with_counts": 11,
+      "n_in_flight": 1,
+      "our_jobs_in_flight": 1
+    },
+    {
+      "checked_at": "2026-09-03T12:15:10Z",
+      "auth_status": {
+        "token_configured": true,
+        "channel": "ibm_cloud",
+        "connected": false,
+        "error": null
+      },
+      "authenticated": true,
+      "backends_visible": [
+        {
+          "name": "ibm_fez",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_marrakesh",
+          "qubits": 156,
+          "pending_jobs": 0
+        },
+        {
+          "name": "ibm_kingston",
+          "qubits": 156,
+          "pending_jobs": 76
+        }
+      ],
+      "jobs": [
+        {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30",
+          "is_ours": true,
+          "experiment": "experiment_h_ibm_hardware",
+          "submitted": "2026-09-03T10:29:14+05:30",
+          "backend_requested": "ibm_kingston",
+          "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+          "parameters_source": "optimized on a noiseless simulator, then transferred"
+        },
+        {
+          "job_id": "da6ejl46l22c73dm82ng",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:33:16.207608+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+          "is_ours": false
+        },
+        {
+          "job_id": "da6eiuu0ukec7381vff0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:47.786013+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+          "is_ours": false
+        },
+        {
+          "job_id": "da6eije0ukec7381vf1g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-08-25 06:31:01.089983+05:30",
+          "retrieve_error": "AttributeError: 'DataBin' object has no attribute 'c'",
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujj85bh0os73er55f0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:52:24.146185+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01110": 222,
+            "11110": 216,
+            "00110": 181,
+            "01001": 179,
+            "01010": 171,
+            "10110": 170,
+            "00101": 156,
+            "10001": 149,
+            "01000": 140,
+            "00001": 130
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujiidposuc738q9e0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:50:58.016562+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01100": 242,
+            "01101": 228,
+            "11101": 214,
+            "10001": 203,
+            "01001": 190,
+            "00001": 174,
+            "10100": 170,
+            "10101": 165,
+            "00100": 162,
+            "11100": 161
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujh9sbp3hs73864gb0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:48:15.998783+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 415,
+            "11011": 280,
+            "11101": 269,
+            "11010": 250,
+            "10100": 235,
+            "01101": 221,
+            "01001": 191,
+            "00011": 174,
+            "00001": 169,
+            "00101": 163
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujgbtbh0os73er51m0",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:46:16.042961+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 288,
+            "00101": 217,
+            "01101": 198,
+            "01001": 198,
+            "10001": 195,
+            "11101": 186,
+            "01110": 184,
+            "10010": 178,
+            "00010": 172,
+            "11011": 152
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ujfptbh0os73er50ug",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 19:45:03.524622+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01010": 309,
+            "01101": 251,
+            "11101": 236,
+            "00010": 203,
+            "00100": 191,
+            "10010": 185,
+            "01001": 179,
+            "10100": 149,
+            "11110": 141,
+            "00110": 137
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh47lbh0os73er1ijg",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:03:50.790145+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01001": 246,
+            "11010": 244,
+            "10001": 241,
+            "00001": 229,
+            "11001": 220,
+            "00010": 212,
+            "01010": 207,
+            "00011": 160,
+            "10010": 159,
+            "01011": 145
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh32tbh0os73er1h50",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 17:01:23.796651+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10111": 280,
+            "01001": 249,
+            "01111": 222,
+            "11001": 217,
+            "10001": 217,
+            "00111": 208,
+            "00110": 197,
+            "00001": 190,
+            "01000": 180,
+            "11111": 155
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh254bp3hs73860t0g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:59:24.290912+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 308,
+            "01101": 230,
+            "00101": 229,
+            "01001": 203,
+            "01110": 184,
+            "00010": 183,
+            "10010": 179,
+            "11101": 170,
+            "11001": 168,
+            "10001": 158
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8uh1hcbp3hs73860s90",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:58:05.681248+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "01010": 326,
+            "11101": 271,
+            "01001": 218,
+            "01101": 217,
+            "10010": 195,
+            "00010": 186,
+            "00100": 183,
+            "10100": 174,
+            "11010": 151,
+            "11110": 140
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ugkftposuc738q540g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:30:15.624482+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "11010": 241,
+            "01100": 199,
+            "10000": 193,
+            "01010": 187,
+            "10100": 164,
+            "11011": 162,
+            "11100": 156,
+            "10001": 155,
+            "10110": 150,
+            "01110": 149
+          },
+          "is_ours": false
+        },
+        {
+          "job_id": "d8ugjf4bp3hs7386051g",
+          "status": "DONE",
+          "backend": "ibm_fez",
+          "in_flight": false,
+          "created": "2026-06-25 16:28:04.380123+05:30",
+          "counts_returned": true,
+          "n_distinct_bitstrings": 32,
+          "total_shots": 4096,
+          "counts_top10": {
+            "10101": 282,
+            "00101": 211,
+            "01001": 183,
+            "10010": 180,
+            "01101": 176,
+            "00010": 169,
+            "01110": 168,
+            "11101": 165,
+            "11011": 154,
+            "10001": 154
+          },
+          "is_ours": false
+        }
+      ],
+      "our_jobs": {
+        "dacft8l1ierc738ji9a0": {
+          "job_id": "dacft8l1ierc738ji9a0",
+          "status": "QUEUED",
+          "backend": "ibm_kingston",
+          "in_flight": true,
+          "created": "2026-09-03 10:29:14.147801+05:30",
+          "is_ours": true,
+          "experiment": "experiment_h_ibm_hardware",
+          "submitted": "2026-09-03T10:29:14+05:30",
+          "backend_requested": "ibm_kingston",
+          "circuit": "QAOA p=1, 5 qubits, edge-selection QUBO (diamond validation graph)",
+          "parameters_source": "optimized on a noiseless simulator, then transferred"
+        }
+      },
+      "our_hardware_measurements_returned": false,
+      "other_account_jobs_with_counts": 11,
+      "n_in_flight": 1,
+      "our_jobs_in_flight": 1
+    }
+  ]
+}
