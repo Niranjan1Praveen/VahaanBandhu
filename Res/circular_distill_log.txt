@@ -1,3 +1,41 @@
 INFO train=30  validation=20 (disjoint)
 INFO train families: {'D_shared_corridor_synergy': 16, 'C_high_detour': 14}
 INFO distilling GLOBAL artifact from 30 problems
+INFO distilling family artifact D_shared_corridor_synergy from 16 problems
+INFO distilling family artifact C_high_detour from 14 problems
+INFO validating 3 artifacts on 20 held-out problems
+INFO   circular_global_vbqer_circular_artifacts_v1    applicable=20 deployable=False  did not improve held-out objectives; not deployed
+INFO   circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1 applicable=14 deployable=False  did not improve held-out objectives; not deployed
+INFO   circular_C_high_detour_vbqer_circular_artifacts_v1 applicable= 6 deployable=False  did not improve held-out objectives; not deployed
+{
+  "any_deployable": false,
+  "artifacts": [
+    {
+      "artifact_id": "circular_global_vbqer_circular_artifacts_v1",
+      "family": "ALL",
+      "n_distilled": 30,
+      "deployable": false
+    },
+    {
+      "artifact_id": "circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1",
+      "family": "D_shared_corridor_synergy",
+      "n_distilled": 16,
+      "deployable": false
+    },
+    {
+      "artifact_id": "circular_C_high_detour_vbqer_circular_artifacts_v1",
+      "family": "C_high_detour",
+      "n_distilled": 14,
+      "deployable": false
+    }
+  ]
+}
+
+circular_global_vbqer_circular_artifacts_v1:
+   {"n_heldout": 20, "n_improved": 0, "n_degraded": 0, "n_unchanged": 20, "mean_delta": 0.0, "improvement_rate": 0.0, "criterion": "mean_delta > 0.0", "reason": "did not improve held-out objectives; not deployed", "n_applicable_heldout": 20, "baseline": "unguided_local_search", "control_mean_gain_over_greedy": 38.73230599498064}
+
+circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1:
+   {"n_heldout": 14, "n_improved": 0, "n_degraded": 0, "n_unchanged": 14, "mean_delta": 0.0, "improvement_rate": 0.0, "criterion": "mean_delta > 0.0", "reason": "did not improve held-out objectives; not deployed", "n_applicable_heldout": 14, "baseline": "unguided_local_search", "control_mean_gain_over_greedy": 33.39931010369321}
+
+circular_C_high_detour_vbqer_circular_artifacts_v1:
+   {"n_heldout": 6, "n_improved": 0, "n_degraded": 0, "n_unchanged": 6, "mean_delta": 0.0, "improvement_rate": 0.0, "criterion": "mean_delta > 0.0", "reason": "did not improve held-out objectives; not deployed", "n_applicable_heldout": 6, "baseline": "unguided_local_search", "control_mean_gain_over_greedy": 51.175963074651314}

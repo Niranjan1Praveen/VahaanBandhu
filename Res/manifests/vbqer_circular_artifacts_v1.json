@@ -1,0 +1,96 @@
+{
+  "experiment_id": "vbqer_circular_artifacts_v1",
+  "created_at": "2026-09-03T11:08:10Z",
+  "git_commit": "6e895bc1ebc711611cfbbda76b83b474b7ec62cd",
+  "hypothesis": "Quantum-derived information may transfer within matched optimization families even when a global prior does not.",
+  "n_train": 30,
+  "n_validation": 20,
+  "p_layers": 3,
+  "shots": 1024,
+  "artifacts": [
+    {
+      "artifact_id": "circular_global_vbqer_circular_artifacts_v1",
+      "family": "ALL",
+      "n_distilled": 30,
+      "mean_feasible_rate": 0.1697265625,
+      "deployable": false,
+      "validation": {
+        "n_heldout": 20,
+        "n_improved": 0,
+        "n_degraded": 0,
+        "n_unchanged": 20,
+        "mean_delta": 0.0,
+        "improvement_rate": 0.0,
+        "criterion": "mean_delta > 0.0",
+        "reason": "did not improve held-out objectives; not deployed",
+        "n_applicable_heldout": 20,
+        "baseline": "unguided_local_search",
+        "control_mean_gain_over_greedy": 38.73230599498064
+      }
+    },
+    {
+      "artifact_id": "circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1",
+      "family": "D_shared_corridor_synergy",
+      "n_distilled": 16,
+      "mean_feasible_rate": 0.1890869140625,
+      "deployable": false,
+      "validation": {
+        "n_heldout": 14,
+        "n_improved": 0,
+        "n_degraded": 0,
+        "n_unchanged": 14,
+        "mean_delta": 0.0,
+        "improvement_rate": 0.0,
+        "criterion": "mean_delta > 0.0",
+        "reason": "did not improve held-out objectives; not deployed",
+        "n_applicable_heldout": 14,
+        "baseline": "unguided_local_search",
+        "control_mean_gain_over_greedy": 33.39931010369321
+      }
+    },
+    {
+      "artifact_id": "circular_C_high_detour_vbqer_circular_artifacts_v1",
+      "family": "C_high_detour",
+      "n_distilled": 14,
+      "mean_feasible_rate": 0.14760044642857142,
+      "deployable": false,
+      "validation": {
+        "n_heldout": 6,
+        "n_improved": 0,
+        "n_degraded": 0,
+        "n_unchanged": 6,
+        "mean_delta": 0.0,
+        "improvement_rate": 0.0,
+        "criterion": "mean_delta > 0.0",
+        "reason": "did not improve held-out objectives; not deployed",
+        "n_applicable_heldout": 6,
+        "baseline": "unguided_local_search",
+        "control_mean_gain_over_greedy": 51.175963074651314
+      }
+    }
+  ],
+  "any_deployable": false,
+  "distillation": {
+    "families": {
+      "D_shared_corridor_synergy": {
+        "distillation": {
+          "n_problems": 16,
+          "n_with_feasible_samples": 16,
+          "mean_feasible_rate": 0.1890869140625
+        }
+      },
+      "C_high_detour": {
+        "distillation": {
+          "n_problems": 14,
+          "n_with_feasible_samples": 14,
+          "mean_feasible_rate": 0.14760044642857142
+        }
+      }
+    },
+    "global_distillation": {
+      "n_problems": 30,
+      "n_with_feasible_samples": 30,
+      "mean_feasible_rate": 0.1697265625
+    }
+  }
+}

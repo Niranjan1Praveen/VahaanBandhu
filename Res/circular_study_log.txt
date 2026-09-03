@@ -8,3 +8,5 @@ INFO   5/5 done (65 rows)
 INFO === option-set size 6 ===
 INFO   5 problems
 INFO   1/5 done (78 rows)
+INFO   2/5 done (91 rows)
+INFO   3/5 done (104 rows)

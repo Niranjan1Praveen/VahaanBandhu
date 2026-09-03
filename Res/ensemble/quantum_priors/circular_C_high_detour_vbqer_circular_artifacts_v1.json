@@ -1,0 +1,56 @@
+{
+  "artifact_id": "circular_C_high_detour_vbqer_circular_artifacts_v1",
+  "artifact_version": "v1",
+  "source": "quantum_simulator",
+  "problem_family": "C_high_detour",
+  "rank_marginals": {
+    "r5": 0.042556,
+    "r0": 1.0,
+    "r4": 0.002215,
+    "r3": 0.022692,
+    "r2": 0.057273,
+    "r1": 0.111532
+  },
+  "pair_marginals": {
+    "r4|r5": 0.00093,
+    "r1|r2": 0.002874,
+    "r1|r4": 0.00628,
+    "r1|r5": 0.001733,
+    "r2|r5": 0.00103,
+    "r0|r2": 0.804106,
+    "r2|r4": 0.001226,
+    "r2|r3": 0.252828,
+    "r1|r3": 0.003958,
+    "r3|r4": 0.001005,
+    "r0|r5": 1.0,
+    "r3|r5": 0.000718
+  },
+  "qaoa_params": [
+    2.9505121538183325,
+    1.6453711603050925,
+    2.922404221530362,
+    1.2462176623486914,
+    0.08545757273435221,
+    1.6277817518823612
+  ],
+  "n_layers": 3,
+  "n_problems_distilled": 14,
+  "mean_feasible_rate": 0.14760044642857142,
+  "deployable": false,
+  "validation": {
+    "n_heldout": 6,
+    "n_improved": 0,
+    "n_degraded": 0,
+    "n_unchanged": 6,
+    "mean_delta": 0.0,
+    "improvement_rate": 0.0,
+    "criterion": "mean_delta > 0.0",
+    "reason": "did not improve held-out objectives; not deployed",
+    "n_applicable_heldout": 6,
+    "baseline": "unguided_local_search",
+    "control_mean_gain_over_greedy": 51.175963074651314
+  },
+  "dataset_version": "v0.1",
+  "created_at": "2026-09-03T11:08:10Z",
+  "git_commit": "6e895bc1ebc711611cfbbda76b83b474b7ec62cd"
+}

@@ -12,5 +12,47 @@
     "artifact_version": "v1",
     "source": "quantum_simulator",
     "deployable": false
+  },
+  "circular_global_vbqer_circular_artifacts_v1": {
+    "category": "ensemble/quantum_priors",
+    "name": "circular_global_vbqer_circular_artifacts_v1",
+    "path": "D:\\VahaanBandhu\\Res\\ensemble\\quantum_priors\\circular_global_vbqer_circular_artifacts_v1.json",
+    "instance_id": "ALL",
+    "cost_snapshot_id": "CST_CIRCULAR",
+    "algorithm_family": "quantum",
+    "algorithm_name": "qaoa_prior_p3",
+    "volatility": "static",
+    "created_at": 1788433690.4230714,
+    "artifact_version": "v1",
+    "source": "quantum_simulator",
+    "deployable": false
+  },
+  "circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1": {
+    "category": "ensemble/quantum_priors",
+    "name": "circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1",
+    "path": "D:\\VahaanBandhu\\Res\\ensemble\\quantum_priors\\circular_D_shared_corridor_synergy_vbqer_circular_artifacts_v1.json",
+    "instance_id": "D_shared_corridor_synergy",
+    "cost_snapshot_id": "CST_CIRCULAR",
+    "algorithm_family": "quantum",
+    "algorithm_name": "qaoa_prior_p3",
+    "volatility": "static",
+    "created_at": 1788433690.5164316,
+    "artifact_version": "v1",
+    "source": "quantum_simulator",
+    "deployable": false
+  },
+  "circular_C_high_detour_vbqer_circular_artifacts_v1": {
+    "category": "ensemble/quantum_priors",
+    "name": "circular_C_high_detour_vbqer_circular_artifacts_v1",
+    "path": "D:\\VahaanBandhu\\Res\\ensemble\\quantum_priors\\circular_C_high_detour_vbqer_circular_artifacts_v1.json",
+    "instance_id": "C_high_detour",
+    "cost_snapshot_id": "CST_CIRCULAR",
+    "algorithm_family": "quantum",
+    "algorithm_name": "qaoa_prior_p3",
+    "volatility": "static",
+    "created_at": 1788433690.6787114,
+    "artifact_version": "v1",
+    "source": "quantum_simulator",
+    "deployable": false
   }
 }

@@ -69,8 +69,17 @@ COMPONENTS: list[Component] = [
     Component(
         "circular_qubo", ComponentStatus.ACTIVE,
         "Return-load selection as a quadratic knapsack, solved exactly at "
-        "current problem sizes.",
-        "Lifts optimal rate from 77.5% (greedy) to 95.0%, mean gap 26.5 -> 3.3.",
+        "current problem sizes. VB-QER's primary circular optimizer.",
+        "On 60 held-out problems: 98.3% optimal, mean gap 0.88, vs greedy's "
+        "71.7% / 32.57. Earlier 40-problem run: 77.5% -> 95.0%.",
+    ),
+    Component(
+        "circular_local_search", ComponentStatus.ACTIVE,
+        "Add/drop/swap local search over return-load selections. Fallback for "
+        "problem sizes where the exact QUBO solve is not tractable.",
+        "60 problems: 85.0% optimal, mean gap 18.05, +14.52 objective units "
+        "over greedy. Discovered as the *control* arm of the artifact "
+        "validation experiment.",
     ),
     Component(
         "incumbent_guard", ComponentStatus.ACTIVE,
@@ -102,11 +111,28 @@ COMPONENTS: list[Component] = [
         "Not deployed. Superseded by circular-track distillation.",
     ),
     Component(
+        "quantum_circular_prior_global", ComponentStatus.REJECTED,
+        "Rank-keyed selection and pairwise synergy marginals distilled from "
+        "circular-track QAOA distributions.",
+        "Failed held-out validation against the unguided local-search control: "
+        "0/20 improved, mean delta 0.0. The circular track yielded far more "
+        "signal than the route track (30/30 vs 12/30 problems), so thin data "
+        "was not the limiting factor.",
+    ),
+    Component(
+        "quantum_circular_prior_per_family", ComponentStatus.REJECTED,
+        "Per-problem-family variants of the above, testing whether quantum "
+        "information transfers within matched optimization families.",
+        "Hypothesis NOT supported. Both families failed independently "
+        "(D_shared_corridor_synergy 0/14, C_high_detour 0/6). Family matching "
+        "did not rescue transfer.",
+    ),
+    Component(
         "quantum_circular_artifacts", ComponentStatus.VALIDATION_GATED,
-        "Return-load marginals, synergy priors and QAOA parameter priors "
-        "distilled from the circular track.",
-        "Under active investigation -- the circular track has a 16.4% feasible "
-        "sampling rate vs the route track's thin 12/30 yield.",
+        "The artifact slot itself: any future return-load prior, QAOA parameter "
+        "prior or capacity-regime prior.",
+        "Slot remains open and gated. No artifact has passed validation to date; "
+        "the two attempts above are REJECTED.",
     ),
 ]
 
