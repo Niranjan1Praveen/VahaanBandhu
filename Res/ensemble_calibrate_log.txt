@@ -1,2 +1,77 @@
 INFO splits: train=30 validation=15 test=15
 INFO distilling quantum priors from 30 training instances
+INFO distilled 90 edge marginals from 30 instances (12 yielded feasible samples)
+INFO validating the prior on 15 held-out validation instances
+INFO prior deployable=False validation={'n_heldout': 15, 'n_improved': 0, 'n_degraded': 0, 'n_unchanged': 15, 'mean_delta': 0.0, 'improvement_rate': 0.0, 'criterion': 'mean_delta > 0.0', 'reason': 'did not improve held-out objectives; not deployed'}
+INFO running ablation on 15 test instances
+{
+  "A_best_classical_only": {
+    "n": 15,
+    "mean_objective": 2342.2037156338174,
+    "median_objective": 2068.410088461538,
+    "feasible_rate": 0.0,
+    "mean_ms": 1.4628933335188776,
+    "quantum_used_rate": 0.0,
+    "mean_empty_km": 84.91153333333332
+  },
+  "B_classical_ensemble": {
+    "n": 15,
+    "mean_objective": 2279.9893644223753,
+    "median_objective": 2039.317846153846,
+    "feasible_rate": 0.0,
+    "mean_ms": 4053.5765866671377,
+    "quantum_used_rate": 0.0,
+    "mean_empty_km": 31.490666666666666
+  },
+  "C_simulator_quantum": {
+    "n": 15,
+    "mean_objective": 2279.9893644223753,
+    "median_objective": 2039.317846153846,
+    "feasible_rate": 0.0,
+    "mean_ms": 4065.4543533348865,
+    "quantum_used_rate": 0.0,
+    "mean_empty_km": 31.490666666666666,
+    "vs_B_n_improved": 0,
+    "vs_B_n_degraded": 0,
+    "vs_B_n_identical": 15,
+    "vs_B_mean_delta": 0.0
+  },
+  "D_hardware_quantum": {
+    "n": 15,
+    "mean_objective": 2279.9893644223753,
+    "median_objective": 2039.317846153846,
+    "feasible_rate": 0.0,
+    "mean_ms": 4036.688573330563,
+    "quantum_used_rate": 0.0,
+    "mean_empty_km": 31.490666666666666,
+    "vs_B_n_improved": 0,
+    "vs_B_n_degraded": 0,
+    "vs_B_n_identical": 15,
+    "vs_B_mean_delta": 0.0
+  },
+  "E_full_ensemble": {
+    "n": 15,
+    "mean_objective": 2279.9893644223753,
+    "median_objective": 2039.317846153846,
+    "feasible_rate": 0.0,
+    "mean_ms": 4058.0669200009047,
+    "quantum_used_rate": 0.0,
+    "mean_empty_km": 31.490666666666666,
+    "vs_B_n_improved": 0,
+    "vs_B_n_degraded": 0,
+    "vs_B_n_identical": 15,
+    "vs_B_mean_delta": 0.0
+  }
+}
+
+prior deployable: False
+validation: {
+  "n_heldout": 15,
+  "n_improved": 0,
+  "n_degraded": 0,
+  "n_unchanged": 15,
+  "mean_delta": 0.0,
+  "improvement_rate": 0.0,
+  "criterion": "mean_delta > 0.0",
+  "reason": "did not improve held-out objectives; not deployed"
+}

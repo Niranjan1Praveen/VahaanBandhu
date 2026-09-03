@@ -8,6 +8,8 @@ ever wires a QPU call into live inference, this fails.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import numpy as np
 import pytest
 
@@ -45,15 +47,27 @@ def _cand(cid, obj, tour, feasible=True, consensus=1, prior=0.0, diversity=0.0):
 
 class TestProductionSafety:
     def test_no_live_quantum_hardware_import(self):
-        """Live inference must never reach IBM Quantum. Verified against the
-        real import graph, not against a comment."""
+        """Live inference must never reach IBM Quantum.
+
+        Checked in a subprocess. Asserting on this process's ``sys.modules``
+        would prove nothing -- any other test or notebook cell that touched the
+        IBM runtime would pollute the table and the check would fail (or, worse,
+        a reordering could make it pass vacuously). A clean interpreter that
+        imports only the inference module is the only sound test.
+        """
+        import subprocess
         import sys
 
-        import routing.ensemble.inference  # noqa: F401
-
-        assert "routing.quantum.ibm_runtime" not in sys.modules, (
-            "live inference imported the IBM hardware runtime"
+        probe = (
+            "import sys; import routing.ensemble.inference; "
+            "bad=[m for m in sys.modules if 'ibm' in m.lower()]; "
+            "print('LEAK' if bad else 'CLEAN', bad[:5])"
         )
+        out = subprocess.run([sys.executable, "-c", probe], capture_output=True,
+                             text=True, cwd=str(Path(__file__).resolve().parents[1]))
+        assert out.returncode == 0, out.stderr[-500:]
+        assert out.stdout.startswith("CLEAN"), (
+            f"live inference pulled in an IBM module: {out.stdout}")
 
     def test_solution_reports_no_live_hardware_call(self, instance):
         s = VBQEROptimizer().solve(instance)

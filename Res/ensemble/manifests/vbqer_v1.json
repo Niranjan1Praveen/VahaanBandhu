@@ -1,0 +1,117 @@
+{
+  "experiment_id": "vbqer_v1",
+  "created_at": "2026-09-03T10:26:50Z",
+  "git_commit": "0c05e422935755e274e99d11fb7e428ce556587d",
+  "splits": {
+    "train": 30,
+    "validation": 15,
+    "test": 15
+  },
+  "distillation": {
+    "n_instances": 30,
+    "n_with_feasible_samples": 12,
+    "mean_feasible_rate": 0.0012369791666666666,
+    "mean_params": [
+      3.098899092386963,
+      1.6419505717371912,
+      1.6775710305174958,
+      1.2477448018091086
+    ]
+  },
+  "prior": {
+    "artifact_id": "qaoa_segment_prior_vbqer_v1",
+    "artifact_version": "v1",
+    "source": "quantum_simulator",
+    "problem_family": "segment_set_partition",
+    "qaoa_params": [
+      3.098899092386963,
+      1.6419505717371912,
+      1.6775710305174958,
+      1.2477448018091086
+    ],
+    "n_layers": 2,
+    "dataset_version": "v0.1",
+    "graph_version": "g1",
+    "training_split": "train",
+    "cost_snapshot_ids": [
+      "CST_48011250D4FB"
+    ],
+    "quantum_backend": "aer_simulator",
+    "n_problems_distilled": 30,
+    "mean_feasible_rate": 0.0012369791666666666,
+    "deployable": false,
+    "validation": {
+      "n_heldout": 15,
+      "n_improved": 0,
+      "n_degraded": 0,
+      "n_unchanged": 15,
+      "mean_delta": 0.0,
+      "improvement_rate": 0.0,
+      "criterion": "mean_delta > 0.0",
+      "reason": "did not improve held-out objectives; not deployed"
+    },
+    "created_at": "2026-09-03T10:13:08Z",
+    "git_commit": "0c05e422935755e274e99d11fb7e428ce556587d",
+    "notes": "Edge marginals distilled from QAOA measurement distributions over segment set-partition QUBOs, energy-weighted."
+  },
+  "n_marginals": 90,
+  "ablation": {
+    "A_best_classical_only": {
+      "n": 15,
+      "mean_objective": 2342.2037156338174,
+      "median_objective": 2068.410088461538,
+      "feasible_rate": 0.0,
+      "mean_ms": 1.4628933335188776,
+      "quantum_used_rate": 0.0,
+      "mean_empty_km": 84.91153333333332
+    },
+    "B_classical_ensemble": {
+      "n": 15,
+      "mean_objective": 2279.9893644223753,
+      "median_objective": 2039.317846153846,
+      "feasible_rate": 0.0,
+      "mean_ms": 4053.5765866671377,
+      "quantum_used_rate": 0.0,
+      "mean_empty_km": 31.490666666666666
+    },
+    "C_simulator_quantum": {
+      "n": 15,
+      "mean_objective": 2279.9893644223753,
+      "median_objective": 2039.317846153846,
+      "feasible_rate": 0.0,
+      "mean_ms": 4065.4543533348865,
+      "quantum_used_rate": 0.0,
+      "mean_empty_km": 31.490666666666666,
+      "vs_B_n_improved": 0,
+      "vs_B_n_degraded": 0,
+      "vs_B_n_identical": 15,
+      "vs_B_mean_delta": 0.0
+    },
+    "D_hardware_quantum": {
+      "n": 15,
+      "mean_objective": 2279.9893644223753,
+      "median_objective": 2039.317846153846,
+      "feasible_rate": 0.0,
+      "mean_ms": 4036.688573330563,
+      "quantum_used_rate": 0.0,
+      "mean_empty_km": 31.490666666666666,
+      "vs_B_n_improved": 0,
+      "vs_B_n_degraded": 0,
+      "vs_B_n_identical": 15,
+      "vs_B_mean_delta": 0.0
+    },
+    "E_full_ensemble": {
+      "n": 15,
+      "mean_objective": 2279.9893644223753,
+      "median_objective": 2039.317846153846,
+      "feasible_rate": 0.0,
+      "mean_ms": 4058.0669200009047,
+      "quantum_used_rate": 0.0,
+      "mean_empty_km": 31.490666666666666,
+      "vs_B_n_improved": 0,
+      "vs_B_n_degraded": 0,
+      "vs_B_n_identical": 15,
+      "vs_B_mean_delta": 0.0
+    }
+  }
+}

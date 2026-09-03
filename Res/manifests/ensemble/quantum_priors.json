@@ -1,0 +1,16 @@
+{
+  "qaoa_segment_prior_vbqer_v1": {
+    "category": "ensemble/quantum_priors",
+    "name": "qaoa_segment_prior_vbqer_v1",
+    "path": "D:\\VahaanBandhu\\Res\\ensemble\\quantum_priors\\qaoa_segment_prior_vbqer_v1.json",
+    "instance_id": "segment_set_partition",
+    "cost_snapshot_id": "CST_48011250D4FB",
+    "algorithm_family": "quantum",
+    "algorithm_name": "qaoa_prior_p2",
+    "volatility": "static",
+    "created_at": 1788430636.2293253,
+    "artifact_version": "v1",
+    "source": "quantum_simulator",
+    "deployable": false
+  }
+}

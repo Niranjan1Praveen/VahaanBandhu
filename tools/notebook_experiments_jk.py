@@ -509,10 +509,21 @@ for r in s.explanation["reasons"]:
     print("  -", r)
 """),
         code("""
-# Invariant 1: no live QPU. Verified against the actual import graph.
-import sys, importlib
-importlib.import_module("routing.ensemble.inference")
-assert "routing.quantum.ibm_runtime" not in sys.modules
+# Invariant 1: no live QPU.
+# Checked in a SUBPROCESS. Testing sys.modules in this kernel would be
+# meaningless -- Experiment H above already imported the IBM runtime, so the
+# global module table is polluted. Only a clean interpreter that imports
+# nothing but the inference module can prove anything about its import graph.
+import subprocess, sys as _sys
+probe = (
+    "import sys; import routing.ensemble.inference; "
+    "bad=[m for m in sys.modules if 'ibm' in m.lower() or 'qiskit_ibm' in m]; "
+    "print('LEAK' if bad else 'CLEAN', bad[:5])"
+)
+out = subprocess.run([_sys.executable, "-c", probe], capture_output=True,
+                     text=True, cwd=str(Path.cwd().parent))
+print("subprocess import probe:", out.stdout.strip() or out.stderr.strip()[-200:])
+assert out.stdout.startswith("CLEAN"), out.stdout
 print("INVARIANT 1 OK: live inference never imports the IBM hardware runtime")
 
 # Invariant 2: the incumbent guard, tested against a deliberately misleading prior.
