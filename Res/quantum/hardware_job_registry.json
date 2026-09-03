@@ -1,0 +1,125 @@
+{
+  "project": "VahaanBandhu",
+  "records": [
+    {
+      "record_id": "H1-KINGSTON",
+      "project": "VahaanBandhu",
+      "experiment_id": "H1_controlled_validation",
+      "job_id": "dacft8l1ierc738ji9a0",
+      "backend": "ibm_kingston",
+      "submission_time": "2026-09-03T10:29:14+05:30",
+      "problem_id": "demo_diamond_graph",
+      "qubo_version": "qubo_v1",
+      "qaoa_depth": 1,
+      "shots": 1024,
+      "parameter_source": "optimized on a noiseless simulator, then transferred",
+      "status": "QUEUED",
+      "owned_by_project": true,
+      "result_retrieved": false,
+      "result_path": null,
+      "notes": "Phase-A Experiment H original submission."
+    },
+    {
+      "record_id": "H1-FEZ",
+      "project": "VahaanBandhu",
+      "experiment_id": "H1_controlled_validation",
+      "job_id": "dacmbq5nj4cs73acr6lg",
+      "backend": "ibm_fez",
+      "submission_time": "2026-09-03T12:20:00Z",
+      "problem_id": "demo_diamond_graph",
+      "qubo_version": "qubo_v1",
+      "encoding_version": "edge_selection_v1",
+      "qaoa_depth": 1,
+      "shots": 1024,
+      "parameter_source": "optimized on a noiseless simulator, then transferred",
+      "qaoa_parameters": [
+        1.958600151268495,
+        1.3586215339173244
+      ],
+      "classical_optimum": 2.5,
+      "simulator_best_energy": 2.5,
+      "simulator_feasible_rate": 0.1982421875,
+      "cost_snapshot_id": "CST_DEMO_DIAMOND",
+      "status": "DONE",
+      "owned_by_project": true,
+      "result_retrieved": true,
+      "result_path": "D:\\VahaanBandhu\\Res\\quantum\\H1_ibm_fez_result.json",
+      "notes": "",
+      "transpiled_depth": 73,
+      "transpiled_n_qubits": 156,
+      "logical_depth": 22,
+      "wall_clock_s": 21.93,
+      "feasible_sample_rate": 0.1611328125,
+      "best_feasible_energy": 2.5
+    },
+    {
+      "record_id": "H1-MARRAKESH",
+      "project": "VahaanBandhu",
+      "experiment_id": "H1_controlled_validation",
+      "job_id": "dacmbvbdd5gc73d69bag",
+      "backend": "ibm_marrakesh",
+      "submission_time": "2026-09-03T12:25:25Z",
+      "problem_id": "demo_diamond_graph",
+      "qubo_version": "qubo_v1",
+      "encoding_version": "edge_selection_v1",
+      "qaoa_depth": 1,
+      "shots": 1024,
+      "parameter_source": "optimized on a noiseless simulator, then transferred",
+      "qaoa_parameters": [
+        1.958600151268495,
+        1.3586215339173244
+      ],
+      "classical_optimum": 2.5,
+      "simulator_best_energy": 2.5,
+      "simulator_feasible_rate": 0.1982421875,
+      "cost_snapshot_id": "CST_DEMO_DIAMOND",
+      "status": "DONE",
+      "owned_by_project": true,
+      "result_retrieved": true,
+      "result_path": "D:\\VahaanBandhu\\Res\\quantum\\H1_ibm_marrakesh_result.json",
+      "notes": "",
+      "transpiled_depth": 74,
+      "transpiled_n_qubits": 156,
+      "logical_depth": 22,
+      "wall_clock_s": 323.64,
+      "feasible_sample_rate": 0.1865234375,
+      "best_feasible_energy": 2.5
+    }
+  ],
+  "backend_inspection": {
+    "checked_at": "2026-09-03T12:19:12Z",
+    "backends": [
+      {
+        "backend_name": "ibm_fez",
+        "accessible": true,
+        "operational": true,
+        "pending_jobs": 0,
+        "num_qubits": 156,
+        "status_msg": "active",
+        "simulator": false,
+        "processor_type": "{'family': 'Heron', 'revision': '2'}"
+      },
+      {
+        "backend_name": "ibm_marrakesh",
+        "accessible": true,
+        "operational": true,
+        "pending_jobs": 0,
+        "num_qubits": 156,
+        "status_msg": "active",
+        "simulator": false,
+        "processor_type": "{'family': 'Heron', 'revision': '2'}"
+      },
+      {
+        "backend_name": "ibm_kingston",
+        "accessible": true,
+        "operational": true,
+        "pending_jobs": 76,
+        "num_qubits": 156,
+        "status_msg": "active",
+        "simulator": false,
+        "processor_type": "{'family': 'Heron', 'revision': '2'}"
+      }
+    ]
+  },
+  "updated_at": "2026-09-03T12:25:25Z"
+}

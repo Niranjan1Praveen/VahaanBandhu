@@ -17,3 +17,4 @@ INFO   5 problems
 INFO   1/5 done (143 rows)
 INFO   2/5 done (156 rows)
 INFO   3/5 done (169 rows)
+INFO   4/5 done (182 rows)

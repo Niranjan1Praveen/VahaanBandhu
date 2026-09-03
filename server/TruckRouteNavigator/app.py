@@ -181,7 +181,9 @@ def map_view():
     # Initialize map with default center (India)
     map_center = [20.5937, 78.9629]
     zoom_level = 5
-    api_key = "UzMMAF8tgfNGRsjn35LDuPdyYajHgKsw"  # TomTom API key
+    # LEGACY. Key moved to the environment; the historical value is exposed in
+    # git history and must be rotated -- see SECURITY_ACTION_REQUIRED.md.
+    api_key = os.environ.get("TOMTOM_API_KEYS", "").split(",")[0].strip()
 
     # Get latest user location
     voice_responses = supabase.table("VoiceResponse").select("*").order("createdAt", desc=True).limit(1).execute().data or []

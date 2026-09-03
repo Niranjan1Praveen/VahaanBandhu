@@ -1,0 +1,31 @@
+H1 classical optimum 2.5000; simulator best 2.5000 feasible 19.82%
+submitting H1 to ibm_fez (pending=0) ...
+  DONE  feasible_rate=16.11% best=2.5
+submitting H1 to ibm_marrakesh (pending=0) ...
+  DONE  feasible_rate=18.65% best=2.5
+
+=== VAHAANBANDHU HARDWARE TOTALS (owned jobs only) ===
+{
+  "total_vahaanbandhu_jobs_submitted": 3,
+  "completed": 2,
+  "still_queued": 1,
+  "failed": 0,
+  "real_hardware_results_analyzed": 2,
+  "by_backend": {
+    "ibm_kingston": {
+      "job_id": "dacft8l1ierc738ji9a0",
+      "status": "QUEUED",
+      "measurements_retrieved": false
+    },
+    "ibm_fez": {
+      "job_id": "dacmbq5nj4cs73acr6lg",
+      "status": "DONE",
+      "measurements_retrieved": true
+    },
+    "ibm_marrakesh": {
+      "job_id": "dacmbvbdd5gc73d69bag",
+      "status": "DONE",
+      "measurements_retrieved": true
+    }
+  }
+}

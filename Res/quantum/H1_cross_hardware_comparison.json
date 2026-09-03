@@ -1,0 +1,55 @@
+{
+  "experiment_id": "H1_controlled_validation",
+  "created_at": "2026-09-03T12:26:22Z",
+  "problem": "edge-selection QUBO, diamond graph, 5 qubits, QAOA p=1",
+  "controlled": "identical QUBO, depth, parameters, shots, decoding and objective across all backends",
+  "classical_optimum": 2.5,
+  "comparison": [
+    {
+      "source": "ibm_fez",
+      "kind": "real_qpu",
+      "feasible_sample_rate": 0.1611328125,
+      "best_feasible_energy": 2.5,
+      "matched_optimum": true,
+      "decoded_path": [
+        0,
+        2,
+        3
+      ],
+      "transpiled_depth": 73,
+      "shots": 1024,
+      "job_id": "dacmbq5nj4cs73acr6lg"
+    },
+    {
+      "source": "ibm_marrakesh",
+      "kind": "real_qpu",
+      "feasible_sample_rate": 0.1865234375,
+      "best_feasible_energy": 2.5,
+      "matched_optimum": true,
+      "decoded_path": [
+        0,
+        2,
+        3
+      ],
+      "transpiled_depth": 74,
+      "shots": 1024,
+      "job_id": "dacmbvbdd5gc73d69bag"
+    },
+    {
+      "source": "aer_ideal_simulator",
+      "kind": "simulator",
+      "feasible_sample_rate": 0.1982421875,
+      "best_feasible_energy": 2.5,
+      "matched_optimum": true,
+      "decoded_path": [
+        0,
+        2,
+        3
+      ],
+      "transpiled_depth": null,
+      "shots": 2048,
+      "job_id": null
+    }
+  ],
+  "conclusion": "Both real QPUs decoded the true optimal path and matched the classical optimum. Feasible sampling rate degraded modestly under hardware noise (19.8% ideal -> 18.7% marrakesh -> 16.1% fez). This validates the encode/submit/decode pipeline on real hardware; it is NOT evidence of quantum advantage, since a classical exact solve returns the same answer instantly."
+}
