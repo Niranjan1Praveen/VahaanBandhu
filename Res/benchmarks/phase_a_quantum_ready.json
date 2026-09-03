@@ -7,9 +7,9 @@
       "mean_tour_km": 240.72175,
       "feasible_rate": 1.0,
       "mean_gap": 0.0,
-      "mean_solver_ms": 0.03609999839682132,
+      "mean_solver_ms": 0.05128749762661755,
       "mean_quantum_ms": 0.0,
-      "mean_wall_ms": 0.03609999839682132,
+      "mean_wall_ms": 0.05128749762661755,
       "mean_sampling_feasible_rate": NaN
     },
     {
@@ -19,9 +19,9 @@
       "mean_tour_km": 240.72175,
       "feasible_rate": 1.0,
       "mean_gap": 0.0,
-      "mean_solver_ms": 0.0183374995685881,
+      "mean_solver_ms": 0.03431249933782965,
       "mean_quantum_ms": 0.0,
-      "mean_wall_ms": 0.03434999780438375,
+      "mean_wall_ms": 0.057299996115034446,
       "mean_sampling_feasible_rate": NaN
     },
     {
@@ -31,9 +31,9 @@
       "mean_tour_km": 240.72175,
       "feasible_rate": 1.0,
       "mean_gap": 0.0,
-      "mean_solver_ms": 507.05789999665285,
+      "mean_solver_ms": 1269.3249750009272,
       "mean_quantum_ms": 0.0,
-      "mean_wall_ms": 507.05789999665285,
+      "mean_wall_ms": 1269.3249750009272,
       "mean_sampling_feasible_rate": NaN
     },
     {
@@ -43,9 +43,9 @@
       "mean_tour_km": 240.72175000000001,
       "feasible_rate": 1.0,
       "mean_gap": 0.0,
-      "mean_solver_ms": 436.758824998833,
+      "mean_solver_ms": 1251.0193625021202,
       "mean_quantum_ms": 0.0,
-      "mean_wall_ms": 436.89061250370287,
+      "mean_wall_ms": 1251.3177000018914,
       "mean_sampling_feasible_rate": NaN
     },
     {
@@ -55,9 +55,9 @@
       "mean_tour_km": 242.63,
       "feasible_rate": 1.0,
       "mean_gap": 0.015641125000000002,
-      "mean_solver_ms": 0.016012498235795647,
+      "mean_solver_ms": 0.022987496777204797,
       "mean_quantum_ms": 0.0,
-      "mean_wall_ms": 0.016012498235795647,
+      "mean_wall_ms": 0.022987496777204797,
       "mean_sampling_feasible_rate": NaN
     },
     {
@@ -68,8 +68,8 @@
       "feasible_rate": 0.375,
       "mean_gap": 0.160128,
       "mean_solver_ms": 0.0,
-      "mean_quantum_ms": 4326.932287496675,
-      "mean_wall_ms": 4327.063399998224,
+      "mean_quantum_ms": 10681.883899997047,
+      "mean_wall_ms": 10682.1807624965,
       "mean_sampling_feasible_rate": 0.0006103515625
     }
   ],

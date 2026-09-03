@@ -761,6 +761,138 @@ component's contribution within it. In priority order:
 4. **Depth sweep p in 1..8** with noise modelling.
 5. **Larger option sets** in the return-load problem, where greedy degrades
    further and the formulation advantage should widen.
+
+---
+
+# Part IV - Improving the Quantum Component Inside VB-QER
+
+Experiment `vbqer_circular_v1` / `vbqer_circular_artifacts_v1`.
+
+Framing per the project invariant: this asks **how to raise the quantum
+contribution within VB-QER**, not whether to use VB-QER. Every arm is a VB-QER
+configuration.
+
+## 26. Scope decision: shortest path is out
+
+Dijkstra and A* solve shortest path exactly in polynomial time. No optimizer,
+quantum or otherwise, can improve on an exact polynomial algorithm, so those
+members stay inside VB-QER unchanged and receive no further quantum research
+effort. `routing/ensemble/problem_family.py` encodes this: a shortest-path
+classification disables the QUBO and artifact layers outright.
+
+Effort is concentrated on return-load selection, a quadratic knapsack with
+measured greedy suboptimality.
+
+## 27. VB-QER circular components, measured on 60 held-out problems
+
+| VB-QER circular component | Optimal rate | Mean gap vs exact |
+|---|---|---|
+| Greedy value-density | 71.7% | 32.57 |
+| **Greedy + local search** | **85.0%** | **18.05** |
+| **Classical QUBO (exact backend)** | **98.3%** | **0.88** |
+
+All three are components inside VB-QER. The QUBO is the primary circular
+optimizer; local search is the fallback where the exact solve is not tractable.
+
+**Local search was discovered by accident, as the honesty control.** It was added
+purely so quantum artifacts could be validated against something other than
+greedy. It turned out to be a materially better classical component (+14.52
+objective units over greedy) and is now ACTIVE. The experiment improved VB-QER --
+just not via quantum.
+
+## 28. Artifact distillation and the transfer hypothesis
+
+The route-track prior failed (0/15). Two candidate explanations were tested.
+
+**Hypothesis:** quantum-derived information may transfer within *matched*
+optimization families even when a global prior does not generalise.
+
+### Methodology: the control that decides the experiment
+
+Artifacts are validated against an **unguided local-search control**, never
+against greedy. Validating against greedy would credit the artifact for whatever
+plain local search finds on its own -- the standard way to manufacture a quantum
+result that is really just a better classical baseline.
+
+Artifacts are keyed on value-density **rank**, not option id, since ids are
+instance-specific and could not transfer to any unseen problem.
+
+### Result: NOT SUPPORTED
+
+| Artifact | Held-out | Improved | Degraded | Mean delta | Deployable | Control gain over greedy |
+|---|---|---|---|---|---|---|
+| Global | 20 | **0** | 0 | 0.0 | **NO** | 38.73 |
+| `D_shared_corridor_synergy` | 14 | **0** | 0 | 0.0 | **NO** | 33.40 |
+| `C_high_detour` | 6 | **0** | 0 | 0.0 | **NO** | 51.18 |
+
+All three failed independently. Two explanations are ruled out:
+
+* **Not a data-volume problem.** The circular track produced feasible QAOA
+  samples on **30/30** problems, against the route track's 12/30. More and better
+  signal did not help.
+* **Not a family-mismatch problem.** Matching on structural family -- the specific
+  fix this experiment existed to test -- changed nothing.
+
+The `control gain over greedy` column is the important one: the unguided control
+gains 33-51 objective units. That improvement is real and entirely classical.
+
+## 29. QAOA depth sweep
+
+Six problems, 5 options each (11 qubits), p in {1,2,3,4,6,8}, 1024 shots.
+
+| p | Optimal rate | Mean gap | Feasible sampling | Circuit depth | Runtime |
+|---|---|---|---|---|---|
+| 1 | 66.7% | 79.86 | 23.7% | 61 | 1478 ms |
+| 2 | 50.0% | 101.44 | 23.2% | 120 | 2873 ms |
+| 3 | 83.3% | 42.04 | 24.8% | 179 | 4911 ms |
+| **4** | **100%** | **0.00** | 24.6% | 238 | 5676 ms |
+| 6 | 66.7% | 52.36 | 24.1% | 356 | 7692 ms |
+| **8** | **100%** | **0.00** | 25.8% | 474 | 9289 ms |
+
+Greedy on the same problems: 83.3% optimal.
+
+**Read this cautiously.** QAOA at p=4 and p=8 did reach 100% optimal, above
+greedy's 83.3%. But the sequence is **non-monotonic** -- p=2 is worse than p=1,
+p=6 worse than p=4 -- which is characteristic of COBYLA settling in different
+basins of the variational landscape rather than of a depth trend. On six
+problems this is optimizer variance, not evidence that depth helps. A depth
+conclusion needs a far larger sample with multiple restarts per depth.
+
+Note also that the exact QUBO solve reaches 98.3% optimal in ~70 ms. QAOA
+matching the optimum at p=8 in 9.3 seconds confirms the encoding is correct; it
+is not an advantage.
+
+## 30. Where the remaining room actually is
+
+The exact QUBO backend reaches **98.3%** optimal at current problem sizes, so
+there is roughly **1.7% headroom left for any optimizer** in this regime. A
+quantum contribution cannot come from here.
+
+It would have to come from problem sizes where the exact solve stops being
+tractable: `n_options` beyond ~16, where the QUBO exceeds the 22-qubit
+statevector budget and exhaustive selection becomes expensive. **That is a
+scaling question, not a tuning question**, and it is the next thing worth
+attacking.
+
+## 31. Component status after Part IV
+
+| VB-QER component | Status | Change in Part IV |
+|---|---|---|
+| Classical ensemble | ACTIVE | unchanged |
+| Circular QUBO (exact backend) | ACTIVE | confirmed primary, 98.3% optimal |
+| **Circular local search** | **ACTIVE** | **newly promoted**, 85.0% optimal |
+| Objective-alignment layer | ACTIVE | unchanged |
+| Incumbent guard | ACTIVE | 0% deployed degradation maintained |
+| QAOA simulator research | ACTIVE OFFLINE | depth sweep added |
+| IBM Quantum hardware | OFFLINE ONLY | job still queued |
+| Route-track prior | REJECTED | unchanged |
+| **Global circular prior** | **REJECTED** | new, 0/20 |
+| **Per-family circular priors** | **REJECTED** | new, 0/14 and 0/6 |
+| Artifact slot | VALIDATION-GATED | still open; nothing has passed |
+
+**The architecture is unchanged and was not under evaluation.** VB-QER remains
+the final algorithm; this experiment moved component statuses and added one new
+active component.
 ---
 
 # Part I (continued)
