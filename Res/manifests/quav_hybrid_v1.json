@@ -1,0 +1,82 @@
+{
+  "experiment_id": "quav_hybrid_v1",
+  "hybrid_version": "quav_hybrid_v1",
+  "git_commit": "056ba9fabffc03fd53c727854b5327b189cfc105",
+  "created_at": "2026-09-03T10:02:59Z",
+  "n_route_instances": 24,
+  "n_circular_problems": 40,
+  "cost_snapshots": [
+    "CST_48011250D4FB"
+  ],
+  "analysis": {
+    "HYBRID-3": {
+      "n_problems": 40,
+      "n_comparable": 40,
+      "quantum_invocation_rate": 1.0,
+      "improvement_rate": 0.1,
+      "match_rate": 0.4,
+      "raw_degradation_rate": 0.5,
+      "final_deployed_degradation_rate": 0.0,
+      "n_quantum_accepted": 4,
+      "n_quantum_rejected": 36,
+      "mean_improvement_when_wins": 127.50966282845954,
+      "median_improvement_when_wins": 119.83355432254888,
+      "mean_raw_degradation": 353.22948986671724,
+      "mean_feasible_sampling_rate": 0.1643798828125,
+      "mean_quantum_ms": 3241.621560000931,
+      "mean_classical_ms": 0.02192999963881448,
+      "exactness": {
+        "classical_mean_gap_vs_exact": 26.47760173148986,
+        "final_mean_gap_vs_exact": 13.726635448643908,
+        "classical_optimal_rate": 0.775,
+        "final_optimal_rate": 0.85
+      }
+    },
+    "HYBRID-3-WARM": {
+      "n_problems": 40,
+      "n_comparable": 40,
+      "quantum_invocation_rate": 1.0,
+      "improvement_rate": 0.1,
+      "match_rate": 0.45,
+      "raw_degradation_rate": 0.45,
+      "final_deployed_degradation_rate": 0.0,
+      "n_quantum_accepted": 4,
+      "n_quantum_rejected": 36,
+      "mean_improvement_when_wins": 107.91641089938756,
+      "median_improvement_when_wins": 105.26513409752437,
+      "mean_raw_degradation": 242.5140783720628,
+      "mean_feasible_sampling_rate": 0.16162109375,
+      "mean_quantum_ms": 3275.1761049989,
+      "mean_classical_ms": 0.0260975011769915,
+      "exactness": {
+        "classical_mean_gap_vs_exact": 26.47760173148986,
+        "final_mean_gap_vs_exact": 15.685960641551105,
+        "classical_optimal_rate": 0.775,
+        "final_optimal_rate": 0.85
+      }
+    },
+    "QUBO_CLASSICAL": {
+      "n_problems": 40,
+      "n_comparable": 38,
+      "quantum_invocation_rate": 1.0,
+      "improvement_rate": 0.18421052631578946,
+      "match_rate": 0.8157894736842105,
+      "raw_degradation_rate": 0.0,
+      "final_deployed_degradation_rate": 0.0,
+      "n_quantum_accepted": 7,
+      "n_quantum_rejected": 33,
+      "mean_improvement_when_wins": 132.35771072191113,
+      "median_improvement_when_wins": 112.81118628356512,
+      "mean_raw_degradation": 0.0,
+      "mean_feasible_sampling_rate": null,
+      "mean_quantum_ms": 68.9716574994236,
+      "mean_classical_ms": 0.0316149991704151,
+      "exactness": {
+        "classical_mean_gap_vs_exact": 26.47760173148986,
+        "final_mean_gap_vs_exact": 3.315002355155414,
+        "classical_optimal_rate": 0.775,
+        "final_optimal_rate": 0.95
+      }
+    }
+  }
+}

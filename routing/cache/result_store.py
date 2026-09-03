@@ -147,7 +147,10 @@ class ArtifactStore:
             "algorithm_family": algorithm_family, "algorithm_name": algorithm_name,
             "volatility": volatility.value, "created_at": time.time(), **meta,
         }
+        # A nested category (e.g. "ensemble/quantum_priors") makes the manifest
+        # path nested too, so its parent must be created explicitly.
         mpath = self.manifest_dir / f"{category}.json"
+        mpath.parent.mkdir(parents=True, exist_ok=True)
         manifest = json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
         manifest[name] = entry
         mpath.write_text(json.dumps(manifest, indent=2, default=str), encoding="utf-8")
@@ -159,4 +162,9 @@ class ArtifactStore:
 
     def list(self, category: str) -> dict:
         mpath = self.manifest_dir / f"{category}.json"
-        return json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
+        if not mpath.exists():
+            return {}
+        try:
+            return json.loads(mpath.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return {}

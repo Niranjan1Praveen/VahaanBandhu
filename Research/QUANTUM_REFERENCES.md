@@ -73,7 +73,107 @@ the resulting circuit actually entangles — otherwise running QAOA would be dec
 
 ---
 
-## 2. Reference repositories reviewed
+## 1b. Second research paper reviewed
+
+**Solving the Network Shortest Path Problem on a Quantum Annealer**
+Thomas Krauss and Joey McCollum, Virginia Tech Hume Center.
+*IEEE Transactions on Quantum Engineering*, vol. 1, 2020. DOI 10.1109/TQE.2020.3021921.
+
+### What the paper contributes
+
+Three distinct QUBO formulations of single-source single-destination shortest path:
+
+| # | Encoding | Qubits | Applies to |
+|---|---|---|---|
+| 1 | Hop-indexed, TSP-style `x_{i,p}` | `|V|·|P|` | general |
+| 2 | **Edge/flow (LP-derived)** | **`|E|` directed, `2|E|` undirected** | general |
+| 3 | Edge + vertex | `|E|+|V|` | undirected only |
+
+**Formulation 2 is the one we independently arrived at**, and the paper validates
+our construction line for line:
+
+```
+H_s = (sum_j x_sj - sum_k x_ks - 1)^2      source
+H_t = (sum_j x_tj - sum_k x_kt + 1)^2      sink
+H_i = (sum_j x_ij - sum_k x_ki)^2          every other vertex
+H_C = sum_(i,j) c_ij x_ij                  objective
+```
+
+### The penalty-scaling result we adopted
+
+The paper makes the scaling explicit: set `alpha_C = 1` and every constraint
+weight `alpha > c_E`, where `c_E = sum |c_ij|` over all edges. Since `c_E >= c_P`
+(the shortest-path cost), this guarantees no infeasible assignment can undercut a
+feasible one, without needing to know `c_P` in advance.
+
+Our `build_edge_selection_qubo`, `build_segment_qubo` and `build_circular_qubo`
+all derive penalties this way rather than using a hardcoded constant.
+
+### Applicability to VahaanBandhu, and its limit
+
+Adopted: the `|E|`-qubit flow formulation, the penalty-scaling rule, the
+directed-graph treatment, and the "ghost edge" path-collapsing idea for
+postprocessing degenerate solutions.
+
+**The limit is fundamental, and it reframed our research question.** This
+formulation reproduces Dijkstra's answer. Dijkstra solves shortest path *exactly*
+in polynomial time, so no quantum method can beat it on its own problem -- the
+paper is a demonstration of encoding, not a claim of advantage, and the authors
+present it as such.
+
+That is why VahaanBandhu's quantum layer targets **return-load selection**
+(quadratic knapsack, NP-hard, greedy is measurably suboptimal) rather than
+shortest path. Framing the quantum layer as "quantum shortest path" would
+guarantee at best a tie.
+
+---
+
+## 1c. Reference repository reviewed: `armulrich/Qpath_optimizer`
+
+<https://github.com/armulrich/Qpath_optimizer>
+
+Cloned and read at `backend/PathFinder.py`, `backend/graph.py`,
+`backend/application.py`. It finds shortest paths in a weighted graph by solving
+a QUBO, wrapped in a Flask backend and a Next.js map front end over NYC
+population data.
+
+### Architecture
+
+`PathFinder.qp_from_matrix(s, t)` builds a `max_hops x n` binary variable matrix
+via docplex and adds: an edge-weight objective over consecutive hops, a
+start-vertex constraint, an end-vertex constraint, a one-vertex-per-hop
+constraint, and a visit-at-most-once constraint. This is **Krauss formulation 1**
+(hop-indexed), with `max_hops = 4`.
+
+### Three findings that informed our implementation
+
+1. **The QAOA path is commented out.** In the shipped code, `solve_qp` constructs
+   `NumPyMinimumEigensolver` -- a *classical exact diagonalizer* -- while the
+   `QAOA`/`Sampler` lines are disabled. The executed code path is therefore
+   classical, despite the project's framing. We note this without criticism of
+   the authors (it is plainly a debugging state), but it is a caution: a repo
+   presenting as quantum may not be running quantum, and our benchmark records
+   `algorithm_family` per row precisely so this cannot happen silently here.
+
+2. **`penalty = 99999` is a hardcoded constant**, not derived from the edge
+   costs. This is exactly what Krauss and McCollum's `alpha > c_E` rule exists to
+   avoid. A fixed penalty fails in both directions: too small on a
+   high-cost graph and infeasible solutions win; too large and the cost signal is
+   swamped, flattening the optimization landscape. Our penalties are always
+   derived from the instance.
+
+3. **`max_hops = 4` is fixed**, which silently caps the representable path length
+   regardless of graph size. Our corridor construction derives its variable
+   budget from the instance and records when trimming occurred.
+
+**Verdict:** useful as an architectural reference for wrapping a QUBO path
+finder in a service, and as a concrete instance of the hop-indexed encoding. No
+code was copied. The formulation we use is the edge/flow one, for the scaling
+reasons above.
+
+---
+
+## 2. Reference repositories reviewed (original Phase-A note)
 
 Both repositories named in the Phase-A brief were reviewed for architecture and
 formulation. **No code was copied.**

@@ -698,6 +698,9 @@ for cat in ["learned_parameters","benchmarks"]:
 """),
 ]
 
+from tools.notebook_experiments_jk import cells as jk_cells
+cells = cells + jk_cells()
+
 nb = nbf.v4.new_notebook(cells=cells)
 nb.metadata = {
     "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
