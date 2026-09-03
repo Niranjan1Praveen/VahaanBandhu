@@ -552,26 +552,47 @@ print("INVARIANT 4 OK: no quantum contribution claimed when none was used")
         md("""
 ## K.5 — Conclusions
 
-**What VB-QER is.** A classical ensemble with an incumbent guard, into which
-validated quantum-derived artifacts feed as one bounded signal among several. The
-live path never calls a QPU.
+**What VB-QER is.** The fixed final routing algorithm: classical members, QUBO
+formulations, circular-logistics optimization, quantum-derived artifacts and an
+incumbent guard, all *inside* one algorithm behind one entry point. The live path
+never calls a QPU.
+
+**Architecture status vs component status — reported separately.**
+
+| | Status |
+|---|---|
+| **Final algorithm: VB-QER** | **FIXED** |
+| Classical ensemble | ACTIVE |
+| Circular-logistics QUBO | ACTIVE |
+| Objective-alignment layer | ACTIVE |
+| Incumbent guard | ACTIVE |
+| QAOA simulator research | ACTIVE OFFLINE |
+| IBM Quantum hardware | OFFLINE ONLY |
+| Route-track quantum prior | REJECTED (0/15 held-out) |
+| Circular-track artifacts | VALIDATION-GATED |
+
+A component moving to REJECTED says nothing about the architecture. The
+classical ensemble and the circular QUBO are VB-QER *components* — activating
+them **is** shipping VB-QER, not an alternative to it.
 
 **What the evidence supports.**
 
-* The circular return-load QUBO genuinely improves on the greedy classical
-  baseline: 77.5% → 95% optimal with an exact solve, → 85% with QAOA.
+* The classical ensemble improves on the best single member by 2.7% and cuts
+  empty running 63%.
+* The circular return-load QUBO lifts 77.5% → 95% optimal (exact backend),
+  → 85% with QAOA.
 * Most of that gain comes from the **formulation**, not from QAOA.
-* Route-refinement quantum contributed nothing (0/24).
+* Route-refinement quantum contributed nothing (0/24), and its distilled prior
+  failed held-out validation (0/15) and is not deployed.
 * The incumbent guard reduced 50% raw quantum degradation to 0% deployed.
 
-**What is not claimed.** No quantum advantage, no speedup, no better routes from
-QAOA than from classical solvers on the same formulation. QAOA was slower than
-the exact QUBO solve by 47× and reached a worse mean optimality gap.
+**What is not claimed.** No quantum advantage, no speedup, and no quantum
+contribution to any live decision. There is none in the current evidence.
 
-**Recommendation.** Ship VB-QER with the quadratic-knapsack return-load
-formulation solved *classically*, keep the QAOA path as an offline research arm,
-and re-evaluate when hardware or algorithms improve. That is the honest
-engineering call, and the architecture supports flipping the solver without any
-other change.
+**Next.** The research question is *how to raise the quantum contribution inside
+VB-QER*, not whether to use VB-QER. The most promising lead is distilling
+artifacts from the circular track — it has a 16.4% feasible sampling rate and a
+demonstrated 85% optimal rate, against the route track's thin 12/30 yield. That
+is Experiment L.
 """),
     ]

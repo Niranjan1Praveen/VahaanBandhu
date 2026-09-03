@@ -1,0 +1,3 @@
+INFO train=30  validation=20 (disjoint)
+INFO train families: {'D_shared_corridor_synergy': 16, 'C_high_detour': 14}
+INFO distilling GLOBAL artifact from 30 problems
