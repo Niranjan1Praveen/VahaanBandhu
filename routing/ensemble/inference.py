@@ -81,8 +81,23 @@ class VBQERSolution:
     quantum_contribution_used: bool = False
     quantum_artifact_ids: list[str] = field(default_factory=list)
     quantum_artifact_source: str = "none"
+    quantum_artifact_version: str = "none"
     quantum_contribution_score: float = 0.0
     quantum_hardware_called_live: bool = False  # always False by design
+    quantum_component_invoked: bool = False
+
+    # Component / classification trace, so a decision can be attributed later.
+    vbqer_version: str = ""
+    problem_type: str = ""
+    problem_family: str | None = None
+    classical_members_used: list[str] = field(default_factory=list)
+    qubo_used: bool = False
+    circular_optimizer_used: bool = False
+    candidate_selected: str = ""
+    objective_before: float = 0.0
+    objective_after: float = 0.0
+    improvement: float = 0.0
+    incumbent_guard_triggered: bool = False
 
     # Decomposed timing.
     classical_ms: float = 0.0
@@ -99,6 +114,7 @@ class VBQERSolution:
         d["routes"] = "|".join(",".join(map(str, r)) for r in self.routes)
         d["violations"] = ";".join(self.violations)
         d["quantum_artifact_ids"] = ",".join(self.quantum_artifact_ids)
+        d["classical_members_used"] = ",".join(self.classical_members_used)
         d.pop("score_terms", None)
         d.pop("explanation", None)
         return d
@@ -149,6 +165,14 @@ class VBQEROptimizer:
     def solve(self, inst: RoutingInstance) -> VBQERSolution:
         t_start = time.perf_counter()
 
+        # --- classify: decide which internal experts should engage.
+        # VB-QER is one algorithm containing specialised optimizers; this is how
+        # it picks them. A shortest-path query, for instance, skips the QUBO
+        # layer entirely because Dijkstra is already exact.
+        from routing.ensemble.problem_family import classify_instance
+        classification = classify_instance(inst)
+        policy = classification.policy
+
         # --- classical ensemble members
         t0 = time.perf_counter()
         candidates = generate_candidates(
@@ -162,7 +186,9 @@ class VBQEROptimizer:
 
         # --- offline quantum artifacts (never a live QPU call)
         t0 = time.perf_counter()
-        priors = self._load_artifacts()
+        # The classification policy can disable the quantum path for problem
+        # types where it cannot help (e.g. exact shortest path).
+        priors = self._load_artifacts() if policy["use_quantum_artifacts"] else []
         merged: dict[str, float] = {}
         for p in priors:
             merged.update(p.variable_marginals)
@@ -223,6 +249,9 @@ class VBQEROptimizer:
             "reasons": self._reasons(best, incumbent, chosen_eval, quantum_used),
         }
 
+        guard_triggered = (source == "classical_incumbent"
+                           and best.candidate.candidate_id != incumbent.candidate_id)
+
         return VBQERSolution(
             instance_id=inst.instance_id,
             algorithm="VB-QER",
@@ -250,7 +279,22 @@ class VBQEROptimizer:
             quantum_artifact_source=(priors[0].source if priors and quantum_used else "none"),
             quantum_contribution_score=(
                 best.candidate.quantum_prior_score if quantum_used else 0.0),
+            quantum_artifact_version=(priors[0].artifact_version
+                                      if priors and quantum_used else "none"),
             quantum_hardware_called_live=False,
+            quantum_component_invoked=bool(priors),
+            vbqer_version=VBQER_VERSION,
+            problem_type=classification.problem_type.value,
+            problem_family=classification.family,
+            classical_members_used=sorted({m for c in candidates
+                                           for m in c.produced_by}),
+            qubo_used=bool(policy["use_qubo"]),
+            circular_optimizer_used=False,
+            candidate_selected=best.candidate.candidate_id,
+            objective_before=incumbent.objective,
+            objective_after=chosen_eval.objective,
+            improvement=incumbent.objective - chosen_eval.objective,
+            incumbent_guard_triggered=guard_triggered,
             classical_ms=classical_ms,
             artifact_ms=artifact_ms,
             scoring_ms=scoring_ms,

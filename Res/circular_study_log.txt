@@ -1,0 +1,6 @@
+INFO === option-set size 4 ===
+INFO   5 problems
+INFO   1/5 done (13 rows)
+INFO   2/5 done (26 rows)
+INFO   3/5 done (39 rows)
+INFO   4/5 done (52 rows)
