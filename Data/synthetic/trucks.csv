@@ -1,0 +1,601 @@
+truck_id,home_location_id,district,state_code,driver_name_en,driver_name_hi,vehicle_class,capacity_kg,capacity_bori,body_type,fuel_type,avg_kmpl,max_route_km,available_from,available_to,is_synthetic,generation_method,seed,dataset_version
+TRK_D2E1FAD8FAE2,LOC_AC684A297AD1,Bareilly,UP,Kuldeep,कुलदीप,3axle,15710.0,314,closed,diesel,4.75,300.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_77285ED95E64,LOC_E7B504BE8FE9,Patiala,PB,Satpal,सतपाल,2axle,7370.0,147,closed,diesel,5.78,420.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_CCC8FA82084A,LOC_C6AB43142BDB,Faridkot,PB,Mohan,मोहन,2axle,9350.0,187,closed,diesel,6.22,200.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_620C05BC679B,LOC_BF1D141289ED,Hoshiarpur,PB,Vijay,विजय,pickup,1370.0,27,open,diesel,12.88,120.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_12B325950C8F,LOC_7CE3D43FF63F,Ambala,HR,Mohan,मोहन,2axle,6250.0,125,tipper,cng,5.11,360.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_DBB3E05A1345,LOC_D2DDEA75080C,Pathankot,PB,Sukhbir,सुखबीर,LCV,3720.0,74,open,diesel,8.25,150.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_8C842CC0A407,LOC_0B27B307A77E,Panipat,HR,Kuldeep,कुलदीप,multi_axle,25970.0,519,tipper,diesel,3.07,570.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_F7ECE21B2F82,LOC_EC1D3E4138DF,Amritsar,PB,Kuldeep,कुलदीप,pickup,1110.0,22,open,diesel,11.59,110.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_7A91F5198B53,LOC_ED9C60D04FC0,SAS Nagar,PB,Balwant,बलवंत,multi_axle,27170.0,543,tipper,diesel,3.01,450.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_CE161697CB0F,LOC_21F591BF08EC,West Delhi,DL,Kuldeep,कुलदीप,2axle,10360.0,207,tipper,cng,5.52,250.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_BEE1B756CA92,LOC_ED9C60D04FC0,SAS Nagar,PB,Satpal,सतपाल,multi_axle,27170.0,543,tipper,diesel,3.18,820.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_A72FA0156ECE,LOC_B6370F731EEC,Lucknow,UP,Sukhbir,सुखबीर,2axle,7200.0,144,tipper,diesel,4.64,380.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_129C27B32C42,LOC_2011BC2FE7BD,Fazilka,PB,Satpal,सतपाल,2axle,10960.0,219,tipper,diesel,4.97,440.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_CE2D668447C7,LOC_E9EE964E8CFE,South Delhi,DL,Vijay,विजय,LCV,3940.0,78,closed,diesel,8.69,230.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_4DEB047EE4A3,LOC_D8FB48D6F894,Fatehabad,HR,Mohan,मोहन,multi_axle,20850.0,417,tipper,diesel,2.78,420.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_78D4AB88907C,LOC_841795218E67,Ghaziabad,UP,Ramesh,रमेश,pickup,1390.0,27,open,diesel,13.84,150.0,09:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_A5F730FA2580,LOC_2ADFB4EFDB06,Kaithal,HR,Dinesh,दिनेश,3axle,16560.0,331,closed,diesel,4.09,650.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_3CF3EAAA5FE3,LOC_E96863625035,Shahdara,DL,Balwant,बलवंत,pickup,990.0,19,closed,diesel,13.77,70.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_292EB830C1E2,LOC_E9EE964E8CFE,South Delhi,DL,Ramesh,रमेश,pickup,810.0,16,open,diesel,12.93,90.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_8DABB7C913C5,LOC_9F3A877025DA,Shahjahanpur,UP,Naresh,नरेश,LCV,3040.0,60,closed,diesel,8.4,230.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_ECEE8EE28F92,LOC_D8FB48D6F894,Fatehabad,HR,Dinesh,दिनेश,multi_axle,23380.0,467,tipper,diesel,3.45,950.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_68C7282B649F,LOC_BD15AF538A86,South East Delhi,DL,Harpreet,हरप्रीत,pickup,1410.0,28,closed,cng,11.68,90.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_EA42DF2EC558,LOC_8E24E29DF84B,Hisar,HR,Vijay,विजय,LCV,1770.0,35,closed,cng,10.33,260.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_8568643F956E,LOC_BD15AF538A86,South East Delhi,DL,Kuldeep,कुलदीप,pickup,860.0,17,closed,diesel,13.88,70.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_A3A61C64DE5D,LOC_487C12AA952A,Jind,HR,Rakesh,राकेश,3axle,13070.0,261,tipper,diesel,4.4,620.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_532DA903AB51,LOC_2ADFB4EFDB06,Kaithal,HR,Ramesh,रमेश,2axle,8680.0,173,tipper,diesel,4.94,330.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_FD2ED987D86D,LOC_60C46A471111,Pilibhit,UP,Kuldeep,कुलदीप,pickup,1150.0,23,open,diesel,11.21,110.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_7A6A0CC55602,LOC_AB3DB4CE53FF,Gurdaspur,PB,Ramesh,रमेश,LCV,3340.0,66,closed,diesel,9.32,300.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_D48AA1E92128,LOC_6B9FA168B682,Firozabad,UP,Vijay,विजय,pickup,1240.0,24,open,ev,13.31,150.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_DAF51A958D58,LOC_3B372919B752,Karnal,HR,Jaspal,जसपाल,3axle,12470.0,249,open,diesel,4.77,310.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_9C8AB9F98395,LOC_2E423964E639,Agra,UP,Vijay,विजय,LCV,2560.0,51,closed,diesel,9.03,160.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_F7D1E6EBB6CA,LOC_0F3D188854D6,Amroha,UP,Naresh,नरेश,2axle,9950.0,199,open,diesel,5.59,330.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_99200FA0CAF5,LOC_4E618897659A,Hathras,UP,Mohan,मोहन,LCV,2220.0,44,open,diesel,8.32,120.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_8C037A0ADC54,LOC_2B9C182E1BB7,Panchkula,HR,Satpal,सतपाल,multi_axle,31430.0,628,tipper,diesel,3.42,740.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_4E30CB2EBC14,LOC_41413C4D1A63,East Delhi,DL,Harpreet,हरप्रीत,LCV,2310.0,46,refrigerated,cng,11.13,180.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_626EAB067544,LOC_5D316714188F,Faridabad,HR,Naresh,नरेश,LCV,3870.0,77,open,diesel,10.81,160.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_27E86454C41E,LOC_B01B9CC74597,Saharanpur,UP,Rakesh,राकेश,LCV,2440.0,48,open,diesel,8.62,140.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_9842EE7E4A7D,LOC_0B27B307A77E,Panipat,HR,Kuldeep,कुलदीप,3axle,12250.0,245,tipper,diesel,4.4,580.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_C7CC5AE3F376,LOC_9F3A877025DA,Shahjahanpur,UP,Harpreet,हरप्रीत,2axle,10490.0,209,open,diesel,5.89,160.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_85ECCC09B9D9,LOC_B26DA7992E56,Prayagraj,UP,Harpreet,हरप्रीत,LCV,2290.0,45,closed,diesel,11.9,290.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_9F4AFED0031B,LOC_2275B2D35F85,Palwal,HR,Ramesh,रमेश,LCV,2740.0,54,open,diesel,10.11,220.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_33F5C27E0A8E,LOC_C58F1767A842,Barnala,PB,Harpreet,हरप्रीत,LCV,2490.0,49,open,diesel,11.21,110.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_EEA651643038,LOC_B56ABDBA32E2,Aligarh,UP,Dinesh,दिनेश,LCV,2940.0,58,closed,diesel,9.01,240.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_EE305F995190,LOC_36B5B5F31C8D,Varanasi,UP,Dinesh,दिनेश,pickup,830.0,16,closed,ev,15.06,160.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_BACD7124FE62,LOC_5775AEDC7A87,Kanpur Nagar,UP,Naresh,नरेश,LCV,3320.0,66,closed,diesel,10.53,290.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_5E33C6EEB554,LOC_11A4C40B0A4F,Yamunanagar,HR,Dinesh,दिनेश,pickup,870.0,17,open,diesel,14.2,70.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_82D080DA4394,LOC_03F06DD41C28,Malerkotla,PB,Harpreet,हरप्रीत,pickup,1380.0,27,closed,cng,11.54,120.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_8F17F47DF021,LOC_5775AEDC7A87,Kanpur Nagar,UP,Naresh,नरेश,2axle,7790.0,155,open,cng,4.81,390.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_3BD6603D79C0,LOC_B01B9CC74597,Saharanpur,UP,Dinesh,दिनेश,pickup,1440.0,28,open,cng,12.83,170.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_E247C3B236BF,LOC_F20DB0F2A327,Gurugram,HR,Jaspal,जसपाल,2axle,7400.0,148,closed,diesel,5.11,360.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_C782EFA75804,LOC_ED9C60D04FC0,SAS Nagar,PB,Harpreet,हरप्रीत,LCV,2350.0,47,closed,diesel,11.4,110.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_A0E9F09D08D4,LOC_165F0D721F3E,Jalandhar,PB,Sukhbir,सुखबीर,3axle,13770.0,275,open,diesel,3.78,550.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_3119DA4FF7CB,LOC_DA9770705B86,South West Delhi,DL,Dinesh,दिनेश,LCV,3740.0,74,closed,diesel,11.95,180.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_80DF5974F975,LOC_41413C4D1A63,East Delhi,DL,Naresh,नरेश,pickup,1050.0,21,closed,cng,11.57,160.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_302D768C55BE,LOC_8DBB3FA667B3,New Delhi,DL,Jaspal,जसपाल,2axle,8700.0,174,tipper,diesel,5.54,180.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_D775FBEE377E,LOC_B9CDAEAD5C72,Mainpuri,UP,Satpal,सतपाल,2axle,10800.0,216,tipper,diesel,4.98,430.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_333266140832,LOC_E7B504BE8FE9,Patiala,PB,Dinesh,दिनेश,LCV,1680.0,33,open,cng,11.49,270.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_BFCCB9F57E47,LOC_ED9C60D04FC0,SAS Nagar,PB,Ramesh,रमेश,pickup,720.0,14,closed,cng,14.06,160.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_7D5CC8280BAC,LOC_F20DB0F2A327,Gurugram,HR,Rakesh,राकेश,2axle,8150.0,163,open,diesel,4.89,230.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_A210D20B3223,LOC_AD745A3946E4,Unnao,UP,Balwant,बलवंत,3axle,16340.0,326,open,diesel,3.68,410.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_D9C6545EAB2E,LOC_45C74FBD7B6F,Mansa,PB,Sukhbir,सुखबीर,2axle,8470.0,169,closed,diesel,4.88,230.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_8406DD0477EF,LOC_BF1D141289ED,Hoshiarpur,PB,Kuldeep,कुलदीप,3axle,13280.0,265,open,diesel,3.58,460.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_2AEAA46637B4,LOC_E96863625035,Shahdara,DL,Jaspal,जसपाल,2axle,6760.0,135,closed,diesel,5.68,150.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_A9EA5FA4BDE5,LOC_9F3A877025DA,Shahjahanpur,UP,Balwant,बलवंत,2axle,9210.0,184,closed,diesel,4.65,230.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_DCD529FCAD92,LOC_AD745A3946E4,Unnao,UP,Sukhbir,सुखबीर,3axle,14100.0,282,closed,diesel,4.62,470.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_5BA38CDD6398,LOC_B39E76DCD93F,Nuh,HR,Vijay,विजय,3axle,14550.0,291,open,diesel,4.58,440.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_3673D58D3F9F,LOC_F20DB0F2A327,Gurugram,HR,Naresh,नरेश,pickup,1240.0,24,open,cng,11.96,120.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_CC15EA18475A,LOC_E96863625035,Shahdara,DL,Jaspal,जसपाल,3axle,12860.0,257,open,diesel,4.5,330.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_73D3FAB3FB7E,LOC_BC48412E6B15,Sambhal,UP,Dinesh,दिनेश,LCV,3100.0,62,refrigerated,diesel,11.19,280.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_3636FA13AE0D,LOC_BACB2642B5AD,Kurukshetra,HR,Naresh,नरेश,2axle,7970.0,159,open,diesel,5.01,380.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_0DBC0A97FD43,LOC_AC684A297AD1,Bareilly,UP,Satpal,सतपाल,pickup,1250.0,25,closed,ev,13.8,100.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_AED6D8426AC1,LOC_AD745A3946E4,Unnao,UP,Vijay,विजय,pickup,1310.0,26,open,diesel,11.48,140.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_72FD468D3BB7,LOC_B26DA7992E56,Prayagraj,UP,Jaspal,जसपाल,2axle,9900.0,198,tipper,diesel,4.86,370.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_14DED19CFB57,LOC_5B344A07BA57,Sangrur,PB,Naresh,नरेश,2axle,10750.0,215,tipper,diesel,4.99,450.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_1C5377557122,LOC_BF1D141289ED,Hoshiarpur,PB,Kuldeep,कुलदीप,2axle,7740.0,154,open,diesel,5.54,160.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_85173B163B02,LOC_C6AB43142BDB,Faridkot,PB,Harpreet,हरप्रीत,3axle,12150.0,243,open,diesel,4.77,290.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_93E61376630A,LOC_5775AEDC7A87,Kanpur Nagar,UP,Balwant,बलवंत,pickup,1450.0,29,closed,diesel,12.28,60.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_32CB60E4DEF3,LOC_27273A6A3299,Shamli,UP,Rakesh,राकेश,LCV,2930.0,58,refrigerated,diesel,8.43,120.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_7F0EDB730CEF,LOC_CF065FE8EBAB,Gautam Buddha Nagar,UP,Mohan,मोहन,3axle,17970.0,359,open,diesel,3.46,700.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_4F819BA45DBB,LOC_F1EE6A62E5AA,Mahendragarh,HR,Dinesh,दिनेश,2axle,6040.0,120,tipper,diesel,6.01,400.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_1E04417AF8BD,LOC_B9CDAEAD5C72,Mainpuri,UP,Balwant,बलवंत,pickup,1450.0,29,open,ev,11.82,130.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_8655D90B9573,LOC_0D7AAF851D69,Tarn Taran,PB,Harpreet,हरप्रीत,2axle,8560.0,171,open,diesel,6.43,310.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_14D982C0383D,LOC_11A4C40B0A4F,Yamunanagar,HR,Satpal,सतपाल,2axle,6630.0,132,open,diesel,5.38,350.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_A2930A44E92E,LOC_5775AEDC7A87,Kanpur Nagar,UP,Balwant,बलवंत,2axle,8640.0,172,tipper,diesel,5.17,260.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_53479DAD233A,LOC_2B9C182E1BB7,Panchkula,HR,Satpal,सतपाल,3axle,17000.0,340,open,diesel,3.43,330.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8B6AC1173403,LOC_2B9C182E1BB7,Panchkula,HR,Harpreet,हरप्रीत,LCV,2830.0,56,closed,diesel,11.07,170.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_6EE4DF0A18BF,LOC_B26FC239E19A,North Delhi,DL,Ramesh,रमेश,3axle,13930.0,278,closed,diesel,4.49,270.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_531D5E4723D5,LOC_FEFD9351973D,Bathinda,PB,Rakesh,राकेश,2axle,9440.0,188,tipper,diesel,5.89,340.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_6AF7FF60CE3E,LOC_41413C4D1A63,East Delhi,DL,Sukhbir,सुखबीर,LCV,3320.0,66,refrigerated,cng,8.13,200.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_15E4BA3F26DB,LOC_5D316714188F,Faridabad,HR,Jaspal,जसपाल,pickup,840.0,16,closed,diesel,12.62,120.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_CBC644EAB81E,LOC_5775AEDC7A87,Kanpur Nagar,UP,Jaspal,जसपाल,2axle,10540.0,210,tipper,diesel,5.33,250.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_E9C76BCDE1E1,LOC_5D316714188F,Faridabad,HR,Harpreet,हरप्रीत,multi_axle,28950.0,579,open,diesel,3.12,880.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_DE5A14580F03,LOC_5775AEDC7A87,Kanpur Nagar,UP,Harpreet,हरप्रीत,pickup,1360.0,27,open,diesel,13.31,110.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_6A55958D091D,LOC_8DBB3FA667B3,New Delhi,DL,Jaspal,जसपाल,2axle,8250.0,165,open,diesel,5.75,160.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_3A519CFB8F0F,LOC_8DBB3FA667B3,New Delhi,DL,Harpreet,हरप्रीत,multi_axle,26230.0,524,tipper,diesel,3.62,940.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_07C89818BEEF,LOC_03F06DD41C28,Malerkotla,PB,Satpal,सतपाल,2axle,8170.0,163,tipper,diesel,4.78,350.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_0331FB7CD37E,LOC_61BECDCA1350,Central Delhi,DL,Sukhbir,सुखबीर,multi_axle,26610.0,532,tipper,diesel,2.79,450.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_C7B2D2B5DA6C,LOC_EBC017604691,Mathura,UP,Kuldeep,कुलदीप,2axle,8620.0,172,open,diesel,6.01,200.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_8B0A48041C1C,LOC_5775AEDC7A87,Kanpur Nagar,UP,Balwant,बलवंत,3axle,17490.0,349,closed,diesel,4.69,460.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_DF02CF5283B1,LOC_8EAD4661AFB9,Jhajjar,HR,Mohan,मोहन,3axle,13060.0,261,closed,diesel,3.44,360.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_1785FA65C441,LOC_5AA457C919DB,Ludhiana,PB,Balwant,बलवंत,2axle,8350.0,167,open,diesel,4.82,350.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_5136065E98CA,LOC_8F3BDE96C1C3,Rampur,UP,Satpal,सतपाल,multi_axle,29770.0,595,tipper,diesel,3.6,720.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_19722D76C688,LOC_21F591BF08EC,West Delhi,DL,Sukhbir,सुखबीर,LCV,3170.0,63,closed,diesel,10.8,100.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_1ADF63AC033E,LOC_36B5B5F31C8D,Varanasi,UP,Kuldeep,कुलदीप,2axle,7140.0,142,closed,diesel,5.04,290.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_38D254CD73D8,LOC_5D316714188F,Faridabad,HR,Jaspal,जसपाल,LCV,3900.0,78,open,cng,10.09,180.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_16D9D4191F37,LOC_EC1D3E4138DF,Amritsar,PB,Dinesh,दिनेश,3axle,15010.0,300,tipper,diesel,3.79,340.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_289DEA3F9F20,LOC_6B9FA168B682,Firozabad,UP,Naresh,नरेश,3axle,17070.0,341,open,diesel,4.49,410.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_8CABBE59C7B3,LOC_ED9C60D04FC0,SAS Nagar,PB,Rakesh,राकेश,2axle,10360.0,207,tipper,diesel,5.97,300.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_106A24329287,LOC_DD4D9C55D7BB,Fatehgarh Sahib,PB,Harpreet,हरप्रीत,multi_axle,24220.0,484,tipper,diesel,3.24,390.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_D15A035D0AFA,LOC_63A998834201,North East Delhi,DL,Jaspal,जसपाल,2axle,10470.0,209,open,diesel,5.08,350.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_D260776856E5,LOC_4E618897659A,Hathras,UP,Jaspal,जसपाल,pickup,770.0,15,open,cng,13.81,140.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_27106B12CB8F,LOC_B26FC239E19A,North Delhi,DL,Jaspal,जसपाल,3axle,15630.0,312,open,diesel,3.8,320.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_67C732019FDB,LOC_165F0D721F3E,Jalandhar,PB,Vijay,विजय,LCV,3870.0,77,closed,diesel,9.72,190.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_9CCF8291D5EB,LOC_4A5F46E3AFB5,Sitapur,UP,Sukhbir,सुखबीर,2axle,10970.0,219,tipper,diesel,5.33,220.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_6BAC671573ED,LOC_DA9770705B86,South West Delhi,DL,Mohan,मोहन,LCV,3860.0,77,closed,cng,9.38,230.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_B7FB75BB3E0A,LOC_B01B9CC74597,Saharanpur,UP,Sukhbir,सुखबीर,multi_axle,28840.0,576,tipper,diesel,2.83,750.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_3A3637714E72,LOC_5D316714188F,Faridabad,HR,Dinesh,दिनेश,2axle,7350.0,147,open,diesel,6.5,270.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_23A096137946,LOC_7CE3D43FF63F,Ambala,HR,Mohan,मोहन,LCV,1900.0,38,open,diesel,11.08,220.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_C8E078B21004,LOC_B01B9CC74597,Saharanpur,UP,Rakesh,राकेश,LCV,3130.0,62,closed,cng,10.12,190.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_6DD0EEDFBA08,LOC_5D316714188F,Faridabad,HR,Balwant,बलवंत,pickup,1220.0,24,closed,diesel,11.05,70.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_DFE2E7A3874A,LOC_B890897F9CCC,Kapurthala,PB,Vijay,विजय,2axle,9740.0,194,tipper,diesel,4.55,230.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_8305179CCBA4,LOC_63A998834201,North East Delhi,DL,Dinesh,दिनेश,multi_axle,20640.0,412,open,diesel,3.01,840.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_579E0CDDD559,LOC_6042150B38E7,Rohtak,HR,Naresh,नरेश,3axle,15970.0,319,tipper,diesel,4.22,350.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_29479EF7C99F,LOC_08E25919DCC7,Kanpur Dehat,UP,Ramesh,रमेश,2axle,7430.0,148,tipper,diesel,4.63,250.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_CB44CB24B4E0,LOC_8DBB3FA667B3,New Delhi,DL,Dinesh,दिनेश,LCV,3170.0,63,refrigerated,diesel,10.99,130.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_6365D3F80895,LOC_41413C4D1A63,East Delhi,DL,Sukhbir,सुखबीर,2axle,9120.0,182,closed,diesel,6.42,300.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_452D76B93741,LOC_BC48412E6B15,Sambhal,UP,Vijay,विजय,3axle,15530.0,310,closed,diesel,3.84,240.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_090667708D1F,LOC_DA9770705B86,South West Delhi,DL,Mohan,मोहन,LCV,2390.0,47,refrigerated,diesel,8.82,270.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_EE0374A9BEE9,LOC_E71843C35AC6,Bijnor,UP,Satpal,सतपाल,3axle,12200.0,244,open,diesel,4.78,540.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_48EB6FE8DF61,LOC_45C74FBD7B6F,Mansa,PB,Harpreet,हरप्रीत,pickup,1040.0,20,closed,diesel,13.38,170.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_4927520C533F,LOC_1FB47BF8FFEB,Bulandshahr,UP,Dinesh,दिनेश,3axle,14200.0,284,tipper,diesel,4.41,510.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_4B6D47D5F42F,LOC_841795218E67,Ghaziabad,UP,Satpal,सतपाल,LCV,2720.0,54,refrigerated,cng,10.52,160.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_C15D2A86FFB1,LOC_BF1D141289ED,Hoshiarpur,PB,Mohan,मोहन,LCV,3310.0,66,open,cng,10.6,210.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_0E563C6D9D5F,LOC_B26DA7992E56,Prayagraj,UP,Rakesh,राकेश,2axle,9780.0,195,closed,cng,6.49,350.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_E5B6D3B322CE,LOC_C58F1767A842,Barnala,PB,Rakesh,राकेश,3axle,16540.0,330,tipper,diesel,3.57,490.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_A42E9F025D43,LOC_61BECDCA1350,Central Delhi,DL,Dinesh,दिनेश,LCV,1820.0,36,open,diesel,11.58,220.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_17B4D136E735,LOC_6042150B38E7,Rohtak,HR,Mohan,मोहन,LCV,2720.0,54,closed,cng,8.15,250.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_0D8E126F96D0,LOC_5B344A07BA57,Sangrur,PB,Ramesh,रमेश,LCV,2750.0,55,refrigerated,cng,11.98,100.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_29FCBBB41709,LOC_E9EE964E8CFE,South Delhi,DL,Balwant,बलवंत,LCV,2770.0,55,open,diesel,11.6,140.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_42B0F81DE519,LOC_8EAD4661AFB9,Jhajjar,HR,Ramesh,रमेश,LCV,3130.0,62,refrigerated,diesel,11.44,120.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_506AC9DF4812,LOC_E96863625035,Shahdara,DL,Sukhbir,सुखबीर,LCV,3230.0,64,closed,cng,11.83,220.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_866E87497CC2,LOC_ED9C60D04FC0,SAS Nagar,PB,Vijay,विजय,3axle,15740.0,314,closed,diesel,4.73,420.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_923ED67EB35E,LOC_7CE3D43FF63F,Ambala,HR,Sukhbir,सुखबीर,2axle,8110.0,162,open,diesel,5.53,180.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_389956C07ADA,LOC_41413C4D1A63,East Delhi,DL,Satpal,सतपाल,pickup,1210.0,24,open,diesel,13.16,140.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_359ED9AAD837,LOC_C6AB43142BDB,Faridkot,PB,Sukhbir,सुखबीर,pickup,1320.0,26,open,diesel,11.64,70.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_5A00116C5568,LOC_8F3BDE96C1C3,Rampur,UP,Rakesh,राकेश,LCV,2470.0,49,closed,diesel,10.0,210.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_A1CCB70BDA72,LOC_443EF0FB4E8C,Etawah,UP,Satpal,सतपाल,2axle,6480.0,129,open,diesel,5.92,210.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_01E66002417B,LOC_8F3BDE96C1C3,Rampur,UP,Satpal,सतपाल,3axle,14400.0,288,open,diesel,4.73,560.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_315CE0D096AA,LOC_0D7AAF851D69,Tarn Taran,PB,Kuldeep,कुलदीप,2axle,7590.0,151,open,diesel,6.45,200.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_C3A5188327F5,LOC_CF065FE8EBAB,Gautam Buddha Nagar,UP,Jaspal,जसपाल,LCV,2650.0,53,open,cng,10.51,250.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8050CCA53A55,LOC_2011BC2FE7BD,Fazilka,PB,Kuldeep,कुलदीप,pickup,920.0,18,open,cng,13.57,80.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_DCE5BAE448B2,LOC_2B9C182E1BB7,Panchkula,HR,Balwant,बलवंत,LCV,2520.0,50,open,cng,10.92,290.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_F63DB88BF4F8,LOC_2E9E391564C2,Sonipat,HR,Vijay,विजय,LCV,3240.0,64,refrigerated,diesel,8.44,240.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_86DDBB46031F,LOC_4E618897659A,Hathras,UP,Mohan,मोहन,LCV,3790.0,75,closed,cng,8.88,200.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_57C748EE92F0,LOC_21F591BF08EC,West Delhi,DL,Ramesh,रमेश,2axle,7660.0,153,tipper,diesel,6.47,220.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_FA5AAED1C334,LOC_63A998834201,North East Delhi,DL,Vijay,विजय,3axle,14000.0,280,open,diesel,3.77,240.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_F7A44017FF44,LOC_DD4D9C55D7BB,Fatehgarh Sahib,PB,Harpreet,हरप्रीत,LCV,1950.0,39,refrigerated,diesel,9.75,180.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_38FF5D307437,LOC_27273A6A3299,Shamli,UP,Satpal,सतपाल,LCV,1720.0,34,open,diesel,10.5,250.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_4DFDC231E57E,LOC_5AA457C919DB,Ludhiana,PB,Harpreet,हरप्रीत,LCV,2830.0,56,refrigerated,cng,8.38,270.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_9EAC6D0ABBEA,LOC_B0D713DFA81B,Ferozepur,PB,Jaspal,जसपाल,LCV,3150.0,63,closed,diesel,8.37,130.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_16ACE9EF76CD,LOC_5AA457C919DB,Ludhiana,PB,Rakesh,राकेश,LCV,1540.0,30,closed,diesel,9.48,120.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_0FA3DFC14577,LOC_21F591BF08EC,West Delhi,DL,Vijay,विजय,pickup,820.0,16,open,diesel,13.92,120.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_E0C77DD58163,LOC_0D7AAF851D69,Tarn Taran,PB,Mohan,मोहन,pickup,980.0,19,closed,cng,14.94,80.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_5DB18177D4BA,LOC_2ECE587EC515,Hardoi,UP,Harpreet,हरप्रीत,3axle,12900.0,258,closed,diesel,4.45,360.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_B2BFC6E326C7,LOC_9F3A877025DA,Shahjahanpur,UP,Satpal,सतपाल,2axle,9160.0,183,open,cng,4.87,280.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_FFF0E16B86EA,LOC_03F06DD41C28,Malerkotla,PB,Satpal,सतपाल,multi_axle,20290.0,405,open,diesel,3.75,720.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_FC69327D528A,LOC_841795218E67,Ghaziabad,UP,Harpreet,हरप्रीत,2axle,10600.0,212,tipper,diesel,5.33,390.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_A7E826AECBA2,LOC_165F0D721F3E,Jalandhar,PB,Naresh,नरेश,2axle,6750.0,135,tipper,cng,5.39,230.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_426EB8216BBE,LOC_B6370F731EEC,Lucknow,UP,Kuldeep,कुलदीप,2axle,9820.0,196,open,diesel,5.82,370.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_4F95BDB0BA5A,LOC_5775AEDC7A87,Kanpur Nagar,UP,Satpal,सतपाल,3axle,16800.0,336,open,diesel,3.8,360.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_C37572A4FA01,LOC_BACB2642B5AD,Kurukshetra,HR,Balwant,बलवंत,multi_axle,22890.0,457,tipper,diesel,3.79,410.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_347D5629569F,LOC_CF065FE8EBAB,Gautam Buddha Nagar,UP,Balwant,बलवंत,pickup,870.0,17,open,ev,14.63,110.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_AC0EE058C86B,LOC_AC684A297AD1,Bareilly,UP,Satpal,सतपाल,LCV,1930.0,38,closed,cng,11.96,270.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_E3565B341669,LOC_EBC017604691,Mathura,UP,Jaspal,जसपाल,LCV,3100.0,62,refrigerated,diesel,11.42,260.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_169792B203A5,LOC_487C12AA952A,Jind,HR,Harpreet,हरप्रीत,LCV,2630.0,52,open,cng,8.78,210.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_4F30A739ED08,LOC_03F06DD41C28,Malerkotla,PB,Mohan,मोहन,3axle,16930.0,338,closed,diesel,3.86,540.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_85E03896EC42,LOC_F1EE6A62E5AA,Mahendragarh,HR,Mohan,मोहन,pickup,1010.0,20,closed,diesel,12.6,120.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_7C939A3C75A8,LOC_FEFD9351973D,Bathinda,PB,Balwant,बलवंत,2axle,10860.0,217,open,diesel,5.99,360.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_5761F54D80F2,LOC_4E618897659A,Hathras,UP,Harpreet,हरप्रीत,2axle,7680.0,153,tipper,diesel,5.27,170.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_E760130867F3,LOC_2ECE587EC515,Hardoi,UP,Mohan,मोहन,2axle,10740.0,214,open,diesel,5.46,410.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_40B5303313DE,LOC_36B5B5F31C8D,Varanasi,UP,Balwant,बलवंत,pickup,1270.0,25,open,cng,14.36,140.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_EEDF5A5A8AD4,LOC_B01B9CC74597,Saharanpur,UP,Harpreet,हरप्रीत,LCV,1820.0,36,refrigerated,diesel,9.1,120.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_719AE6339BFD,LOC_F20DB0F2A327,Gurugram,HR,Harpreet,हरप्रीत,pickup,1220.0,24,closed,cng,13.31,90.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_FA092739F993,LOC_F1EE6A62E5AA,Mahendragarh,HR,Dinesh,दिनेश,LCV,1940.0,38,refrigerated,cng,8.77,170.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_6745C206CF7D,LOC_08E25919DCC7,Kanpur Dehat,UP,Naresh,नरेश,LCV,2480.0,49,refrigerated,cng,8.57,120.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_58B2A657DF26,LOC_8EAD4661AFB9,Jhajjar,HR,Rakesh,राकेश,LCV,2890.0,57,refrigerated,diesel,9.51,170.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_E260AFDFB21B,LOC_FF96333A5510,North West Delhi,DL,Mohan,मोहन,multi_axle,29400.0,588,open,diesel,2.62,920.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_3CFEB87B3316,LOC_DA9770705B86,South West Delhi,DL,Balwant,बलवंत,3axle,14600.0,292,tipper,diesel,3.55,540.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_105C091EFD2D,LOC_4E618897659A,Hathras,UP,Dinesh,दिनेश,LCV,2550.0,51,refrigerated,diesel,10.2,220.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_BF4524860146,LOC_841795218E67,Ghaziabad,UP,Rakesh,राकेश,multi_axle,23880.0,477,tipper,diesel,3.67,320.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_9143FC770BBE,LOC_443EF0FB4E8C,Etawah,UP,Harpreet,हरप्रीत,2axle,6380.0,127,tipper,diesel,5.48,400.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_E9DC6BD4C060,LOC_B6370F731EEC,Lucknow,UP,Kuldeep,कुलदीप,2axle,10530.0,210,tipper,diesel,5.72,370.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_5D8E3362C1D0,LOC_6042150B38E7,Rohtak,HR,Kuldeep,कुलदीप,3axle,17100.0,342,open,diesel,3.6,250.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_1A09343A6FAC,LOC_D49CDCEB7AF7,Charkhi Dadri,HR,Satpal,सतपाल,multi_axle,25770.0,515,open,diesel,3.49,630.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_57D4B8795120,LOC_6C7E235EC96D,Nawanshahr,PB,Rakesh,राकेश,LCV,3050.0,61,open,diesel,10.85,150.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_D29EEB1F53C4,LOC_8E24E29DF84B,Hisar,HR,Dinesh,दिनेश,LCV,2110.0,42,closed,diesel,10.65,120.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_3850C153C078,LOC_8E5593D8E476,Rupnagar,PB,Ramesh,रमेश,LCV,2970.0,59,refrigerated,diesel,10.84,240.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_BB051CCBCB43,LOC_4A5F46E3AFB5,Sitapur,UP,Rakesh,राकेश,2axle,7530.0,150,open,diesel,5.66,240.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_38645E4F9C39,LOC_41413C4D1A63,East Delhi,DL,Rakesh,राकेश,3axle,12370.0,247,open,diesel,4.67,380.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_33EE201CCB72,LOC_60C46A471111,Pilibhit,UP,Mohan,मोहन,pickup,1150.0,23,open,cng,11.54,70.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_8949F5C9BAF0,LOC_58DEC063659A,Gorakhpur,UP,Mohan,मोहन,2axle,6930.0,138,tipper,diesel,5.84,210.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_1E9419A748CE,LOC_2E9E391564C2,Sonipat,HR,Naresh,नरेश,pickup,850.0,17,open,diesel,12.49,60.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_392E46231431,LOC_8DBB3FA667B3,New Delhi,DL,Satpal,सतपाल,LCV,2260.0,45,refrigerated,diesel,8.01,290.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_EA0BF86B0239,LOC_5D316714188F,Faridabad,HR,Rakesh,राकेश,multi_axle,24700.0,494,tipper,diesel,3.28,590.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_40F5228AAD63,LOC_4E618897659A,Hathras,UP,Sukhbir,सुखबीर,3axle,17520.0,350,open,diesel,4.59,440.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_9294462ECDA6,LOC_ED9C60D04FC0,SAS Nagar,PB,Kuldeep,कुलदीप,LCV,1670.0,33,refrigerated,diesel,10.49,190.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_CE4772AA3291,LOC_8F3BDE96C1C3,Rampur,UP,Balwant,बलवंत,pickup,890.0,17,closed,diesel,15.46,150.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_4A05F6B9B509,LOC_5B344A07BA57,Sangrur,PB,Rakesh,राकेश,multi_axle,28580.0,571,open,diesel,3.72,470.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_77A3676CBD11,LOC_D49CDCEB7AF7,Charkhi Dadri,HR,Ramesh,रमेश,2axle,8420.0,168,open,diesel,6.4,370.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_B05F093FBC7C,LOC_D8FB48D6F894,Fatehabad,HR,Jaspal,जसपाल,pickup,720.0,14,closed,diesel,15.29,160.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_05B72ADB01A0,LOC_F20DB0F2A327,Gurugram,HR,Mohan,मोहन,LCV,1870.0,37,closed,cng,10.06,250.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_F217E05EA4C4,LOC_D2DDEA75080C,Pathankot,PB,Rakesh,राकेश,LCV,2440.0,48,closed,diesel,8.63,160.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_9B8B209713BA,LOC_5242BE7C01CE,Rewari,HR,Satpal,सतपाल,2axle,7270.0,145,tipper,diesel,4.77,320.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_4A67BF4BF624,LOC_E96863625035,Shahdara,DL,Mohan,मोहन,LCV,2690.0,53,open,cng,8.61,190.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_24451540E310,LOC_7CE3D43FF63F,Ambala,HR,Balwant,बलवंत,2axle,9360.0,187,closed,diesel,4.5,390.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_0E796ECF9F25,LOC_8DBB3FA667B3,New Delhi,DL,Mohan,मोहन,2axle,6610.0,132,tipper,diesel,5.48,280.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_F4563EA612B0,LOC_61BECDCA1350,Central Delhi,DL,Rakesh,राकेश,pickup,1450.0,29,closed,diesel,11.8,100.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_176FE1AE1FEE,LOC_B890897F9CCC,Kapurthala,PB,Rakesh,राकेश,3axle,15090.0,301,open,diesel,4.46,610.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_D4AEBAB5652D,LOC_2B9C182E1BB7,Panchkula,HR,Naresh,नरेश,LCV,2360.0,47,refrigerated,diesel,11.07,210.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_FB045E9F7F61,LOC_11A4C40B0A4F,Yamunanagar,HR,Sukhbir,सुखबीर,multi_axle,28890.0,577,open,diesel,2.7,570.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_8EFA0D582F26,LOC_E9EE964E8CFE,South Delhi,DL,Sukhbir,सुखबीर,2axle,8340.0,166,open,diesel,5.12,310.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_53CBDA158281,LOC_5B344A07BA57,Sangrur,PB,Mohan,मोहन,3axle,17530.0,350,tipper,diesel,4.78,420.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_C580340C0DEF,LOC_F86E62177015,Muzaffarnagar,UP,Sukhbir,सुखबीर,pickup,1060.0,21,open,diesel,13.9,150.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_EACC11A598BC,LOC_4E618897659A,Hathras,UP,Vijay,विजय,3axle,15260.0,305,closed,diesel,3.51,270.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_ABC633A3D528,LOC_841795218E67,Ghaziabad,UP,Vijay,विजय,3axle,16520.0,330,tipper,diesel,3.97,200.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_F1DE649175A6,LOC_D49CDCEB7AF7,Charkhi Dadri,HR,Harpreet,हरप्रीत,2axle,7850.0,157,open,diesel,4.99,170.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_93A39B9400FE,LOC_58DEC063659A,Gorakhpur,UP,Sukhbir,सुखबीर,LCV,2160.0,43,closed,diesel,8.23,170.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_DB39FF3E302D,LOC_D24D73F16033,Meerut,UP,Dinesh,दिनेश,2axle,6350.0,127,closed,diesel,5.77,350.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_61201E6441AD,LOC_8DBB3FA667B3,New Delhi,DL,Vijay,विजय,2axle,10550.0,211,tipper,diesel,6.0,430.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_62BE0015EC2D,LOC_2B9C182E1BB7,Panchkula,HR,Vijay,विजय,2axle,9310.0,186,tipper,diesel,5.24,370.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_6457D63032E1,LOC_D24D73F16033,Meerut,UP,Jaspal,जसपाल,3axle,14530.0,290,closed,diesel,4.43,360.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_8372A88C0998,LOC_8DBB3FA667B3,New Delhi,DL,Sukhbir,सुखबीर,3axle,12610.0,252,tipper,diesel,4.51,660.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_4BC2A3613C1C,LOC_ED9C60D04FC0,SAS Nagar,PB,Harpreet,हरप्रीत,2axle,6660.0,133,open,diesel,5.75,440.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_0FDF29F03416,LOC_6B9FA168B682,Firozabad,UP,Satpal,सतपाल,2axle,9740.0,194,closed,diesel,4.73,220.0,09:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_EEB1DE456EE4,LOC_36B5B5F31C8D,Varanasi,UP,Kuldeep,कुलदीप,multi_axle,31250.0,625,open,diesel,3.28,690.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_4C099DD0CCEF,LOC_FEFD9351973D,Bathinda,PB,Dinesh,दिनेश,LCV,1590.0,31,open,diesel,10.35,140.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_B8D698CC7FBB,LOC_6B9FA168B682,Firozabad,UP,Harpreet,हरप्रीत,pickup,1340.0,26,closed,cng,12.3,80.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_2632473D56DF,LOC_41413C4D1A63,East Delhi,DL,Sukhbir,सुखबीर,3axle,12680.0,253,closed,diesel,3.87,410.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_3A218767D263,LOC_EE8F1CF00ECF,Bhiwani,HR,Balwant,बलवंत,LCV,2210.0,44,open,diesel,8.44,180.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_CF954DBA1CFE,LOC_91BA4A3395D5,Sirsa,HR,Balwant,बलवंत,LCV,2450.0,49,closed,diesel,11.78,130.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_057940469E3F,LOC_190E748F376B,Barabanki,UP,Ramesh,रमेश,3axle,15310.0,306,tipper,diesel,4.05,680.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_ED4A0A9B677B,LOC_B26DA7992E56,Prayagraj,UP,Dinesh,दिनेश,LCV,2320.0,46,closed,diesel,11.28,180.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_4FF849112E23,LOC_27273A6A3299,Shamli,UP,Jaspal,जसपाल,3axle,13040.0,260,open,diesel,3.49,410.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_FE0AFC0334BF,LOC_CF065FE8EBAB,Gautam Buddha Nagar,UP,Sukhbir,सुखबीर,3axle,14010.0,280,open,diesel,4.53,470.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_6F9F028D03FA,LOC_8EAD4661AFB9,Jhajjar,HR,Ramesh,रमेश,3axle,12100.0,242,closed,diesel,4.76,670.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_A08D17F030E8,LOC_2B9C182E1BB7,Panchkula,HR,Naresh,नरेश,pickup,1180.0,23,open,diesel,12.38,170.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_7E9A026D4494,LOC_5775AEDC7A87,Kanpur Nagar,UP,Jaspal,जसपाल,2axle,6900.0,138,tipper,diesel,5.04,400.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_1D16333AEC58,LOC_E96863625035,Shahdara,DL,Harpreet,हरप्रीत,LCV,2350.0,47,closed,diesel,9.83,110.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_1529727AD926,LOC_5775AEDC7A87,Kanpur Nagar,UP,Jaspal,जसपाल,LCV,3770.0,75,refrigerated,diesel,10.44,290.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_B0DF2497C19C,LOC_11A4C40B0A4F,Yamunanagar,HR,Vijay,विजय,2axle,7450.0,149,open,diesel,6.24,420.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_BBB99565DDFE,LOC_5775AEDC7A87,Kanpur Nagar,UP,Sukhbir,सुखबीर,LCV,3050.0,61,refrigerated,cng,10.93,220.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_C33EC1A45F69,LOC_5B344A07BA57,Sangrur,PB,Vijay,विजय,LCV,2870.0,57,closed,ev,8.15,150.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_0E62CA865483,LOC_7CE3D43FF63F,Ambala,HR,Kuldeep,कुलदीप,2axle,6740.0,134,open,diesel,5.89,440.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_0C5E1B5422FA,LOC_FEFD9351973D,Bathinda,PB,Dinesh,दिनेश,3axle,17550.0,351,tipper,diesel,4.62,520.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_9F96CC4092E7,LOC_B26FC239E19A,North Delhi,DL,Dinesh,दिनेश,3axle,12000.0,240,tipper,diesel,4.43,550.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_C943D7479AB1,LOC_60C46A471111,Pilibhit,UP,Dinesh,दिनेश,3axle,13170.0,263,tipper,diesel,3.9,440.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_A9A51C33E181,LOC_5D316714188F,Faridabad,HR,Vijay,विजय,LCV,3960.0,79,refrigerated,cng,10.2,290.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_5D8D73EA6549,LOC_4A5F46E3AFB5,Sitapur,UP,Balwant,बलवंत,3axle,14970.0,299,open,diesel,3.57,490.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_A4DDCAE7C8D0,LOC_2E423964E639,Agra,UP,Mohan,मोहन,LCV,1720.0,34,closed,diesel,9.14,100.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_3DD0E9D4177C,LOC_0B27B307A77E,Panipat,HR,Harpreet,हरप्रीत,3axle,17440.0,348,closed,diesel,4.66,520.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8811FA65E346,LOC_DA9770705B86,South West Delhi,DL,Rakesh,राकेश,pickup,1260.0,25,closed,cng,13.1,140.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_C44C70509AEF,LOC_B01B9CC74597,Saharanpur,UP,Kuldeep,कुलदीप,LCV,2820.0,56,closed,cng,11.69,270.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_756EB7771C3B,LOC_AA53E75D54A9,Etah,UP,Dinesh,दिनेश,pickup,1300.0,26,closed,diesel,14.62,80.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_868B0E540874,LOC_AFF866260256,Moradabad,UP,Dinesh,दिनेश,2axle,6500.0,130,closed,cng,5.92,340.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_845EA1F8ABE4,LOC_B890897F9CCC,Kapurthala,PB,Harpreet,हरप्रीत,3axle,17150.0,343,closed,diesel,4.67,550.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_5116501BE0D5,LOC_61BECDCA1350,Central Delhi,DL,Rakesh,राकेश,3axle,13240.0,264,closed,diesel,3.66,430.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_94A47B39CE03,LOC_E96863625035,Shahdara,DL,Mohan,मोहन,LCV,2860.0,57,open,diesel,8.22,190.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_70DC8DDCBF62,LOC_2E423964E639,Agra,UP,Jaspal,जसपाल,LCV,1610.0,32,refrigerated,cng,9.84,170.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_CA2084F9B559,LOC_2011BC2FE7BD,Fazilka,PB,Harpreet,हरप्रीत,pickup,1260.0,25,closed,ev,11.08,150.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_2BA6FAFE7A91,LOC_5D316714188F,Faridabad,HR,Mohan,मोहन,pickup,1040.0,20,open,diesel,11.02,130.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_BBF725739E94,LOC_58DEC063659A,Gorakhpur,UP,Dinesh,दिनेश,LCV,2010.0,40,refrigerated,diesel,9.03,190.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_28DF3E106817,LOC_5AA457C919DB,Ludhiana,PB,Sukhbir,सुखबीर,LCV,2160.0,43,closed,diesel,10.83,300.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_2A2A3F44FD68,LOC_8EAD4661AFB9,Jhajjar,HR,Satpal,सतपाल,3axle,13420.0,268,closed,diesel,4.8,210.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_99ABAC0F81A2,LOC_CF209A6CE403,Hapur,UP,Rakesh,राकेश,2axle,7310.0,146,tipper,diesel,5.86,380.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_C846AED53548,LOC_8DBB3FA667B3,New Delhi,DL,Kuldeep,कुलदीप,LCV,2760.0,55,open,diesel,11.94,200.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_74665B82770B,LOC_2B9C182E1BB7,Panchkula,HR,Naresh,नरेश,pickup,1280.0,25,open,ev,14.54,160.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_AEFF0F3D6157,LOC_4E618897659A,Hathras,UP,Kuldeep,कुलदीप,2axle,8080.0,161,open,diesel,5.12,300.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_2328CBC73B38,LOC_2B9C182E1BB7,Panchkula,HR,Dinesh,दिनेश,2axle,8000.0,160,open,diesel,5.34,440.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_5A9A36000076,LOC_B6370F731EEC,Lucknow,UP,Balwant,बलवंत,2axle,7700.0,154,open,diesel,5.88,270.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_DD2D862C7E49,LOC_B26FC239E19A,North Delhi,DL,Naresh,नरेश,2axle,10520.0,210,closed,diesel,5.94,320.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_6607D43CE34C,LOC_8DBB3FA667B3,New Delhi,DL,Dinesh,दिनेश,LCV,1880.0,37,open,ev,10.56,160.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_420B16096D5C,LOC_B39E76DCD93F,Nuh,HR,Jaspal,जसपाल,pickup,1310.0,26,open,cng,11.96,80.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_7F9119EC965F,LOC_63A998834201,North East Delhi,DL,Mohan,मोहन,LCV,2680.0,53,open,diesel,10.74,280.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_5C7FAD79866D,LOC_36B5B5F31C8D,Varanasi,UP,Vijay,विजय,pickup,1020.0,20,closed,diesel,13.72,140.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_E3F66E4B0894,LOC_190E748F376B,Barabanki,UP,Jaspal,जसपाल,LCV,2980.0,59,open,diesel,10.42,200.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_503C0FADF266,LOC_F86E62177015,Muzaffarnagar,UP,Naresh,नरेश,LCV,3740.0,74,refrigerated,diesel,10.53,210.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_C73CD385496C,LOC_1FB47BF8FFEB,Bulandshahr,UP,Naresh,नरेश,2axle,6190.0,123,tipper,diesel,5.36,340.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_D07B7539F7D3,LOC_AA53E75D54A9,Etah,UP,Rakesh,राकेश,LCV,2750.0,55,closed,diesel,11.36,120.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_A0E297CED6E7,LOC_D24D73F16033,Meerut,UP,Kuldeep,कुलदीप,LCV,2700.0,54,open,cng,11.61,220.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_5C30BC50870E,LOC_B56ABDBA32E2,Aligarh,UP,Balwant,बलवंत,LCV,3880.0,77,open,diesel,11.97,150.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_72CA4D066FFF,LOC_2E9E391564C2,Sonipat,HR,Balwant,बलवंत,2axle,10560.0,211,open,diesel,5.99,440.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_6A34F369DDA0,LOC_BF1D141289ED,Hoshiarpur,PB,Kuldeep,कुलदीप,pickup,1390.0,27,open,diesel,11.3,110.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_39D901293A44,LOC_0B27B307A77E,Panipat,HR,Vijay,विजय,LCV,2740.0,54,closed,diesel,9.3,120.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_C2D77EC91F01,LOC_E7B504BE8FE9,Patiala,PB,Naresh,नरेश,pickup,1050.0,21,closed,diesel,14.37,90.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_35D82D2C2693,LOC_3B372919B752,Karnal,HR,Naresh,नरेश,3axle,17860.0,357,tipper,diesel,3.94,330.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_1739A0E69F8F,LOC_BC48412E6B15,Sambhal,UP,Rakesh,राकेश,3axle,16410.0,328,tipper,diesel,3.48,470.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_B51DA48ACA2C,LOC_443EF0FB4E8C,Etawah,UP,Mohan,मोहन,2axle,10110.0,202,tipper,diesel,4.52,330.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_A64F002D107E,LOC_63A998834201,North East Delhi,DL,Vijay,विजय,3axle,12270.0,245,tipper,diesel,3.41,600.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_5CE77F839B58,LOC_EE8F1CF00ECF,Bhiwani,HR,Mohan,मोहन,LCV,1740.0,34,closed,diesel,11.67,290.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_499061CF26CB,LOC_B0D713DFA81B,Ferozepur,PB,Jaspal,जसपाल,2axle,9060.0,181,open,diesel,4.79,390.0,09:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_7404AB9A5D0C,LOC_ED9C60D04FC0,SAS Nagar,PB,Rakesh,राकेश,2axle,10520.0,210,tipper,diesel,5.37,340.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_A6C340223DBC,LOC_BC48412E6B15,Sambhal,UP,Naresh,नरेश,pickup,1430.0,28,closed,diesel,15.12,110.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_0596206DA958,LOC_58DEC063659A,Gorakhpur,UP,Vijay,विजय,LCV,3700.0,74,closed,cng,9.93,180.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_2A1553ADA58F,LOC_08E25919DCC7,Kanpur Dehat,UP,Kuldeep,कुलदीप,LCV,3400.0,68,refrigerated,cng,9.41,260.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_FE166AA6E113,LOC_5D316714188F,Faridabad,HR,Rakesh,राकेश,3axle,15260.0,305,tipper,diesel,3.66,670.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_30BC51C9A940,LOC_E7B504BE8FE9,Patiala,PB,Sukhbir,सुखबीर,LCV,3530.0,70,refrigerated,diesel,9.01,240.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_EEA8DB00B33D,LOC_08E25919DCC7,Kanpur Dehat,UP,Kuldeep,कुलदीप,multi_axle,26280.0,525,tipper,diesel,3.29,950.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_F54446A7E6AF,LOC_841795218E67,Ghaziabad,UP,Satpal,सतपाल,LCV,2010.0,40,closed,diesel,10.53,190.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_899C46DBA1D5,LOC_1FB47BF8FFEB,Bulandshahr,UP,Harpreet,हरप्रीत,LCV,3880.0,77,open,diesel,8.87,230.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_9DFA15E0928C,LOC_EBC017604691,Mathura,UP,Vijay,विजय,2axle,8820.0,176,closed,diesel,5.91,220.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_DF518143BD2B,LOC_BD15AF538A86,South East Delhi,DL,Rakesh,राकेश,LCV,3850.0,77,open,diesel,9.26,220.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_D51F1F9567AE,LOC_2275B2D35F85,Palwal,HR,Mohan,मोहन,LCV,2960.0,59,closed,diesel,9.93,110.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_9477B20008B6,LOC_2275B2D35F85,Palwal,HR,Sukhbir,सुखबीर,pickup,790.0,15,open,diesel,13.17,120.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_2A518021377B,LOC_1FB47BF8FFEB,Bulandshahr,UP,Rakesh,राकेश,LCV,2950.0,59,refrigerated,diesel,11.4,160.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_1E6386CE9B0D,LOC_E71843C35AC6,Bijnor,UP,Satpal,सतपाल,3axle,17000.0,340,open,diesel,4.41,220.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_13B28E209BDB,LOC_B0D713DFA81B,Ferozepur,PB,Sukhbir,सुखबीर,3axle,17650.0,353,open,diesel,4.01,390.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_B6CE07A71D80,LOC_B26DA7992E56,Prayagraj,UP,Ramesh,रमेश,multi_axle,30590.0,611,tipper,diesel,2.62,940.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_F0C91B5B2FC0,LOC_841795218E67,Ghaziabad,UP,Rakesh,राकेश,3axle,13190.0,263,open,diesel,4.39,330.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_EEDB687F9E31,LOC_841795218E67,Ghaziabad,UP,Balwant,बलवंत,pickup,1400.0,28,closed,cng,12.95,80.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_04AD092A1046,LOC_C58F1767A842,Barnala,PB,Balwant,बलवंत,3axle,13890.0,277,open,diesel,3.5,520.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_061AB495BE27,LOC_796345940EEC,Budaun,UP,Naresh,नरेश,pickup,1130.0,22,closed,diesel,12.21,100.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_0AB63953745D,LOC_8E5593D8E476,Rupnagar,PB,Dinesh,दिनेश,3axle,16580.0,331,closed,diesel,3.59,500.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_9F8038E305C7,LOC_0F3D188854D6,Amroha,UP,Mohan,मोहन,3axle,15870.0,317,closed,diesel,3.5,210.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_BCC966E673C0,LOC_D24D73F16033,Meerut,UP,Ramesh,रमेश,multi_axle,30750.0,615,tipper,diesel,3.23,580.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_340016F2B945,LOC_FEFD9351973D,Bathinda,PB,Mohan,मोहन,multi_axle,20560.0,411,open,diesel,2.7,610.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_9797160F967D,LOC_BD15AF538A86,South East Delhi,DL,Vijay,विजय,3axle,16850.0,337,open,diesel,4.14,670.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_2C5697FD65F3,LOC_D24D73F16033,Meerut,UP,Kuldeep,कुलदीप,pickup,1470.0,29,open,diesel,11.72,160.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_694A5DF7166E,LOC_D2DDEA75080C,Pathankot,PB,Mohan,मोहन,LCV,2180.0,43,closed,diesel,10.64,200.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_153BCA0BA278,LOC_443EF0FB4E8C,Etawah,UP,Dinesh,दिनेश,LCV,2650.0,53,open,cng,9.7,110.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_938ED02F82A5,LOC_BC48412E6B15,Sambhal,UP,Harpreet,हरप्रीत,2axle,8750.0,175,tipper,diesel,5.02,200.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_02CA88617317,LOC_B26FC239E19A,North Delhi,DL,Ramesh,रमेश,LCV,2480.0,49,refrigerated,cng,8.21,230.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_BFE3723152B3,LOC_BC83DA386B0E,Baghpat,UP,Vijay,विजय,LCV,3810.0,76,closed,diesel,10.4,270.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_EF6F11280A6A,LOC_BC83DA386B0E,Baghpat,UP,Satpal,सतपाल,LCV,2340.0,46,open,diesel,10.4,180.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_F57FB85923E6,LOC_AFF866260256,Moradabad,UP,Sukhbir,सुखबीर,LCV,4000.0,80,refrigerated,cng,11.06,210.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_C1175283E1D9,LOC_27273A6A3299,Shamli,UP,Satpal,सतपाल,pickup,920.0,18,open,diesel,14.55,90.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_4184D4F5D88F,LOC_165F0D721F3E,Jalandhar,PB,Jaspal,जसपाल,2axle,6280.0,125,tipper,diesel,4.53,390.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_28733333D0A6,LOC_5B344A07BA57,Sangrur,PB,Mohan,मोहन,2axle,9850.0,197,open,diesel,5.22,370.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_273073753A67,LOC_8DBB3FA667B3,New Delhi,DL,Kuldeep,कुलदीप,2axle,10200.0,204,open,diesel,5.24,210.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_D5A8DC42C947,LOC_1FB47BF8FFEB,Bulandshahr,UP,Dinesh,दिनेश,3axle,13320.0,266,open,diesel,4.05,490.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_B4E942FB3E8F,LOC_21F591BF08EC,West Delhi,DL,Rakesh,राकेश,2axle,9880.0,197,closed,diesel,5.34,380.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_D11E32ABA953,LOC_B6370F731EEC,Lucknow,UP,Balwant,बलवंत,3axle,16940.0,338,open,diesel,4.05,440.0,09:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_3F769E6A1A5E,LOC_BD15AF538A86,South East Delhi,DL,Harpreet,हरप्रीत,2axle,9190.0,183,open,diesel,6.06,160.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_AE89DA00CCCF,LOC_AFF866260256,Moradabad,UP,Jaspal,जसपाल,LCV,1750.0,35,closed,diesel,8.24,230.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_21A36B979651,LOC_36B5B5F31C8D,Varanasi,UP,Rakesh,राकेश,LCV,2200.0,44,open,cng,8.96,280.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_7B990BCB315F,LOC_E96863625035,Shahdara,DL,Dinesh,दिनेश,2axle,10660.0,213,tipper,diesel,5.02,410.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_B84D3F394315,LOC_11A4C40B0A4F,Yamunanagar,HR,Kuldeep,कुलदीप,LCV,3490.0,69,closed,diesel,10.62,160.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_087A3F80418D,LOC_45C74FBD7B6F,Mansa,PB,Dinesh,दिनेश,3axle,12640.0,252,open,diesel,3.43,500.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_C9488548F340,LOC_E9EE964E8CFE,South Delhi,DL,Kuldeep,कुलदीप,3axle,12080.0,241,open,diesel,4.56,380.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_16E5A4F3E8DF,LOC_8EAD4661AFB9,Jhajjar,HR,Balwant,बलवंत,2axle,8060.0,161,closed,diesel,5.22,310.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_A28CD824B27B,LOC_190E748F376B,Barabanki,UP,Satpal,सतपाल,3axle,16720.0,334,closed,diesel,4.27,610.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_F2320BC974CA,LOC_FF96333A5510,North West Delhi,DL,Harpreet,हरप्रीत,LCV,1920.0,38,refrigerated,diesel,9.22,240.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_1E6E397FD04B,LOC_443EF0FB4E8C,Etawah,UP,Kuldeep,कुलदीप,LCV,2360.0,47,closed,cng,10.0,190.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_2EC9632BD23F,LOC_36B5B5F31C8D,Varanasi,UP,Mohan,मोहन,multi_axle,25040.0,500,tipper,diesel,3.19,730.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_067F3D7A49A8,LOC_7CE3D43FF63F,Ambala,HR,Kuldeep,कुलदीप,pickup,1170.0,23,open,cng,14.19,180.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_9D1C16C6C6D2,LOC_443EF0FB4E8C,Etawah,UP,Mohan,मोहन,LCV,3480.0,69,closed,diesel,8.24,180.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_BDC7168C085A,LOC_5242BE7C01CE,Rewari,HR,Mohan,मोहन,LCV,3000.0,60,open,diesel,11.17,140.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_EE6431FC41DB,LOC_B56ABDBA32E2,Aligarh,UP,Ramesh,रमेश,multi_axle,23370.0,467,tipper,diesel,2.83,610.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_8BB9FA95D4D9,LOC_841795218E67,Ghaziabad,UP,Sukhbir,सुखबीर,2axle,6730.0,134,tipper,diesel,6.33,200.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_E5C58E40D891,LOC_487C12AA952A,Jind,HR,Harpreet,हरप्रीत,LCV,3190.0,63,refrigerated,diesel,11.03,110.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_43E6DED71D1A,LOC_CF209A6CE403,Hapur,UP,Rakesh,राकेश,3axle,13390.0,267,open,diesel,3.75,590.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_A5CB9D0FA1C9,LOC_F20DB0F2A327,Gurugram,HR,Harpreet,हरप्रीत,2axle,6510.0,130,tipper,diesel,5.76,320.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_AA8BF80E5DEA,LOC_5B344A07BA57,Sangrur,PB,Ramesh,रमेश,3axle,12600.0,252,closed,diesel,3.43,300.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_0C76F65062FC,LOC_21F591BF08EC,West Delhi,DL,Kuldeep,कुलदीप,LCV,3870.0,77,open,diesel,11.44,140.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_CBA0CC8EBCBA,LOC_D8FB48D6F894,Fatehabad,HR,Jaspal,जसपाल,pickup,1040.0,20,closed,cng,14.79,140.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_536C1B2DE910,LOC_8EAD4661AFB9,Jhajjar,HR,Naresh,नरेश,2axle,6340.0,126,closed,diesel,5.77,170.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_6C3165FB39B7,LOC_796345940EEC,Budaun,UP,Jaspal,जसपाल,2axle,6120.0,122,closed,diesel,4.52,160.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_BEDCBB95036F,LOC_D24D73F16033,Meerut,UP,Rakesh,राकेश,pickup,1460.0,29,open,diesel,12.1,110.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_747DD2875E6A,LOC_BD15AF538A86,South East Delhi,DL,Satpal,सतपाल,3axle,14490.0,289,open,diesel,3.58,600.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_C83D46088374,LOC_36B5B5F31C8D,Varanasi,UP,Rakesh,राकेश,pickup,1160.0,23,closed,diesel,12.09,90.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_70EBA429E209,LOC_0D7AAF851D69,Tarn Taran,PB,Balwant,बलवंत,LCV,2680.0,53,open,diesel,9.74,170.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_4F6C0189023F,LOC_5775AEDC7A87,Kanpur Nagar,UP,Vijay,विजय,2axle,6420.0,128,tipper,diesel,5.77,270.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_8CE158DC2C71,LOC_B39E76DCD93F,Nuh,HR,Mohan,मोहन,LCV,3380.0,67,open,diesel,9.93,220.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8F1CA5203CBE,LOC_487C12AA952A,Jind,HR,Ramesh,रमेश,3axle,15360.0,307,open,diesel,3.68,400.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_8299CD0311BD,LOC_B01B9CC74597,Saharanpur,UP,Vijay,विजय,pickup,1210.0,24,closed,ev,12.83,160.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_33991C81BF85,LOC_E96863625035,Shahdara,DL,Sukhbir,सुखबीर,2axle,9670.0,193,tipper,diesel,4.94,360.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_C59B1FC1100A,LOC_F20DB0F2A327,Gurugram,HR,Rakesh,राकेश,3axle,16800.0,336,open,diesel,3.98,700.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_486AB8FB5CC5,LOC_08710C80560B,Moga,PB,Naresh,नरेश,3axle,17680.0,353,tipper,diesel,4.64,460.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_E3355928E62A,LOC_8DBB3FA667B3,New Delhi,DL,Vijay,विजय,multi_axle,20260.0,405,tipper,diesel,3.47,350.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_5670BABEA691,LOC_AC684A297AD1,Bareilly,UP,Rakesh,राकेश,LCV,1760.0,35,closed,diesel,10.3,100.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_1A728EEE2A9E,LOC_841795218E67,Ghaziabad,UP,Kuldeep,कुलदीप,2axle,10810.0,216,closed,diesel,5.92,220.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_8786EA160AA6,LOC_36B5B5F31C8D,Varanasi,UP,Balwant,बलवंत,LCV,2130.0,42,closed,diesel,9.92,130.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_1BA53DEE443E,LOC_AB3DB4CE53FF,Gurdaspur,PB,Satpal,सतपाल,pickup,930.0,18,open,cng,12.81,100.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_38B1E33BF502,LOC_B890897F9CCC,Kapurthala,PB,Mohan,मोहन,LCV,2190.0,43,open,cng,10.12,160.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_CC5E9F699FD3,LOC_ED9C60D04FC0,SAS Nagar,PB,Harpreet,हरप्रीत,2axle,10450.0,209,open,cng,5.68,230.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_C9EA6F20E301,LOC_E96863625035,Shahdara,DL,Harpreet,हरप्रीत,2axle,6710.0,134,closed,diesel,5.06,210.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_624B4963694A,LOC_0B27B307A77E,Panipat,HR,Vijay,विजय,pickup,890.0,17,open,diesel,11.18,70.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_718C8C333BD6,LOC_BC48412E6B15,Sambhal,UP,Dinesh,दिनेश,2axle,7620.0,152,tipper,diesel,6.02,430.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_DC3128CC0073,LOC_B890897F9CCC,Kapurthala,PB,Vijay,विजय,pickup,710.0,14,closed,diesel,12.19,100.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_C6B7BF5968EF,LOC_E96863625035,Shahdara,DL,Mohan,मोहन,3axle,17330.0,346,open,diesel,4.5,330.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_529B47FB0E0C,LOC_0B27B307A77E,Panipat,HR,Harpreet,हरप्रीत,3axle,16060.0,321,tipper,diesel,4.61,370.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_D0FF4E4E8289,LOC_BC48412E6B15,Sambhal,UP,Dinesh,दिनेश,LCV,3200.0,64,refrigerated,diesel,10.93,110.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_38CCD92D5770,LOC_21F591BF08EC,West Delhi,DL,Rakesh,राकेश,2axle,6550.0,131,closed,diesel,4.69,440.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_37EC8A17015B,LOC_11A4C40B0A4F,Yamunanagar,HR,Harpreet,हरप्रीत,pickup,910.0,18,open,diesel,15.31,160.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_63CACAC7A5D2,LOC_63A998834201,North East Delhi,DL,Kuldeep,कुलदीप,2axle,8970.0,179,open,diesel,5.69,310.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_C465A0917CF8,LOC_45C74FBD7B6F,Mansa,PB,Sukhbir,सुखबीर,2axle,6940.0,138,tipper,diesel,5.58,260.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_BA0F9737B3C2,LOC_6042150B38E7,Rohtak,HR,Kuldeep,कुलदीप,LCV,2420.0,48,closed,cng,11.24,120.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_0C4083577035,LOC_5242BE7C01CE,Rewari,HR,Ramesh,रमेश,pickup,970.0,19,closed,diesel,11.75,60.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_BDD154F2E697,LOC_DD4D9C55D7BB,Fatehgarh Sahib,PB,Balwant,बलवंत,2axle,8340.0,166,closed,diesel,5.01,370.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_093AF5F63820,LOC_AC684A297AD1,Bareilly,UP,Vijay,विजय,pickup,1260.0,25,open,diesel,14.59,150.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_393B5B33E25C,LOC_B6370F731EEC,Lucknow,UP,Ramesh,रमेश,LCV,2090.0,41,closed,diesel,9.76,280.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_74A618D8B782,LOC_0B27B307A77E,Panipat,HR,Mohan,मोहन,LCV,2640.0,52,closed,diesel,8.08,220.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_B8D63B84D295,LOC_B26DA7992E56,Prayagraj,UP,Ramesh,रमेश,LCV,1940.0,38,refrigerated,diesel,8.47,300.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_3F175C42FEAA,LOC_5AA457C919DB,Ludhiana,PB,Vijay,विजय,multi_axle,25290.0,505,open,diesel,3.08,440.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_9BC2963BECB3,LOC_08E25919DCC7,Kanpur Dehat,UP,Rakesh,राकेश,2axle,10540.0,210,tipper,diesel,4.63,430.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_F26C74190352,LOC_C6AB43142BDB,Faridkot,PB,Vijay,विजय,LCV,2970.0,59,closed,diesel,11.51,220.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_403E348EEBE4,LOC_DD4D9C55D7BB,Fatehgarh Sahib,PB,Naresh,नरेश,3axle,13400.0,268,tipper,diesel,4.74,530.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_D4439C2C9539,LOC_BD15AF538A86,South East Delhi,DL,Balwant,बलवंत,2axle,7330.0,146,open,diesel,4.53,360.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_DFE1E1892764,LOC_2E423964E639,Agra,UP,Ramesh,रमेश,LCV,3710.0,74,closed,diesel,9.61,280.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_8D8A8174B23D,LOC_DA9770705B86,South West Delhi,DL,Mohan,मोहन,2axle,7330.0,146,tipper,diesel,5.29,190.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_554F6A6717A5,LOC_B6370F731EEC,Lucknow,UP,Dinesh,दिनेश,pickup,1190.0,23,closed,cng,11.8,130.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8AE0F3C790BB,LOC_FF96333A5510,North West Delhi,DL,Sukhbir,सुखबीर,3axle,17620.0,352,tipper,diesel,4.76,280.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_E290981DF9DC,LOC_0F3D188854D6,Amroha,UP,Satpal,सतपाल,LCV,3850.0,77,open,diesel,9.47,110.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_CDCB8D0108E8,LOC_BF1D141289ED,Hoshiarpur,PB,Kuldeep,कुलदीप,pickup,1020.0,20,open,diesel,11.29,120.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_CE450D7F416B,LOC_F1EE6A62E5AA,Mahendragarh,HR,Satpal,सतपाल,3axle,12650.0,253,closed,diesel,4.02,310.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_69C70C8EC0E8,LOC_BC83DA386B0E,Baghpat,UP,Kuldeep,कुलदीप,pickup,1430.0,28,open,ev,13.25,130.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_E07D6DD07728,LOC_41413C4D1A63,East Delhi,DL,Dinesh,दिनेश,2axle,8300.0,166,open,diesel,5.08,290.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_D5734C94CA97,LOC_21F591BF08EC,West Delhi,DL,Vijay,विजय,multi_axle,23880.0,477,tipper,diesel,3.52,360.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_1CB4865E3CF1,LOC_08E25919DCC7,Kanpur Dehat,UP,Ramesh,रमेश,LCV,2930.0,58,refrigerated,diesel,10.12,250.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_3ABB42F7D8F0,LOC_D24D73F16033,Meerut,UP,Rakesh,राकेश,pickup,1340.0,26,closed,ev,14.16,160.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_0FE81F3ABCB0,LOC_C90487F88BAC,Muktsar,PB,Rakesh,राकेश,LCV,3720.0,74,open,diesel,9.53,120.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_7CACB8009A8C,LOC_841795218E67,Ghaziabad,UP,Balwant,बलवंत,3axle,14720.0,294,closed,diesel,3.5,330.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_C24544F9AF63,LOC_BC48412E6B15,Sambhal,UP,Balwant,बलवंत,LCV,3480.0,69,refrigerated,diesel,9.97,230.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_4FCA7589A181,LOC_8EAD4661AFB9,Jhajjar,HR,Mohan,मोहन,pickup,1120.0,22,open,diesel,14.12,150.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_017DA12B162E,LOC_5B344A07BA57,Sangrur,PB,Ramesh,रमेश,multi_axle,31980.0,639,tipper,diesel,3.3,320.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_5801D39EB402,LOC_EE8F1CF00ECF,Bhiwani,HR,Kuldeep,कुलदीप,3axle,15040.0,300,open,diesel,3.89,500.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_02F2C021CA5B,LOC_9F3A877025DA,Shahjahanpur,UP,Dinesh,दिनेश,2axle,7210.0,144,closed,diesel,5.1,260.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_335B9874CA1F,LOC_E7B504BE8FE9,Patiala,PB,Harpreet,हरप्रीत,2axle,7200.0,144,closed,diesel,5.86,230.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_00AA4EC74478,LOC_E96863625035,Shahdara,DL,Mohan,मोहन,pickup,930.0,18,open,cng,13.81,150.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_E9BAAAA5BD82,LOC_B39E76DCD93F,Nuh,HR,Harpreet,हरप्रीत,LCV,1710.0,34,refrigerated,diesel,9.83,230.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_47DBAD05B9AC,LOC_27273A6A3299,Shamli,UP,Naresh,नरेश,pickup,1240.0,24,open,diesel,14.76,80.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_9E9C18F26A3A,LOC_0D7AAF851D69,Tarn Taran,PB,Harpreet,हरप्रीत,2axle,6560.0,131,closed,cng,6.09,260.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_4F7292FB6B5C,LOC_B39E76DCD93F,Nuh,HR,Harpreet,हरप्रीत,LCV,3710.0,74,refrigerated,diesel,10.88,290.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_26D007A4581B,LOC_DD4D9C55D7BB,Fatehgarh Sahib,PB,Balwant,बलवंत,pickup,1230.0,24,closed,cng,11.84,160.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_95E9B951FE4B,LOC_841795218E67,Ghaziabad,UP,Sukhbir,सुखबीर,LCV,3090.0,61,closed,ev,8.88,160.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_592A7431AD8F,LOC_C90487F88BAC,Muktsar,PB,Vijay,विजय,2axle,10840.0,216,closed,diesel,4.61,260.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_D15B8332AEB2,LOC_6C7E235EC96D,Nawanshahr,PB,Satpal,सतपाल,3axle,15180.0,303,open,diesel,4.71,310.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_0617E774334D,LOC_165F0D721F3E,Jalandhar,PB,Rakesh,राकेश,LCV,2400.0,48,refrigerated,diesel,9.71,280.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_D0CB5004F418,LOC_8DBB3FA667B3,New Delhi,DL,Dinesh,दिनेश,pickup,1390.0,27,closed,diesel,12.29,150.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_CB1859F20CFD,LOC_BC48412E6B15,Sambhal,UP,Naresh,नरेश,3axle,15360.0,307,tipper,diesel,4.78,410.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_3BC8A10A7D94,LOC_E96863625035,Shahdara,DL,Mohan,मोहन,LCV,3100.0,62,open,cng,9.14,180.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_035B73E44EE9,LOC_841795218E67,Ghaziabad,UP,Rakesh,राकेश,LCV,2740.0,54,open,diesel,11.03,260.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_ADDDD7A442CF,LOC_2E423964E639,Agra,UP,Balwant,बलवंत,multi_axle,23720.0,474,tipper,diesel,3.29,630.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_C5AB04A8F08C,LOC_4A5F46E3AFB5,Sitapur,UP,Kuldeep,कुलदीप,LCV,3970.0,79,closed,diesel,8.09,210.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_9EE26BA9B472,LOC_6B9FA168B682,Firozabad,UP,Jaspal,जसपाल,2axle,8720.0,174,open,diesel,4.54,170.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_CABB0843638E,LOC_11A4C40B0A4F,Yamunanagar,HR,Ramesh,रमेश,LCV,1990.0,39,refrigerated,diesel,10.51,120.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_743B5986218A,LOC_41413C4D1A63,East Delhi,DL,Ramesh,रमेश,LCV,2270.0,45,closed,cng,9.82,300.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_2C29A4F9D289,LOC_FEFD9351973D,Bathinda,PB,Balwant,बलवंत,2axle,10980.0,219,tipper,diesel,6.28,450.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_FDC45484BD7A,LOC_EC1D3E4138DF,Amritsar,PB,Kuldeep,कुलदीप,2axle,8580.0,171,closed,diesel,6.13,360.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_70D636E0DFFA,LOC_41413C4D1A63,East Delhi,DL,Dinesh,दिनेश,LCV,2430.0,48,open,cng,9.48,160.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_3AAFDA8C31B2,LOC_FEFD9351973D,Bathinda,PB,Satpal,सतपाल,3axle,14390.0,287,closed,diesel,4.45,250.0,09:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_FA46DB4F4AF4,LOC_BD15AF538A86,South East Delhi,DL,Vijay,विजय,pickup,1260.0,25,closed,diesel,13.81,80.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_9BC3A7238962,LOC_8E24E29DF84B,Hisar,HR,Dinesh,दिनेश,3axle,14790.0,295,closed,diesel,4.74,630.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_2553D5E0810B,LOC_58DEC063659A,Gorakhpur,UP,Rakesh,राकेश,2axle,10680.0,213,tipper,diesel,5.18,430.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_0693582B53F4,LOC_EE8F1CF00ECF,Bhiwani,HR,Kuldeep,कुलदीप,3axle,14220.0,284,tipper,diesel,4.06,460.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_DF823B232B20,LOC_5D316714188F,Faridabad,HR,Sukhbir,सुखबीर,2axle,10900.0,218,open,diesel,5.07,340.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_47CC4791562F,LOC_8F3BDE96C1C3,Rampur,UP,Satpal,सतपाल,LCV,2210.0,44,open,diesel,10.15,180.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_A8A54FCDBDF5,LOC_E9EE964E8CFE,South Delhi,DL,Harpreet,हरप्रीत,multi_axle,24020.0,480,open,diesel,3.04,710.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_FCE48EDC764B,LOC_5AA457C919DB,Ludhiana,PB,Vijay,विजय,2axle,7300.0,146,tipper,diesel,5.05,440.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_13687C4BC4C3,LOC_AD745A3946E4,Unnao,UP,Dinesh,दिनेश,3axle,12580.0,251,closed,diesel,4.0,680.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_683952675FEC,LOC_5AA457C919DB,Ludhiana,PB,Balwant,बलवंत,pickup,1340.0,26,open,cng,14.9,170.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_66F4D9A88CB1,LOC_D24D73F16033,Meerut,UP,Naresh,नरेश,LCV,1500.0,30,closed,cng,8.37,230.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_8E966DCB684A,LOC_36B5B5F31C8D,Varanasi,UP,Jaspal,जसपाल,LCV,2910.0,58,closed,diesel,10.96,210.0,09:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_FA9D9B51098D,LOC_EE8F1CF00ECF,Bhiwani,HR,Sukhbir,सुखबीर,2axle,8000.0,160,tipper,diesel,5.77,160.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_7BE1D610310E,LOC_B26FC239E19A,North Delhi,DL,Kuldeep,कुलदीप,3axle,17690.0,353,open,diesel,4.5,360.0,07:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_ABA0CD2CAD90,LOC_B6370F731EEC,Lucknow,UP,Dinesh,दिनेश,3axle,16720.0,334,closed,diesel,4.35,520.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_F334A7659E67,LOC_AC684A297AD1,Bareilly,UP,Mohan,मोहन,2axle,10460.0,209,open,diesel,5.85,360.0,04:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_C501BD23AF0B,LOC_DA9770705B86,South West Delhi,DL,Jaspal,जसपाल,LCV,2880.0,57,closed,ev,8.51,160.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_D0BC1C0C07BE,LOC_B890897F9CCC,Kapurthala,PB,Dinesh,दिनेश,3axle,14960.0,299,open,diesel,3.84,560.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_E8329D124E84,LOC_B0D713DFA81B,Ferozepur,PB,Harpreet,हरप्रीत,pickup,1210.0,24,open,diesel,12.89,170.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_A997FC00E0CF,LOC_6042150B38E7,Rohtak,HR,Satpal,सतपाल,multi_axle,31510.0,630,open,diesel,2.61,750.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_4EACE173545D,LOC_190E748F376B,Barabanki,UP,Dinesh,दिनेश,LCV,2670.0,53,refrigerated,diesel,10.77,220.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_6FAF2494BF87,LOC_3B372919B752,Karnal,HR,Ramesh,रमेश,3axle,14390.0,287,open,diesel,4.63,490.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_D002A63A3C6A,LOC_63A998834201,North East Delhi,DL,Ramesh,रमेश,LCV,2140.0,42,closed,diesel,10.85,240.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_CF878FD4C13C,LOC_B890897F9CCC,Kapurthala,PB,Jaspal,जसपाल,2axle,9100.0,182,tipper,diesel,4.54,370.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_356B7F139E2E,LOC_2ECE587EC515,Hardoi,UP,Rakesh,राकेश,2axle,7680.0,153,open,diesel,6.27,230.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_0A0DBBCA4639,LOC_21F591BF08EC,West Delhi,DL,Mohan,मोहन,pickup,820.0,16,open,diesel,12.54,150.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_98D80C089C77,LOC_E96863625035,Shahdara,DL,Rakesh,राकेश,2axle,10340.0,206,tipper,diesel,5.55,350.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_8B5A17C561A2,LOC_C58F1767A842,Barnala,PB,Rakesh,राकेश,LCV,3930.0,78,closed,diesel,9.12,210.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_DDE4F36F14B7,LOC_6042150B38E7,Rohtak,HR,Naresh,नरेश,2axle,6070.0,121,closed,diesel,5.75,320.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_CEFB3C509D24,LOC_7CE3D43FF63F,Ambala,HR,Sukhbir,सुखबीर,2axle,9250.0,185,open,diesel,6.13,420.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_A3AB5653E80B,LOC_2E423964E639,Agra,UP,Balwant,बलवंत,2axle,9170.0,183,closed,diesel,5.4,240.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_66235A3E6108,LOC_190E748F376B,Barabanki,UP,Naresh,नरेश,LCV,2600.0,52,closed,diesel,10.63,250.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_1C8C798F44C5,LOC_6042150B38E7,Rohtak,HR,Ramesh,रमेश,multi_axle,27990.0,559,tipper,diesel,3.09,860.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_C74877746578,LOC_11A4C40B0A4F,Yamunanagar,HR,Satpal,सतपाल,pickup,1030.0,20,open,diesel,13.99,100.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_0231F8BE1746,LOC_FEFD9351973D,Bathinda,PB,Satpal,सतपाल,pickup,1030.0,20,closed,cng,12.38,140.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8169C8E8F13C,LOC_5B344A07BA57,Sangrur,PB,Ramesh,रमेश,LCV,3870.0,77,refrigerated,cng,9.58,130.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_779ABA8D0EF0,LOC_DA9770705B86,South West Delhi,DL,Mohan,मोहन,2axle,9260.0,185,closed,diesel,5.88,320.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_DC35C8B6C226,LOC_D24D73F16033,Meerut,UP,Harpreet,हरप्रीत,2axle,10350.0,207,open,cng,5.12,370.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_E8CB81DCBE3F,LOC_8E5593D8E476,Rupnagar,PB,Naresh,नरेश,pickup,720.0,14,open,diesel,14.28,90.0,07:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_47FA9BC52762,LOC_796345940EEC,Budaun,UP,Jaspal,जसपाल,3axle,15520.0,310,open,diesel,3.41,370.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_DFFB2A886AB5,LOC_FF96333A5510,North West Delhi,DL,Harpreet,हरप्रीत,LCV,2240.0,44,open,cng,10.86,140.0,09:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_994CE9739235,LOC_DA9770705B86,South West Delhi,DL,Vijay,विजय,2axle,6600.0,132,tipper,diesel,4.55,210.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_6F7B962D8029,LOC_36B5B5F31C8D,Varanasi,UP,Dinesh,दिनेश,2axle,9070.0,181,open,diesel,6.3,440.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_5CCBD1015034,LOC_1FB47BF8FFEB,Bulandshahr,UP,Rakesh,राकेश,LCV,3650.0,73,refrigerated,cng,11.72,120.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_64445E560D2D,LOC_B26FC239E19A,North Delhi,DL,Vijay,विजय,3axle,13790.0,275,closed,diesel,3.63,370.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_8853A112029D,LOC_B26FC239E19A,North Delhi,DL,Satpal,सतपाल,3axle,17590.0,351,open,diesel,4.37,360.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_D77AA299A22C,LOC_5B344A07BA57,Sangrur,PB,Ramesh,रमेश,2axle,7420.0,148,tipper,diesel,6.07,330.0,07:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_923384074533,LOC_FF96333A5510,North West Delhi,DL,Naresh,नरेश,LCV,3780.0,75,refrigerated,diesel,11.67,250.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_8CA485E15563,LOC_D24D73F16033,Meerut,UP,Mohan,मोहन,3axle,13910.0,278,closed,diesel,4.52,470.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_40245AE86E2B,LOC_B26DA7992E56,Prayagraj,UP,Rakesh,राकेश,3axle,12840.0,256,closed,diesel,3.54,440.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_35CBC9634297,LOC_E96863625035,Shahdara,DL,Satpal,सतपाल,3axle,17290.0,345,open,diesel,3.95,280.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_2FC72D6C75D1,LOC_1FB47BF8FFEB,Bulandshahr,UP,Vijay,विजय,LCV,3180.0,63,open,diesel,9.12,240.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_65F855C2D6B0,LOC_190E748F376B,Barabanki,UP,Kuldeep,कुलदीप,3axle,14410.0,288,closed,diesel,4.13,320.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_04F3CE2B9E7E,LOC_FF96333A5510,North West Delhi,DL,Vijay,विजय,pickup,840.0,16,closed,cng,14.56,100.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_4F52079F3C24,LOC_6042150B38E7,Rohtak,HR,Dinesh,दिनेश,pickup,1430.0,28,open,cng,14.98,140.0,08:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_E0816312C500,LOC_841795218E67,Ghaziabad,UP,Kuldeep,कुलदीप,multi_axle,21070.0,421,open,diesel,2.98,590.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_FDDC9D45CFFB,LOC_8DBB3FA667B3,New Delhi,DL,Rakesh,राकेश,LCV,3720.0,74,refrigerated,diesel,11.23,140.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_62D7098FB5A1,LOC_D2DDEA75080C,Pathankot,PB,Jaspal,जसपाल,LCV,1970.0,39,open,diesel,9.68,130.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_DAFEF38719DD,LOC_B26FC239E19A,North Delhi,DL,Satpal,सतपाल,pickup,870.0,17,open,ev,12.52,120.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_75D07A642865,LOC_61BECDCA1350,Central Delhi,DL,Rakesh,राकेश,LCV,2250.0,45,open,diesel,11.26,290.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_CE55528CD22A,LOC_DA9770705B86,South West Delhi,DL,Mohan,मोहन,pickup,910.0,18,closed,diesel,14.26,110.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_95A1FE4FF0DD,LOC_41413C4D1A63,East Delhi,DL,Satpal,सतपाल,2axle,8110.0,162,tipper,cng,4.91,370.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_49EE98E2F33C,LOC_1FB47BF8FFEB,Bulandshahr,UP,Ramesh,रमेश,2axle,9820.0,196,open,diesel,5.7,350.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_591DA8D69BF3,LOC_2E423964E639,Agra,UP,Vijay,विजय,LCV,2150.0,43,open,diesel,11.4,230.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_DC586726E633,LOC_60C46A471111,Pilibhit,UP,Ramesh,रमेश,2axle,8840.0,176,closed,diesel,5.56,270.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_6B4356BB7FC8,LOC_41413C4D1A63,East Delhi,DL,Harpreet,हरप्रीत,3axle,17300.0,346,tipper,diesel,3.55,270.0,04:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_5564246F7906,LOC_8DBB3FA667B3,New Delhi,DL,Mohan,मोहन,multi_axle,30530.0,610,open,diesel,2.96,680.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_F56F84F62A42,LOC_796345940EEC,Budaun,UP,Jaspal,जसपाल,pickup,1200.0,24,closed,ev,14.0,100.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_22F3D50898DB,LOC_FF96333A5510,North West Delhi,DL,Jaspal,जसपाल,LCV,3540.0,70,closed,diesel,11.44,170.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_AE03AD21962F,LOC_CF065FE8EBAB,Gautam Buddha Nagar,UP,Harpreet,हरप्रीत,LCV,2910.0,58,refrigerated,diesel,9.47,210.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_C1FC4B86476D,LOC_B890897F9CCC,Kapurthala,PB,Kuldeep,कुलदीप,3axle,16370.0,327,open,diesel,3.84,350.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_E4FDAF928F73,LOC_D8FB48D6F894,Fatehabad,HR,Satpal,सतपाल,LCV,2320.0,46,refrigerated,diesel,10.69,170.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_C90AF1D36D1D,LOC_6042150B38E7,Rohtak,HR,Vijay,विजय,pickup,990.0,19,open,cng,15.18,60.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_8FC4DE6101AC,LOC_0B27B307A77E,Panipat,HR,Rakesh,राकेश,2axle,9890.0,197,closed,diesel,5.09,330.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_F6267C99592A,LOC_91BA4A3395D5,Sirsa,HR,Kuldeep,कुलदीप,pickup,1360.0,27,open,diesel,12.7,110.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_5590DF2ECA53,LOC_F20DB0F2A327,Gurugram,HR,Kuldeep,कुलदीप,2axle,10960.0,219,closed,diesel,5.36,320.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_15A5592D73AA,LOC_DA9770705B86,South West Delhi,DL,Jaspal,जसपाल,LCV,3580.0,71,closed,cng,9.25,230.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_5F0188F77E0E,LOC_796345940EEC,Budaun,UP,Kuldeep,कुलदीप,2axle,10600.0,212,closed,diesel,5.95,360.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_F95DC10D01A8,LOC_8E5593D8E476,Rupnagar,PB,Sukhbir,सुखबीर,LCV,3520.0,70,open,diesel,8.54,170.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_15FF4C1716B5,LOC_E96863625035,Shahdara,DL,Vijay,विजय,3axle,14630.0,292,open,diesel,4.75,460.0,05:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_8D5651B53D26,LOC_6B9FA168B682,Firozabad,UP,Balwant,बलवंत,pickup,1410.0,28,closed,diesel,12.5,170.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_C72869DB9CAD,LOC_DA9770705B86,South West Delhi,DL,Satpal,सतपाल,2axle,10910.0,218,tipper,diesel,4.52,360.0,09:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_CCF8A8744231,LOC_443EF0FB4E8C,Etawah,UP,Vijay,विजय,2axle,8230.0,164,closed,diesel,6.49,220.0,05:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_4AA6580E3788,LOC_1FB47BF8FFEB,Bulandshahr,UP,Naresh,नरेश,LCV,3810.0,76,open,diesel,8.16,210.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_0824160F4C88,LOC_8DBB3FA667B3,New Delhi,DL,Jaspal,जसपाल,2axle,10160.0,203,open,diesel,4.71,400.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_9D0F0F7BC64D,LOC_CF065FE8EBAB,Gautam Buddha Nagar,UP,Satpal,सतपाल,3axle,15600.0,312,tipper,diesel,4.21,510.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_C7B7B736DAF3,LOC_B26FC239E19A,North Delhi,DL,Kuldeep,कुलदीप,pickup,1090.0,21,open,cng,12.33,140.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_1DBF3B78C79D,LOC_6B9FA168B682,Firozabad,UP,Ramesh,रमेश,LCV,2080.0,41,closed,cng,11.74,150.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_D9DB0BF9D25C,LOC_B6370F731EEC,Lucknow,UP,Sukhbir,सुखबीर,pickup,1350.0,27,open,diesel,11.68,160.0,09:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_C3A74AC89814,LOC_91BA4A3395D5,Sirsa,HR,Kuldeep,कुलदीप,pickup,1230.0,24,closed,diesel,13.68,110.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_AECC93C07E6C,LOC_5D316714188F,Faridabad,HR,Jaspal,जसपाल,multi_axle,23180.0,463,open,diesel,3.32,800.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_92FCCDDA79E5,LOC_AB3DB4CE53FF,Gurdaspur,PB,Harpreet,हरप्रीत,pickup,1250.0,25,closed,cng,15.37,160.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_2913902A2DEE,LOC_5775AEDC7A87,Kanpur Nagar,UP,Mohan,मोहन,2axle,6500.0,130,tipper,diesel,4.76,400.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_644943417ABA,LOC_0B27B307A77E,Panipat,HR,Vijay,विजय,multi_axle,23960.0,479,tipper,diesel,3.32,490.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_F129A970A76F,LOC_36B5B5F31C8D,Varanasi,UP,Balwant,बलवंत,2axle,9320.0,186,open,diesel,5.2,290.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_CCF7B5C631C1,LOC_5242BE7C01CE,Rewari,HR,Mohan,मोहन,2axle,7400.0,148,tipper,diesel,5.94,270.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_B067BCD63265,LOC_AB3DB4CE53FF,Gurdaspur,PB,Balwant,बलवंत,2axle,7430.0,148,open,diesel,4.97,310.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_B7BA04A0793B,LOC_FEFD9351973D,Bathinda,PB,Balwant,बलवंत,3axle,15520.0,310,tipper,diesel,3.55,240.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_453CD7ABA6D8,LOC_8E5593D8E476,Rupnagar,PB,Sukhbir,सुखबीर,LCV,2220.0,44,closed,diesel,8.06,270.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_FC4EFBC1E225,LOC_1FB47BF8FFEB,Bulandshahr,UP,Mohan,मोहन,3axle,14410.0,288,closed,diesel,4.32,610.0,05:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_A8564101089C,LOC_58DEC063659A,Gorakhpur,UP,Naresh,नरेश,LCV,1690.0,33,closed,ev,10.23,160.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_5EC9EC5A741E,LOC_C6AB43142BDB,Faridkot,PB,Balwant,बलवंत,2axle,8670.0,173,tipper,diesel,5.36,180.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_80037AF38136,LOC_8F3BDE96C1C3,Rampur,UP,Mohan,मोहन,pickup,1330.0,26,open,cng,12.81,90.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_E93950C7B81D,LOC_91BA4A3395D5,Sirsa,HR,Jaspal,जसपाल,pickup,1480.0,29,closed,diesel,14.62,90.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_C376449803FB,LOC_27273A6A3299,Shamli,UP,Dinesh,दिनेश,LCV,3050.0,61,closed,diesel,10.11,200.0,04:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_3D378E8843DC,LOC_21F591BF08EC,West Delhi,DL,Mohan,मोहन,2axle,9600.0,192,open,diesel,6.47,190.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_4A1AD40BC709,LOC_E9EE964E8CFE,South Delhi,DL,Rakesh,राकेश,3axle,17420.0,348,tipper,diesel,3.84,660.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_C327C2BB7867,LOC_F86E62177015,Muzaffarnagar,UP,Mohan,मोहन,2axle,9490.0,189,tipper,diesel,5.82,450.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_1245D9DDD50A,LOC_B6370F731EEC,Lucknow,UP,Ramesh,रमेश,pickup,1160.0,23,open,diesel,14.8,160.0,06:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_AE0F77F9CECE,LOC_11A4C40B0A4F,Yamunanagar,HR,Rakesh,राकेश,2axle,9450.0,189,closed,diesel,6.33,220.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_15A4E86B7E18,LOC_1FB47BF8FFEB,Bulandshahr,UP,Rakesh,राकेश,2axle,9210.0,184,open,diesel,5.33,390.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_547C0929AFCE,LOC_21F591BF08EC,West Delhi,DL,Jaspal,जसपाल,2axle,9620.0,192,tipper,diesel,5.25,170.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_35AEA5A238B5,LOC_8E24E29DF84B,Hisar,HR,Mohan,मोहन,pickup,730.0,14,open,ev,12.22,60.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_A6E218F9E112,LOC_AC684A297AD1,Bareilly,UP,Rakesh,राकेश,LCV,2130.0,42,refrigerated,diesel,10.77,130.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_D69CF406017F,LOC_2011BC2FE7BD,Fazilka,PB,Kuldeep,कुलदीप,pickup,1490.0,29,closed,cng,13.67,150.0,05:00,13:00,True,class_constrained_v1,20260903,v0.1
+TRK_E864749D5F23,LOC_BC83DA386B0E,Baghpat,UP,Kuldeep,कुलदीप,LCV,2430.0,48,open,diesel,8.15,210.0,06:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_A82E52F848C5,LOC_B26FC239E19A,North Delhi,DL,Rakesh,राकेश,2axle,6620.0,132,tipper,diesel,6.24,200.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_071ACA394633,LOC_B56ABDBA32E2,Aligarh,UP,Kuldeep,कुलदीप,2axle,10810.0,216,tipper,diesel,4.53,190.0,06:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_AE3CDD24C55E,LOC_5242BE7C01CE,Rewari,HR,Mohan,मोहन,pickup,780.0,15,closed,diesel,15.36,90.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_D6A95F1B5510,LOC_F20DB0F2A327,Gurugram,HR,Naresh,नरेश,pickup,930.0,18,open,cng,12.08,90.0,08:00,22:00,True,class_constrained_v1,20260903,v0.1
+TRK_0DB792D95BC8,LOC_21F591BF08EC,West Delhi,DL,Satpal,सतपाल,3axle,17980.0,359,open,diesel,3.49,290.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_2143108EC3BA,LOC_FF96333A5510,North West Delhi,DL,Balwant,बलवंत,LCV,2860.0,57,open,diesel,8.39,270.0,08:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_8F9222BACB92,LOC_BD15AF538A86,South East Delhi,DL,Satpal,सतपाल,3axle,16750.0,335,open,diesel,3.77,490.0,06:00,20:00,True,class_constrained_v1,20260903,v0.1
+TRK_FC6C36FEB94C,LOC_61BECDCA1350,Central Delhi,DL,Vijay,विजय,LCV,3890.0,77,closed,diesel,8.07,130.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_3227F80A4573,LOC_AD745A3946E4,Unnao,UP,Balwant,बलवंत,2axle,9520.0,190,open,diesel,4.62,320.0,04:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_359EE0514DFA,LOC_8DBB3FA667B3,New Delhi,DL,Harpreet,हरप्रीत,3axle,17170.0,343,closed,diesel,3.82,540.0,04:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_CF567CF238B0,LOC_BD15AF538A86,South East Delhi,DL,Mohan,मोहन,2axle,10470.0,209,open,diesel,5.36,220.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_022C5F1C896D,LOC_41413C4D1A63,East Delhi,DL,Satpal,सतपाल,LCV,3920.0,78,refrigerated,diesel,8.83,150.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_A2E05BF196F5,LOC_B56ABDBA32E2,Aligarh,UP,Jaspal,जसपाल,2axle,8270.0,165,tipper,cng,5.13,410.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_1337427BFA57,LOC_E96863625035,Shahdara,DL,Naresh,नरेश,2axle,9170.0,183,open,diesel,5.64,280.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_4B9B485B6A6B,LOC_36B5B5F31C8D,Varanasi,UP,Dinesh,दिनेश,3axle,17450.0,349,open,diesel,4.04,220.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_3F72A9A287A1,LOC_2ADFB4EFDB06,Kaithal,HR,Kuldeep,कुलदीप,LCV,3040.0,60,open,cng,9.68,120.0,07:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_7927A913B51F,LOC_EC1D3E4138DF,Amritsar,PB,Ramesh,रमेश,pickup,960.0,19,open,cng,12.07,130.0,05:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_8DC7FD5FF93A,LOC_5242BE7C01CE,Rewari,HR,Balwant,बलवंत,multi_axle,27710.0,554,open,diesel,3.01,460.0,07:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_934DD3D5A916,LOC_B0D713DFA81B,Ferozepur,PB,Sukhbir,सुखबीर,LCV,1600.0,32,open,diesel,8.56,160.0,04:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_06A40E83B39B,LOC_1FB47BF8FFEB,Bulandshahr,UP,Sukhbir,सुखबीर,2axle,6540.0,130,open,diesel,6.09,210.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_F8096EB4BC10,LOC_1FB47BF8FFEB,Bulandshahr,UP,Rakesh,राकेश,2axle,7490.0,149,closed,diesel,5.14,180.0,05:00,14:00,True,class_constrained_v1,20260903,v0.1
+TRK_E41470A1730E,LOC_E96863625035,Shahdara,DL,Dinesh,दिनेश,3axle,12880.0,257,closed,diesel,4.77,410.0,09:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_F979E9350BBA,LOC_B890897F9CCC,Kapurthala,PB,Vijay,विजय,LCV,2200.0,44,open,diesel,10.84,280.0,08:00,16:00,True,class_constrained_v1,20260903,v0.1
+TRK_05D6F43C6DC3,LOC_61BECDCA1350,Central Delhi,DL,Balwant,बलवंत,2axle,6010.0,120,tipper,diesel,6.49,250.0,08:00,21:00,True,class_constrained_v1,20260903,v0.1
+TRK_493D005A7980,LOC_36B5B5F31C8D,Varanasi,UP,Rakesh,राकेश,2axle,8280.0,165,open,diesel,4.73,380.0,06:00,18:00,True,class_constrained_v1,20260903,v0.1
+TRK_D4EF39187FEC,LOC_0D7AAF851D69,Tarn Taran,PB,Sukhbir,सुखबीर,LCV,1770.0,35,closed,diesel,11.05,280.0,04:00,12:00,True,class_constrained_v1,20260903,v0.1
+TRK_2B5EA08DA126,LOC_E96863625035,Shahdara,DL,Naresh,नरेश,pickup,1240.0,24,closed,diesel,12.49,100.0,09:00,23:00,True,class_constrained_v1,20260903,v0.1
+TRK_FEAB1B854A38,LOC_BF1D141289ED,Hoshiarpur,PB,Balwant,बलवंत,pickup,770.0,15,open,ev,12.09,110.0,08:00,17:00,True,class_constrained_v1,20260903,v0.1
+TRK_1E5DF0505AC7,LOC_B26FC239E19A,North Delhi,DL,Balwant,बलवंत,LCV,2800.0,56,open,diesel,8.7,100.0,06:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_6400716958F2,LOC_AFF866260256,Moradabad,UP,Vijay,विजय,2axle,6470.0,129,tipper,diesel,4.97,160.0,08:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_9CD1085BF3B6,LOC_C58F1767A842,Barnala,PB,Jaspal,जसपाल,LCV,2010.0,40,closed,diesel,9.85,140.0,06:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_842D441F507B,LOC_27273A6A3299,Shamli,UP,Vijay,विजय,pickup,790.0,15,open,ev,13.77,100.0,07:00,15:00,True,class_constrained_v1,20260903,v0.1
+TRK_280027138249,LOC_B39E76DCD93F,Nuh,HR,Harpreet,हरप्रीत,LCV,2530.0,50,closed,diesel,11.36,240.0,05:00,19:00,True,class_constrained_v1,20260903,v0.1
+TRK_08FFF18507A4,LOC_E9EE964E8CFE,South Delhi,DL,Sukhbir,सुखबीर,2axle,7710.0,154,tipper,diesel,4.66,190.0,07:00,18:00,True,class_constrained_v1,20260903,v0.1

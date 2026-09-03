@@ -1,0 +1,9 @@
+scenario_id,name,traffic_factor,risk_factor,description,is_baseline,dataset_version
+SCN_BASELINE,baseline,1.0,1.0,Free-flow reference costs. Never overwritten.,True,v0.1
+SCN_MORNING_PEAK,morning_peak,1.45,1.1,Weekday 07:00-10:00. Heaviest congestion on NCR approaches.,False,v0.1
+SCN_MIDDAY,midday,1.12,1.0,Weekday 11:00-16:00. Light congestion.,False,v0.1
+SCN_EVENING_PEAK,evening_peak,1.52,1.14,Weekday 17:00-20:00. Peak plus mandi-gate queuing.,False,v0.1
+SCN_NIGHT,night,0.88,1.25,22:00-05:00. Fast but higher risk; some yards shut.,False,v0.1
+SCN_WEEKEND,weekend,1.05,1.0,Saturday/Sunday. Lower commercial traffic.,False,v0.1
+SCN_HARVEST_PEAK,harvest_peak,1.38,1.08,Rabi/Kharif arrival surge. Mandi approach roads congested.,False,v0.1
+SCN_MONSOON_RAIN,monsoon_rain,1.34,1.6,Active rain. Slower and materially riskier on unsealed links.,False,v0.1

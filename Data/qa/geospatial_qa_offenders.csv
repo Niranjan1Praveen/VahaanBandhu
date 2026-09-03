@@ -1,0 +1,8 @@
+location_id,district,reason,km_from_centroid,envelope_km
+LOC_4FBBE2A5DB22,Panipat,outside_district_envelope,27.51,22
+LOC_C7341557F77A,Nuh,outside_district_envelope,33.2,24
+LOC_D43BE4B914CC,Yamunanagar,outside_district_envelope,29.25,22
+LOC_A5716EEC2341,North Delhi,outside_district_envelope,20.44,10
+LOC_DA62F3E7818A,Kurukshetra,outside_district_envelope,28.47,22
+LOC_0DD18AB1CFF1,Ludhiana,outside_district_envelope,41.09,28
+LOC_73662344D033,Ludhiana,outside_district_envelope,38.82,28

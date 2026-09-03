@@ -1,0 +1,19 @@
+crop_id,crop_key,name_en,name_hi,aliases_en,aliases_hi,default_unit,default_bag_weight_kg,density_or_handling_class,season_kharif_rabi_zaid,states,dataset_version
+CRP_DE6C334339AC,wheat,Wheat,गेहूँ,wheat|gehun|gehu|gehoon|gehun |genhu|wheet|kanak,गेहूँ|गेहूं|गेहु|कनक,quintal,50.0,granular_bagged,rabi,DL|HR|PB|UP,v0.1
+CRP_2554D1918FBC,paddy,Paddy,धान,paddy|dhan|dhaan|rice paddy|paddi|dhann,धान|धाण|चावल धान,quintal,40.0,granular_bagged,kharif,HR|PB|UP,v0.1
+CRP_352B5B6699D8,mustard,Mustard,सरसों,mustard|sarso|sarson|sarsoo|sarsau|rai|raya,सरसों|सरसो|राई|राया,quintal,50.0,oilseed_bagged,rabi,HR|PB|UP|DL,v0.1
+CRP_B2E55E456CF4,sugarcane,Sugarcane,गन्ना,sugarcane|ganna|gana|sugar cane|ikh,गन्ना|गन्ने|ईख,tonne,,bulk_loose,perennial,HR|UP|PB,v0.1
+CRP_D955CA97E44D,maize,Maize,मक्का,maize|makka|makai|corn|makkai|bhutta,मक्का|मकई|भुट्टा,quintal,50.0,granular_bagged,kharif,PB|UP|HR,v0.1
+CRP_28F945D9AC9C,bajra,Pearl Millet,बाजरा,bajra|pearl millet|bajara|bajri,बाजरा|बाजरी,quintal,50.0,granular_bagged,kharif,HR|UP,v0.1
+CRP_CAA75103C53B,gram,Chickpea,चना,gram|chana|chickpea|channa|bengal gram|chna,चना|चणा|छोला,quintal,50.0,pulse_bagged,rabi,HR|UP|PB,v0.1
+CRP_C7952894B2A5,moong,Green Gram,मूंग,moong|mung|green gram|moong dal|mong,मूंग|मुंग,quintal,50.0,pulse_bagged,zaid,UP|HR|PB,v0.1
+CRP_69E399851C84,cotton,Cotton,कपास,cotton|kapas|narma|kapaas|cotten,कपास|नरमा,quintal,40.0,fibre_baled,kharif,PB|HR,v0.1
+CRP_E91C254AD588,potato,Potato,आलू,potato|aloo|alu|aalu|potatoe,आलू|आलु,quintal,50.0,perishable_bagged,rabi,UP|PB|HR|DL,v0.1
+CRP_288971671685,onion,Onion,प्याज,onion|pyaz|pyaaz|piyaz|kanda,प्याज|प्याज़|पियाज,quintal,50.0,perishable_bagged,rabi,UP|HR|DL,v0.1
+CRP_5ED728C2FA5D,tomato,Tomato,टमाटर,tomato|tamatar|tmatar|tomatoe,टमाटर|टमाटार,kg,25.0,perishable_crate,zaid,UP|HR|DL|PB,v0.1
+CRP_BF35A2D3261F,cauliflower,Cauliflower,फूलगोभी,cauliflower|gobhi|phool gobhi|gobi|fulgobhi,फूलगोभी|गोभी|फूल गोभी,kg,20.0,perishable_crate,rabi,UP|HR|DL,v0.1
+CRP_D7A9EAD0B15C,barley,Barley,जौ,barley|jau|jow|jav,जौ|जव,quintal,50.0,granular_bagged,rabi,HR|UP|PB,v0.1
+CRP_8F398886C326,sunflower,Sunflower,सूरजमुखी,sunflower|surajmukhi|suraj mukhi|sunflower seed,सूरजमुखी|सूरजमुखी बीज,quintal,40.0,oilseed_bagged,zaid,PB|HR,v0.1
+CRP_E2253B73169D,guar,Cluster Bean,ग्वार,guar|gwar|cluster bean|guar gum seed,ग्वार|ग्वार फली,quintal,50.0,pulse_bagged,kharif,HR,v0.1
+CRP_4DDD4816119A,arhar,Pigeon Pea,अरहर,arhar|tur|toor|pigeon pea|tuar|arhar,अरहर|तुअर|तूर,quintal,50.0,pulse_bagged,kharif,UP,v0.1
+CRP_7CC27C59C145,urad,Black Gram,उड़द,urad|urd|black gram|udad|urad dal,उड़द|उरद,quintal,50.0,pulse_bagged,kharif,UP|HR,v0.1

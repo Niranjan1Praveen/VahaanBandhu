@@ -1,0 +1,19 @@
+{
+  "artifact_name": "qaoa_edge_selection_p3",
+  "optimal_gamma_beta": [
+    2.952620744130815,
+    2.8271769300738714,
+    3.430860199291543,
+    0.3537985490784142,
+    0.46490834931114344,
+    1.372049949384551
+  ],
+  "n_layers": 3,
+  "encoding": "edge_selection_v1",
+  "qubo_version": "qubo_v1",
+  "feasible_rate": 0.1044921875,
+  "best_energy": 2.5,
+  "classical_optimum": 2.5,
+  "problem_family": "constrained_path_selection_5edge",
+  "reuse_note": "Warm-start parameters for QAOA on structurally similar edge-selection problems. NOT valid for a different encoding, layer count, or cost snapshot."
+}

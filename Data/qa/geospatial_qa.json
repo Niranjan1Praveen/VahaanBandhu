@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-09-03T05:10:05.808788+00:00",
+  "n_locations": 3442,
+  "n_outside_coarse_bbox": 0,
+  "n_outside_district_envelope": 7,
+  "envelope_distance_km_p50": 16.89,
+  "envelope_distance_km_p99": 33.25,
+  "containment_method": "circular_district_envelope",
+  "containment_limitation": "No boundary polygons available in Phase-A. A point just across a real district border will not be detected. Phase-B must use LGD polygons.",
+  "n_duplicate_coordinates": 80,
+  "n_ncr_flag_mismatches": 0,
+  "n_edges": 375968,
+  "n_edges_shorter_than_geodesic": 0,
+  "n_self_loop_edges": 0,
+  "n_bidirectional_pairs": 40258,
+  "mean_abs_direction_asymmetry_km": 0.9696,
+  "passed": true
+}

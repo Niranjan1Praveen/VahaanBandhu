@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-09-03T05:10:05.935456+00:00",
+  "requests_by_state": {
+    "UP": 7828,
+    "PB": 5664,
+    "HR": 4390,
+    "DL": 118
+  },
+  "requests_by_language": {
+    "hinglish": 9837,
+    "hi": 5003,
+    "en": 3160
+  },
+  "requests_by_mode": {
+    "text": 11124,
+    "voice": 6876
+  },
+  "requests_by_feasibility": {
+    "feasible": 14962,
+    "unresolved_quantity": 1208,
+    "ambiguous": 1124,
+    "infeasible": 706
+  },
+  "requests_by_unit": {
+    "quintal": 4973,
+    "bori": 4680,
+    "tonne": 4225,
+    "kg": 4122
+  },
+  "conversion_confidence": {
+    "exact": 13320,
+    "crop_default": 3472,
+    "unresolved": 1208
+  },
+  "top_crops": {
+    "mustard": 1057,
+    "barley": 947,
+    "sugarcane": 942,
+    "wheat": 910,
+    "paddy": 900,
+    "gram": 899,
+    "tomato": 877,
+    "maize": 849,
+    "moong": 806,
+    "potato": 780,
+    "cauliflower": 599,
+    "urad": 579
+  },
+  "quantity_kg": {
+    "n": 16792,
+    "min": 80.0,
+    "p50": 3380.0,
+    "p95": 30000.0,
+    "max": 40000.0,
+    "n_non_positive": 0
+  },
+  "trucks_by_class": {
+    "LCV": 179,
+    "2axle": 161,
+    "3axle": 112,
+    "pickup": 107,
+    "multi_axle": 41
+  },
+  "trucks_by_fuel": {
+    "diesel": 489,
+    "cng": 91,
+    "ev": 20
+  },
+  "capacity_kg": {
+    "min": 710.0,
+    "p50": 6500.0,
+    "max": 31980.0
+  },
+  "shops_by_category": {
+    "multi": 216,
+    "cement": 124,
+    "hardware": 124,
+    "brick": 92,
+    "tmt": 90,
+    "paint": 66,
+    "electrical": 59,
+    "pipe": 55,
+    "tile": 38,
+    "sanitary": 25,
+    "roofing": 11
+  },
+  "farm_size_ha": {
+    "p50": 1.48,
+    "p95": 5.331499999999998,
+    "max": 25.23
+  },
+  "edge_distance_km": {
+    "p50": 10.1165,
+    "p95": 116.438,
+    "max": 220.968
+  },
+  "implied_speed_kmph": {
+    "p50": 46.00322715024018
+  },
+  "violations": {
+    "non_positive_quantity": 0,
+    "negative_farm_size": 0,
+    "zero_capacity_trucks": 0,
+    "implausible_speed_over_120kmph": 0
+  },
+  "passed": true
+}

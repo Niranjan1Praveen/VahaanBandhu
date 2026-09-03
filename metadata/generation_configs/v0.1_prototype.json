@@ -1,0 +1,38 @@
+{
+  "stage": "prototype",
+  "seed": 20260903,
+  "dataset_version": "v0.1",
+  "states": [
+    "DL",
+    "HR",
+    "PB",
+    "UP"
+  ],
+  "frac_shop_requests": 0.3,
+  "frac_infeasible": 0.08,
+  "frac_ambiguous": 0.1,
+  "frac_voice": 0.55,
+  "lang_mix": [
+    0.4,
+    0.25,
+    0.35
+  ],
+  "knn_edges": 8,
+  "max_edge_km": 180.0,
+  "holdout_districts": [
+    "Karnal",
+    "Bulandshahr",
+    "Bathinda"
+  ],
+  "holdout_time_from": "2026-11-20",
+  "sizes": {
+    "n_villages": 2400,
+    "n_shops": 900,
+    "n_farmer_nodes": 1400,
+    "n_trucks": 600,
+    "n_requests": 18000,
+    "n_route_instances": 2000,
+    "n_quantum_instances": 200
+  },
+  "config_hash": "f7cef15e36427d07"
+}

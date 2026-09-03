@@ -1,0 +1,25 @@
+# Python 3.12: OR-Tools and GeoPandas have no 3.13/3.14 wheels yet.
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# GEOS/PROJ are needed by shapely and pyproj; build-essential for any sdist builds.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential libgeos-dev libproj-dev proj-bin \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first so the dependency layer caches across code changes.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY vb ./vb
+COPY routing ./routing
+COPY api ./api
+
+ENV PYTHONPATH=/app \
+    PYTHONUNBUFFERED=1
+
+EXPOSE 5000
+
+# Secrets are injected at runtime via env_file, never baked into the image.
+CMD ["python", "-m", "api.app"]

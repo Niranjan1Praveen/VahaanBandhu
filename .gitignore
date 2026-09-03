@@ -1,0 +1,25 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+.next/
+client/src/generated/prisma/
+
+# OS
+.DS_Store
+
+# Large / regenerable data
+Data/raw/osm/*.pbf
+Res/route_cache/*.json

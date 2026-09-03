@@ -1,0 +1,13 @@
+{
+  "phase_a_quantum_ready": {
+    "category": "benchmarks",
+    "name": "phase_a_quantum_ready",
+    "path": "D:\\VahaanBandhu\\Res\\benchmarks\\phase_a_quantum_ready.json",
+    "instance_id": "multiple",
+    "cost_snapshot_id": "CST_48011250D4FB",
+    "algorithm_family": "hybrid",
+    "algorithm_name": "benchmark_suite",
+    "volatility": "static",
+    "created_at": 1788411457.0970817
+  }
+}

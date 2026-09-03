@@ -1,0 +1,13 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm ci || npm install
+
+COPY . .
+
+EXPOSE 3000
+
+# Development server. Build a production image separately with `next build`.
+CMD ["npm", "run", "dev"]

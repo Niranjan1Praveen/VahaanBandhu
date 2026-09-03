@@ -1,0 +1,76 @@
+# VahaanBandhu 2.0 — local development stack.
+#
+# No credentials are embedded. Every secret comes from .env, which is gitignored.
+#
+#   docker compose up -d mongo     # database only; run the apps natively
+#   docker compose up              # full stack
+#
+# STATUS: `mongo` is working and tested. The `api` and `web` services are
+# scaffolded but WILL NOT BUILD YET -- `api/` does not exist (the application
+# layer is the next phase of work) and `client/` still needs its Clerk/MongoDB
+# migration. Use `docker compose up -d mongo` until those land.
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: vb-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: vahaanbandhu
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: vb-api
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      # Inside the compose network, reach Mongo by service name.
+      MONGODB_URI: mongodb://mongo:27017
+      FLASK_ENV: development
+    volumes:
+      # Mount the datasets read-only: the API serves them, it does not author them.
+      - ./Data:/app/Data:ro
+      - ./Res:/app/Res
+      - ./vb:/app/vb
+      - ./routing:/app/routing
+      - ./api:/app/api
+
+  web:
+    build:
+      context: ./client
+      dockerfile: ../docker/Dockerfile.web
+    container_name: vb-web
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:5000
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+      - /app/.next
+
+volumes:
+  mongo-data:

@@ -1,0 +1,78 @@
+{
+  "summary": [
+    {
+      "algorithm_name": "brute_force_exact",
+      "n_instances": 8,
+      "mean_objective": 240.72175,
+      "mean_tour_km": 240.72175,
+      "feasible_rate": 1.0,
+      "mean_gap": 0.0,
+      "mean_solver_ms": 0.037099998735357076,
+      "mean_quantum_ms": 0.0,
+      "mean_wall_ms": 0.037099998735357076,
+      "mean_sampling_feasible_rate": NaN
+    },
+    {
+      "algorithm_name": "nearest_neighbour+2opt",
+      "n_instances": 8,
+      "mean_objective": 240.72175,
+      "mean_tour_km": 240.72175,
+      "feasible_rate": 1.0,
+      "mean_gap": 0.0,
+      "mean_solver_ms": 0.021087498680572025,
+      "mean_quantum_ms": 0.0,
+      "mean_wall_ms": 0.03701249988807831,
+      "mean_sampling_feasible_rate": NaN
+    },
+    {
+      "algorithm_name": "simulated_annealing",
+      "n_instances": 8,
+      "mean_objective": 240.72175,
+      "mean_tour_km": 240.72175,
+      "feasible_rate": 1.0,
+      "mean_gap": 0.0,
+      "mean_solver_ms": 559.7878374992433,
+      "mean_quantum_ms": 0.0,
+      "mean_wall_ms": 559.7878374992433,
+      "mean_sampling_feasible_rate": NaN
+    },
+    {
+      "algorithm_name": "qubo_brute_force",
+      "n_instances": 8,
+      "mean_objective": 240.7217500000001,
+      "mean_tour_km": 240.72175000000001,
+      "feasible_rate": 1.0,
+      "mean_gap": 0.0,
+      "mean_solver_ms": 454.30490000035206,
+      "mean_quantum_ms": 0.0,
+      "mean_wall_ms": 454.50898749550106,
+      "mean_sampling_feasible_rate": NaN
+    },
+    {
+      "algorithm_name": "nearest_neighbour",
+      "n_instances": 8,
+      "mean_objective": 242.63,
+      "mean_tour_km": 242.63,
+      "feasible_rate": 1.0,
+      "mean_gap": 0.015641125000000002,
+      "mean_solver_ms": 0.015925001207506284,
+      "mean_quantum_ms": 0.0,
+      "mean_wall_ms": 0.015925001207506284,
+      "mean_sampling_feasible_rate": NaN
+    },
+    {
+      "algorithm_name": "qaoa_p2_simulator",
+      "n_instances": 8,
+      "mean_objective": Infinity,
+      "mean_tour_km": 367.95733333333334,
+      "feasible_rate": 0.375,
+      "mean_gap": 0.160128,
+      "mean_solver_ms": 0.0,
+      "mean_quantum_ms": 4492.394700004297,
+      "mean_wall_ms": 4492.597825001212,
+      "mean_sampling_feasible_rate": 0.0006103515625
+    }
+  ],
+  "n_instances": 8,
+  "conclusion": "No quantum advantage observed. QAOA p=2 underperforms classical baselines."
+}

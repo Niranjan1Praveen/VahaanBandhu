@@ -1,0 +1,13 @@
+{
+  "qaoa_edge_selection_p3": {
+    "category": "learned_parameters",
+    "name": "qaoa_edge_selection_p3",
+    "path": "D:\\VahaanBandhu\\Res\\learned_parameters\\qaoa_edge_selection_p3.json",
+    "instance_id": "demo_diamond_graph",
+    "cost_snapshot_id": "CST_48011250D4FB",
+    "algorithm_family": "quantum",
+    "algorithm_name": "qaoa_p3",
+    "volatility": "static",
+    "created_at": 1788411457.0970817
+  }
+}

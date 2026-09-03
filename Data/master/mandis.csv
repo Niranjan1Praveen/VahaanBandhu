@@ -1,0 +1,51 @@
+mandi_id,location_id,apmc_name,market_yard_type,enam_enabled,commodities_supported,opening_days,service_start,service_end,avg_queue_min,market_scale,coordinate_verified,source_id,is_synthetic,dataset_version
+MND_9E255CEE332B,LOC_54EA925C8D4F,Azadpur Mandi,main,False,6,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,18:00,90,terminal,False,SRC_CURATED_REF,False,v0.1
+MND_1796B26F4DCC,LOC_A5716EEC2341,Narela Mandi,main,False,6,"Mon,Tue,Wed,Thu,Fri,Sat",06:00,18:00,69,large,False,SRC_CURATED_REF,False,v0.1
+MND_20196CE23F9E,LOC_B0F782A131CA,Ghazipur Mandi,main,False,6,"Tue,Wed,Thu,Fri,Sat,Sun",06:00,18:00,74,large,False,SRC_CURATED_REF,False,v0.1
+MND_96A0566277F9,LOC_E7A75523A1C8,Okhla Mandi,sub-yard,False,6,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,16:00,52,medium,False,SRC_CURATED_REF,False,v0.1
+MND_AAFC9C0B8DA5,LOC_B59AFC16BD24,Keshopur Mandi,sub-yard,False,6,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,47,medium,False,SRC_CURATED_REF,False,v0.1
+MND_50FC19D7AEC4,LOC_597CF4331C69,Najafgarh Mandi,sub-yard,False,4,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,16:00,25,small,False,SRC_CURATED_REF,False,v0.1
+MND_4ADE384C6981,LOC_7F36DA6D1D20,Karnal Grain Market,main,True,10,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,18:00,71,large,False,SRC_CURATED_REF,False,v0.1
+MND_283ED6EAAB84,LOC_AC424CB33B08,Panipat Grain Market,main,True,10,"Mon,Tue,Wed,Thu,Fri,Sun",06:00,18:00,71,large,False,SRC_CURATED_REF,False,v0.1
+MND_538E435A4360,LOC_2D9C52DA14E3,Sonipat Grain Market,main,True,10,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,18:00,67,large,False,SRC_CURATED_REF,False,v0.1
+MND_A59F6598A624,LOC_03E521BA5D3C,Gurugram Mandi,main,True,7,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,42,medium,False,SRC_CURATED_REF,False,v0.1
+MND_3F94E23EB0A5,LOC_2F386F764ED6,Rewari Mandi,main,True,7,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,16:00,53,medium,False,SRC_CURATED_REF,False,v0.1
+MND_CB2E88CD3113,LOC_68CFDDDF277A,Hisar Grain Market,main,True,10,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,18:00,64,large,False,SRC_CURATED_REF,False,v0.1
+MND_5C10FF171343,LOC_CEC5FDC42D34,Sirsa Grain Market,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sat",06:00,16:00,38,medium,False,SRC_CURATED_REF,False,v0.1
+MND_7491C25B20FE,LOC_70558DC20584,Kaithal Grain Market,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sat",06:00,16:00,47,medium,False,SRC_CURATED_REF,False,v0.1
+MND_9C5A213D03D2,LOC_DA62F3E7818A,Pehowa Mandi,sub-yard,True,7,"Tue,Wed,Thu,Fri,Sat,Sun",06:00,16:00,47,medium,False,SRC_CURATED_REF,False,v0.1
+MND_372DA5A01CDA,LOC_EB9B8AD962B7,Rohtak Grain Market,main,True,7,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,16:00,41,medium,False,SRC_CURATED_REF,False,v0.1
+MND_BBFD6D659730,LOC_114EDABBE480,Palwal Mandi,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sat",06:00,16:00,45,medium,False,SRC_CURATED_REF,False,v0.1
+MND_07DDCCA966AE,LOC_057482E7BD17,Jind Grain Market,main,True,7,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,16:00,43,medium,False,SRC_CURATED_REF,False,v0.1
+MND_F02880680127,LOC_740F02AE15CE,Bhiwani Mandi,main,True,7,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,16:00,47,medium,False,SRC_CURATED_REF,False,v0.1
+MND_4427C76F4F6F,LOC_E7AFFB955361,Fatehabad Grain Market,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sun",06:00,16:00,42,medium,False,SRC_CURATED_REF,False,v0.1
+MND_3F6468C86419,LOC_BEB72C8DA2BA,Ambala Grain Market,main,True,7,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,16:00,50,medium,False,SRC_CURATED_REF,False,v0.1
+MND_D400EAD28DB3,LOC_0DD18AB1CFF1,Khanna Grain Market,main,True,12,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,18:00,103,terminal,False,SRC_CURATED_REF,False,v0.1
+MND_DA6DF57ACFEE,LOC_E531147D7EFC,Ludhiana Grain Market,main,True,10,"Tue,Wed,Thu,Fri,Sat,Sun",06:00,18:00,73,large,False,SRC_CURATED_REF,False,v0.1
+MND_D3D37BB2E2D7,LOC_C41EA40F30F8,Rajpura Mandi,main,True,7,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,37,medium,False,SRC_CURATED_REF,False,v0.1
+MND_FE8D567E9001,LOC_631EE033D63E,Moga Grain Market,main,True,10,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,18:00,75,large,False,SRC_CURATED_REF,False,v0.1
+MND_AE02C36E7ACD,LOC_799C69AF76C7,Bathinda Grain Market,main,True,10,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,18:00,64,large,False,SRC_CURATED_REF,False,v0.1
+MND_784599D2DCF5,LOC_73662344D033,Jagraon Mandi,sub-yard,True,7,"Tue,Wed,Thu,Fri,Sat,Sun",06:00,16:00,52,medium,False,SRC_CURATED_REF,False,v0.1
+MND_548773D47A30,LOC_6368540B84AB,Sangrur Grain Market,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sun",06:00,16:00,46,medium,False,SRC_CURATED_REF,False,v0.1
+MND_9AE87167EF0F,LOC_68983FD6CCD5,Patiala Grain Market,main,True,7,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,16:00,38,medium,False,SRC_CURATED_REF,False,v0.1
+MND_E2F2E16B54CD,LOC_805975984793,Amritsar Grain Market,main,True,10,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,18:00,62,large,False,SRC_CURATED_REF,False,v0.1
+MND_46CD786BC585,LOC_8FD34117F75A,Jalandhar Mandi,main,True,7,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,16:00,52,medium,False,SRC_CURATED_REF,False,v0.1
+MND_BA2F125FAB06,LOC_06D73B2D5DA3,Mansa Grain Market,main,True,7,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,16:00,51,medium,False,SRC_CURATED_REF,False,v0.1
+MND_DEA1CD5F415B,LOC_B0A2CBC44C27,Barnala Mandi,main,True,7,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,16:00,37,medium,False,SRC_CURATED_REF,False,v0.1
+MND_596F86458307,LOC_3B6744C6B906,Meerut Navin Mandi,main,True,10,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,18:00,74,large,False,SRC_CURATED_REF,False,v0.1
+MND_4217655002FF,LOC_8FA46A67CDE8,Ghaziabad Mandi,main,True,10,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,18:00,72,large,False,SRC_CURATED_REF,False,v0.1
+MND_2E59AF542C18,LOC_78200CD43D88,Bulandshahr Mandi,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sat",06:00,16:00,47,medium,False,SRC_CURATED_REF,False,v0.1
+MND_05333875B51A,LOC_DC8A0B932E37,Muzaffarnagar Mandi,main,True,10,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,18:00,75,large,False,SRC_CURATED_REF,False,v0.1
+MND_D5BFCB18509B,LOC_C71CFC391E17,Saharanpur Mandi,main,True,7,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,16:00,38,medium,False,SRC_CURATED_REF,False,v0.1
+MND_1BD2DF2540D5,LOC_7E538D9A5AED,Aligarh Mandi,main,True,7,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,37,medium,False,SRC_CURATED_REF,False,v0.1
+MND_316B3A33D09D,LOC_3CF5A55DB63C,Agra Mandi,main,True,10,"Mon,Wed,Thu,Fri,Sat,Sun",06:00,18:00,70,large,False,SRC_CURATED_REF,False,v0.1
+MND_5B5C6B926181,LOC_307A7D234DCB,Mathura Mandi,main,True,7,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,16:00,52,medium,False,SRC_CURATED_REF,False,v0.1
+MND_96D277426B8A,LOC_81436469E396,Hapur Mandi,main,True,7,"Mon,Tue,Wed,Thu,Fri,Sat",06:00,16:00,49,medium,False,SRC_CURATED_REF,False,v0.1
+MND_B8828956892C,LOC_C4995C179A2F,Moradabad Mandi,main,True,7,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,38,medium,False,SRC_CURATED_REF,False,v0.1
+MND_9AC86A6D5AEC,LOC_008EDC4F6892,Bareilly Mandi,main,True,7,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,47,medium,False,SRC_CURATED_REF,False,v0.1
+MND_F0BDDB3CC08D,LOC_24FF783F729F,Lucknow Navin Mandi,main,True,10,"Tue,Wed,Thu,Fri,Sat,Sun",06:00,18:00,66,large,False,SRC_CURATED_REF,False,v0.1
+MND_301551655568,LOC_1B01FD8B182B,Kanpur Mandi,main,True,10,"Mon,Tue,Wed,Fri,Sat,Sun",06:00,18:00,74,large,False,SRC_CURATED_REF,False,v0.1
+MND_EE2349EB6FB3,LOC_B859B20B71AD,Varanasi Mandi,main,True,7,"Mon,Tue,Wed,Thu,Sat,Sun",06:00,16:00,48,medium,False,SRC_CURATED_REF,False,v0.1
+MND_362E0E09CB0D,LOC_223795E93DD6,Gorakhpur Mandi,main,True,7,"Tue,Wed,Thu,Fri,Sat,Sun",06:00,16:00,52,medium,False,SRC_CURATED_REF,False,v0.1
+MND_954F0551D2D8,LOC_2197C98EE6F3,Sitapur Mandi,main,True,4,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,30,small,False,SRC_CURATED_REF,False,v0.1
+MND_C163C6E4A832,LOC_AC87C73A1F45,Shamli Mandi,main,True,4,"Mon,Tue,Thu,Fri,Sat,Sun",06:00,16:00,25,small,False,SRC_CURATED_REF,False,v0.1
