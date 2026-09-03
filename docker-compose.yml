@@ -1,14 +1,13 @@
 # VahaanBandhu 2.0 — local development stack.
 #
-# No credentials are embedded. Every secret comes from .env, which is gitignored.
+# No credentials are embedded anywhere. Everything comes from .env at runtime,
+# and .env is gitignored.
 #
-#   docker compose up -d mongo     # database only; run the apps natively
-#   docker compose up              # full stack
+#   docker compose up -d mongo redis   # data services only
+#   docker compose up --build          # full stack
 #
-# STATUS: `mongo` is working and tested. The `api` and `web` services are
-# scaffolded but WILL NOT BUILD YET -- `api/` does not exist (the application
-# layer is the next phase of work) and `client/` still needs its Clerk/MongoDB
-# migration. Use `docker compose up -d mongo` until those land.
+# Startup order is enforced by health checks: the API waits for MongoDB and
+# Redis to be genuinely ready, not merely started.
 
 services:
   mongo:
@@ -22,11 +21,27 @@ services:
     environment:
       MONGO_INITDB_DATABASE: vahaanbandhu
     healthcheck:
-      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 6
       start_period: 20s
+
+  redis:
+    image: redis:7
+    container_name: vb-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
   api:
     build:
@@ -37,21 +52,32 @@ services:
     depends_on:
       mongo:
         condition: service_healthy
+      redis:
+        condition: service_healthy
     ports:
-      - "5000:5000"
+      - "8000:8000"
     env_file:
       - .env
     environment:
-      # Inside the compose network, reach Mongo by service name.
+      # Inside the compose network, reach services by name.
       MONGODB_URI: mongodb://mongo:27017
-      FLASK_ENV: development
+      REDIS_URL: redis://redis:6379/0
+      ENVIRONMENT: development
     volumes:
-      # Mount the datasets read-only: the API serves them, it does not author them.
+      # Phase-A datasets are research artifacts: mounted READ-ONLY so the
+      # application can never modify them.
       - ./Data:/app/Data:ro
-      - ./Res:/app/Res
-      - ./vb:/app/vb
-      - ./routing:/app/routing
-      - ./api:/app/api
+      - ./Res:/app/Res:ro
+      - ./vb:/app/vb:ro
+      - ./routing:/app/routing:ro
+      - ./server:/app/server
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request;urllib.request.urlopen('http://localhost:8000/api/v1/health/live')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
 
   web:
     build:
@@ -60,13 +86,14 @@ services:
     container_name: vb-web
     restart: unless-stopped
     depends_on:
-      - api
+      api:
+        condition: service_started
     ports:
       - "3000:3000"
     env_file:
       - .env
     environment:
-      NEXT_PUBLIC_API_BASE_URL: http://localhost:5000
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
     volumes:
       - ./client:/app
       - /app/node_modules
@@ -74,3 +101,4 @@ services:
 
 volumes:
   mongo-data:
+  redis-data:
