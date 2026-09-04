@@ -1,18 +1,40 @@
 # VahaanBandhu FastAPI backend (Python 3.12)
+
+# --- Web
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
 pydantic==2.9.2
 pydantic-settings==2.6.1
-motor==3.6.0
-# pymongo pin removed: motor selects a compatible version itself
+python-multipart==0.0.20
 
+# --- Data stores
+motor==3.6.0
+# pymongo is not pinned: motor selects a compatible version itself, and pinning
+# both produced an unsatisfiable resolution.
 redis==5.2.1
+
+# --- Auth / HTTP
 httpx==0.28.1
 python-jose[cryptography]==3.3.0
 python-dotenv==1.0.1
-python-multipart==0.0.20
+requests==2.32.3
 
-# Testing
+# --- Phase-A runtime, needed by RoutingService and the seed loader.
+# Without pandas the routing service silently degrades to straight-line
+# estimates and the seeder cannot read the master CSVs.
+pandas==2.2.3
+numpy==2.1.3
+networkx==3.4.2
+shapely==2.0.6
+pyproj==3.7.0
+ortools==9.11.4210
+
+# --- Deliberately NOT installed: qiskit, qiskit-aer, qiskit-ibm-runtime.
+# The application must never call quantum hardware in a request path, and
+# leaving the IBM runtime out of the image makes that physically true rather
+# than merely a convention. Quantum research runs in the host environment.
+
+# --- Testing
 pytest==8.3.4
 pytest-asyncio==0.25.0
 asgi-lifespan==2.1.0

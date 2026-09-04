@@ -33,10 +33,12 @@ VIEWPORTS = {
 # (checkpoint, name, path, dev_user, viewports)
 PAGES = [
     ("01-landing", "landing", "/", None, ["desktop", "mobile"]),
-    ("02-auth", "signin", "/signin", None, ["desktop", "mobile"]),
-    # Same page with the demo panel expanded, so both states are documented.
-    ("02-auth", "signin-demo-expanded", "/signin?expand=demo", None,
-     ["desktop", "mobile"]),
+    # The two-path entry screen: Login with Clerk / Show Demo.
+    ("02-auth", "signin", "/signin", None,
+     ["desktop", "mobile", "mobile-sm", "tablet"]),
+    # The demo role selector reached from Show Demo.
+    ("02-auth", "demo-role-selector", "/demo", None,
+     ["desktop", "mobile", "mobile-sm", "tablet"]),
     ("03-role", "role-selection", "/app/role", "dev_farmer_01", ["desktop", "mobile"]),
     ("04-farmer", "farmer-dashboard", "/app/farmer", "dev_farmer_01",
      ["desktop", "mobile", "mobile-sm", "tablet"]),
@@ -89,14 +91,6 @@ def capture(checkpoint_filter: str | None = None) -> dict:
                             "u => localStorage.setItem('vb_dev_user', u)", dev_user)
 
                     page.goto(f"{WEB}{path}", wait_until="networkidle", timeout=45000)
-                    if "demo-expanded" in name:
-                        # Reveal the demo roles so the expanded state is captured.
-                        page.wait_for_timeout(1200)
-                        for sel in ("डेमो देखें", "View the demo"):
-                            btn = page.get_by_role("button", name=sel)
-                            if btn.count():
-                                btn.first.click()
-                                break
                     # Let client fetches settle; these pages load data on mount.
                     page.wait_for_timeout(6000 if "map" in name else 2500)
 
