@@ -434,3 +434,76 @@ class TestProductionSafety:
     async def test_settings_have_no_real_secret_defaults(self):
         s = get_settings()
         assert s.clerk_secret_key == "" or s.clerk_secret_key.startswith("sk_")
+
+class TestDemoAuthGuards:
+    """The demo path must be development-only, enforced by the backend.
+
+    A frontend switch is not a security boundary: the browser can send any
+    header it likes, so the refusal has to happen server-side.
+    """
+
+    async def test_demo_refused_in_production_even_if_flag_enabled(self):
+        from server.app.core.config import Settings
+        s = Settings(environment="production", dev_auth_enabled=True)
+        assert s.demo_auth_active is False
+
+    async def test_demo_refused_when_flag_disabled(self):
+        from server.app.core.config import Settings
+        s = Settings(environment="development", dev_auth_enabled=False)
+        assert s.demo_auth_active is False
+
+    async def test_demo_requires_both_conditions(self):
+        from server.app.core.config import Settings
+        assert Settings(environment="development",
+                        dev_auth_enabled=True).demo_auth_active is True
+        for env in ("production", "prod", "PRODUCTION"):
+            assert Settings(environment=env,
+                            dev_auth_enabled=True).demo_auth_active is False
+
+    @needs_mongo
+    async def test_dev_login_returns_404_not_403_outside_development(
+        self, client, monkeypatch
+    ):
+        """404, so the endpoint does not advertise its own existence.
+
+        The route reads settings through get_settings() at call time, so the
+        production condition is injected there. Mutating the cached Settings
+        object and clearing the cache does not work -- the cache simply rebuilds
+        an identical instance from the environment.
+        """
+        from server.app.core.config import Settings
+        import server.app.api.routes.me as me_module
+
+        prod = Settings(environment="production", dev_auth_enabled=True)
+        assert prod.demo_auth_active is False
+        monkeypatch.setattr(me_module, "get_settings", lambda: prod)
+
+        r = await client.post("/api/v1/auth/dev-login",
+                              json={"user_id": "x", "role": "FARMER"})
+        assert r.status_code == 404
+
+    @needs_mongo
+    async def test_dev_login_works_in_development(self, client):
+        r = await client.post("/api/v1/auth/dev-login",
+                              json={"user_id": "demo_probe", "role": "FARMER"})
+        assert r.status_code == 200
+        assert r.json()["auth_source"] == "dev"
+
+    @needs_mongo
+    async def test_demo_identity_cannot_cross_roles(self, client):
+        """A demo farmer is still only a farmer."""
+        await client.post("/api/v1/auth/dev-login",
+                          json={"user_id": "demo_farmer_probe", "role": "FARMER"})
+        r = await client.get("/api/v1/truckers/jobs",
+                             headers={"x-dev-user": "demo_farmer_probe"})
+        assert r.status_code == 403
+
+    @needs_mongo
+    async def test_role_in_request_body_is_not_trusted(self, client):
+        """Claiming a role in the payload must not grant it."""
+        r = await client.post(
+            "/api/v1/farmers/requests",
+            headers={"x-dev-user": "test_trucker"},
+            json={"crop_key": "wheat", "quantity_value": 5,
+                  "quantity_unit": "quintal", "role": "FARMER"})
+        assert r.status_code == 403
