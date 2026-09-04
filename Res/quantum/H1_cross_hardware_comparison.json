@@ -1,29 +1,27 @@
 {
   "experiment_id": "H1_controlled_validation",
-  "created_at": "2026-09-03T12:26:22Z",
-  "problem": "edge-selection QUBO, diamond graph, 5 qubits, QAOA p=1",
-  "controlled": "identical QUBO, depth, parameters, shots, decoding and objective across all backends",
+  "created_at": "2026-09-04T02:15:46Z",
+  "problem": "edge-selection QUBO, diamond graph, 5 qubits, QAOA p=1, 1024 shots",
+  "controlled": "identical QUBO, QAOA depth, optimized parameters, shots, decoding and objective across all backends; only hardware and transpilation differ",
   "classical_optimum": 2.5,
-  "comparison": [
-    {
-      "source": "ibm_fez",
-      "kind": "real_qpu",
-      "feasible_sample_rate": 0.1611328125,
-      "best_feasible_energy": 2.5,
-      "matched_optimum": true,
-      "decoded_path": [
-        0,
-        2,
-        3
-      ],
-      "transpiled_depth": 73,
-      "shots": 1024,
-      "job_id": "dacmbq5nj4cs73acr6lg"
-    },
+  "true_optimal_path": [
+    0,
+    2,
+    3
+  ],
+  "simulator": {
+    "source": "aer_ideal_simulator",
+    "kind": "simulator",
+    "feasible_sample_rate": 0.1982,
+    "best_feasible_energy": 2.5,
+    "matched_optimum": true,
+    "shots": 2048
+  },
+  "real_qpus": [
     {
       "source": "ibm_marrakesh",
       "kind": "real_qpu",
-      "feasible_sample_rate": 0.1865234375,
+      "feasible_sample_rate": 0.1865,
       "best_feasible_energy": 2.5,
       "matched_optimum": true,
       "decoded_path": [
@@ -33,12 +31,29 @@
       ],
       "transpiled_depth": 74,
       "shots": 1024,
-      "job_id": "dacmbvbdd5gc73d69bag"
+      "job_id": "dacmbvbdd5gc73d69bag",
+      "n_distinct_bitstrings": 32
     },
     {
-      "source": "aer_ideal_simulator",
-      "kind": "simulator",
-      "feasible_sample_rate": 0.1982421875,
+      "source": "ibm_fez",
+      "kind": "real_qpu",
+      "feasible_sample_rate": 0.1611,
+      "best_feasible_energy": 2.5,
+      "matched_optimum": true,
+      "decoded_path": [
+        0,
+        2,
+        3
+      ],
+      "transpiled_depth": 73,
+      "shots": 1024,
+      "job_id": "dacmbq5nj4cs73acr6lg",
+      "n_distinct_bitstrings": 32
+    },
+    {
+      "source": "ibm_kingston",
+      "kind": "real_qpu",
+      "feasible_sample_rate": 0.123,
       "best_feasible_energy": 2.5,
       "matched_optimum": true,
       "decoded_path": [
@@ -47,9 +62,10 @@
         3
       ],
       "transpiled_depth": null,
-      "shots": 2048,
-      "job_id": null
+      "shots": 1024,
+      "job_id": "dacft8l1ierc738ji9a0",
+      "n_distinct_bitstrings": 32
     }
   ],
-  "conclusion": "Both real QPUs decoded the true optimal path and matched the classical optimum. Feasible sampling rate degraded modestly under hardware noise (19.8% ideal -> 18.7% marrakesh -> 16.1% fez). This validates the encode/submit/decode pipeline on real hardware; it is NOT evidence of quantum advantage, since a classical exact solve returns the same answer instantly."
+  "conclusion": "All three real IBM QPUs decoded the TRUE optimal path [0,2,3] and matched the classical optimum exactly. Feasible sampling rate degraded under hardware noise relative to the noiseless simulator (19.82% ideal vs 12.30-18.65% on hardware). This validates the encode/submit/decode pipeline on real quantum hardware. It is NOT evidence of quantum advantage: a classical exact solve returns the same answer in microseconds."
 }

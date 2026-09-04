@@ -13,11 +13,13 @@
       "qaoa_depth": 1,
       "shots": 1024,
       "parameter_source": "optimized on a noiseless simulator, then transferred",
-      "status": "QUEUED",
+      "status": "DONE",
       "owned_by_project": true,
-      "result_retrieved": false,
-      "result_path": null,
-      "notes": "Phase-A Experiment H original submission."
+      "result_retrieved": true,
+      "result_path": "D:\\VahaanBandhu\\Res\\quantum\\H1_ibm_kingston_result.json",
+      "notes": "Phase-A Experiment H original submission.",
+      "feasible_sample_rate": 0.123046875,
+      "best_feasible_energy": 2.5
     },
     {
       "record_id": "H1-FEZ",
@@ -121,5 +123,5 @@
       }
     ]
   },
-  "updated_at": "2026-09-03T12:25:25Z"
+  "updated_at": "2026-09-04T02:15:27Z"
 }
