@@ -1,11 +1,24 @@
 # VahaanBandhu
 
+**Top 10 — Microsoft Azure Agritech Hackathon**
+
 **Rural circular logistics for Indian agriculture — connecting farmers, truck drivers and input dealers so fewer trucks travel empty.**
 
-[Research Notebooks](research/notebooks) · [Local Setup](#running-locally) · [Tests](#tests)
+[Live Demo](__LIVE_URL__) · [Research Notebooks](research/notebooks) · [Local Setup](#running-locally) · [Tests](#tests)
 
-> **Live deployment:** not yet published. See [Deployment](#deployment) for the
-> exact steps and what is still required.
+> The live demo runs the frontend with a bundled snapshot of real seeded records
+> and frozen TomTom route geometry. It is **read-only** — it demonstrates the
+> three role experiences and the routing output without a hosted backend. Run
+> locally for the full stack.
+
+## Team
+
+| Member | Role |
+|---|---|
+| Niranjan Praveen | Team Leader, Frontend Developer |
+| Debshata Choudhury | QML Developer |
+| Vaibhav Jain | Frontend Developer |
+| Abhishek Chaubey | Backend Developer |
 
 ---
 
