@@ -1,13 +1,20 @@
 "use client";
+import { t } from "@/lib/i18n";
+import { useSession } from "@/components/providers/SessionProvider";
 import Tags from "@/components/ui/tags";
 import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-const text = `असंगठित लॉजिस्टिक्स, ऊँची परिवहन लागत और समय पर ट्रक की अनुपलब्धता के कारण, किसानों को देरी, फसल खराब होने और तकनीकी पहुँच की कमी जैसी गंभीर समस्याओं का सामना करना पड़ता है।`;
+// Word-by-word animation source. Read from the dictionary so it
+// switches with the language like every other string.
+const TEXT_KEY = "intro.problem";
 
-const words = text.split(" ");
 export default function Introduction() {
+  const { lang } = useSession();
+  const tr = (k) => t(k, lang);
+  // Recomputed per render so the animated text follows the language.
+  const words = tr(TEXT_KEY).split(" ");
   const scrollTarget = useRef();
   const { scrollYProgress } = useScroll({
     target: scrollTarget,
@@ -25,12 +32,11 @@ export default function Introduction() {
       <div className="container">
         <div className="sticky top-20 md:top-28 lg:top-40">
           <div className="flex justify-center">
-            <Tags title={"परिचय"} />
+            <Tags title={tr("intro.tag")} />
           </div>
           <div className="text-4xl md:text-5xl text-center font-medium mt-10">
             <span>
-              सामाजिक प्रभाव को मापने योग्य और सार्थक होना चाहिए। CSR फंडिंग के
-              बढ़ने के बावजूद...
+              {tr("intro.csr")}
             </span>{" "}
             <span className="text-white/15 leading-relaxed tracking-wider">
               {words.map((word, index) => {
@@ -38,7 +44,7 @@ export default function Introduction() {
                 
                 const shouldHighlight =
                   isVisible &&
-                  ["असंगठित", "देरी", "खराब"].some((w) =>
+                  (lang === "hi" ? ["असंगठित", "देरी", "खराब"] : ["Disorganised", "delays", "spoiled"]).some((w) =>
                     word.toLowerCase().includes(w)
                   );
 
@@ -57,7 +63,7 @@ export default function Introduction() {
               })}
             </span>
             <span className="text-lime-400 block mt-3">
-              इसीलिए हमने वाहनबन्धु बनाया है।
+              {tr("intro.closing")}
             </span>
           </div>
         </div>

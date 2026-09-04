@@ -53,7 +53,12 @@ PAGES = [
 ]
 
 
-def capture(checkpoint_filter: str | None = None) -> dict:
+# Pages captured in both languages, to prove the toggle actually switches
+# rather than merely rendering a button.
+LANG_VARIANTS = {"landing", "signin", "demo-role-selector", "farmer-dashboard"}
+
+
+def capture(checkpoint_filter: str | None = None, lang: str | None = None) -> dict:
     SHOTS.mkdir(parents=True, exist_ok=True)
     report: list[dict] = []
 
@@ -85,16 +90,21 @@ def capture(checkpoint_filter: str | None = None) -> dict:
                 try:
                     # Seed the dev identity before the app boots, so the session
                     # provider picks it up on first render.
-                    if dev_user:
+                    if dev_user or lang:
                         page.goto(f"{WEB}/", wait_until="domcontentloaded")
-                        page.evaluate(
-                            "u => localStorage.setItem('vb_dev_user', u)", dev_user)
+                        if dev_user:
+                            page.evaluate(
+                                "u => localStorage.setItem('vb_dev_user', u)", dev_user)
+                        if lang:
+                            page.evaluate(
+                                "l => localStorage.setItem('vb_lang', l)", lang)
 
                     page.goto(f"{WEB}{path}", wait_until="networkidle", timeout=45000)
                     # Let client fetches settle; these pages load data on mount.
                     page.wait_for_timeout(6000 if "map" in name else 2500)
 
-                    fname = f"{name}--{vp}.png"
+                    suffix = f"--{lang}" if lang else ""
+                    fname = f"{name}{suffix}--{vp}.png"
                     # Viewport-only on mobile. A full-page capture renders the
                     # `position: fixed` bottom nav at its viewport offset, which
                     # makes it appear stranded mid-page in the image -- a
@@ -129,8 +139,10 @@ def capture(checkpoint_filter: str | None = None) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--checkpoint", default=None)
+    ap.add_argument("--lang", default=None, choices=["hi", "en"],
+                    help="capture in a specific language")
     a = ap.parse_args()
-    out = capture(a.checkpoint)
+    out = capture(a.checkpoint, a.lang)
     print(f"\n{out['count']} screenshots -> {SHOTS}")
 
 

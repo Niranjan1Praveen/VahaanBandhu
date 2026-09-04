@@ -22,6 +22,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { LanguageToggle } from "@/components/app/LanguageToggle";
 import { useSession } from "@/components/providers/SessionProvider";
 import api from "@/lib/api";
 import { t } from "@/lib/i18n";
@@ -47,7 +48,10 @@ export default function SignInPage() {
   const demoAvailable = health?.auth?.dev_auth_active !== false;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4 py-10 text-foreground">
+    <div className="relative flex min-h-screen items-center justify-center bg-background px-4 py-10 text-foreground">
+      <div className="absolute right-4 top-4">
+        <LanguageToggle />
+      </div>
       <div className="w-full max-w-md">
         <Link href="/" className="mb-10 flex items-center justify-center gap-2.5">
           <span className="grid h-11 w-11 place-items-center rounded-full bg-lime-400 text-lg font-bold text-neutral-950">
@@ -62,7 +66,7 @@ export default function SignInPage() {
 
         {/* ---------- 1. Real authentication ---------- */}
         <p className="mb-2.5 text-center text-sm text-white/60">
-          {lang === "hi" ? "असली उपयोगकर्ता?" : "Real user?"}
+          {tr("auth.realUser")}
         </p>
         <Link
           href={clerkConfigured ? "/sign-in" : "#"}
@@ -70,11 +74,7 @@ export default function SignInPage() {
             if (!clerkConfigured) {
               e.preventDefault();
               // Honest message. Never a silent downgrade to demo auth.
-              setClerkMessage(
-                lang === "hi"
-                  ? "इस स्थानीय वातावरण में Clerk प्रमाणीकरण कॉन्फ़िगर नहीं है।"
-                  : "Clerk authentication is not configured for this local environment."
-              );
+              setClerkMessage(tr("auth.clerkNotConfigured"));
             }
           }}
           className={`flex h-14 w-full items-center justify-center gap-3 rounded-full border text-base font-medium transition ${
@@ -84,7 +84,7 @@ export default function SignInPage() {
           }`}
         >
           <span>🔐</span>
-          {lang === "hi" ? "Clerk से लॉग इन करें" : "Login with Clerk"}
+          {tr("auth.loginClerk")}
         </Link>
 
         {clerkMessage && (
@@ -97,14 +97,14 @@ export default function SignInPage() {
         <div className="my-8 flex items-center gap-4">
           <span className="h-px flex-1 bg-white/10" />
           <span className="text-xs uppercase tracking-wider text-white/25">
-            {lang === "hi" ? "या" : "or"}
+            {tr("auth.or")}
           </span>
           <span className="h-px flex-1 bg-white/10" />
         </div>
 
         {/* ---------- 2. Demo ---------- */}
         <p className="mb-2.5 text-center text-sm text-white/60">
-          {lang === "hi" ? "पहले देखना चाहते हैं?" : "Want to explore first?"}
+          {tr("auth.exploreFirst")}
         </p>
         <Link
           href="/demo"
@@ -116,14 +116,12 @@ export default function SignInPage() {
           }`}
         >
           <span>👁️</span>
-          {lang === "hi" ? "डेमो देखें" : "Show Demo"}
+          {tr("auth.showDemo")}
         </Link>
 
         {!demoAvailable && (
           <p className="mt-3 text-center text-xs text-white/35">
-            {lang === "hi"
-              ? "इस वातावरण में डेमो उपलब्ध नहीं है।"
-              : "The demo is not available in this environment."}
+            {tr("auth.demoUnavailable")}
           </p>
         )}
 
@@ -137,7 +135,7 @@ export default function SignInPage() {
           href="/"
           className="mt-10 block text-center text-sm text-white/40 hover:text-white/70"
         >
-          ← {lang === "hi" ? "मुख्य पृष्ठ" : "Home"}
+          ← {tr("auth.home")}
         </Link>
       </div>
     </div>

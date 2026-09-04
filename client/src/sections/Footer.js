@@ -1,15 +1,20 @@
+"use client";
+import { t } from "@/lib/i18n";
+import { useSession } from "@/components/providers/SessionProvider";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/images/logo.png";
 
 const footerLinks = [
-  { href: "#", label: "संपर्क करें" },
-  { href: "#", label: "गोपनीयता नीति" },
-  { href: "#", label: "नियम और शर्तें" },
+  { href: "#", key: "footer.contact" },
+  { href: "#", key: "footer.privacy" },
+  { href: "#", key: "footer.terms" },
 ];
 
 
 export default function Footer() {
+  const { lang } = useSession();
+  const tr = (k) => t(k, lang);
   return (
     <section className="py-10 px-4 flex items-center justify-center">
       <footer className="container flex flex-col md:flex-row md:justify-between items-center gap-6">
@@ -21,11 +26,11 @@ export default function Footer() {
             </h2>
           </div>
           <small className="text-white/50">
-            द्वारा निर्मित{" "}
+            {tr("footer.builtBy")}{" "}
             <Link href={"/"} className="uppercase">
               code4change
             </Link>
-            । स्रोत कोड{" "}
+            {tr("footer.sourceCode")}{" "}
             <Link
               href={
                 "https://github.com/Niranjan1Praveen/DropConnect-Development"
@@ -34,17 +39,17 @@ export default function Footer() {
             >
               GitHub
             </Link>{" "}
-            पर उपलब्ध है।
+            {tr("footer.availableOn")}
           </small>
         </div>
         <nav className="flex gap-6">
           {footerLinks.map((link) => (
             <a
               href={link.href}
-              key={link.label}
+              key={link.key}
               className="text-white/50 text-sm"
             >
-              {link.label}
+              {tr(link.key)}
             </a>
           ))}
         </nav>

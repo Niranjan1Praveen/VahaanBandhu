@@ -20,6 +20,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { LanguageToggle } from "@/components/app/LanguageToggle";
 import { useSession } from "@/components/providers/SessionProvider";
 import api from "@/lib/api";
 import { t } from "@/lib/i18n";
@@ -28,34 +29,35 @@ const DEMOS = [
   {
     id: "dev_farmer_01",
     role: "FARMER",
+    tkey: "farmer",
     icon: "🌾",
     titleHi: "किसान",
     titleEn: "Farmer",
-    descHi: "फसल भेजने का अनुरोध बनाएं, मंडी और मात्रा चुनें, और मिली हुई गाड़ी देखें।",
-    descEn: "Create crop transport requests, choose mandi and quantity, and view matched transport.",
+    
   },
   {
     id: "dev_trucker_01",
     role: "TRUCKER",
+    tkey: "trucker",
     icon: "🚚",
     titleHi: "ट्रक चालक",
     titleEn: "Trucker",
-    descHi: "उपलब्ध काम, रास्ते, वापसी लोड और बचे हुए खाली किलोमीटर देखें।",
-    descEn: "Explore jobs, routes, return loads and empty-kilometre savings.",
+    
   },
   {
     id: "dev_dealer_01",
     role: "INPUT_DEALER",
+    tkey: "dealer",
     icon: "🏪",
     titleHi: "इनपुट डीलर",
     titleEn: "Input Dealer",
-    descHi: "सामग्री की ज़रूरतें, आने वाली डिलीवरी और लौटती गाड़ियों के मौके देखें।",
-    descEn: "Explore material requirements, incoming deliveries and returning-truck opportunities.",
+    
   },
 ];
 
 export default function DemoPage() {
   const { devSignIn, lang } = useSession();
+  const tr = (k) => t(k, lang);
   const router = useRouter();
   const [busy, setBusy] = useState(null);
   const [err, setErr] = useState(null);
@@ -77,18 +79,17 @@ export default function DemoPage() {
     } catch (e) {
       // Most likely the backend refused demo auth for this environment.
       setErr(
-        e.status === 404
-          ? lang === "hi"
-            ? "इस वातावरण में डेमो प्रमाणीकरण उपलब्ध नहीं है।"
-            : "Demo authentication is not available in this environment."
-          : e.message
+        e.status === 404 ? tr("demo.notAvailable") : e.message
       );
       setBusy(null);
     }
   }
 
   return (
-    <div className="min-h-screen bg-background px-4 py-10 text-foreground">
+    <div className="relative min-h-screen bg-background px-4 py-10 text-foreground">
+      <div className="absolute right-4 top-4">
+        <LanguageToggle />
+      </div>
       <div className="mx-auto w-full max-w-2xl">
         <Link href="/" className="mb-8 flex items-center justify-center gap-2.5">
           <span className="grid h-10 w-10 place-items-center rounded-full bg-lime-400 text-base font-bold text-neutral-950">
@@ -98,16 +99,14 @@ export default function DemoPage() {
         </Link>
 
         <h1 className="text-center text-2xl font-medium md:text-3xl">
-          {lang === "hi" ? "वाहनबन्धु देखें" : "Explore VahaanBandhu"}
+          {tr("demo.title")}
         </h1>
         <p className="mt-2 text-center text-sm text-white/50">
-          {lang === "hi" ? "कोई एक अनुभव चुनें" : "Choose an experience"}
+          {tr("demo.subtitle")}
         </p>
 
         <div className="mx-auto mt-6 max-w-md rounded-2xl border border-amber-500/25 bg-amber-500/10 px-4 py-3 text-center text-xs text-amber-200">
-          {lang === "hi"
-            ? "डेमो मोड — नमूना डेटा। कोई असली खाता नहीं बनता।"
-            : "Demo mode — sample data. No real account is created."}
+          {tr("demo.warning")}
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -123,7 +122,7 @@ export default function DemoPage() {
                 {lang === "hi" ? d.titleHi : d.titleEn}
               </span>
               <span className="flex-1 text-sm leading-relaxed text-white/50">
-                {lang === "hi" ? d.descHi : d.descEn}
+                {tr(`demo.${d.tkey}.desc`)}
               </span>
               <span className="mt-1 flex items-center gap-2 text-sm text-lime-400">
                 {busy === d.id ? (
@@ -132,7 +131,7 @@ export default function DemoPage() {
                     {t("common.loading", lang)}
                   </>
                 ) : (
-                  <>{lang === "hi" ? "शुरू करें" : "Start"} →</>
+                  <>{tr("demo.start")} →</>
                 )}
               </span>
             </button>
@@ -141,9 +140,7 @@ export default function DemoPage() {
 
         {available === false && (
           <p className="mt-6 text-center text-sm text-white/45">
-            {lang === "hi"
-              ? "इस वातावरण में डेमो प्रमाणीकरण बंद है।"
-              : "Demo authentication is disabled in this environment."}
+            {tr("demo.notAvailable")}
           </p>
         )}
 
@@ -157,7 +154,7 @@ export default function DemoPage() {
           href="/signin"
           className="mt-10 block text-center text-sm text-white/40 hover:text-white/70"
         >
-          ← {lang === "hi" ? "लॉग इन पर वापस" : "Back to login"}
+          ← {tr("demo.backToLogin")}
         </Link>
       </div>
     </div>

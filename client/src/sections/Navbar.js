@@ -1,4 +1,7 @@
 "use client";
+import { LanguageToggle } from "@/components/app/LanguageToggle";
+import { t } from "@/lib/i18n";
+import { useSession } from "@/components/providers/SessionProvider";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,11 +11,13 @@ import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "framer-motion";
 // fdsfs
 export default function Navbar() {
+  const { lang } = useSession();
+  const tr = (k) => t(k, lang);
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
-    { label: "होम", href: "" },
-    { label: "परिचय", href: "#introductions" },
-    { label: "विशेषताएं", href: "#features" },
+    { key: "nav.home", href: "" },
+    { key: "nav.intro", href: "#introductions" },
+    { key: "nav.features", href: "#features" },
   ];
 
   return (
@@ -31,8 +36,8 @@ export default function Navbar() {
               <div className="lg:flex justify-center items-center hidden">
                 <nav className="flex gap-6 font-medium">
                   {navLinks.map((link) => (
-                    <a href={link.href} key={link.label}>
-                      {link.label}
+                    <a href={link.href} key={link.key}>
+                      {tr(link.key)}
                     </a>
                   ))}
                 </nav>
@@ -80,19 +85,20 @@ export default function Navbar() {
                     )}
                   />
                 </svg>
+                <LanguageToggle className="mr-1" />
                 <Link href="/signin">
                   <Button
                     variant={"login"}
                     className="cursor-pointer hidden md:inline-flex items-center"
                   >
-                    लॉग इन
+                    {tr("nav.signIn")}
                   </Button>
                 </Link>
                 <Button
                   variant={"signup"}
                   className="cursor-pointer hidden md:inline-flex items-center"
                 >
-                  <a href="#signUpOptions">साइन अप</a>
+                  <a href="#signUpOptions">{tr("nav.signUp")}</a>
                 </Button>
               </div>
             </div>
@@ -107,8 +113,8 @@ export default function Navbar() {
                 >
                   <div className="flex flex-col items-center gap-4 py-4 ">
                     {navLinks.map((link) => (
-                      <a href={link.href} key={link.label} className="">
-                        {link.label}
+                      <a href={link.href} key={link.key} className="">
+                        {tr(link.key)}
                       </a>
                     ))}
                     <Link href="/signin">
@@ -116,14 +122,14 @@ export default function Navbar() {
                         variant={"login"}
                         className="cursor-pointer md:inline-flex items-center"
                       >
-                        लॉग इन
+                        {tr("nav.signIn")}
                       </Button>
                     </Link>
                     <Button
                       variant={"signup"}
                       className="cursor-pointer md:inline-flex items-center"
                     >
-                      <a href="#signUpOptions">साइन अप</a>
+                      <a href="#signUpOptions">{tr("nav.signUp")}</a>
                     </Button>
                   </div>
                 </motion.div>
