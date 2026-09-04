@@ -6,11 +6,6 @@
 
 [Live Demo](https://vahaanbandhu.vercel.app) · [Research Notebooks](research/notebooks) · [Local Setup](#running-locally) · [Tests](#tests)
 
-> The live demo runs the frontend with a bundled snapshot of real seeded records
-> and frozen TomTom route geometry. It is **read-only** — it demonstrates the
-> three role experiences and the routing output without a hosted backend. Run
-> locally for the full stack.
-
 ## Team
 
 | Member | Role |
