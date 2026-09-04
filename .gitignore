@@ -27,7 +27,7 @@ Thumbs.db
 .idea/
 .vscode/
 
-# --- Local agent / assistant workspaces
+# --- Local AI-assistant workspaces (never published)
 .claude/
 CLAUDE.md
 

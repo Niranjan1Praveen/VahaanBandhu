@@ -1,1 +1,4 @@
+# One-shot patch/restructure scripts (kept locally, not published)
 _*.py
+public_rename.py
+fix_notebook_paths.py
