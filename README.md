@@ -4,7 +4,7 @@
 
 **Rural circular logistics for Indian agriculture — connecting farmers, truck drivers and input dealers so fewer trucks travel empty.**
 
-[Live Demo](__LIVE_URL__) · [Research Notebooks](research/notebooks) · [Local Setup](#running-locally) · [Tests](#tests)
+[Live Demo](https://vahaanbandhu.vercel.app) · [Research Notebooks](research/notebooks) · [Local Setup](#running-locally) · [Tests](#tests)
 
 > The live demo runs the frontend with a bundled snapshot of real seeded records
 > and frozen TomTom route geometry. It is **read-only** — it demonstrates the

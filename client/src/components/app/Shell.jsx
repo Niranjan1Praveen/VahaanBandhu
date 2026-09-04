@@ -12,6 +12,7 @@
  */
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import { useSession } from "@/components/providers/SessionProvider";
@@ -22,6 +23,15 @@ export function Shell({ nav = [], title, children }) {
   const { lang, setLang, user, signOut, role } = useSession();
   const pathname = usePathname();
   const router = useRouter();
+
+  // The public deployment has no backend, so the app serves a bundled snapshot.
+  // Say so plainly rather than letting a read-only snapshot look live.
+  const [staticDemo, setStaticDemo] = useState(false);
+  useEffect(() => {
+    const onStatic = () => setStaticDemo(true);
+    window.addEventListener("vb:static-demo", onStatic);
+    return () => window.removeEventListener("vb:static-demo", onStatic);
+  }, []);
   const tr = (k) => t(k, lang);
 
   return (
@@ -83,6 +93,13 @@ export function Shell({ nav = [], title, children }) {
         <div className="flex items-center justify-center gap-3 border-b border-amber-500/25 bg-amber-500/10 px-4 py-1.5 text-center text-xs text-amber-200">
           <span>
             {tr("common.demoMode")} · {role}
+            {staticDemo && (
+              <span className="ml-2 text-amber-300/80">
+                {lang === "hi"
+                  ? "· नमूना डेटा (केवल पढ़ने के लिए)"
+                  : "· sample data (read-only)"}
+              </span>
+            )}
           </span>
           <button
             onClick={() => {

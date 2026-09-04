@@ -10,9 +10,21 @@
  * never asserts a role, because the server reads the role from the database.
  */
 
+import { markStaticDemo, serveStatic } from "@/lib/staticDemo";
+
 const BASE =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 const PREFIX = "/api/v1";
+
+/**
+ * Build-time switch for the public deployment, which ships without a backend.
+ *
+ * Without it the client would fall back to the default base URL and call
+ * `http://localhost:8000` -- meaning a visitor's browser would quietly probe
+ * *their own machine*. Serving the bundled snapshot directly avoids that and
+ * removes a pointless failed request on every page.
+ */
+const STATIC_DEMO = process.env.NEXT_PUBLIC_STATIC_DEMO === "true";
 
 /** Thrown for any non-2xx response, carrying the backend's detail message. */
 export class ApiError extends Error {
@@ -43,12 +55,43 @@ export async function apiFetch(path, options = {}) {
     if (dev) headers["x-dev-user"] = dev;
   }
 
+  if (STATIC_DEMO) {
+    markStaticDemo();
+    const offline = serveStatic(path, { ...options, method: rest.method });
+    if (offline !== undefined) {
+      if (offline.__readOnly) {
+        throw new ApiError(offline.detail, 405, "read_only_demo");
+      }
+      return offline;
+    }
+    // Nothing offline to serve. Do NOT fall through to fetch: there is no
+    // backend on the public deployment, so `BASE` would resolve to the
+    // *visitor's own* machine. `/me` lands here whenever no demo role has been
+    // chosen yet, which is simply "not signed in".
+    throw new ApiError(
+      "इस डेमो में यह उपलब्ध नहीं है।",
+      401,
+      "static_demo_unavailable"
+    );
+  }
+
   let res;
   try {
     res = await fetch(`${BASE}${PREFIX}${path}`, { ...rest, headers });
   } catch (e) {
-    // Network-level failure: the API is unreachable. Surface this distinctly so
-    // the UI can say "backend unavailable" rather than a blank screen.
+    // The API is unreachable. On the public deployment there is no backend at
+    // all, so fall back to the bundled snapshot of real seeded records and
+    // frozen TomTom corridors instead of erroring on every panel. The fallback
+    // is clearly labelled in the UI and refuses writes.
+    const staticResult = serveStatic(path, { ...options, method: rest.method });
+    if (staticResult !== undefined) {
+      markStaticDemo();
+      if (staticResult.__readOnly) {
+        throw new ApiError(staticResult.detail, 405, "read_only_demo");
+      }
+      return staticResult;
+    }
+    // Nothing sensible to serve offline: report the real problem.
     throw new ApiError(
       "सर्वर से संपर्क नहीं हो पा रहा है।",
       0,

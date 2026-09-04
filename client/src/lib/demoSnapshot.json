@@ -1,0 +1,907 @@
+{
+ "crops": [
+  {
+   "crop_id": "CRP_DE6C334339AC",
+   "crop_key": "wheat",
+   "name_en": "Wheat",
+   "name_hi": "गेहूँ",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_2554D1918FBC",
+   "crop_key": "paddy",
+   "name_en": "Paddy",
+   "name_hi": "धान",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 40.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_352B5B6699D8",
+   "crop_key": "mustard",
+   "name_en": "Mustard",
+   "name_hi": "सरसों",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_B2E55E456CF4",
+   "crop_key": "sugarcane",
+   "name_en": "Sugarcane",
+   "name_hi": "गन्ना",
+   "default_unit": "tonne",
+   "default_bag_weight_kg": null,
+   "season": "perennial",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_D955CA97E44D",
+   "crop_key": "maize",
+   "name_en": "Maize",
+   "name_hi": "मक्का",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_28F945D9AC9C",
+   "crop_key": "bajra",
+   "name_en": "Pearl Millet",
+   "name_hi": "बाजरा",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_CAA75103C53B",
+   "crop_key": "gram",
+   "name_en": "Chickpea",
+   "name_hi": "चना",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_C7952894B2A5",
+   "crop_key": "moong",
+   "name_en": "Green Gram",
+   "name_hi": "मूंग",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "zaid",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_69E399851C84",
+   "crop_key": "cotton",
+   "name_en": "Cotton",
+   "name_hi": "कपास",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 40.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_E91C254AD588",
+   "crop_key": "potato",
+   "name_en": "Potato",
+   "name_hi": "आलू",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_288971671685",
+   "crop_key": "onion",
+   "name_en": "Onion",
+   "name_hi": "प्याज",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_5ED728C2FA5D",
+   "crop_key": "tomato",
+   "name_en": "Tomato",
+   "name_hi": "टमाटर",
+   "default_unit": "kg",
+   "default_bag_weight_kg": 25.0,
+   "season": "zaid",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_BF35A2D3261F",
+   "crop_key": "cauliflower",
+   "name_en": "Cauliflower",
+   "name_hi": "फूलगोभी",
+   "default_unit": "kg",
+   "default_bag_weight_kg": 20.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_D7A9EAD0B15C",
+   "crop_key": "barley",
+   "name_en": "Barley",
+   "name_hi": "जौ",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "rabi",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_8F398886C326",
+   "crop_key": "sunflower",
+   "name_en": "Sunflower",
+   "name_hi": "सूरजमुखी",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 40.0,
+   "season": "zaid",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_E2253B73169D",
+   "crop_key": "guar",
+   "name_en": "Cluster Bean",
+   "name_hi": "ग्वार",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_4DDD4816119A",
+   "crop_key": "arhar",
+   "name_en": "Pigeon Pea",
+   "name_hi": "अरहर",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  },
+  {
+   "crop_id": "CRP_7CC27C59C145",
+   "crop_key": "urad",
+   "name_en": "Black Gram",
+   "name_hi": "उड़द",
+   "default_unit": "quintal",
+   "default_bag_weight_kg": 50.0,
+   "season": "kharif",
+   "source": "phase_a_v0.1"
+  }
+ ],
+ "mandis": [
+  {
+   "mandi_id": "MND_9E255CEE332B",
+   "apmc_name": "Azadpur Mandi",
+   "name_hi": "आज़ादपुर मंडी",
+   "name_en": "Azadpur Mandi",
+   "district": "North Delhi",
+   "latitude": 28.7075,
+   "longitude": 77.175
+  },
+  {
+   "mandi_id": "MND_1796B26F4DCC",
+   "apmc_name": "Narela Mandi",
+   "name_hi": "नरेला मंडी",
+   "name_en": "Narela Mandi",
+   "district": "North Delhi",
+   "latitude": 28.853,
+   "longitude": 77.092
+  },
+  {
+   "mandi_id": "MND_20196CE23F9E",
+   "apmc_name": "Ghazipur Mandi",
+   "name_hi": "गाज़ीपुर मंडी",
+   "name_en": "Ghazipur Mandi",
+   "district": "East Delhi",
+   "latitude": 28.625,
+   "longitude": 77.326
+  },
+  {
+   "mandi_id": "MND_96A0566277F9",
+   "apmc_name": "Okhla Mandi",
+   "name_hi": "ओखला मंडी",
+   "name_en": "Okhla Mandi",
+   "district": "South East Delhi",
+   "latitude": 28.535,
+   "longitude": 77.279
+  },
+  {
+   "mandi_id": "MND_AAFC9C0B8DA5",
+   "apmc_name": "Keshopur Mandi",
+   "name_hi": "केशोपुर मंडी",
+   "name_en": "Keshopur Mandi",
+   "district": "West Delhi",
+   "latitude": 28.641,
+   "longitude": 77.087
+  },
+  {
+   "mandi_id": "MND_50FC19D7AEC4",
+   "apmc_name": "Najafgarh Mandi",
+   "name_hi": "नजफगढ़ मंडी",
+   "name_en": "Najafgarh Mandi",
+   "district": "South West Delhi",
+   "latitude": 28.609,
+   "longitude": 76.979
+  },
+  {
+   "mandi_id": "MND_4ADE384C6981",
+   "apmc_name": "Karnal Grain Market",
+   "name_hi": "करनाल अनाज मंडी",
+   "name_en": "Karnal Grain Market",
+   "district": "Karnal",
+   "latitude": 29.6857,
+   "longitude": 76.9905
+  },
+  {
+   "mandi_id": "MND_283ED6EAAB84",
+   "apmc_name": "Panipat Grain Market",
+   "name_hi": "पानीपत अनाज मंडी",
+   "name_en": "Panipat Grain Market",
+   "district": "Panipat",
+   "latitude": 29.3909,
+   "longitude": 76.9635
+  },
+  {
+   "mandi_id": "MND_538E435A4360",
+   "apmc_name": "Sonipat Grain Market",
+   "name_hi": "सोनीपत अनाज मंडी",
+   "name_en": "Sonipat Grain Market",
+   "district": "Sonipat",
+   "latitude": 28.9931,
+   "longitude": 77.0151
+  },
+  {
+   "mandi_id": "MND_A59F6598A624",
+   "apmc_name": "Gurugram Mandi",
+   "name_hi": "गुरुग्राम मंडी",
+   "name_en": "Gurugram Mandi",
+   "district": "Gurugram",
+   "latitude": 28.4595,
+   "longitude": 77.0266
+  },
+  {
+   "mandi_id": "MND_3F94E23EB0A5",
+   "apmc_name": "Rewari Mandi",
+   "name_hi": "रेवाड़ी मंडी",
+   "name_en": "Rewari Mandi",
+   "district": "Rewari",
+   "latitude": 28.192,
+   "longitude": 76.619
+  },
+  {
+   "mandi_id": "MND_CB2E88CD3113",
+   "apmc_name": "Hisar Grain Market",
+   "name_hi": "हिसार अनाज मंडी",
+   "name_en": "Hisar Grain Market",
+   "district": "Hisar",
+   "latitude": 29.1492,
+   "longitude": 75.7217
+  },
+  {
+   "mandi_id": "MND_5C10FF171343",
+   "apmc_name": "Sirsa Grain Market",
+   "name_hi": "सिरसा अनाज मंडी",
+   "name_en": "Sirsa Grain Market",
+   "district": "Sirsa",
+   "latitude": 29.5349,
+   "longitude": 75.028
+  },
+  {
+   "mandi_id": "MND_7491C25B20FE",
+   "apmc_name": "Kaithal Grain Market",
+   "name_hi": "कैथल अनाज मंडी",
+   "name_en": "Kaithal Grain Market",
+   "district": "Kaithal",
+   "latitude": 29.8015,
+   "longitude": 76.3995
+  },
+  {
+   "mandi_id": "MND_9C5A213D03D2",
+   "apmc_name": "Pehowa Mandi",
+   "name_hi": "पेहोवा मंडी",
+   "name_en": "Pehowa Mandi",
+   "district": "Kurukshetra",
+   "latitude": 29.98,
+   "longitude": 76.583
+  },
+  {
+   "mandi_id": "MND_372DA5A01CDA",
+   "apmc_name": "Rohtak Grain Market",
+   "name_hi": "रोहतक अनाज मंडी",
+   "name_en": "Rohtak Grain Market",
+   "district": "Rohtak",
+   "latitude": 28.8955,
+   "longitude": 76.6066
+  },
+  {
+   "mandi_id": "MND_BBFD6D659730",
+   "apmc_name": "Palwal Mandi",
+   "name_hi": "पलवल मंडी",
+   "name_en": "Palwal Mandi",
+   "district": "Palwal",
+   "latitude": 28.1487,
+   "longitude": 77.332
+  },
+  {
+   "mandi_id": "MND_07DDCCA966AE",
+   "apmc_name": "Jind Grain Market",
+   "name_hi": "जींद अनाज मंडी",
+   "name_en": "Jind Grain Market",
+   "district": "Jind",
+   "latitude": 29.316,
+   "longitude": 76.315
+  },
+  {
+   "mandi_id": "MND_F02880680127",
+   "apmc_name": "Bhiwani Mandi",
+   "name_hi": "भिवानी मंडी",
+   "name_en": "Bhiwani Mandi",
+   "district": "Bhiwani",
+   "latitude": 28.793,
+   "longitude": 76.139
+  },
+  {
+   "mandi_id": "MND_4427C76F4F6F",
+   "apmc_name": "Fatehabad Grain Market",
+   "name_hi": "फतेहाबाद अनाज मंडी",
+   "name_en": "Fatehabad Grain Market",
+   "district": "Fatehabad",
+   "latitude": 29.515,
+   "longitude": 75.455
+  },
+  {
+   "mandi_id": "MND_3F6468C86419",
+   "apmc_name": "Ambala Grain Market",
+   "name_hi": "अंबाला अनाज मंडी",
+   "name_en": "Ambala Grain Market",
+   "district": "Ambala",
+   "latitude": 30.3752,
+   "longitude": 76.7821
+  },
+  {
+   "mandi_id": "MND_D400EAD28DB3",
+   "apmc_name": "Khanna Grain Market",
+   "name_hi": "खन्ना अनाज मंडी",
+   "name_en": "Khanna Grain Market",
+   "district": "Ludhiana",
+   "latitude": 30.705,
+   "longitude": 76.222
+  },
+  {
+   "mandi_id": "MND_DA6DF57ACFEE",
+   "apmc_name": "Ludhiana Grain Market",
+   "name_hi": "लुधियाना अनाज मंडी",
+   "name_en": "Ludhiana Grain Market",
+   "district": "Ludhiana",
+   "latitude": 30.901,
+   "longitude": 75.8573
+  },
+  {
+   "mandi_id": "MND_D3D37BB2E2D7",
+   "apmc_name": "Rajpura Mandi",
+   "name_hi": "राजपुरा मंडी",
+   "name_en": "Rajpura Mandi",
+   "district": "Patiala",
+   "latitude": 30.484,
+   "longitude": 76.594
+  },
+  {
+   "mandi_id": "MND_FE8D567E9001",
+   "apmc_name": "Moga Grain Market",
+   "name_hi": "मोगा अनाज मंडी",
+   "name_en": "Moga Grain Market",
+   "district": "Moga",
+   "latitude": 30.8158,
+   "longitude": 75.1717
+  },
+  {
+   "mandi_id": "MND_AE02C36E7ACD",
+   "apmc_name": "Bathinda Grain Market",
+   "name_hi": "बठिंडा अनाज मंडी",
+   "name_en": "Bathinda Grain Market",
+   "district": "Bathinda",
+   "latitude": 30.211,
+   "longitude": 74.9455
+  },
+  {
+   "mandi_id": "MND_784599D2DCF5",
+   "apmc_name": "Jagraon Mandi",
+   "name_hi": "जगरांव मंडी",
+   "name_en": "Jagraon Mandi",
+   "district": "Ludhiana",
+   "latitude": 30.787,
+   "longitude": 75.473
+  },
+  {
+   "mandi_id": "MND_548773D47A30",
+   "apmc_name": "Sangrur Grain Market",
+   "name_hi": "संगरूर अनाज मंडी",
+   "name_en": "Sangrur Grain Market",
+   "district": "Sangrur",
+   "latitude": 30.2458,
+   "longitude": 75.8421
+  },
+  {
+   "mandi_id": "MND_9AE87167EF0F",
+   "apmc_name": "Patiala Grain Market",
+   "name_hi": "पटियाला अनाज मंडी",
+   "name_en": "Patiala Grain Market",
+   "district": "Patiala",
+   "latitude": 30.3398,
+   "longitude": 76.3869
+  },
+  {
+   "mandi_id": "MND_E2F2E16B54CD",
+   "apmc_name": "Amritsar Grain Market",
+   "name_hi": "अमृतसर अनाज मंडी",
+   "name_en": "Amritsar Grain Market",
+   "district": "Amritsar",
+   "latitude": 31.634,
+   "longitude": 74.8723
+  },
+  {
+   "mandi_id": "MND_46CD786BC585",
+   "apmc_name": "Jalandhar Mandi",
+   "name_hi": "जालंधर मंडी",
+   "name_en": "Jalandhar Mandi",
+   "district": "Jalandhar",
+   "latitude": 31.326,
+   "longitude": 75.5762
+  },
+  {
+   "mandi_id": "MND_BA2F125FAB06",
+   "apmc_name": "Mansa Grain Market",
+   "name_hi": "मानसा अनाज मंडी",
+   "name_en": "Mansa Grain Market",
+   "district": "Mansa",
+   "latitude": 29.988,
+   "longitude": 75.393
+  },
+  {
+   "mandi_id": "MND_DEA1CD5F415B",
+   "apmc_name": "Barnala Mandi",
+   "name_hi": "बरनाला मंडी",
+   "name_en": "Barnala Mandi",
+   "district": "Barnala",
+   "latitude": 30.3745,
+   "longitude": 75.546
+  },
+  {
+   "mandi_id": "MND_596F86458307",
+   "apmc_name": "Meerut Navin Mandi",
+   "name_hi": "मेरठ नवीन मंडी",
+   "name_en": "Meerut Navin Mandi",
+   "district": "Meerut",
+   "latitude": 28.9845,
+   "longitude": 77.7064
+  },
+  {
+   "mandi_id": "MND_4217655002FF",
+   "apmc_name": "Ghaziabad Mandi",
+   "name_hi": "गाज़ियाबाद मंडी",
+   "name_en": "Ghaziabad Mandi",
+   "district": "Ghaziabad",
+   "latitude": 28.6692,
+   "longitude": 77.4538
+  },
+  {
+   "mandi_id": "MND_2E59AF542C18",
+   "apmc_name": "Bulandshahr Mandi",
+   "name_hi": "बुलंदशहर मंडी",
+   "name_en": "Bulandshahr Mandi",
+   "district": "Bulandshahr",
+   "latitude": 28.407,
+   "longitude": 77.85
+  },
+  {
+   "mandi_id": "MND_05333875B51A",
+   "apmc_name": "Muzaffarnagar Mandi",
+   "name_hi": "मुज़फ़्फ़रनगर मंडी",
+   "name_en": "Muzaffarnagar Mandi",
+   "district": "Muzaffarnagar",
+   "latitude": 29.4727,
+   "longitude": 77.7085
+  },
+  {
+   "mandi_id": "MND_D5BFCB18509B",
+   "apmc_name": "Saharanpur Mandi",
+   "name_hi": "सहारनपुर मंडी",
+   "name_en": "Saharanpur Mandi",
+   "district": "Saharanpur",
+   "latitude": 29.968,
+   "longitude": 77.546
+  },
+  {
+   "mandi_id": "MND_1BD2DF2540D5",
+   "apmc_name": "Aligarh Mandi",
+   "name_hi": "अलीगढ़ मंडी",
+   "name_en": "Aligarh Mandi",
+   "district": "Aligarh",
+   "latitude": 27.8974,
+   "longitude": 78.088
+  },
+  {
+   "mandi_id": "MND_316B3A33D09D",
+   "apmc_name": "Agra Mandi",
+   "name_hi": "आगरा मंडी",
+   "name_en": "Agra Mandi",
+   "district": "Agra",
+   "latitude": 27.1767,
+   "longitude": 78.0081
+  }
+ ],
+ "farmer_requests": [
+  {
+   "requester_user_id": "dev_farmer_01",
+   "requester_role": "FARMER",
+   "crop_key": "wheat",
+   "crop_label": "गेहूँ",
+   "mandi_id": "MND_9E255CEE332B",
+   "mandi_label": "आज़ादपुर मंडी",
+   "quantity_value": 2.0,
+   "quantity_unit": "kg",
+   "quantity_kg": 2.0,
+   "bag_weight_kg_used": null,
+   "conversion_source": "definitional",
+   "conversion_confidence": "exact",
+   "needs_clarification": false,
+   "clarification_prompt": null,
+   "origin_location_id": null,
+   "origin_label": "",
+   "origin": null,
+   "pickup_date": null,
+   "notes": null,
+   "language": "hi",
+   "input_mode": "text",
+   "raw_utterance": null,
+   "status": "ACCEPTED",
+   "request_id": "REQ_FB982EACF0CF",
+   "created_at": "2026-09-04 04:36:18.111000",
+   "updated_at": "2026-09-04 04:37:02.503000",
+   "status_history": [
+    {
+     "status": "REQUESTED",
+     "at": "2026-09-04 04:36:18.111000"
+    },
+    {
+     "status": "MATCHING",
+     "at": "2026-09-04 04:37:02.495000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "MATCHED",
+     "at": "2026-09-04 04:37:02.501000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "ACCEPTED",
+     "at": "2026-09-04 04:37:02.503000",
+     "by": "dev_trucker_01"
+    }
+   ],
+   "assigned_trucker_user_id": "dev_trucker_01",
+   "assigned_vehicle_id": "VEH_DEV0000001"
+  },
+  {
+   "request_id": "REQ_DEV000000001",
+   "conversion_confidence": "exact",
+   "conversion_source": "definitional",
+   "created_at": "2026-09-04 02:30:42.419000",
+   "crop_key": "wheat",
+   "crop_label": "गेहूँ",
+   "input_mode": "text",
+   "is_dev_seed": true,
+   "language": "hi",
+   "mandi_id": "MND_9E255CEE332B",
+   "mandi_label": "आज़ादपुर मंडी",
+   "needs_clarification": false,
+   "origin": {
+    "geo": {
+     "type": "Point",
+     "coordinates": [
+      77.01,
+      28.99
+     ]
+    },
+    "latitude": 28.99,
+    "longitude": 77.01
+   },
+   "origin_label": "रामपुर कलां",
+   "quantity_kg": 2000.0,
+   "quantity_unit": "quintal",
+   "quantity_value": 20.0,
+   "requester_role": "FARMER",
+   "requester_user_id": "dev_farmer_01",
+   "status": "ACCEPTED",
+   "status_history": [
+    {
+     "status": "REQUESTED",
+     "at": "2026-09-04 04:06:17.949000"
+    },
+    {
+     "status": "MATCHING",
+     "at": "2026-09-04 04:37:07.515000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "MATCHED",
+     "at": "2026-09-04 04:37:07.521000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "ACCEPTED",
+     "at": "2026-09-04 04:37:07.525000",
+     "by": "dev_trucker_01"
+    }
+   ],
+   "updated_at": "2026-09-04 04:37:07.525000",
+   "assigned_trucker_user_id": "dev_trucker_01",
+   "assigned_vehicle_id": "VEH_DEV0000001"
+  },
+  {
+   "request_id": "REQ_DEV000000002",
+   "clarification_prompt": "एक बोरी का वज़न फसल के अनुसार बदलता है। कृपया बताएं कि एक बोरी में कितने किलो हैं?",
+   "conversion_confidence": "unresolved",
+   "conversion_source": "no_bag_weight_available",
+   "created_at": "2026-09-04 02:30:42.419000",
+   "crop_key": "sugarcane",
+   "crop_label": "गन्ना",
+   "input_mode": "text",
+   "is_dev_seed": true,
+   "language": "hi",
+   "mandi_id": "MND_9E255CEE332B",
+   "mandi_label": "आज़ादपुर मंडी",
+   "needs_clarification": true,
+   "origin_label": "रामपुर कलां",
+   "quantity_kg": null,
+   "quantity_unit": "bori",
+   "quantity_value": 15.0,
+   "requester_role": "FARMER",
+   "requester_user_id": "dev_farmer_01",
+   "status": "DRAFT",
+   "status_history": [
+    {
+     "status": "DRAFT",
+     "at": "2026-09-04 04:06:17.949000"
+    }
+   ],
+   "updated_at": "2026-09-04 04:06:17.949000"
+  }
+ ],
+ "trucker_jobs": [
+  {
+   "request_id": "REQ_DEV000000001",
+   "conversion_confidence": "exact",
+   "conversion_source": "definitional",
+   "created_at": "2026-09-04 02:30:42.419000",
+   "crop_key": "wheat",
+   "crop_label": "गेहूँ",
+   "input_mode": "text",
+   "is_dev_seed": true,
+   "language": "hi",
+   "mandi_id": "MND_9E255CEE332B",
+   "mandi_label": "आज़ादपुर मंडी",
+   "needs_clarification": false,
+   "origin": {
+    "geo": {
+     "type": "Point",
+     "coordinates": [
+      77.01,
+      28.99
+     ]
+    },
+    "latitude": 28.99,
+    "longitude": 77.01
+   },
+   "origin_label": "रामपुर कलां",
+   "quantity_kg": 2000.0,
+   "quantity_unit": "quintal",
+   "quantity_value": 20.0,
+   "requester_role": "FARMER",
+   "requester_user_id": "dev_farmer_01",
+   "status": "ACCEPTED",
+   "status_history": [
+    {
+     "status": "REQUESTED",
+     "at": "2026-09-04 04:06:17.949000"
+    },
+    {
+     "status": "MATCHING",
+     "at": "2026-09-04 04:37:07.515000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "MATCHED",
+     "at": "2026-09-04 04:37:07.521000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "ACCEPTED",
+     "at": "2026-09-04 04:37:07.525000",
+     "by": "dev_trucker_01"
+    }
+   ],
+   "updated_at": "2026-09-04 04:37:07.525000",
+   "assigned_trucker_user_id": "dev_trucker_01",
+   "assigned_vehicle_id": "VEH_DEV0000001"
+  },
+  {
+   "requester_user_id": "dev_farmer_01",
+   "requester_role": "FARMER",
+   "crop_key": "wheat",
+   "crop_label": "गेहूँ",
+   "mandi_id": "MND_9E255CEE332B",
+   "mandi_label": "आज़ादपुर मंडी",
+   "quantity_value": 2.0,
+   "quantity_unit": "kg",
+   "quantity_kg": 2.0,
+   "bag_weight_kg_used": null,
+   "conversion_source": "definitional",
+   "conversion_confidence": "exact",
+   "needs_clarification": false,
+   "clarification_prompt": null,
+   "origin_location_id": null,
+   "origin_label": "",
+   "origin": null,
+   "pickup_date": null,
+   "notes": null,
+   "language": "hi",
+   "input_mode": "text",
+   "raw_utterance": null,
+   "status": "ACCEPTED",
+   "request_id": "REQ_FB982EACF0CF",
+   "created_at": "2026-09-04 04:36:18.111000",
+   "updated_at": "2026-09-04 04:37:02.503000",
+   "status_history": [
+    {
+     "status": "REQUESTED",
+     "at": "2026-09-04 04:36:18.111000"
+    },
+    {
+     "status": "MATCHING",
+     "at": "2026-09-04 04:37:02.495000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "MATCHED",
+     "at": "2026-09-04 04:37:02.501000",
+     "by": "dev_trucker_01"
+    },
+    {
+     "status": "ACCEPTED",
+     "at": "2026-09-04 04:37:02.503000",
+     "by": "dev_trucker_01"
+    }
+   ],
+   "assigned_trucker_user_id": "dev_trucker_01",
+   "assigned_vehicle_id": "VEH_DEV0000001"
+  }
+ ],
+ "vehicles": [
+  {
+   "vehicle_id": "VEH_DEV0000001",
+   "available": true,
+   "body_type": "open",
+   "capacity_kg": 9000.0,
+   "created_at": "2026-09-04 02:30:42.419000",
+   "district": "Rohtak",
+   "fuel_type": "diesel",
+   "geo": {
+    "type": "Point",
+    "coordinates": [
+     76.6066,
+     28.8955
+    ]
+   },
+   "is_dev_seed": true,
+   "latitude": 28.8955,
+   "longitude": 76.6066,
+   "owner_user_id": "dev_trucker_01",
+   "updated_at": "2026-09-04 04:36:59.756000",
+   "vehicle_class": "2axle",
+   "vehicle_number": "HR-10-AB-1234"
+  }
+ ],
+ "dealer_requirements": [
+  {
+   "requirement_id": "DRQ_DEV000000001",
+   "business_name": "श्री बालाजी बिल्डिंग मटेरियल",
+   "conversion_confidence": "exact",
+   "created_at": "2026-09-04 02:30:42.419000",
+   "dealer_user_id": "dev_dealer_01",
+   "delivery_label": "सीमेंट — सोनीपत",
+   "delivery_location": {
+    "geo": {
+     "type": "Point",
+     "coordinates": [
+      76.85,
+      28.96
+     ]
+    },
+    "latitude": 28.96,
+    "longitude": 76.85
+   },
+   "is_dev_seed": true,
+   "material": "cement",
+   "material_label": "सीमेंट",
+   "needed_by": "2026-09-07",
+   "needs_clarification": false,
+   "quantity_kg": 8000.0,
+   "quantity_unit": "kg",
+   "quantity_value": 8000.0,
+   "status": "OPEN",
+   "updated_at": "2026-09-04 04:06:17.949000"
+  },
+  {
+   "requirement_id": "DRQ_DEV000000002",
+   "business_name": "श्री बालाजी बिल्डिंग मटेरियल",
+   "conversion_confidence": "exact",
+   "created_at": "2026-09-04 02:30:42.419000",
+   "dealer_user_id": "dev_dealer_01",
+   "delivery_label": "स्टील / टीएमटी — सोनीपत",
+   "delivery_location": {
+    "geo": {
+     "type": "Point",
+     "coordinates": [
+      76.72,
+      28.93
+     ]
+    },
+    "latitude": 28.93,
+    "longitude": 76.72
+   },
+   "is_dev_seed": true,
+   "material": "tmt",
+   "material_label": "स्टील / टीएमटी",
+   "needed_by": "2026-09-07",
+   "needs_clarification": false,
+   "quantity_kg": 5000.0,
+   "quantity_unit": "kg",
+   "quantity_value": 5000.0,
+   "status": "OPEN",
+   "updated_at": "2026-09-04 04:06:17.949000"
+  },
+  {
+   "requirement_id": "DRQ_DEV000000003",
+   "business_name": "श्री बालाजी बिल्डिंग मटेरियल",
+   "conversion_confidence": "exact",
+   "created_at": "2026-09-04 02:30:42.419000",
+   "dealer_user_id": "dev_dealer_01",
+   "delivery_label": "ईंट — सोनीपत",
+   "delivery_location": {
+    "geo": {
+     "type": "Point",
+     "coordinates": [
+      77.35,
+      29.1
+     ]
+    },
+    "latitude": 29.1,
+    "longitude": 77.35
+   },
+   "is_dev_seed": true,
+   "material": "brick",
+   "material_label": "ईंट",
+   "needed_by": "2026-09-07",
+   "needs_clarification": false,
+   "quantity_kg": 12000.0,
+   "quantity_unit": "kg",
+   "quantity_value": 12000.0,
+   "status": "OPEN",
+   "updated_at": "2026-09-04 04:06:17.949000"
+  }
+ ]
+}
