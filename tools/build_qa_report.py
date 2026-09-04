@@ -33,7 +33,7 @@ def main() -> None:
 
     A("# Data QA Report")
     A("")
-    A("**VahaanBandhu 2.0 · Phase-A · dataset `v0.1` (prototype stage)**")
+    A("**VahaanBandhu · the routing research · dataset `v0.1` (prototype stage)**")
     A("")
     A(f"Generated: `{datetime.now(timezone.utc).isoformat()}`")
     A("")
@@ -90,7 +90,7 @@ def main() -> None:
     A("")
     A("### Coarse bounding box — a correction to the spec")
     A("")
-    A("The Phase-A brief suggested a coarse rejection box of 23.0–31.5 N. **That upper")
+    A("The the routing research brief suggested a coarse rejection box of 23.0–31.5 N. **That upper")
     A("bound is too tight.** It excludes Gurdaspur (~32.04 N) and Pathankot (~32.27 N),")
     A("which are genuine Punjab districts, and rejected 176 valid locations plus 68")
     A("farmer nodes on the first validation run. The box was widened to 23.0–32.6 N.")
@@ -185,7 +185,7 @@ def main() -> None:
     A("")
 
     # --- acceptance
-    A("## 6. Phase-A acceptance criteria")
+    A("## 6. the routing research acceptance criteria")
     A("")
     A("| Criterion | Status |")
     A("|---|---|")
@@ -217,7 +217,7 @@ def main() -> None:
     A("These are real, and none is worked around silently:")
     A("")
     A("1. **Containment uses circular district envelopes, not boundary polygons.** A point")
-    A("   just across a real district border will not be detected. Phase-B must use LGD")
+    A("   just across a real district border will not be detected. the application must use LGD")
     A("   polygons.")
     A("2. **No official administrative codes.** LGD/Census was not acquired, so district")
     A("   codes are internal `VB-` prefixed and subdistrict/village/pincode are NULL.")

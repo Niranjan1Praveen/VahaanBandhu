@@ -1,4 +1,4 @@
-"""Build return-load selection problems from the Phase-A datasets.
+"""Build return-load selection problems from the research datasets.
 
 Takes a real mandi, a real depot and the synthetic shop replenishment requests
 near that mandi, and assembles the reduced decision problem defined in

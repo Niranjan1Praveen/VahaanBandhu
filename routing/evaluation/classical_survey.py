@@ -1,6 +1,6 @@
 """Step 1: identify the best classical baseline, per problem family.
 
-The Phase-A benchmark only covered 3-4 node TSPs where every solver tied at the
+The research benchmark only covered 3-4 node TSPs where every solver tied at the
 optimum, and it compared raw tour distance against OR-Tools' weighted objective.
 That table could not identify a best algorithm because the numbers were not
 comparable and the instances were trivial.

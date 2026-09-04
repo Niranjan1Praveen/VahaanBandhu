@@ -11,7 +11,7 @@ __pycache__
 **/__pycache__
 *.pyc
 artifacts/screenshots
-# Phase-A research artifacts are bind-mounted read-only, not baked in.
+# Research artifacts are bind-mounted read-only, not baked in.
 Data/raw
 Data/staging
 Research/*.ipynb

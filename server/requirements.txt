@@ -19,7 +19,7 @@ python-jose[cryptography]==3.3.0
 python-dotenv==1.0.1
 requests==2.32.3
 
-# --- Phase-A runtime, needed by RoutingService and the seed loader.
+# --- research runtime, needed by RoutingService and the seed loader.
 # Without pandas the routing service silently degrades to straight-line
 # estimates and the seeder cannot read the master CSVs.
 pandas==2.2.3

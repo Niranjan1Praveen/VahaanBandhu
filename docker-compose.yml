@@ -1,4 +1,4 @@
-# VahaanBandhu 2.0 — local development stack.
+# VahaanBandhu — local development stack.
 #
 # No credentials are embedded anywhere. Everything comes from .env at runtime,
 # and .env is gitignored.
@@ -64,7 +64,7 @@ services:
       REDIS_URL: redis://redis:6379/0
       ENVIRONMENT: development
     volumes:
-      # Phase-A datasets are research artifacts: mounted READ-ONLY so the
+      # research datasets are research artifacts: mounted READ-ONLY so the
       # application can never modify them.
       - ./Data:/app/Data:ro
       - ./Res:/app/Res:ro

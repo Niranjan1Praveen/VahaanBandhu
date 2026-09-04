@@ -1,4 +1,4 @@
-"""Phase-B backend tests.
+"""application backend tests.
 
 These run against a real MongoDB and Redis (the compose stack), because the
 things most worth testing here — index behaviour, geospatial queries, status
@@ -6,7 +6,7 @@ transitions, cache versioning — are exactly what a mock would fake away.
 
 The load-bearing tests:
 
-* ``test_bori_is_never_silently_converted`` — the Phase-A quantity rule must
+* ``test_bori_is_never_silently_converted`` — the the routing research quantity rule must
   survive into the application layer.
 * ``test_role_enforced_server_side`` — a client cannot reach another role's data
   by claiming a role.
@@ -90,7 +90,7 @@ async def client():
 
 
 # --------------------------------------------------------------------------
-# Quantity normalization — the Phase-A rule at the application boundary
+# Quantity normalization — the the quantity rule at the application boundary
 # --------------------------------------------------------------------------
 
 class TestQuantity:

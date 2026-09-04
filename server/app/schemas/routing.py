@@ -1,11 +1,11 @@
-"""Application-facing routing contract — the frozen Phase-A/Phase-B boundary.
+"""Application-facing routing contract — the frozen research/application boundary.
 
 `RoutingRequest` and `RouteSolution` are versioned application types. They
 deliberately expose **no** VB-QER internals: no QUBO matrices, no bitstrings, no
 QAOA parameters, no artifact payloads. The application knows it asked for a
 route and got one, plus enough provenance to reason about staleness.
 
-Phase-A research may replace every internal component behind this boundary
+the routing research may replace every internal component behind this boundary
 without any frontend or API change.
 """
 
@@ -33,7 +33,7 @@ class RoutingProfile(str, Enum):
 
 class RoutingContext(str, Enum):
     LIVE = "live"       # current traffic where a provider is configured
-    OFFLINE = "offline"  # Phase-A graph adapter
+    OFFLINE = "offline"  # research road graph adapter
 
 
 class RouteStop(BaseModel):

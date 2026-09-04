@@ -32,7 +32,9 @@ SCHEMAS = METADATA / "schemas"
 VERSIONS = METADATA / "versions"
 
 RES = ROOT / "Res"
-RESEARCH = ROOT / "Research"
+RESEARCH = ROOT / "research"
+NOTEBOOKS = RESEARCH / "notebooks"
+RESEARCH_DOCS = RESEARCH / "docs"
 
 Stage = Literal["prototype", "pilot", "training"]
 
@@ -45,7 +47,7 @@ CRS_METRIC = "EPSG:32644"  # UTM zone 44N
 # Coarse rejection box for the four target states. This is a smoke test only;
 # real containment is checked against district envelopes in vb.validate.qa.
 #
-# The Phase-A spec suggested 23.0-31.5 N. That upper bound is too tight: it
+# The the routing research spec suggested 23.0-31.5 N. That upper bound is too tight: it
 # excludes Gurdaspur (~32.04 N) and Pathankot (~32.27 N), which are genuine
 # Punjab districts, and rejected 176 valid locations. Raised to 32.6 N with
 # headroom for their district envelopes.

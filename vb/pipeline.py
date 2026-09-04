@@ -1,4 +1,4 @@
-"""Phase-A master data pipeline.
+"""the routing research master data pipeline.
 
 Runs acquisition -> normalization -> generation -> export in dependency order
 and writes a manifest for every table. Deterministic given (seed, config).
@@ -114,7 +114,7 @@ def run(cfg: GenerationConfig, *, overwrite: bool = False) -> dict[str, pd.DataF
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="VahaanBandhu Phase-A data pipeline")
+    p = argparse.ArgumentParser(description="VahaanBandhu research data pipeline")
     p.add_argument("--stage", default="prototype", choices=list(C.STAGE_SIZES))
     p.add_argument("--version", default="v0.1")
     p.add_argument("--seed", type=int, default=20260903)

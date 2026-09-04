@@ -77,7 +77,7 @@ MANDIS_SCHEMA = DataFrameSchema(
         "is_synthetic": Column(bool),
     },
     checks=[
-        # Mandi coordinates in Phase-A are town-level approximations. If this
+        # Mandi coordinates in the routing research are town-level approximations. If this
         # ever flips to True, DATA_SOURCES.md must say where they came from.
         Check(
             lambda df: ~df["coordinate_verified"].any(),

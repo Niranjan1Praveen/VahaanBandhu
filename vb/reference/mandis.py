@@ -8,12 +8,12 @@ host town rather than surveyed to the market yard gate.
 
 Accordingly every row carries ``coordinate_verified = False`` and
 ``geocode_precision = settlement``. Nothing in this module may be presented as
-an officially verified mandi location. The Phase-A rule "never fabricate the
+an officially verified mandi location. The the quantity rule "never fabricate the
 latitude/longitude of an actual mandi" is honoured by refusing to *claim*
 precision we do not have, rather than by omitting the markets entirely --
 downstream routing needs plausible destinations to exist.
 
-Phase-B must reconcile this list against the e-NAM mandi directory and the
+the application must reconcile this list against the e-NAM mandi directory and the
 state agricultural marketing board portals (Delhi, Haryana, Punjab, UP), and
 replace these coordinates with sourced ones. Note that e-NAM covers only
 integrated markets and is NOT the complete universe of physical mandis.

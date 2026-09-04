@@ -11,11 +11,11 @@ downloaded boundary file. They are therefore tagged
 They are fit for: laying out a geographically plausible synthetic network,
 coarse containment QA, and relative-distance sanity.
 They are NOT fit for: publishing as official coordinates, or any claim of
-survey accuracy. Phase-B should replace this module with LGD/Census boundary
+survey accuracy. the application should replace this module with LGD/Census boundary
 polygons and re-derive centroids properly.
 
 NCR membership is an explicit per-district flag, not inferred from state, as
-required by the Phase-A geography spec. Rajasthan's NCR districts (Alwar,
+required by the the routing research geography spec. Rajasthan's NCR districts (Alwar,
 Bharatpur) are real NCR members but fall outside the four target states and
 are intentionally absent.
 """

@@ -55,7 +55,7 @@ SOURCES = [
             "town-level, and not sourced from an authoritative boundary file. "
             "Emitted with geocode_precision=settlement|district_centroid and a "
             "reduced confidence score; coordinate_verified=False throughout. "
-            "Must not be presented as official. Phase-B replaces this."
+            "Must not be presented as official. the application replaces this."
         ),
     },
     {
@@ -65,15 +65,15 @@ SOURCES = [
         "organization": "Ministry of Agriculture & Farmers Welfare, GoI",
         "retrieved_at": "",
         "status": "blocked",
-        "license_or_terms": "Terms not reviewed; acquisition not attempted in Phase-A.",
+        "license_or_terms": "Terms not reviewed; acquisition not attempted in the routing research.",
         "geography": "India",
         "fields_used": "",
         "raw_file_hash": "",
         "ml_training_permitted": "unknown",
         "notes": (
-            "NOT ACQUIRED. Phase-A proceeds on synthetic data by explicit "
+            "NOT ACQUIRED. the routing research proceeds on synthetic data by explicit "
             "decision. Critically, e-NAM covers integrated markets only and is "
-            "NOT the complete universe of physical mandis -- Phase-B must "
+            "NOT the complete universe of physical mandis -- the application must "
             "cross-check against state APMC/marketing board portals for DL, HR, "
             "PB and UP rather than treating e-NAM as authoritative coverage."
         ),
@@ -85,7 +85,7 @@ SOURCES = [
         "organization": "Ministry of Panchayati Raj / Office of the Registrar General",
         "retrieved_at": "",
         "status": "blocked",
-        "license_or_terms": "Terms not reviewed; acquisition not attempted in Phase-A.",
+        "license_or_terms": "Terms not reviewed; acquisition not attempted in the routing research.",
         "geography": "India",
         "fields_used": "",
         "raw_file_hash": "",
@@ -94,7 +94,7 @@ SOURCES = [
             "NOT ACQUIRED. This is why locations_master carries internal "
             "VB-prefixed district codes and NULL subdistrict/village/pincode "
             "codes: fabricating official location codes would be worse than "
-            "leaving them empty. Phase-B must populate these from LGD."
+            "leaving them empty. the application must populate these from LGD."
         ),
     },
     {

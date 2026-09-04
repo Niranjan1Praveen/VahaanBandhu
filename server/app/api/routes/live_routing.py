@@ -2,7 +2,7 @@
 
 Architectural position — this does **not** bypass VB-QER. TomTom supplies the
 road network and current traffic; VB-QER still decides which candidate is best
-under the project objective. The split the Phase-A brief specifies:
+under the project objective. The split the the routing research brief specifies:
 
     TomTom  ->  candidate routes + traffic
        |
@@ -11,7 +11,7 @@ under the project objective. The split the Phase-A brief specifies:
      route
 
 Degradation is explicit: when no TomTom key works, the response is marked
-`provider: "offline_graph"` and the geometry comes from the Phase-A graph.
+`provider: "offline_graph"` and the geometry comes from the research road graph.
 A synthetic route is never presented as a live one.
 """
 
@@ -194,7 +194,7 @@ async def traffic_config(identity: Identity = Depends(get_identity)) -> dict:
 
     The key is returned only to authenticated callers and only when traffic
     tiles are actually usable — the frontend cannot render the overlay without
-    it, and a hardcoded key in the bundle is exactly what Phase-B removed.
+    it, and a hardcoded key in the bundle is exactly what the application removed.
     """
     s = get_settings()
     keys = [k.strip() for k in s.tomtom_api_keys.split(",") if k.strip()]

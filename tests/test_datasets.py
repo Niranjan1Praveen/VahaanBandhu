@@ -85,7 +85,7 @@ class TestProvenanceRules:
         assert syn["verified_at"].isna().all()
 
     def test_mandis_do_not_claim_verified_coordinates(self, tables):
-        """Phase-A has no sourced mandi coordinates. Claiming otherwise would
+        """the routing research has no sourced mandi coordinates. Claiming otherwise would
         misrepresent town-level approximations as surveyed positions."""
         assert not tables["mandis"]["coordinate_verified"].any()
 

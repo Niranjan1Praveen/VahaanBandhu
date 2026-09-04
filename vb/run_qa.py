@@ -1,4 +1,4 @@
-"""Run the full Phase-A validation suite.
+"""Run the full the routing research validation suite.
 
     python -m vb.run_qa
 """

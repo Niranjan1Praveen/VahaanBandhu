@@ -3,7 +3,7 @@
 /**
  * RouteMap — the map UI layer.
  *
- * Deliberate separation, per the Phase-B architecture rule:
+ * Deliberate separation, per the application architecture rule:
  *
  *     map UI (this file)
  *        ^ consumes plain {lat, lon} data

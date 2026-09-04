@@ -1,4 +1,4 @@
-"""Build Research/synthetic_data_generation.ipynb.
+"""Build research/notebooks/synthetic_data_generation.ipynb.
 
 The notebook is generated from this script so it stays reviewable in git and
 regenerable. It calls the ``vb`` package rather than reimplementing generation
@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import nbformat as nbf
 
-from vb.config import RESEARCH
+from vb.config import NOTEBOOKS
 
 
 def md(t):
@@ -23,11 +23,11 @@ def code(t):
 
 cells = [
     md("""
-# VahaanBandhu 2.0 — Synthetic Data Generation
+# VahaanBandhu — Synthetic Data Generation
 
-**Phase-A prototype dataset · `v0.1`**
+**the routing research prototype dataset · `v0.1`**
 
-This notebook documents and *executes* the data foundation for VahaanBandhu 2.0:
+This notebook documents and *executes* the data foundation for VahaanBandhu:
 a rural circular-logistics platform connecting farmers, truckers and rural
 construction-material dealers across Delhi NCR, Haryana, Punjab and Uttar Pradesh.
 
@@ -531,7 +531,7 @@ nb.metadata = {
     "language_info": {"name": "python", "version": "3.12"},
 }
 
-RESEARCH.mkdir(parents=True, exist_ok=True)
-out = RESEARCH / "synthetic_data_generation.ipynb"
+NOTEBOOKS.mkdir(parents=True, exist_ok=True)
+out = NOTEBOOKS / "synthetic_data_generation.ipynb"
 nbf.write(nb, out)
 print(f"wrote {out} ({len(cells)} cells)")

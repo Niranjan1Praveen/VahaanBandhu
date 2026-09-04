@@ -281,7 +281,7 @@ export default function FarmerPage() {
               <StatusPill status={r.status} lang={lang} />
             </div>
 
-            {/* The bori clarification path — the UI face of the Phase-A rule */}
+            {/* The bori clarification path — the UI face of the the quantity rule */}
             {r.needs_clarification && (
               <BoriPrompt
                 request={r}

@@ -1,7 +1,7 @@
 """Benchmark set and runner for the QUAV-inspired hybrid experiments.
 
 Experiment identifier: ``quav_hybrid_v1``. Results are versioned separately from
-the Phase-A benchmark and never overwrite it.
+the research benchmark and never overwrite it.
 
 Benchmark design (Step 18): problems are stratified into categories that stress
 different parts of the objective, rather than inflating the count by duplicating

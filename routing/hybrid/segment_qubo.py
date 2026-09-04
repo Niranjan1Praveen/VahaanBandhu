@@ -20,7 +20,7 @@ Three constraint families, each contributing genuine quadratic couplings:
 
 **Why this and not one-hot candidate selection.** Picking one of k whole routes
 is an O(k) argmin -- a pointless thing to hand a quantum optimizer, as the
-Phase-A notes already recorded. Set partitioning is NP-hard: segments overlap in
+research notes already recorded. Set partitioning is NP-hard: segments overlap in
 which customers they cover, so leg choices are coupled through constraint (2).
 That coupling is the entire justification for using QAOA here rather than a sort.
 

@@ -1,9 +1,9 @@
 """Shared enums and value objects for the application-facing API.
 
-These are the **frozen Phase-A/Phase-B boundary types**. Internal optimization
+These are the **frozen research/application boundary types**. Internal optimization
 details -- QUBO matrices, bitstrings, QAOA parameters, artifact internals -- never
 appear here. The application depends on this contract, not on VB-QER internals,
-so Phase-A research can evolve without breaking Phase-B.
+so the routing research can evolve without breaking the application.
 """
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from enum import Enum
 from pydantic import BaseModel, Field, field_validator
 
 # Coarse project region. Mirrors vb.config.COARSE_BBOX, which was widened to
-# 32.6N during Phase-A because 31.5 excluded real Punjab districts.
+# 32.6N during the routing research because 31.5 excluded real Punjab districts.
 LAT_MIN, LAT_MAX = 23.0, 32.6
 LON_MIN, LON_MAX = 73.0, 85.0
 

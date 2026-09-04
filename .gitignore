@@ -1,25 +1,62 @@
-# Secrets
+# --- Secrets
 .env
 .env.*
 !.env.example
 
-# Python
+# --- Python
+.venv/
+venv/
 __pycache__/
 *.py[cod]
-venv/
-.venv/
-*.egg-info/
 .pytest_cache/
 .ipynb_checkpoints/
+*.egg-info/
 
-# Node
+# --- Node / Next.js
 node_modules/
 .next/
-client/src/generated/prisma/
+out/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
 
-# OS
+# --- OS / editor
 .DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
 
-# Large / regenerable data
-Data/raw/osm/*.pbf
-Res/route_cache/*.json
+# --- Local agent / assistant workspaces
+.claude/
+CLAUDE.md
+
+# --- Generated research data.
+# The synthetic corpus is large and fully reproducible from
+# research/notebooks/synthetic_data_generation.ipynb, so it is generated
+# locally rather than committed. The compact master and demo data the
+# application actually needs at runtime IS committed (see the negations below).
+Data/synthetic/
+Data/raw/
+Data/staging/
+Data/features/
+Data/splits/
+Data/qa/
+
+# --- Local research outputs and operational caches
+Res/route_cache/
+Res/**/*.log
+artifacts/
+playwright-report/
+test-results/
+
+# --- Logs
+*.log
+
+# --- Internal development notes (kept locally, not published)
+PHASE_*.md
+MIGRATION_*.md
+LEGACY_MIGRATION_MAP.md
+README_PHASE_A.md
+INSTRUCTIONS.md
+SECURITY_ACTION_REQUIRED.md

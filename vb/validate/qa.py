@@ -3,11 +3,11 @@
 Writes machine-readable results to ``Data/qa/`` so the QA report is generated
 from measurements rather than from claims.
 
-An important limitation is recorded honestly rather than papered over: Phase-A
+An important limitation is recorded honestly rather than papered over: the routing research
 has no district boundary polygons, so containment is checked against a circular
 district envelope derived from the curated centroid and radius. That catches
 gross misplacement but will not catch a point just over a real district border.
-Phase-B must swap in LGD/Census polygons.
+the application must swap in LGD/Census polygons.
 """
 
 from __future__ import annotations
@@ -58,8 +58,8 @@ def geospatial_qa(locations: pd.DataFrame, edges: pd.DataFrame) -> dict:
     res["envelope_distance_km_p99"] = round(float(np.percentile(distances, 99)), 2) if distances else None
     res["containment_method"] = "circular_district_envelope"
     res["containment_limitation"] = (
-        "No boundary polygons available in Phase-A. A point just across a real "
-        "district border will not be detected. Phase-B must use LGD polygons."
+        "No boundary polygons available in the routing research. A point just across a real "
+        "district border will not be detected. the application must use LGD polygons."
     )
 
     # Exact duplicate coordinates. Two distinct entities at identical 6-decimal

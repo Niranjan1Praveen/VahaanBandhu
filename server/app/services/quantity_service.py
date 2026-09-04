@@ -1,6 +1,6 @@
 """Quantity normalization at the application boundary.
 
-Wraps the Phase-A converter so the API preserves its central rule:
+Wraps the the routing research converter so the API preserves its central rule:
 
     **A bori with no determinable bag weight does NOT become 50 kg.**
 

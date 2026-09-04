@@ -1,6 +1,6 @@
-"""Load Phase-A artifacts into MongoDB and create development seed data.
+"""Load research artifacts into MongoDB and create development seed data.
 
-**Direction is one-way.** Phase-A CSVs remain the reproducible research source of
+**Direction is one-way.** the routing research CSVs remain the reproducible research source of
 truth; MongoDB is a rebuildable serving layer. Nothing here writes back to
 `Data/`, and the compose file mounts those directories read-only.
 
@@ -50,8 +50,8 @@ DEV_USERS = [
 MAX_LOCATIONS = 1200
 
 
-async def load_phase_a(limit_locations: int = MAX_LOCATIONS) -> dict:
-    """Load locations, mandis and crops from the Phase-A masters."""
+async def load_research_data(limit_locations: int = MAX_LOCATIONS) -> dict:
+    """Load locations, mandis and crops from the research masters."""
     import pandas as pd
 
     from vb import config as C
@@ -61,7 +61,7 @@ async def load_phase_a(limit_locations: int = MAX_LOCATIONS) -> dict:
     # --- locations: mandis, depots and a village sample.
     path = C.MASTER / "locations_master.csv"
     if not path.exists():
-        log.warning("Phase-A locations not found at %s", path)
+        log.warning("the routing research locations not found at %s", path)
         return counts
 
     df = pd.read_csv(path)
@@ -112,7 +112,7 @@ async def load_phase_a(limit_locations: int = MAX_LOCATIONS) -> dict:
                 "geo": loc["geo"],
                 "market_yard_type": r.get("market_yard_type"),
                 "enam_enabled": bool(r.get("enam_enabled", False)),
-                # Phase-A honesty flag: real market name, approximate coordinate.
+                # the routing research honesty flag: real market name, approximate coordinate.
                 "coordinate_verified": bool(r.get("coordinate_verified", False)),
                 "avg_queue_min": int(r.get("avg_queue_min", 45)),
                 "source": "phase_a_v0.1",
@@ -278,12 +278,12 @@ async def run(reset: bool = False) -> dict:
             await mongo.collection(coll).delete_many({})
         log.info("collections reset")
 
-    counts = await load_phase_a()
-    log.info("Phase-A loaded: %s", counts)
+    counts = await load_research_data()
+    log.info("the routing research loaded: %s", counts)
     dev = await seed_dev_data()
     log.info("dev seed: %s", dev)
     await mongo.disconnect()
-    return {"phase_a": counts, "dev": dev, "indexes": {k: len(v) for k, v in idx.items()}}
+    return {"research_data": counts, "dev": dev, "indexes": {k: len(v) for k, v in idx.items()}}
 
 
 def main() -> None:

@@ -1,12 +1,12 @@
 # VahaanBandhu FastAPI backend.
 #
 # Python 3.12: OR-Tools and GeoPandas have no 3.13/3.14 wheels yet, and the
-# Phase-A optimization stack is imported by the routing service.
+# routing/optimization stack is imported by the routing service.
 FROM python:3.12-slim
 
 WORKDIR /app
 
-# GEOS/PROJ are needed by shapely and pyproj (Phase-A geospatial code that the
+# GEOS/PROJ are needed by shapely and pyproj (geospatial research code that the
 # routing service imports); curl is used by the container health check.
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential libgeos-dev libproj-dev proj-bin curl \
@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY server/requirements.txt ./server/requirements.txt
 RUN pip install --no-cache-dir -r server/requirements.txt
 
-# Phase-A packages the routing service depends on. These are also bind-mounted
+# Research packages the routing service depends on. These are also bind-mounted
 # read-only by docker-compose; copying them keeps the image runnable standalone.
 COPY vb ./vb
 COPY routing ./routing

@@ -1,4 +1,4 @@
-"""Load canonical optimization instances from the Phase-A datasets.
+"""Load canonical optimization instances from the research datasets.
 
 This is the single entry point every solver uses. If a solver builds its own
 distance matrix anywhere else, classical/quantum comparison stops being valid,

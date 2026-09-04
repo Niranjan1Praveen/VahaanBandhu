@@ -1,6 +1,6 @@
 """Non-blocking IBM Quantum job inspection.
 
-Phase-B rule: hardware monitoring must never block application development, and
+the application rule: hardware monitoring must never block application development, and
 must never use a blocking ``job.result()`` call in a foreground process. This
 script queries job *status* only, records it, and exits.
 
@@ -29,7 +29,7 @@ from vb import config as C  # noqa: E402
 
 STATE_PATH = C.RES / "quantum" / "ibm_job_monitor.json"
 
-# Our Phase-A Experiment-H submission. Recorded explicitly because the account
+# Our the routing research Experiment-H submission. Recorded explicitly because the account
 # also contains older, unrelated jobs from previous work: without pinning the
 # job id, "a DONE job with counts exists on this account" would be mistaken for
 # "our experiment returned hardware measurements". Those are different claims.
@@ -43,7 +43,7 @@ OUR_JOB_IDS = {
     },
 }
 
-# Statuses that mean the job is still legitimately in flight. Per the Phase-B
+# Statuses that mean the job is still legitimately in flight. Per the the application
 # brief these must NOT be cancelled merely because they have waited hours.
 IN_FLIGHT = {"INITIALIZING", "QUEUED", "VALIDATING", "RUNNING"}
 
@@ -66,7 +66,7 @@ def inspect(retrieve: bool = False) -> dict:
 
     if not runner.available:
         record["note"] = ("Not authenticated. This is not a hardware failure, "
-                          "and Phase-B development continues regardless.")
+                          "and application development continues regardless.")
         _save(record)
         return record
 

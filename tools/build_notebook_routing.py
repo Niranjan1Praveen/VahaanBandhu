@@ -1,10 +1,10 @@
-"""Build Research/route_optimization_classical_quantum.ipynb."""
+"""Build research/notebooks/route_optimization_classical_quantum.ipynb."""
 
 from __future__ import annotations
 
 import nbformat as nbf
 
-from vb.config import RESEARCH
+from vb.config import NOTEBOOKS
 
 
 def md(t):
@@ -17,9 +17,9 @@ def code(t):
 
 cells = [
     md("""
-# VahaanBandhu 2.0 — Classical and Quantum-Enhanced Route Optimization
+# VahaanBandhu — Classical and Quantum-Enhanced Route Optimization
 
-**Phase-A research notebook**
+**Research notebook**
 
 This notebook defines the VahaanBandhu routing problem, builds classical baselines,
 derives a quantum formulation, validates it classically, runs it on a simulator, and
@@ -608,7 +608,7 @@ qaoa_rows = bench[bench.algorithm_name.str.contains("qaoa")]
 classical_rows = bench[(bench.algorithm_family=="classical") & bench.feasible]
 
 print("="*70)
-print("FINDINGS - Phase-A quantum route optimization")
+print("FINDINGS - quantum routing research route optimization")
 print("="*70)
 print(f"\\nInstances benchmarked        : {bench.instance_id.nunique()}")
 print(f"Cost snapshots (must be 1)   : {bench.cost_snapshot_id.nunique()}")
@@ -707,7 +707,7 @@ nb.metadata = {
     "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
     "language_info": {"name": "python", "version": "3.12"},
 }
-RESEARCH.mkdir(parents=True, exist_ok=True)
-out = RESEARCH / "route_optimization_classical_quantum.ipynb"
+NOTEBOOKS.mkdir(parents=True, exist_ok=True)
+out = NOTEBOOKS / "route_optimization_classical_quantum.ipynb"
 nbf.write(nb, out)
 print(f"wrote {out} ({len(cells)} cells)")

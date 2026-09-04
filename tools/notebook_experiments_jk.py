@@ -1,6 +1,6 @@
 """Experiment J and K cells, appended to the routing research notebook.
 
-Kept in a separate module so the original Phase-A notebook builder stays
+Kept in a separate module so the original research notebook builder stays
 reviewable and the new experiments can be regenerated independently.
 """
 
@@ -27,7 +27,7 @@ def cells() -> list:
 
 Experiment identifier `quav_hybrid_v1`.
 
-The Phase-A result was that standalone QAOA loses to classical solvers. The
+The research result was that standalone QAOA loses to classical solvers. The
 response was **not** to tune QAOA and hope. It was to change the architecture and
 the research question.
 

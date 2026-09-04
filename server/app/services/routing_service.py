@@ -12,7 +12,7 @@ contribute.
 graph, and a test asserts that in a clean subprocess. A queued or failed IBM job
 can never make the application unavailable.
 
-**Graceful degradation.** Where the Phase-A route graph or datasets are missing,
+**Graceful degradation.** Where the the routing research route graph or datasets are missing,
 the service returns a clearly-labelled unavailable result rather than raising --
 the application stays up and tells the user something true.
 """
@@ -35,14 +35,14 @@ from server.app.schemas.routing import (
 
 log = logging.getLogger(__name__)
 
-# Fuel/§toll assumptions shared with Phase-A so figures agree across layers.
+# Fuel/§toll assumptions shared with the routing research so figures agree across layers.
 DIESEL_INR_PER_L = 92.0
 DEFAULT_KMPL = 5.0
 
 
 @lru_cache(maxsize=1)
-def _load_phase_a():
-    """Load Phase-A artifacts once. Returns None when unavailable.
+def _load_research_data():
+    """Load research artifacts once. Returns None when unavailable.
 
     Imported lazily and cached so a missing dataset degrades the routing
     endpoint rather than preventing the API from starting.
@@ -57,7 +57,7 @@ def _load_phase_a():
         provider = OfflineGraphProvider(edges, locations, scenario_id="SCN_BASELINE")
         return {"locations": locations, "provider": provider}
     except Exception as e:
-        log.warning("Phase-A routing artifacts unavailable: %s", e)
+        log.warning("the routing research routing artifacts unavailable: %s", e)
         return None
 
 
@@ -104,10 +104,10 @@ class RoutingService:
             sol.optimization.cached = True
             return sol, warnings
 
-        data = _load_phase_a()
+        data = _load_research_data()
         if data is None:
             warnings.append(
-                "Phase-A route graph is not loaded; returning a direct-line estimate.")
+                "the routing research route graph is not loaded; returning a direct-line estimate.")
             sol = self._fallback_solution(req, warnings)
             return sol, warnings
 
@@ -131,7 +131,7 @@ class RoutingService:
         return GeoPoint(latitude=float(r["latitude"]), longitude=float(r["longitude"]))
 
     def _solve_on_graph(self, req: RoutingRequest, data, warnings: list[str]) -> RouteSolution:
-        """Route over the Phase-A graph via the VB-QER-backed provider.
+        """Route over the research road graph via the VB-QER-backed provider.
 
         For a simple origin->destination request the shortest-path members are
         the right internal experts and VB-QER's classification says so; we ask

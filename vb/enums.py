@@ -1,4 +1,4 @@
-"""Frozen controlled vocabularies for VahaanBandhu 2.0.
+"""Frozen controlled vocabularies for VahaanBandhu.
 
 These are the ontology. Changing a member is a breaking schema change and
 requires a dataset version bump.

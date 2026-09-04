@@ -56,7 +56,7 @@ H1 = {
     "cost_snapshot_id": "CST_DEMO_DIAMOND",
 }
 
-# Pre-existing Kingston submission from Phase-A Experiment H.
+# Pre-existing Kingston submission from the routing research Experiment H.
 SEED_RECORDS = [
     {
         "record_id": "H1-KINGSTON",
@@ -74,7 +74,7 @@ SEED_RECORDS = [
         "owned_by_project": True,
         "result_retrieved": False,
         "result_path": None,
-        "notes": "Phase-A Experiment H original submission.",
+        "notes": "the routing research Experiment H original submission.",
     },
 ]
 
@@ -133,7 +133,7 @@ def submit_h1(backends: list[str]) -> dict:
     reg = _load()
     runner = IBMQuantumRunner()
     if not runner.available:
-        print("IBM Quantum unavailable; no submission. Phase-B continues.")
+        print("IBM Quantum unavailable; no submission. the application continues.")
         return reg
 
     qubo, optimum, sim = build_h1()

@@ -60,7 +60,7 @@ def make_splits(n_instances: int = 60, seed: int = 20260903,
     """Train/validation/test instance ids, using the dataset's own split column.
 
     Reusing the dataset split rather than re-drawing one keeps this experiment
-    consistent with the Phase-A leakage guarantees (district, temporal,
+    consistent with the the routing research leakage guarantees (district, temporal,
     template-family and structural-hash holdouts already applied there).
     """
     df = list_instances()
