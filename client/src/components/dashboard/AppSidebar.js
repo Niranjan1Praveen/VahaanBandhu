@@ -20,7 +20,6 @@ import {
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,7 +41,7 @@ const items = [
 ];
 
 const AppSidebar = async () => {
-  const { getUser } = getKindeServerSession();
+  // Kinde removed. Identity now comes from the session provider / API.
   const user = await getUser();
   console.log(user);
 

@@ -12,7 +12,7 @@
  */
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { useSession } from "@/components/providers/SessionProvider";
 import { t } from "@/lib/i18n";
@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 export function Shell({ nav = [], title, children }) {
   const { lang, setLang, user, signOut, role } = useSession();
   const pathname = usePathname();
+  const router = useRouter();
   const tr = (k) => t(k, lang);
 
   return (
@@ -75,10 +76,23 @@ export function Shell({ nav = [], title, children }) {
         </div>
       </header>
 
-      {/* Demo-mode banner. Development only, and unmistakable. */}
+      {/* Demo-mode banner. Development only, and unmistakable.
+          Carries its own exit so a visitor never has to clear local storage
+          by hand to leave demo mode. */}
       {user?.auth_source === "dev" && (
-        <div className="border-b border-lime-400/20 bg-lime-400/10 px-4 py-1.5 text-center text-xs text-lime-300">
-          {tr("common.demoMode")} · {user.user_id} · {role}
+        <div className="flex items-center justify-center gap-3 border-b border-amber-500/25 bg-amber-500/10 px-4 py-1.5 text-center text-xs text-amber-200">
+          <span>
+            {tr("common.demoMode")} · {role}
+          </span>
+          <button
+            onClick={() => {
+              signOut();
+              router.push("/signin");
+            }}
+            className="rounded-full border border-amber-400/40 px-2.5 py-0.5 text-[11px] text-amber-100 transition hover:bg-amber-400/15"
+          >
+            {lang === "hi" ? "डेमो से बाहर" : "Exit demo"}
+          </button>
         </div>
       )}
 

@@ -1,0 +1,17 @@
+# Keep build context small and secrets out of images.
+.env
+.env.*
+!.env.example
+.git
+.venv
+node_modules
+**/node_modules
+**/.next
+__pycache__
+**/__pycache__
+*.pyc
+artifacts/screenshots
+# Phase-A research artifacts are bind-mounted read-only, not baked in.
+Data/raw
+Data/staging
+Research/*.ipynb

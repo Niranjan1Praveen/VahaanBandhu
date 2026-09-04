@@ -109,7 +109,7 @@ export default function MapPage() {
     } finally {
       setLoading(false);
     }
-  }, [role]);
+  }, [role, JSON.stringify(plan.legs)]);
 
   useEffect(() => {
     if (status === "anon") router.replace("/signin");

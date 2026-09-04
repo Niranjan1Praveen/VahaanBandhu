@@ -1,11 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/assets/images/logo.png";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "framer-motion";
-import { LoginLink } from "@kinde-oss/kinde-auth-nextjs";
 // fdsfs
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,14 +80,14 @@ export default function Navbar() {
                     )}
                   />
                 </svg>
-                <LoginLink>
+                <Link href="/signin">
                   <Button
                     variant={"login"}
                     className="cursor-pointer hidden md:inline-flex items-center"
                   >
                     लॉग इन
                   </Button>
-                </LoginLink>
+                </Link>
                 <Button
                   variant={"signup"}
                   className="cursor-pointer hidden md:inline-flex items-center"
@@ -111,14 +111,14 @@ export default function Navbar() {
                         {link.label}
                       </a>
                     ))}
-                    <LoginLink>
+                    <Link href="/signin">
                       <Button
                         variant={"login"}
                         className="cursor-pointer md:inline-flex items-center"
                       >
                         लॉग इन
                       </Button>
-                    </LoginLink>
+                    </Link>
                     <Button
                       variant={"signup"}
                       className="cursor-pointer md:inline-flex items-center"

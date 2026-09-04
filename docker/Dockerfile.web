@@ -1,13 +1,30 @@
+# VahaanBandhu Next.js frontend (development image).
+#
+# This runs `next dev`, which is what the compose stack wants: the source tree is
+# bind-mounted, so edits reload without a rebuild. A production image would run
+# `next build && next start` against a copied tree with no mount.
 FROM node:20-alpine
 
 WORKDIR /app
 
+# Dependency layer first so it caches across source changes.
+#
+# The prisma schema must be copied *before* npm install: package.json still
+# carries a `postinstall: prisma generate` from the legacy Supabase/Prisma
+# stack, and without the schema present that script fails and takes the whole
+# build with it. Prisma is DEPRECATE-class (see LEGACY_MIGRATION_MAP.md) and the
+# active application uses MongoDB, but the postinstall is left working rather
+# than stripped, so the legacy path stays runnable for reference.
 COPY package.json package-lock.json* ./
+COPY prisma ./prisma
 RUN npm ci || npm install
 
 COPY . .
 
+ENV NEXT_TELEMETRY_DISABLED=1
+
 EXPOSE 3000
 
-# Development server. Build a production image separately with `next build`.
-CMD ["npm", "run", "dev"]
+# 0.0.0.0 so the port is reachable from outside the container; binding to
+# localhost inside a container makes it unreachable from the host.
+CMD ["npm", "run", "dev", "--", "--hostname", "0.0.0.0"]

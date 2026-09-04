@@ -1,12 +1,21 @@
 "use client";
 
 /**
- * Sign in.
+ * Entry screen — two architecturally distinct journeys.
  *
- * Renders the Clerk flow when Clerk is configured. Otherwise it offers the
- * development sign-in, which is unmistakably labelled as such — it exists so
- * local UI work and screenshots do not depend on network access to Clerk, and
- * the backend refuses it outside development.
+ *   1. Login with Clerk  → real authentication, real user profile, real role
+ *   2. Show Demo         → /demo role selector, seeded development identities
+ *
+ * These are deliberately NOT the same path with a fallback. An earlier version
+ * showed the demo list *because* Clerk was unconfigured, which conflated
+ * "no credentials here" with "this visitor wants a demo". They are different
+ * questions.
+ *
+ * Consequences held to:
+ *   - Show Demo never invokes Clerk and never depends on Clerk availability.
+ *   - Clerk login never silently degrades into demo auth. Unconfigured Clerk
+ *     produces an honest message, not a redirect.
+ *   - Demo auth is validated by the backend, not merely gated in the browser.
  */
 
 import Link from "next/link";
@@ -17,43 +26,15 @@ import { useSession } from "@/components/providers/SessionProvider";
 import api from "@/lib/api";
 import { t } from "@/lib/i18n";
 
-const DEMO_USERS = [
-  {
-    id: "dev_farmer_01",
-    role: "FARMER",
-    icon: "🌾",
-    nameHi: "किसान — रमेश कुमार",
-    nameEn: "Farmer — Ramesh Kumar",
-  },
-  {
-    id: "dev_trucker_01",
-    role: "TRUCKER",
-    icon: "🚛",
-    nameHi: "ट्रक चालक — सुखबीर सिंह",
-    nameEn: "Trucker — Sukhbir Singh",
-  },
-  {
-    id: "dev_dealer_01",
-    role: "INPUT_DEALER",
-    icon: "🏪",
-    nameHi: "इनपुट डीलर — श्री बालाजी",
-    nameEn: "Input dealer — Shri Balaji",
-  },
-];
-
 export default function SignInPage() {
-  const { devSignIn, lang, status, user } = useSession();
+  const { lang, status, user } = useSession();
   const router = useRouter();
-  const [busy, setBusy] = useState(null);
-  const [clerkConfigured, setClerkConfigured] = useState(null);
-  const [err, setErr] = useState(null);
+  const [health, setHealth] = useState(null);
+  const [clerkMessage, setClerkMessage] = useState(null);
   const tr = (k) => t(k, lang);
 
   useEffect(() => {
-    api
-      .health()
-      .then((h) => setClerkConfigured(Boolean(h?.auth?.clerk_configured)))
-      .catch(() => setClerkConfigured(false));
+    api.health().then(setHealth).catch(() => setHealth({ auth: {} }));
   }, []);
 
   useEffect(() => {
@@ -62,96 +43,99 @@ export default function SignInPage() {
     }
   }, [status, user, router]);
 
-  async function handleDemo(u) {
-    setBusy(u.id);
-    setErr(null);
-    try {
-      await devSignIn(u.id, u.role);
-      router.push("/app");
-    } catch (e) {
-      setErr(e.message);
-      setBusy(null);
-    }
-  }
+  const clerkConfigured = Boolean(health?.auth?.clerk_configured);
+  const demoAvailable = health?.auth?.dev_auth_active !== false;
 
   return (
-    <div className="min-h-screen bg-background px-4 py-10 text-foreground">
-      <div className="mx-auto w-full max-w-md">
-        <Link href="/" className="mb-8 flex items-center justify-center gap-2">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-lime-400 text-base font-bold text-neutral-950">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4 py-10 text-foreground">
+      <div className="w-full max-w-md">
+        <Link href="/" className="mb-10 flex items-center justify-center gap-2.5">
+          <span className="grid h-11 w-11 place-items-center rounded-full bg-lime-400 text-lg font-bold text-neutral-950">
             वा
           </span>
-          <span className="text-xl font-medium">{tr("app.name")}</span>
+          <span className="text-2xl font-medium">{tr("app.name")}</span>
         </Link>
 
-        <h1 className="text-center text-2xl font-medium">{tr("nav.signIn")}</h1>
-        <p className="mt-2 text-center text-sm text-white/50">
+        <p className="mb-10 text-center text-sm text-white/50">
           {tr("app.tagline")}
         </p>
 
-        {clerkConfigured === true && (
-          <div className="mt-8 rounded-3xl border border-white/10 bg-neutral-900 p-6 text-center">
-            <p className="text-sm text-white/70">
-              Clerk is configured. Continue with your account.
-            </p>
-            <Link
-              href="/sign-in"
-              className="mt-4 inline-flex h-12 items-center rounded-full border border-lime-400 bg-lime-400 px-6 font-medium text-neutral-950"
-            >
-              {tr("nav.signIn")}
-            </Link>
-          </div>
+        {/* ---------- 1. Real authentication ---------- */}
+        <p className="mb-2.5 text-center text-sm text-white/60">
+          {lang === "hi" ? "असली उपयोगकर्ता?" : "Real user?"}
+        </p>
+        <Link
+          href={clerkConfigured ? "/sign-in" : "#"}
+          onClick={(e) => {
+            if (!clerkConfigured) {
+              e.preventDefault();
+              // Honest message. Never a silent downgrade to demo auth.
+              setClerkMessage(
+                lang === "hi"
+                  ? "इस स्थानीय वातावरण में Clerk प्रमाणीकरण कॉन्फ़िगर नहीं है।"
+                  : "Clerk authentication is not configured for this local environment."
+              );
+            }
+          }}
+          className={`flex h-14 w-full items-center justify-center gap-3 rounded-full border text-base font-medium transition ${
+            clerkConfigured
+              ? "border-lime-400 bg-lime-400 text-neutral-950 active:scale-[0.99]"
+              : "border-lime-400/35 bg-lime-400/10 text-lime-200/80"
+          }`}
+        >
+          <span>🔐</span>
+          {lang === "hi" ? "Clerk से लॉग इन करें" : "Login with Clerk"}
+        </Link>
+
+        {clerkMessage && (
+          <p className="mt-3 rounded-2xl border border-amber-500/25 bg-amber-500/5 px-4 py-3 text-center text-sm text-amber-200">
+            {clerkMessage}
+          </p>
         )}
 
-        {clerkConfigured === false && (
-          <div className="mt-8">
-            <div className="mb-4 rounded-2xl border border-amber-500/25 bg-amber-500/10 px-4 py-3 text-center text-xs text-amber-200">
-              {lang === "hi"
-                ? "डेमो मोड — केवल स्थानीय विकास के लिए"
-                : "Demo mode — local development only"}
-            </div>
+        {/* ---------- divider ---------- */}
+        <div className="my-8 flex items-center gap-4">
+          <span className="h-px flex-1 bg-white/10" />
+          <span className="text-xs uppercase tracking-wider text-white/25">
+            {lang === "hi" ? "या" : "or"}
+          </span>
+          <span className="h-px flex-1 bg-white/10" />
+        </div>
 
-            <div className="space-y-3">
-              {DEMO_USERS.map((u) => (
-                <button
-                  key={u.id}
-                  onClick={() => handleDemo(u)}
-                  disabled={Boolean(busy)}
-                  className="flex w-full items-center gap-4 rounded-3xl border border-white/10 bg-neutral-900 p-5 text-left transition hover:border-lime-400/40 disabled:opacity-50"
-                >
-                  <span className="text-3xl">{u.icon}</span>
-                  <span className="flex-1">
-                    <span className="block font-medium">
-                      {lang === "hi" ? u.nameHi : u.nameEn}
-                    </span>
-                    <span className="mt-0.5 block text-xs text-white/40">
-                      {u.id}
-                    </span>
-                  </span>
-                  {busy === u.id && (
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/20 border-t-lime-400" />
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* ---------- 2. Demo ---------- */}
+        <p className="mb-2.5 text-center text-sm text-white/60">
+          {lang === "hi" ? "पहले देखना चाहते हैं?" : "Want to explore first?"}
+        </p>
+        <Link
+          href="/demo"
+          aria-disabled={!demoAvailable}
+          className={`flex h-14 w-full items-center justify-center gap-3 rounded-full border text-base font-medium transition ${
+            demoAvailable
+              ? "border-white text-white active:scale-[0.99] hover:bg-white/5"
+              : "pointer-events-none border-white/15 text-white/30"
+          }`}
+        >
+          <span>👁️</span>
+          {lang === "hi" ? "डेमो देखें" : "Show Demo"}
+        </Link>
+
+        {!demoAvailable && (
+          <p className="mt-3 text-center text-xs text-white/35">
+            {lang === "hi"
+              ? "इस वातावरण में डेमो उपलब्ध नहीं है।"
+              : "The demo is not available in this environment."}
+          </p>
         )}
 
-        {clerkConfigured === null && (
+        {health === null && (
           <div className="mt-10 flex justify-center">
             <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/20 border-t-lime-400" />
           </div>
         )}
 
-        {err && (
-          <p className="mt-5 rounded-2xl border border-red-500/25 bg-red-500/5 px-4 py-3 text-center text-sm text-red-300">
-            {err}
-          </p>
-        )}
-
         <Link
           href="/"
-          className="mt-8 block text-center text-sm text-white/40 hover:text-white/70"
+          className="mt-10 block text-center text-sm text-white/40 hover:text-white/70"
         >
           ← {lang === "hi" ? "मुख्य पृष्ठ" : "Home"}
         </Link>

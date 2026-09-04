@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Tags from "@/components/ui/tags";
-import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 import Link from "next/link";
 
 const SignUpOptions = () => {
@@ -57,19 +56,19 @@ const SignUpOptions = () => {
                       {plan.description}
                     </p>
                     {plan.id === 1 && (
-                      <Link href={"/farmer/vehicle-request "}>
+                      <Link href={"/app/farmer"}>
                         <Button className="cursor-pointer w-full">बुक करें</Button>
                       </Link>
                     )}
                     {plan.id === 2 && (
-                      <Link href={"http://127.0.0.1:5000/"}>
+                      <Link href={"/app/trucker"}>
                         <Button className="cursor-pointer w-full">उठान शुरू</Button>
                       </Link>
                     )}
                     {plan.id === 3 && (
-                      <RegisterLink>
+                      <Link href="/signin">
                         <Button className="cursor-pointer w-full">रजिस्टर करें</Button>
-                      </RegisterLink>
+                      </Link>
                     )}
                   </div>
                   <ul className="mt-6 space-y-2 text-sm">

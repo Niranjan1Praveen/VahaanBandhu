@@ -1,25 +1,35 @@
-# Python 3.12: OR-Tools and GeoPandas have no 3.13/3.14 wheels yet.
+# VahaanBandhu FastAPI backend.
+#
+# Python 3.12: OR-Tools and GeoPandas have no 3.13/3.14 wheels yet, and the
+# Phase-A optimization stack is imported by the routing service.
 FROM python:3.12-slim
 
 WORKDIR /app
 
-# GEOS/PROJ are needed by shapely and pyproj; build-essential for any sdist builds.
+# GEOS/PROJ are needed by shapely and pyproj (Phase-A geospatial code that the
+# routing service imports); curl is used by the container health check.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        build-essential libgeos-dev libproj-dev proj-bin \
+        build-essential libgeos-dev libproj-dev proj-bin curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first so the dependency layer caches across code changes.
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Dependency layer first so it caches across application code changes.
+COPY server/requirements.txt ./server/requirements.txt
+RUN pip install --no-cache-dir -r server/requirements.txt
 
+# Phase-A packages the routing service depends on. These are also bind-mounted
+# read-only by docker-compose; copying them keeps the image runnable standalone.
 COPY vb ./vb
 COPY routing ./routing
-COPY api ./api
+COPY server ./server
 
 ENV PYTHONPATH=/app \
     PYTHONUNBUFFERED=1
 
-EXPOSE 5000
+EXPOSE 8000
+
+# Run as a non-root user. The API needs no write access to the image.
+RUN useradd --create-home --uid 10001 appuser && chown -R appuser:appuser /app
+USER appuser
 
 # Secrets are injected at runtime via env_file, never baked into the image.
-CMD ["python", "-m", "api.app"]
+CMD ["uvicorn", "server.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
