@@ -123,5 +123,14 @@
       }
     ]
   },
-  "updated_at": "2026-09-04T02:15:27Z"
+  "updated_at": "2026-09-04T02:15:27Z",
+  "conclusion": "Real IBM Quantum hardware execution has now been completed on three 156-qubit IBM Heron-class systems for the controlled VahaanBandhu hardware validation. All three produced feasible samples containing the classical ground-state solution. This validates the hardware execution and decoding pipeline. It does not demonstrate quantum advantage.",
+  "totals": {
+    "vahaanbandhu_jobs_submitted": 3,
+    "completed": 3,
+    "still_queued": 0,
+    "failed": 0,
+    "real_hardware_results_analyzed": 3,
+    "note": "Excludes 11 older DONE jobs present on the IBM account from unrelated prior work; those are not VahaanBandhu results."
+  }
 }

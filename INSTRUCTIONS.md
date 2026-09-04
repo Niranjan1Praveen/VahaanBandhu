@@ -69,9 +69,19 @@ You want `Up (healthy)` for `vb-mongo` and `vb-redis`.
 
 One-time (or whenever you want a clean database):
 
+**PowerShell** (this machine):
+
+```powershell
+$env:PYTHONPATH="."; $env:MONGODB_URI="mongodb://localhost:27017"
+.\.venv\Scripts\python.exe -m server.app.db.seed --reset
+```
+
+<details><summary>Bash / Git Bash equivalent</summary>
+
 ```bash
 PYTHONPATH=. MONGODB_URI=mongodb://localhost:27017 ./.venv/Scripts/python.exe -m server.app.db.seed --reset
 ```
+</details>
 
 This loads a subset of the Phase-A research datasets into MongoDB — about 1,320
 locations, 50 mandis, 18 crops — plus three demo users. It reads `Data/` and
@@ -94,10 +104,13 @@ Interactive API docs: <http://127.0.0.1:8000/docs>
 
 ### Terminal 3 — frontend
 
-```bash
+**PowerShell:**
+
+```powershell
 cd client
-npm install          # first time only
-NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000 npm run dev
+npm install                                        # first time only
+$env:NEXT_PUBLIC_API_BASE_URL="http://127.0.0.1:8000"
+npm run dev
 ```
 
 Open <http://localhost:3000>.
@@ -118,7 +131,8 @@ To stop, keeping your data:
 docker compose down
 ```
 
-To stop **and wipe** the database volumes:
+To stop **and wipe** the database volumes — this destroys your seeded data,
+so only do it when you intend a clean reset:
 
 ```bash
 docker compose down -v
@@ -128,23 +142,42 @@ docker compose down -v
 
 ## 5. Signing in
 
-With no Clerk credentials configured, <http://localhost:3000/signin> offers three
-seeded demo users:
+`/signin` always offers **two separate journeys**:
 
-| User | Role | Sees |
+```
+              वाहनबन्धु
+
+  असली उपयोगकर्ता?
+  [ 🔐  Clerk से लॉग इन करें ]      <- real authentication
+
+              — या —
+
+  पहले देखना चाहते हैं?
+  [ 👁️  डेमो देखें ]                <- goes to /demo
+```
+
+**Login with Clerk** is the real path. With Clerk configured it starts the Clerk
+flow; without it, clicking says so plainly and does **not** quietly become a
+demo login.
+
+**Show Demo** goes to `/demo`, a role selector with three cards. Picking one
+enters using a seeded identity automatically — you never type a user id:
+
+| Card | Identity | Shows |
 |---|---|---|
-| `dev_farmer_01` — रमेश कुमार | Farmer | Transport requests, crop/mandi/quantity, route |
-| `dev_trucker_01` — सुखबीर सिंह | Trucker | Vehicle, jobs, **return loads** |
-| `dev_dealer_01` — श्री बालाजी | Input dealer | Material requirements, incoming deliveries |
+| 🌾 किसान / Farmer | `dev_farmer_01` | Crop transport requests, mandi, quantity, matched transport |
+| 🚚 ट्रक चालक / Trucker | `dev_trucker_01` | Jobs, routes, return loads, empty-km savings |
+| 🏪 इनपुट डीलर / Input Dealer | `dev_dealer_01` | Material requirements, incoming deliveries |
 
-A yellow **डेमो मोड** banner appears whenever development auth is in use. It is
-refused outside development: `demo_auth_active` requires *both*
-`DEV_AUTH_ENABLED=true` **and** a non-production `ENVIRONMENT`, so a single
-misconfigured variable cannot expose it.
+Demo mode shows a persistent amber **डेमो मोड** banner carrying an **डेमो से
+बाहर / Exit demo** button, so leaving never requires clearing local storage.
 
-With Clerk configured, the same page shows the Clerk flow instead.
+The demo is **development-only and enforced server-side**: `demo_auth_active`
+requires *both* `DEV_AUTH_ENABLED=true` **and** a non-production `ENVIRONMENT`,
+and `POST /api/v1/auth/dev-login` returns **404** outside development. A single
+misconfigured variable cannot expose it, and it is not merely a frontend switch.
 
----
+Show Demo never invokes Clerk and does not depend on Clerk being configured.
 
 ## 6. Worth looking at
 
@@ -182,8 +215,9 @@ PYTHONPATH=. MONGODB_URI=mongodb://localhost:27017 REDIS_URL=redis://localhost:6
 
 Screenshots, captured from the actually-running app:
 
-```bash
-PYTHONPATH=. ./.venv/Scripts/python.exe tools/capture_screenshots.py
+```powershell
+$env:PYTHONPATH="."
+.\.venv\Scripts\python.exe tools\capture_screenshots.py
 ```
 
 Output lands in `artifacts/screenshots/`, organised by checkpoint. Both servers
@@ -219,9 +253,9 @@ cache operation degrades to a miss.
 
 **Port already in use** — find and stop the holder:
 
-```bash
-netstat -ano | grep ":8000" | grep LISTENING     # or :3000
-taskkill //PID <pid> //F
+```powershell
+netstat -ano | findstr ":8000" | findstr LISTENING   # or :3000
+taskkill /PID <pid> /F
 ```
 
 **API returns 500 on every request** — check MongoDB:

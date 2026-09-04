@@ -708,19 +708,51 @@ fitted to the training set, and it worked on the first real test.
 | Does quantum help when classical candidates are nearly tied? | Not measurable here - the triage threshold routed almost all corridors to "classically confident" |
 | Does the benefit generalise to held-out instances? | **No.** 0/15 |
 
-## 23. IBM Quantum hardware status
+## 23. IBM Quantum hardware status -- COMPLETED
 
-Connectivity was verified: `ibm_fez`, `ibm_marrakesh`, `ibm_kingston`
-(156 qubits each) observed operational on the `ibm_cloud` channel.
+**Real hardware execution is now complete on three QPUs.** The earlier
+"still queued" status is superseded.
 
-A 5-qubit QAOA circuit with simulator-optimized parameters was **submitted to a
-real backend and remained queued for the duration of this session**. No hardware
-result is reported, and no simulator result has been relabelled as hardware.
-Arm D of the ablation is therefore empty by necessity rather than by finding.
+The controlled H1 validation -- identical QUBO, QAOA depth p=1, simulator-
+optimized parameters, 1024 shots, identical decoding and objective -- was run on
+three 156-qubit IBM Heron-class systems. Only hardware and transpilation varied.
 
-`Res/quantum/experiment_h_ibm_hardware.json` will record `executed: true` with
-backend, job id, transpiled depth and feasible rate when the job returns, or
-`executed: false` with a reason if it fails.
+| Source | Kind | Job id | Feasible rate | Best E | Decoded path | Matched optimum |
+|---|---|---|---|---|---|---|
+| classical exact | ground truth | — | — | 2.5 | `[0,2,3]` | — |
+| Aer simulator | noiseless sim | — | 19.82% | 2.5 | `[0,2,3]` | yes |
+| **ibm_marrakesh** | **REAL QPU** | `dacmbvbdd5gc73d69bag` | **18.65%** | **2.5** | `[0,2,3]` | **yes** |
+| **ibm_fez** | **REAL QPU** | `dacmbq5nj4cs73acr6lg` | **16.11%** | **2.5** | `[0,2,3]` | **yes** |
+| **ibm_kingston** | **REAL QPU** | `dacft8l1ierc738ji9a0` | **12.30%** | **2.5** | `[0,2,3]` | **yes** |
+
+Kingston queued roughly eight hours behind 76 pending jobs; Fez and Marrakesh
+had empty queues at submission and returned in minutes. That is a scheduling
+observation, not a device-quality one.
+
+### Conclusion, stated precisely
+
+> Real IBM Quantum hardware execution has now been completed on three 156-qubit
+> IBM Heron-class systems for the controlled VahaanBandhu hardware validation.
+> All three produced feasible samples containing the classical ground-state
+> solution. This validates the hardware execution and decoding pipeline. **It
+> does not demonstrate quantum advantage.**
+
+A classical exact solve returns the same optimum in microseconds. What the data
+shows is expected degradation in *feasible sampling rate* under hardware noise
+(19.82% noiseless → 18.65% / 16.11% / 12.30%), with solution quality unaffected
+at this circuit size. Three devices is far too small a sample to rank hardware.
+
+Artifacts: `Res/quantum/H1_ibm_{fez,marrakesh,kingston}_result.json`,
+`Res/quantum/H1_cross_hardware_comparison.json`, and the ownership-scoped
+registry `Res/quantum/hardware_job_registry.json`.
+
+**Totals (VahaanBandhu-owned jobs only):** 3 submitted, 3 completed, 0 queued,
+0 failed, 3 analysed. The IBM account also holds 11 older DONE jobs from
+unrelated prior work; those are excluded from every total.
+
+Arm D of the ablation (hardware-derived quantum features) remains empty: these
+runs validate the pipeline but have not yet been distilled into an artifact that
+passes held-out validation.
 
 ## 24. Production recommendation
 
