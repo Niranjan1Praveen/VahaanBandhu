@@ -20,7 +20,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from server.app.api.routes import (
-    dealers, farmers, health, locations, me, routing, truckers,
+    dealers, farmers, health, live_routing, locations, me, routing, truckers,
 )
 from server.app.core.config import get_settings
 from server.app.core.logging import configure_logging
@@ -98,6 +98,7 @@ def create_app() -> FastAPI:
     app.include_router(truckers.router, prefix=f"{p}/truckers", tags=["trucker"])
     app.include_router(dealers.router, prefix=f"{p}/dealers", tags=["dealer"])
     app.include_router(routing.router, prefix=f"{p}/routes", tags=["routing"])
+    app.include_router(live_routing.router, prefix=f"{p}/routes", tags=["routing"])
     app.include_router(locations.router, prefix=p, tags=["locations"])
     return app
 

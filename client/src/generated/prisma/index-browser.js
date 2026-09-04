@@ -126,7 +126,8 @@ exports.Prisma.UserScalarFieldEnum = {
   firstName: 'firstName',
   lastName: 'lastName',
   profileImage: 'profileImage',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  role: 'role'
 };
 
 exports.Prisma.MandiLatLongScalarFieldEnum = {
@@ -172,7 +173,10 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.Role = exports.$Enums.Role = {
+  DRIVER: 'DRIVER',
+  INPUTDEALER: 'INPUTDEALER'
+};
 
 exports.Prisma.ModelName = {
   User: 'User',

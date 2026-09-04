@@ -92,7 +92,10 @@ class TomTomRoutingProvider(RoutingProvider):
                 return None
             if r.status_code == 200:
                 return r.json()
-            if r.status_code in (403, 429):
+            # 401 belongs here too: an expired or revoked key is exactly the
+            # case key rotation exists for. Without it a dead first key would
+            # fail every request while two working keys sat unused.
+            if r.status_code in (401, 403, 429):
                 if not self._rotate():
                     log.error("tomtom: all API keys exhausted")
                     return None
@@ -150,7 +153,16 @@ class TomTomRoutingProvider(RoutingProvider):
             "alt": max_alternatives, **kw,
         }
         if (hit := self.cache.get(req)) is not None:
-            return [RouteCandidate(**c) for c in hit]
+            # to_dict() adds n_geometry_points, which is a derived field and not
+            # a constructor argument. Storing it and replaying it verbatim made
+            # every cache hit raise TypeError and silently degrade to the
+            # straight-line fallback -- the first call worked, every repeat did
+            # not. Strip derived keys on the way back in.
+            fields = set(RouteCandidate.__dataclass_fields__)
+            return [
+                RouteCandidate(**{k: v for k, v in c.items() if k in fields})
+                for c in hit
+            ]
         if not self.available:
             return []
 
