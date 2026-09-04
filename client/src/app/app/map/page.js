@@ -87,19 +87,26 @@ export default function MapPage() {
     setLoading(true);
     setError(null);
     try {
+      // The frozen corridor is real TomTom geometry captured once, so the demo
+      // renders identical road paths every time -- offline, rate-limited, or a
+      // year from now. Live routing stays available for real requests.
       const [routeRes, trafficRes] = await Promise.all([
-        apiFetch("/routes/live", {
-          method: "POST",
-          body: JSON.stringify({
-            legs: plan.legs.map((l) => ({
-              from_point: { latitude: l.from.lat, longitude: l.from.lon },
-              to_point: { latitude: l.to.lat, longitude: l.to.lon },
-              kind: l.kind,
-              label: l.label,
-            })),
-            travel_mode: "truck",
-          }),
-        }),
+        apiFetch("/routes/demo").catch(() =>
+          // Only if the fixture is missing do we hit the live API, which may
+          // legitimately degrade to an estimate and will say so.
+          apiFetch("/routes/live", {
+            method: "POST",
+            body: JSON.stringify({
+              legs: plan.legs.map((l) => ({
+                from_point: { latitude: l.from.lat, longitude: l.from.lon },
+                to_point: { latitude: l.to.lat, longitude: l.to.lon },
+                kind: l.kind,
+                label: l.label,
+              })),
+              travel_mode: "truck",
+            }),
+          })
+        ),
         apiFetch("/routes/live/traffic-config").catch(() => null),
       ]);
       setLive(routeRes);
@@ -140,6 +147,9 @@ export default function MapPage() {
 
   const isLive = live?.provider === "tomtom";
   const isMixed = live?.provider === "mixed";
+  const isFrozen = live?.mode === "frozen_snapshot";
+  const nTraffic = (live?.legs || []).reduce(
+    (n, l) => n + (l.traffic_sections?.length || 0), 0);
 
   return (
     <Shell nav={nav} title={tr("route.title")}>
@@ -156,9 +166,10 @@ export default function MapPage() {
 
       <Card className="mb-5 p-0">
         <RouteMap
-          markers={plan.markers}
+          markers={live?.markers?.length ? live.markers : plan.markers}
           polyline={outbound}
           returnPolyline={returnLine}
+          trafficLegs={live?.legs || []}
           trafficConfig={traffic}
           height={400}
         />
@@ -170,13 +181,19 @@ export default function MapPage() {
           isLive ? "border-lime-400/40 bg-lime-400/10 text-lime-300"
                  : isMixed ? "border-amber-400/40 bg-amber-400/10 text-amber-300"
                  : "border-white/15 text-white/50"}`}>
-          {isLive ? "असली सड़क मार्ग · TomTom"
+          {isFrozen ? "असली सड़क मार्ग · TomTom (सहेजा गया)"
+            : isLive ? "असली सड़क मार्ग · TomTom"
             : isMixed ? "आंशिक रूप से असली मार्ग"
             : "अनुमानित सीधी दूरी"}
         </span>
         {traffic && (
           <span className="rounded-full border border-white/15 px-3 py-1 text-white/60">
             लाइव ट्रैफ़िक उपलब्ध
+          </span>
+        )}
+        {nTraffic > 0 && (
+          <span className="rounded-full border border-orange-400/40 bg-orange-400/10 px-3 py-1 text-orange-300">
+            {nTraffic} ट्रैफ़िक खंड मार्ग पर
           </span>
         )}
         {live && (
@@ -190,7 +207,7 @@ export default function MapPage() {
 
       {/* Legs */}
       <Card className="mb-5">
-        <Tag>{plan.titleHi}</Tag>
+        <Tag>{live?.title_hi || plan.titleHi}</Tag>
         <div className="mt-4 space-y-3">
           {(live?.legs || []).map((leg, i) => (
             <div key={i} className="flex items-start gap-3">

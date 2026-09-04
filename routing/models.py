@@ -46,6 +46,11 @@ class RouteCandidate:
     capacity_utilization: float = 0.0
     circular_logistics_score: float = 0.0
     geometry: list[tuple[float, float]] = field(default_factory=list)
+    # Congestion along the route itself, as index ranges into `geometry`:
+    # {start, end, magnitude, category, effective_speed_kmh, delay_s}.
+    # This is what lets the map colour the path by congestion rather than
+    # relying on a tile overlay that says nothing about the chosen route.
+    traffic_sections: list[dict] = field(default_factory=list)
     traffic_snapshot_time: str | None = None
     source: str = "unknown"
 

@@ -54,6 +54,10 @@ class LiveLegResult(BaseModel):
     # two-point straight line.
     polyline: list[list[float]] = Field(default_factory=list)
     n_geometry_points: int = 0
+    # Congestion stretches as index ranges into `polyline`, so the map can
+    # colour the actual route instead of relying on a tile overlay that says
+    # nothing about the path chosen.
+    traffic_sections: list[dict] = Field(default_factory=list)
     provider: str
 
 
@@ -133,6 +137,7 @@ async def live_route(
                         traffic_delay_min=round(r.traffic_delay_min, 1),
                         polyline=[[lat, lon] for lat, lon in r.geometry],
                         n_geometry_points=len(r.geometry),
+                        traffic_sections=r.traffic_sections,
                         provider="tomtom",
                     )
                     providers_used.add("tomtom")

@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -41,6 +42,9 @@ def _key(payload: dict) -> str:
     return hashlib.sha256(
         json.dumps(payload, sort_keys=True, default=str).encode()
     ).hexdigest()[:24]
+
+
+log = logging.getLogger(__name__)
 
 
 @dataclass
@@ -64,8 +68,21 @@ class RouteCache:
     """File-backed cache for provider responses."""
 
     def __init__(self, directory: Path | None = None) -> None:
-        self.dir = directory or (RES / "route_cache")
-        self.dir.mkdir(parents=True, exist_ok=True)
+        # VB_ROUTE_CACHE_DIR lets a deployment point the operational cache at a
+        # writable location. In Docker, Res/ is mounted read-only because it
+        # holds research artifacts, and an ephemeral provider cache does not
+        # belong there anyway.
+        import os
+        env_dir = os.environ.get("VB_ROUTE_CACHE_DIR")
+        self.dir = directory or (Path(env_dir) if env_dir else RES / "route_cache")
+        self.writable = True
+        try:
+            self.dir.mkdir(parents=True, exist_ok=True)
+        except OSError as e:
+            # Degrade to a no-op cache rather than refusing to construct.
+            self.writable = False
+            log.warning("route cache dir %s is not writable (%s); "
+                        "running without a provider cache", self.dir, e)
 
     def _path(self, key: str) -> Path:
         return self.dir / f"{key}.json"
@@ -75,6 +92,7 @@ class RouteCache:
         p = self._path(_key(request))
         if not p.exists():
             return None
+        
         try:
             raw = json.loads(p.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
@@ -93,9 +111,20 @@ class RouteCache:
         key = _key(request)
         entry = CacheEntry(key=key, value=value, volatility=volatility.value,
                            stored_at=time.time(), meta={"request": request, **meta})
-        self._path(key).write_text(
-            json.dumps(entry.__dict__, indent=2, default=str), encoding="utf-8"
-        )
+        if not self.writable:
+            return key
+        try:
+            self._path(key).write_text(
+                json.dumps(entry.__dict__, indent=2, default=str), encoding="utf-8"
+            )
+        except OSError as e:
+            # A cache write must NEVER destroy a successful fetch. This was a
+            # real outage: in Docker, Res/ is mounted read-only (correctly --
+            # it holds research artifacts), so every TomTom response raised
+            # OSError *after* the route had been fetched, and the caller fell
+            # back to a straight line. Caching is an optimisation; losing it is
+            # a slowdown, not a failure.
+            log.warning("route cache write failed (%s); continuing uncached", e)
         return key
 
     def clear_expired(self) -> int:

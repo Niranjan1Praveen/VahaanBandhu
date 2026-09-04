@@ -20,7 +20,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from server.app.api.routes import (
-    dealers, farmers, health, live_routing, locations, me, routing, truckers,
+    dealers, demo_routes, farmers, health, live_routing, locations, me,
+    routing, truckers,
 )
 from server.app.core.config import get_settings
 from server.app.core.logging import configure_logging
@@ -97,8 +98,12 @@ def create_app() -> FastAPI:
     app.include_router(farmers.router, prefix=f"{p}/farmers", tags=["farmer"])
     app.include_router(truckers.router, prefix=f"{p}/truckers", tags=["trucker"])
     app.include_router(dealers.router, prefix=f"{p}/dealers", tags=["dealer"])
-    app.include_router(routing.router, prefix=f"{p}/routes", tags=["routing"])
+    # Order matters: routing.router declares GET /routes/{route_id}, which would
+    # otherwise swallow /routes/demo and /routes/live as route ids. Specific
+    # paths are registered first.
+    app.include_router(demo_routes.router, prefix=f"{p}/routes", tags=["routing"])
     app.include_router(live_routing.router, prefix=f"{p}/routes", tags=["routing"])
+    app.include_router(routing.router, prefix=f"{p}/routes", tags=["routing"])
     app.include_router(locations.router, prefix=p, tags=["locations"])
     return app
 

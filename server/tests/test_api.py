@@ -507,3 +507,80 @@ class TestDemoAuthGuards:
             json={"crop_key": "wheat", "quantity_value": 5,
                   "quantity_unit": "quintal", "role": "FARMER"})
         assert r.status_code == 403
+
+class TestFrozenDemoRoutes:
+    """The demo corridors must stay real road geometry.
+
+    A straight line here would mean the fixture silently regressed to a
+    placeholder -- exactly the failure these tests exist to catch, because the
+    map would still render and simply look wrong.
+    """
+
+    @needs_mongo
+    async def test_every_role_has_a_frozen_corridor(self, client):
+        for role in ("FARMER", "TRUCKER", "INPUT_DEALER"):
+            r = await client.get(f"/api/v1/routes/demo?role={role}",
+                                 headers=FARMER)
+            assert r.status_code == 200, role
+            assert r.json()["role"] == role
+
+    @needs_mongo
+    async def test_geometry_is_a_real_road_not_a_straight_line(self, client):
+        """Two points per leg would be a straight line. Real carriageway
+        geometry has hundreds."""
+        for role in ("FARMER", "TRUCKER", "INPUT_DEALER"):
+            body = (await client.get(f"/api/v1/routes/demo?role={role}",
+                                     headers=FARMER)).json()
+            for leg in body["legs"]:
+                assert leg["n_geometry_points"] > 50, (role, leg["label"])
+                assert len(leg["polyline"]) == leg["n_geometry_points"]
+
+    @needs_mongo
+    async def test_labelled_as_a_snapshot_not_a_live_call(self, client):
+        body = (await client.get("/api/v1/routes/demo?role=FARMER",
+                                 headers=FARMER)).json()
+        assert body["provider"] == "tomtom"
+        # Honest provenance: real geometry, but frozen.
+        assert body["mode"] == "frozen_snapshot"
+        assert body["generated_at"]
+
+    @needs_mongo
+    async def test_trucker_corridor_has_a_return_leg(self, client):
+        """Circular logistics is the product thesis; the demo must show it."""
+        body = (await client.get("/api/v1/routes/demo?role=TRUCKER",
+                                 headers=FARMER)).json()
+        kinds = {l["kind"] for l in body["legs"]}
+        assert "outbound" in kinds and "return" in kinds
+
+    @needs_mongo
+    async def test_traffic_sections_index_within_their_polyline(self, client):
+        """An out-of-range index would silently draw nothing."""
+        for role in ("FARMER", "TRUCKER", "INPUT_DEALER"):
+            body = (await client.get(f"/api/v1/routes/demo?role={role}",
+                                     headers=FARMER)).json()
+            for leg in body["legs"]:
+                n = leg["n_geometry_points"]
+                for sec in leg["traffic_sections"]:
+                    assert 0 <= sec["start"] < n, (role, sec)
+                    assert 0 <= sec["end"] < n, (role, sec)
+                    assert sec["end"] >= sec["start"]
+
+    @needs_mongo
+    async def test_defaults_to_the_callers_own_role(self, client):
+        body = (await client.get("/api/v1/routes/demo", headers=TRUCKER)).json()
+        assert body["role"] == "TRUCKER"
+
+
+class TestRouteCacheResilience:
+    """A cache write must never destroy a successful fetch."""
+
+    async def test_unwritable_cache_dir_is_not_fatal(self, monkeypatch, tmp_path):
+        from routing.cache.result_store import RouteCache
+        target = tmp_path / "blocked"
+        cache = RouteCache(directory=target)
+        # Simulate a read-only mount, which is exactly what Docker produced.
+        monkeypatch.setattr(
+            type(cache._path('k')), "write_text",
+            lambda *a, **k: (_ for _ in ()).throw(OSError(30, "Read-only file system")))
+        key = cache.put({"a": 1}, {"b": 2})
+        assert key  # returned normally instead of raising

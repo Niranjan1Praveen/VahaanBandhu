@@ -126,6 +126,21 @@ class TomTomRoutingProvider(RoutingProvider):
             for p in section.get("points", []):
                 geometry.append((p["latitude"], p["longitude"]))
 
+        # TRAFFIC sections index into the flattened geometry above, so the map
+        # can colour the exact stretches that are congested.
+        traffic_sections = [
+            {
+                "start": int(sec.get("startPointIndex", 0)),
+                "end": int(sec.get("endPointIndex", 0)),
+                "magnitude": int(sec.get("magnitudeOfDelay", 0)),
+                "category": sec.get("simpleCategory"),
+                "effective_speed_kmh": sec.get("effectiveSpeedInKmh"),
+                "delay_s": int(sec.get("delayInSeconds", 0) or 0),
+            }
+            for sec in leg.get("sections", [])
+            if sec.get("sectionType") == "TRAFFIC"
+        ]
+
         return RouteCandidate(
             route_id=f"TT_{origin_id}_{destination_id}_{idx}",
             origin_id=origin_id,
@@ -137,6 +152,7 @@ class TomTomRoutingProvider(RoutingProvider):
             traffic_delay_min=round(delay_s / 60.0, 2),
             estimated_fuel_cost_inr=round(dist_km / DEFAULT_KMPL * DIESEL_PRICE_INR_PER_L, 2),
             geometry=geometry,
+            traffic_sections=traffic_sections,
             traffic_snapshot_time=summary.get("departureTime"),
             source="tomtom",
         )
@@ -175,6 +191,9 @@ class TomTomRoutingProvider(RoutingProvider):
                 "travelMode": kw.get("travel_mode", "truck"),
                 "maxAlternatives": max_alternatives,
                 "instructionsType": "text",
+                # Ask for congestion segments along the route, not just a
+                # single aggregate delay number.
+                "sectionType": "traffic",
             },
         )
         if not data or "routes" not in data:
@@ -186,7 +205,10 @@ class TomTomRoutingProvider(RoutingProvider):
         ]
         # Traffic-derived, so dynamic: this expires in minutes, by design.
         self.cache.put(
-            req, [c.to_dict() | {"geometry": c.geometry} for c in candidates],
+            req,
+            [c.to_dict() | {"geometry": c.geometry,
+                            "traffic_sections": c.traffic_sections}
+             for c in candidates],
             volatility=Volatility.DYNAMIC, provider="tomtom",
         )
         return candidates

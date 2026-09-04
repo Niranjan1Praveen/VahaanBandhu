@@ -35,6 +35,25 @@ const COLORS = {
 };
 
 /**
+ * Congestion colouring for stretches of the route itself.
+ *
+ * Keyed to TomTom's magnitudeOfDelay (0 unknown … 4 severe). This is different
+ * from the traffic tile overlay: the overlay colours every road on screen,
+ * whereas these segments colour *the path we chose*, which is the thing a
+ * driver actually cares about.
+ */
+const TRAFFIC_COLORS = {
+  0: "#94a3b8", // unknown
+  1: "#fbbf24", // minor
+  2: "#fb923c", // moderate
+  3: "#ef4444", // major
+  4: "#b91c1c", // severe / closure / road work
+};
+const TRAFFIC_LABELS_HI = {
+  0: "अज्ञात", 1: "हल्का", 2: "मध्यम", 3: "भारी", 4: "गंभीर",
+};
+
+/**
  * Role symbols instead of anonymous dots.
  *
  * A trucker glancing at a phone in a mandi yard should not have to decode a
@@ -63,6 +82,9 @@ export default function RouteMap({
   markers = [],
   polyline = [],
   returnPolyline = [],
+  // [{ polyline, traffic_sections, kind }] — congestion stretches indexed into
+  // each leg's own polyline.
+  trafficLegs = [],
   trafficConfig = null,
   showTrafficDefault = true,
   height = 320,
@@ -138,6 +160,31 @@ export default function RouteMap({
         bounds.push(...returnPolyline);
       }
 
+      // Congestion stretches drawn ON the route, above the base line.
+      trafficLegs.forEach((leg) => {
+        const pts = leg.polyline || [];
+        (leg.traffic_sections || []).forEach((sec) => {
+          const a = Math.max(0, Math.min(sec.start ?? 0, pts.length - 1));
+          const b = Math.max(0, Math.min(sec.end ?? 0, pts.length - 1));
+          if (b <= a) return;
+          const slice = pts.slice(a, b + 1);
+          if (slice.length < 2) return;
+          const mag = Number(sec.magnitude ?? 0);
+          const color = TRAFFIC_COLORS[mag] || TRAFFIC_COLORS[0];
+          L.polyline(slice, {
+            color, weight: 8, opacity: 0.95, lineCap: "round",
+          })
+            .addTo(map)
+            .bindTooltip(
+              `${TRAFFIC_LABELS_HI[mag] || ""}` +
+                (sec.category ? ` · ${sec.category}` : "") +
+                (sec.effective_speed_kmh ? ` · ${sec.effective_speed_kmh} km/h` : "") +
+                (sec.delay_s ? ` · +${Math.round(sec.delay_s / 60)} मिनट` : ""),
+              { sticky: true }
+            );
+        });
+      });
+
       markers.forEach((m) => {
         if (m.lat == null || m.lon == null) return;
         const style = MARKER_STYLE[m.kind] || MARKER_STYLE.waypoint;
@@ -186,6 +233,7 @@ export default function RouteMap({
     JSON.stringify(markers),
     JSON.stringify(polyline),
     JSON.stringify(returnPolyline),
+    JSON.stringify(trafficLegs),
     trafficConfig?.tile_url,
   ]);
 
@@ -199,6 +247,8 @@ export default function RouteMap({
   }, [trafficOn]);
 
   const kindsShown = [...new Set(markers.map((m) => m.kind))];
+  const nTrafficSections = trafficLegs.reduce(
+    (n, l) => n + (l.traffic_sections?.length || 0), 0);
 
   return (
     <div className={`relative overflow-hidden rounded-3xl border border-white/10 ${className}`}>
@@ -246,6 +296,14 @@ export default function RouteMap({
             <LineKey color={COLORS.returnLeg} dashed label="वापसी लोड" />
           )}
         </div>
+        {nTrafficSections > 0 && (
+          <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 border-t border-white/10 pt-1.5">
+            <span className="text-white/45">ट्रैफ़िक:</span>
+            {[1, 2, 3, 4].map((m) => (
+              <LineKey key={m} color={TRAFFIC_COLORS[m]} label={TRAFFIC_LABELS_HI[m]} />
+            ))}
+          </div>
+        )}
         {kindsShown.length > 0 && (
           <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 border-t border-white/10 pt-1.5">
             {kindsShown.map((k) => {
